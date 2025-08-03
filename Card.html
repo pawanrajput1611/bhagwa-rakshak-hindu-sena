@@ -1,0 +1,95 @@
+<!-- bhagwa_rakshak_website/card.html -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>सदस्यता कार्ड - भगवा रक्षक हिन्दू सेना</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #card-preview {
+      border: 2px solid #f90;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>सदस्यता कार्ड बनाएं</h1>
+    <nav>
+      <a href="index.html">होम</a>
+      <a href="about.html">हमारे बारे में</a>
+      <a href="team.html">टीम</a>
+      <a href="gallery.html">गैलरी</a>
+      <a href="contact.html">संपर्क करें</a>
+      <a href="join.html">ज्वॉइन करें</a>
+      <a href="card.html">सदस्य कार्ड</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>अपनी जानकारी भरें:</h2>
+    <form id="cardForm">
+      <label>नाम:</label><br>
+      <input type="text" id="name" required><br><br>
+      <label>जिला:</label><br>
+      <input type="text" id="district" required><br><br>
+      <label>सदस्य ID:</label><br>
+      <input type="text" id="memberId" required><br><br>
+      <label>फोटो चुनें:</label><br>
+      <input type="file" id="photo" accept="image/*"><br><br>
+      <button type="button" onclick="generateCard()">कार्ड बनाएं</button>
+      <button type="button" onclick="downloadCard()">डाउनलोड करें</button>
+    </form>
+
+    <canvas id="card-preview" width="500" height="300"></canvas>
+  </main>
+
+  <footer>
+    <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
+  </footer>
+
+  <script>
+    function generateCard() {
+      const name = document.getElementById('name').value;
+      const district = document.getElementById('district').value;
+      const memberId = document.getElementById('memberId').value;
+      const photoInput = document.getElementById('photo');
+
+      const canvas = document.getElementById('card-preview');
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#FF9933';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#fff';
+      ctx.font = '20px Arial';
+      ctx.fillText('भगवा रक्षक हिन्दू सेना - सदस्यता कार्ड', 60, 40);
+
+      ctx.font = '16px Arial';
+      ctx.fillText(`नाम: ${name}`, 50, 100);
+      ctx.fillText(`जिला: ${district}`, 50, 130);
+      ctx.fillText(`सदस्य ID: ${memberId}`, 50, 160);
+
+      if (photoInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = new Image();
+          img.onload = function () {
+            ctx.drawImage(img, 350, 100, 100, 100);
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      }
+    }
+
+    function downloadCard() {
+      const canvas = document.getElementById('card-preview');
+      const link = document.createElement('a');
+      link.download = 'bhagwa_card.jpg';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  </script>
+</body>
+</html>
