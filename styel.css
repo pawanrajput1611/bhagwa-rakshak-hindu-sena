@@ -102,3 +102,23 @@ button:hover {
   color: #ffe0b3;
 }
 
+.bhagwa-theme {
+  background-color: #ff9933;
+  color: white;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+header h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid white;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+a:hover {
+  color: #ffe0b3;
+}
