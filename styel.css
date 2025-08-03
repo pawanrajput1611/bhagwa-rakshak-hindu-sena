@@ -122,3 +122,34 @@ a {
 a:hover {
   color: #ffe0b3;
 }
+.accordion {
+  max-width: 800px;
+  margin: auto;
+  padding: 10px;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ff9800;
+}
+
+.accordion-button {
+  background-color: #e65100;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  background-color: #fff3e0;
+  padding: 15px;
+  line-height: 1.6;
+}
