@@ -42,3 +42,38 @@ footer {
   text-align: center;
   padding: 10px;
 }
+/* भगवा थीम के लिए रंग */
+body {
+  background-color: #fff8e1; /* हल्का भगवा */
+  color: #4e2600;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+header, nav, footer {
+  background-color: #ff9800; /* गहरा भगवा */
+  color: white;
+}
+
+section, .card, .about-section, .join-section {
+  background-color: #ffe0b2; /* मध्यम भगवा */
+  border: 1px solid #ff9800;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+  color: #e65100;
+}
+
+button, .btn {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
