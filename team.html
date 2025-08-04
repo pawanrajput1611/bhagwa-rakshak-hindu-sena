@@ -3,12 +3,161 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>टीम - भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #FF6600; /* केसरिया */
+      --secondary-color: #4CAF50; /* हरा */
+      --text-color: #333;
+      --bg-color: #f0f2f5;
+      --card-bg-color: #ffffff;
+      --border-radius: 10px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    header {
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: var(--box-shadow);
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    nav {
+      margin-top: 10px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: #ffd700; /* गहरा सुनहरा */
+    }
+    
+    main {
+      background: var(--card-bg-color);
+      padding: 40px;
+      margin: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      width: 90%;
+      max-width: 1000px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .team-member {
+      background-color: #f9f9f9;
+      border-radius: var(--border-radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid var(--primary-color);
+    }
+
+    .team-member h3 {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      margin-bottom: 5px;
+    }
+
+    .team-member p.role {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .team-member p.bio {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: var(--text-color);
+      font-size: 1.2rem;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+    }
+
+    footer {
+      width: 100%;
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>टीम</h1>
+    <h1>भगवा रक्षक हिन्दू सेना</h1>
     <nav>
       <a href="index.html">होम</a>
       <a href="about.html">हमारे बारे में</a>
@@ -21,12 +170,57 @@
   </header>
 
   <main>
-    <h2>मुख्य सदस्य</h2>
-    <ul>
-      <li>✳️ पवन राजपूत – संस्थापक</li>
-      <li>✳️ रवि शर्मा – को-ऑर्डिनेटर</li>
-      <li>✳️ अन्य सदस्य – (आप यहाँ जोड़ सकते हैं)</li>
-    </ul>
+    <h2>हमारी टीम</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="images/pawan_rajput.jpg" alt="पवन राजपूत" class="team-member-img">
+        <h3>पवन राजपूत</h3>
+        <p class="role">संस्थापक एवं अध्यक्ष</p>
+        <p class="bio">पवन राजपूत ने भगवा रक्षक हिन्दू सेना की स्थापना सनातन धर्म के सिद्धांतों को बढ़ावा देने के उद्देश्य से की।</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="team-member">
+        <img src="images/rahul_rajput.jpg" alt="राहुल राजपूत" class="team-member-img">
+        <h3>राहुल राजपूत</h3>
+        <p class="role">सह-संस्थापक एवं संयोजक</p>
+        <p class="bio">राहुल राजपूत संगठन के दैनिक कार्यों को संभालते हैं और विभिन्न परियोजनाओं का समन्वय करते हैं।</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="team-member">
+        <img src="images/suresh_sharma.jpg" alt="सुरेश शर्मा" class="team-member-img">
+        <h3>सुरेश शर्मा</h3>
+        <p class="role">मीडिया प्रमुख</p>
+        <p class="bio">सुरेश शर्मा संगठन की मीडिया और संचार रणनीतियों का प्रबंधन करते हैं।</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="images/new_member.jpg" alt="नए सदस्य" class="team-member-img">
+        <h3>नए सदस्य</h3>
+        <p class="role">पद का नाम</p>
+        <p class="bio">सदस्य का संक्षिप्त परिचय।</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <footer>
