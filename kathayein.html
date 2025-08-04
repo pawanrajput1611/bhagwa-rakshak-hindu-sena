@@ -2,17 +2,74 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <title>पौराणिक कथाएं</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>पौराणिक कथाएं | भगवा रक्षक हिन्दू सेना</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #fff3e0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #4e2600;
+    }
+    h1 {
+      background-color: #e65100;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .accordion {
+      background-color: #ffe0b2;
+      color: #4e2600;
+      cursor: pointer;
+      padding: 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .active, .accordion:hover {
+      background-color: #ffb74d;
+    }
+    .panel {
+      padding: 0 15px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+      border-left: 3px solid #e65100;
+      border-radius: 0 0 8px 8px;
+    }
+  </style>
 </head>
-<body class="bhagwa-theme">
-  <header>
-    <h1>📖 पौराणिक कथाएं</h1>
-    <nav><a href="index.html">🏠 होम</a></nav>
-  </header>
+<body>
+  <h1>📜 पौराणिक कथाएं 📜</h1>
 
-  <main>
-    <p>यहाँ पर रामायण, महाभारत, भागवत आदि की कथाएं जोड़ी जाएंगी।</p>
-  </main>
+  <button class="accordion">🔸 समुद्र मंथन</button>
+  <div class="panel">
+    <p>देवों और असुरों द्वारा अमृत प्राप्ति हेतु समुद्र मंथन किया गया। इस प्रक्रिया में कई रत्न, विष और धन्वंतरि प्रकट हुए।</p>
+  </div>
+
+  <button class="accordion">🔸 नरसिंह अवतार</button>
+  <div class="panel">
+    <p>भगवान विष्णु ने हिरण्यकश्यप का अंत करने हेतु आधे नर और आधे सिंह के रूप में नरसिंह अवतार लिया।</p>
+  </div>
+
+  <button class="accordion">🔸 सती और शिव की कथा</button>
+  <div class="panel">
+    <p>सती के आत्मदाह के बाद भगवान शिव ने क्रोधित होकर तांडव किया और सती के अंग जहां-जहां गिरे, वहां शक्तिपीठ बने।</p>
+  </div>
+
+  <script>
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    }
+  </script>
 </body>
 </html>
