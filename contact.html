@@ -1,34 +1,219 @@
-<!-- bhagwa_rakshak_website/contact.html -->
 <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>संपर्क करें - भगवा रक्षक हिन्दू सेना</title>
+  
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* Custom CSS for Contact Page */
+    .contact-main {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .contact-form-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: var(--card-bg-color);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 3rem;
+      text-align: left;
+    }
+
+    .contact-form-container h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+    
+    .form-submit-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      background-color: var(--primary-color);
+      color: var(--text-color-light);
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .form-submit-btn:hover {
+      background-color: #e65c00;
+      transform: translateY(-2px);
+    }
+    
+    .contact-info {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    
+    .contact-info h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-info-item i {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-right: 1rem;
+      width: 30px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .contact-form-container {
+            padding: 2rem;
+        }
+    }
+    
+  </style>
 </head>
 <body>
+  
   <header>
-    <h1>संपर्क करें</h1>
-    <nav>
-      <a href="index.html">होम</a>
-      <a href="about.html">हमारे बारे में</a>
-      <a href="team.html">टीम</a>
-      <a href="gallery.html">गैलरी</a>
-      <a href="contact.html">संपर्क करें</a>
-      <a href="join.html">ज्वॉइन करें</a>
-      <a href="card.html">सदस्य कार्ड</a>
-    </nav>
+    <div class="header-content container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/organization-logo.png" alt="संगठन का लोगो" class="organization-logo">
+          भगवा रक्षक हिन्दू सेना
+          <img src="images/bhagwa-dhwaj.png" alt="भगवा ध्वज" class="bhagwa-dhwaj">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">होम</a></li>
+          <li><a href="about.html">हमारे बारे में</a></li>
+          <li><a href="team.html">टीम</a></li>
+          <li><a href="gallery.html">गैलरी</a></li>
+          <li class="dropdown">
+            <a href="#">हमारी गाथा <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="dharm-gatha.html">धर्म गाथा</a></li>
+              <li><a href="aarti.html">आरती</a></li>
+              <li><a href="kathayein.html">पौराणिक कथाएं</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" class="active">संपर्क करें</a></li>
+          <li><a href="join.html" class="cta-button">ज्वॉइन करें</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>हमें संपर्क करें</h2>
-    <p>Email: bhagvarakshak@hindu.org</p>
-    <p>Instagram: <a href="https://www.instagram.com/bhagva_rakshak__hindu_sena" target="_blank">@bhagva_rakshak__hindu_sena</a></p>
-    <p>मोबाइल: +91-9999999999</p>
+  <main class="contact-main">
+    <div class="container">
+      
+      <div class="contact-form-container">
+        <h2>हमसे संपर्क करें</h2>
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">आपका नाम</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">ईमेल</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">विषय</label>
+            <input type="text" id="subject" name="subject">
+          </div>
+          <div class="form-group">
+            <label for="message">संदेश</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">संदेश भेजें</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>या हमें सीधे संपर्क करें</h3>
+        <div class="contact-info-item">
+            <i class="fas fa-envelope"></i>
+            <p>ईमेल: bhagvarakshak@hindu.org</p>
+        </div>
+        <div class="contact-info-item">
+            <i class="fab fa-instagram"></i>
+            <p>इंस्टाग्राम: <a href="https://www.instagram.com/bhagva_rakshak__hindu_sena?igsh=M3B2M3U5YWMyd2Iw" target="_blank">@bhagva_rakshak__hindu_sena</a></p>
+        </div>
+        <div class="contact-info-item">
+            <i class="fas fa-mobile-alt"></i>
+            <p>मोबाइल: +91-9999999999</p>
+        </div>
+        <div class="contact-info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>पता: अयोध्या, उत्तर प्रदेश, भारत</p>
+        </div>
+      </div>
+
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
+    <div class="container">
+      <div class="footer-links">
+        <div>
+          <h3>महत्वपूर्ण लिंक</h3>
+          <ul>
+            <li><a href="about.html">हमारे बारे में</a></li>
+            <li><a href="contact.html">संपर्क करें</a></li>
+            <li><a href="join.html">ज्वॉइन करें</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>हमारा अनुसरण करें</h3>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/bhagva_rakshak__hindu_sena?igsh=M3B2M3U5YWMyd2Iw" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <p class="copyright">© 2025 भगवा रक्षक हिन्दू सेना</p>
+    </div>
   </footer>
+
 </body>
 </html>
