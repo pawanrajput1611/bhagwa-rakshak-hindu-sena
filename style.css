@@ -1,4 +1,6 @@
-  /* Basic Reset and Global Styles */
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap');
+
 /* Basic Reset and Global Styles */
 * {
     box-sizing: border-box;
@@ -45,7 +47,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
 }
 
 .logo a {
@@ -297,7 +298,6 @@ footer {
     margin-top: 2rem;
 }
 
-
 /* Responsive Design */
 @media (max-width: 992px) {
     .header-content {
@@ -331,4 +331,4 @@ footer {
     .slogan-banner h2 {
         font-size: 2rem;
     }
-          }
+}
