@@ -1,14 +1,163 @@
 <!-- bhagwa_rakshak_website/gallery.html -->
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>फोटो गैलरी - भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #FF6600; /* केसरिया */
+      --secondary-color: #4CAF50; /* हरा */
+      --text-color: #333;
+      --bg-color: #f0f2f5;
+      --card-bg-color: #ffffff;
+      --border-radius: 10px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    header {
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: var(--box-shadow);
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    nav {
+      margin-top: 10px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: #ffd700; /* गहरा सुनहरा */
+    }
+    
+    main {
+      background: var(--card-bg-color);
+      padding: 40px;
+      margin: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      width: 90%;
+      max-width: 1200px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Overlay for Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-content img {
+      width: auto;
+      max-height: 80vh;
+      display: block;
+      border-radius: var(--border-radius);
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      width: 100%;
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>फोटो गैलरी</h1>
+    <h1>भगवा रक्षक हिन्दू सेना</h1>
     <nav>
       <a href="index.html">होम</a>
       <a href="about.html">हमारे बारे में</a>
@@ -22,15 +171,64 @@
 
   <main>
     <h2>हमारी झलकियाँ</h2>
-    <div class="gallery">
-      <img src="images/photo1.jpg" alt="Photo 1" width="200" />
-      <img src="images/photo2.jpg" alt="Photo 2" width="200" />
-      <img src="images/photo3.jpg" alt="Photo 3" width="200" />
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/photo1.jpg" alt="कार्यक्रम की तस्वीर 1" onclick="openLightbox('images/photo1.jpg')">
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/photo2.jpg" alt="रैली की तस्वीर 2" onclick="openLightbox('images/photo2.jpg')">
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/photo3.jpg" alt="सदस्यों की तस्वीर 3" onclick="openLightbox('images/photo3.jpg')">
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/photo4.jpg" alt="समर्पण समारोह 4" onclick="openLightbox('images/photo4.jpg')">
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/photo5.jpg" alt="धार्मिक आयोजन 5" onclick="openLightbox('images/photo5.jpg')">
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/photo6.jpg" alt="सेवा कार्य 6" onclick="openLightbox('images/photo6.jpg')">
+      </div>
+
     </div>
   </main>
+  
+  <div class="lightbox-overlay" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-content">
+      <img src="" alt="बड़ी तस्वीर" id="lightbox-image">
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
   </footer>
+  
+  <script>
+    function openLightbox(imageSrc) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = imageSrc;
+      lightbox.style.display = 'flex';
+    }
+    
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+    }
+    
+    // क्लोज करने के लिए जब overlay पर क्लिक हो
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox') {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
