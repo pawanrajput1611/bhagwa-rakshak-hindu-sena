@@ -3,8 +3,121 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>हमारे बारे में - भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #FF6600; /* केसरिया */
+      --secondary-color: #4CAF50; /* हरा */
+      --text-color: #333;
+      --bg-color: #f0f2f5;
+      --card-bg-color: #ffffff;
+      --border-radius: 10px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    header {
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: var(--box-shadow);
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    nav {
+      margin-top: 10px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: #ffd700; /* गहरा सुनहरा */
+    }
+    
+    main {
+      background: var(--card-bg-color);
+      padding: 40px;
+      margin: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      width: 90%;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-left: 5px solid var(--primary-color);
+      border-radius: 5px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-color);
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    
+    .slogan {
+      text-align: center;
+      margin: 40px 0;
+      padding: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      font-size: 2rem;
+      font-weight: 700;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+    
+    footer {
+      width: 100%;
+      background: var(--text-color);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -21,8 +134,26 @@
   </header>
 
   <main>
-    <h2>हम कौन हैं?</h2>
-    <p>भगवा रक्षक हिन्दू सेना एक सामाजिक और धार्मिक संगठन है, जिसका उद्देश्य हिंदू संस्कृति, परंपरा और धर्म की रक्षा करना है। हम देशभर में सनातन मूल्यों को पुनर्स्थापित करने के लिए समर्पित हैं।</p>
+    <h2>भगवा रक्षक हिन्दू सेना - एक परिचय</h2>
+    <div class="slogan">जय श्री राम!</div>
+
+    <div class="section">
+      <h3 class="section-title">हमारा उद्देश्य और मिशन</h3>
+      <p>भगवा रक्षक हिन्दू सेना एक समर्पित सामाजिक और धार्मिक संगठन है, जो **सनातन धर्म** और **हिन्दू संस्कृति** की रक्षा, संवर्धन और पुनर्स्थापना के लिए कार्यरत है। हमारा मिशन भारतीय मूल्यों, परंपराओं और गौरवशाली इतिहास को आने वाली पीढ़ियों तक पहुँचाना है।</p>
+      <p>हमारा उद्देश्य केवल धार्मिक गतिविधियों तक सीमित नहीं है, बल्कि हम समाज में जागरूकता फैलाने, जरूरतमंदों की मदद करने और एक सशक्त हिंदू राष्ट्र के निर्माण के लिए भी प्रतिबद्ध हैं।</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">हमारी मुख्य गतिविधियाँ</h3>
+      <ul>
+        <li>**धर्म और संस्कृति की रक्षा:** धार्मिक स्थलों की सुरक्षा, सांस्कृतिक कार्यक्रमों का आयोजन और सनातन मूल्यों का प्रचार-प्रसार करना।</li>
+        <li>**सामाजिक कार्य:** गरीबों और जरूरतमंदों के लिए अन्नदान, रक्तदान शिविर और स्वास्थ्य सेवाएँ प्रदान करना।</li>
+        <li>**युवाओं को जोड़ना:** युवाओं में राष्ट्रवाद और धार्मिक चेतना जगाना, उन्हें संगठन से जोड़कर राष्ट्र निर्माण में योगदान देने के लिए प्रेरित करना।</li>
+        <li>**एकता और भाईचारा:** विभिन्न हिंदू समुदायों के बीच एकता और सद्भाव को बढ़ावा देना।</li>
+      </ul>
+    </div>
+
+    <p>हमारा मानना है कि एक मजबूत राष्ट्र की नींव उसकी संस्कृति और मूल्यों पर टिकी होती है। भगवा रक्षक हिन्दू सेना इसी नींव को मजबूत बनाने के लिए हर संभव प्रयास कर रही है।</p>
   </main>
 
   <footer>
