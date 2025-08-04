@@ -2,41 +2,320 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>सदस्यता कार्ड - भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/card-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #FF6600; /* केसरिया */
+      --secondary-color: #4CAF50; /* हरा */
+      --text-color: #333;
+      --bg-color: #f0f2f5;
+      --card-bg-color: #ffffff;
+      --border-radius: 10px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    header {
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: var(--box-shadow);
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    nav {
+      margin-top: 10px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1rem;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: #ffd700; /* गहरा सुनहरा */
+    }
+    
+    main {
+      background: var(--card-bg-color);
+      padding: 40px;
+      margin: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+    
+    form label {
+      display: block;
+      text-align: left;
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    
+    form input[type="text"], form input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+
+    form input[type="file"] {
+      padding: 10px;
+    }
+    
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    
+    .button-group button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .button-group button:first-child {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    .button-group button:first-child:hover {
+      background-color: #e65c00;
+      transform: translateY(-2px);
+    }
+    
+    .button-group button:last-child {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    
+    .button-group button:last-child:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+    }
+    
+    #card-preview-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    
+    #card-preview {
+      border: 5px solid var(--primary-color);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      background-color: #fff;
+    }
+
+    footer {
+      width: 100%;
+      background: var(--text-color);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+
+    /* Card design on canvas */
+    .card-title {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #fff;
+    }
+    
+    .card-info-label {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .card-info-value {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>सदस्यता कार्ड बनाएं</h1>
+    <h1>भगवा रक्षक हिन्दू सेना</h1>
     <nav>
-      </nav>
+      <a href="index.html">होम</a>
+      <a href="about.html">हमारे बारे में</a>
+      <a href="team.html">टीम</a>
+      <a href="gallery.html">गैलरी</a>
+      <a href="contact.html">संपर्क करें</a>
+      <a href="join.html">ज्वॉइन करें</a>
+      <a href="card.html">सदस्य कार्ड</a>
+    </nav>
   </header>
 
   <main>
     <h2>अपनी जानकारी भरें:</h2>
     <form id="cardForm">
-      <label for="name">नाम:</label><br>
-      <input type="text" id="name" required><br>
-      <label for="district">जिला:</label><br>
-      <input type="text" id="district" required><br>
-      <label for="memberId">सदस्य ID:</label><br>
-      <input type="text" id="memberId" required><br>
-      <label for="photo">फोटो चुनें:</label><br>
-      <input type="file" id="photo" accept="image/*"><br><br>
-      <label for="logo">लोगो चुनें:</label><br>
-      <input type="file" id="logo" accept="image/*"><br><br>
-      <button type="button" onclick="generateCard()">कार्ड बनाएं</button>
-      <button type="button" onclick="downloadCard()">डाउनलोड करें</button>
+      <label for="name">नाम:</label>
+      <input type="text" id="name" required>
+      
+      <label for="district">जिला:</label>
+      <input type="text" id="district" required>
+      
+      <label for="memberId">सदस्य ID:</label>
+      <input type="text" id="memberId" required>
+      
+      <label for="photo">फोटो चुनें:</label>
+      <input type="file" id="photo" accept="image/*">
+      
+      <div class="button-group">
+        <button type="button" onclick="generateCard()">कार्ड बनाएं</button>
+        <button type="button" onclick="downloadCard()">डाउनलोड करें</button>
+      </div>
     </form>
 
-    <canvas id="card-preview" width="500" height="300"></canvas>
+    <div id="card-preview-container">
+      <canvas id="card-preview" width="500" height="300"></canvas>
+    </div>
   </main>
 
   <footer>
     <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
   </footer>
 
-  <script src="js/card-generator.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // पेज लोड होने पर एक डिफ़ॉल्ट कार्ड बनाएं
+      generateCard();
+    });
+
+    function generateCard() {
+      const name = document.getElementById('name').value || "आपका नाम";
+      const district = document.getElementById('district').value || "आपका जिला";
+      const memberId = document.getElementById('memberId').value || "ID12345";
+      const photoInput = document.getElementById('photo');
+
+      const canvas = document.getElementById('card-preview');
+      const ctx = canvas.getContext('2d');
+
+      // कार्ड का बैकग्राउंड (केसरिया और सफेद)
+      ctx.fillStyle = '#FF6600'; // केसरिया
+      ctx.fillRect(0, 0, canvas.width, canvas.height / 3);
+      ctx.fillStyle = '#ffffff'; // सफेद
+      ctx.fillRect(0, canvas.height / 3, canvas.width, canvas.height * 2 / 3);
+
+      // कार्ड का हेडर
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '700 24px Noto Sans Devanagari, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('भगवा रक्षक हिन्दू सेना', canvas.width / 2, 45);
+      
+      // 'सदस्यता कार्ड' टेक्स्ट
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '400 18px Noto Sans Devanagari, sans-serif';
+      ctx.fillText('सदस्यता कार्ड', canvas.width / 2, 75);
+      
+      // जानकारी
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#333';
+      ctx.font = '600 18px Noto Sans Devanagari, sans-serif';
+      ctx.fillText('नाम:', 50, 150);
+      ctx.fillText('जिला:', 50, 190);
+      ctx.fillText('सदस्य ID:', 50, 230);
+      
+      ctx.fillStyle = '#555';
+      ctx.font = '400 18px Noto Sans Devanagari, sans-serif';
+      ctx.fillText(name, 150, 150);
+      ctx.fillText(district, 150, 190);
+      ctx.fillText(memberId, 150, 230);
+
+      // फोटो जोड़ने के लिए
+      if (photoInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = new Image();
+          img.onload = function () {
+            // गोल फोटो
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(400, 180, 50, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.clip();
+            ctx.drawImage(img, 350, 130, 100, 100);
+            ctx.restore();
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        // अगर फोटो अपलोड नहीं हुई है तो एक डिफ़ॉल्ट आइकन दिखाएं
+        ctx.fillStyle = '#ccc';
+        ctx.beginPath();
+        ctx.arc(400, 180, 50, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = '#666';
+        ctx.font = '30px Noto Sans Devanagari';
+        ctx.textAlign = 'center';
+        ctx.fillText('फोटो', 400, 190);
+      }
+    }
+
+    function downloadCard() {
+      const canvas = document.getElementById('card-preview');
+      const link = document.createElement('a');
+      link.download = 'bhagwa_rakshak_card.jpg';
+      link.href = canvas.toDataURL('image/jpeg', 1.0); // उच्च गुणवत्ता JPEG
+      link.click();
+    }
+  </script>
 </body>
 </html>
