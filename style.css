@@ -332,3 +332,68 @@ footer {
         font-size: 2rem;
     }
 }
+/* Hamburger Menu Icon */
+.hamburger-menu-icon {
+    display: none; /* Default state: hidden on desktop */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color-light);
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Sidenav Menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001; /* Above header */
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.sidenav ul {
+    display: block;
+    padding-top: 20px;
+}
+
+.sidenav ul li {
+    margin: 0;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 992px) {
+    .header-content nav {
+        display: none;
+    }
+    .hamburger-menu-icon {
+        display: block;
+    }
+}
