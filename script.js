@@ -2,6 +2,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const nav = document.querySelector('nav');
     const header = document.querySelector('header');
     const headerHeight = header.offsetHeight;
+    // Function to open/close the sidenav
+function toggleNav() {
+    const sidenav = document.getElementById("mySidenav");
+    if (sidenav.style.width === "250px") {
+        sidenav.style.width = "0";
+    } else {
+        sidenav.style.width = "250px";
+    }
+}
+    
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > headerHeight) {
