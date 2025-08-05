@@ -38,10 +38,10 @@ header {
     color: var(--text-color-light);
     padding: 1rem 0;
     box-shadow: var(--box-shadow);
-    position: sticky;
-    top: 0;
+    /* position: sticky; और top: 0; यहाँ से हटा दिए गए हैं */
     z-index: 1000;
 }
+
 
 .header-content {
     display: flex;
