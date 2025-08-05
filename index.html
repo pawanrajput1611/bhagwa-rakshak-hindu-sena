@@ -12,33 +12,46 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <div class="logo">
-        <img src="images/hindu sena logo.png" alt="sangthan Logo" "width="250" height="100">
+
+    <header>
+    <div class="header-content container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/sangthan-logo.png" alt="संगठन का लोगो" class="sangthan-logo">
+                भगवा रक्षक हिन्दू सेना
+                <img src="images/bhagwa-dhwaj.png" alt="भगवा ध्वज" class="bhagwa-dhwaj">
+            </a>
+        </div>
         
-        <a href="index.html">भगवा रक्षक हिन्दू सेना</a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">होम</a></li>
-          <li><a href="about.html">हमारे बारे में</a></li>
-          <li><a href="team.html">टीम</a></li>
-          <li><a href="gallery.html">गैलरी</a></li>
-          <li class="dropdown">
-            <a href="#">हमारी गाथा <i class="fas fa-caret-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="dharm-gatha.html">धर्म गाथा</a></li>
-              <li><a href="aarti.html">आरती</a></li>
-              <li><a href="kathayein.html">पौराणिक कथाएं</a></li>
+        <div class="hamburger-menu-icon" onclick="toggleNav()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <nav id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+            <ul>
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+                <li><a href="team.html">टीम</a></li>
+                <li><a href="gallery.html">गैलरी</a></li>
+                <li class="dropdown">
+                    <a href="#">हमारी गाथा <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dharm-gatha.html">धर्म गाथा</a></li>
+                        <li><a href="aarti.html">आरती</a></li>
+                        <li><a href="kathayein.html">पौराणिक कथाएं</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">संपर्क करें</a></li>
+                <li><a href="join.html" class="cta-button">ज्वॉइन करें</a></li>
             </ul>
-          </li>
-          <li><a href="contact.html">संपर्क करें</a></li>
-          <li><a href="join.html" class="cta-button">ज्वॉइन करें</a></li>
-        </ul>
-      </nav>
+        </nav>
+
     </div>
-  </header>
+</header>
+
 
   <main>
     <section class="hero-section">
