@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const nameInput = document.getElementById('memberName');
     const districtInput = document.getElementById('memberDistrict');
     const mobileInput = document.getElementById('memberMobile');
-    const idInput = document.getElementById('memberId');
     const photoInput = document.getElementById('memberPhoto');
     const cardPreview = document.getElementById('memberCardPreview');
     const downloadBtn = document.getElementById('downloadBtn');
@@ -42,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
         return `BRHS${timestamp}-${random}`;
     }
 
-    idInput.value = generateUniqueId();
+    // Generate ID and store it in a variable
+    const generatedId = generateUniqueId();
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const name = nameInput.value;
         const district = districtInput.value;
         const mobile = mobileInput.value;
-        const id = idInput.value;
         
         // Read the uploaded photo
         const reader = new FileReader();
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('cardName').textContent = name;
             document.getElementById('cardDistrict').textContent = district;
             document.getElementById('cardMobile').textContent = mobile;
-            document.getElementById('cardId').textContent = id;
+            document.getElementById('cardId').textContent = generatedId; // Use the stored ID
             document.getElementById('cardPhoto').src = event.target.result;
             
             cardPreview.style.display = 'block';
@@ -71,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         domtoimage.toPng(cardPreview)
             .then(function(dataUrl) {
                 const link = document.createElement('a');
-                link.download = `${idInput.value}.png`;
+                link.download = `${generatedId}.png`; // Use the stored ID for file name
                 link.href = dataUrl;
                 link.click();
             });
