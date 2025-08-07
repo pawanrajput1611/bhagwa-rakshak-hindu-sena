@@ -13,15 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Sidenav functionality (if you have one)
+    // Sidenav functionality
     window.toggleNav = function() {
         const sidenav = document.getElementById("mySidenav");
         if (sidenav) {
-            if (sidenav.style.width === "250px") {
-                sidenav.style.width = "0";
-            } else {
-                sidenav.style.width = "250px";
-            }
+            sidenav.style.width = sidenav.style.width === "250px" ? "0" : "250px";
         }
     };
     
@@ -69,6 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 };
                 reader.readAsDataURL(photoFile);
             } else {
+                // If no photo is selected, show a placeholder or just display the card.
+                // You can add a default image here if you have one.
+                cardPhoto.src = "images/default-photo.png"; // Example placeholder
                 cardPreview.style.display = 'block';
                 downloadBtn.style.display = 'block';
             }
