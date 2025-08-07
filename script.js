@@ -76,3 +76,72 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('memberCardForm');
+    const memberNameInput = document.getElementById('memberName');
+    const memberDistrictInput = document.getElementById('memberDistrict');
+    const memberMobileInput = document.getElementById('memberMobile');
+    const memberPhotoInput = document.getElementById('memberPhoto');
+    const generateBtn = document.querySelector('.generate-btn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const cardPreview = document.getElementById('memberCardPreview');
+    const cardNameSpan = document.getElementById('cardName');
+    const cardDistrictSpan = document.getElementById('cardDistrict');
+    const cardMobileSpan = document.getElementById('cardMobile');
+    const cardIdSpan = document.getElementById('cardId');
+    const cardPhoto = document.getElementById('cardPhoto');
+
+    // एक रैंडम (यादृच्छिक) आईडी बनाने का फंक्शन
+    function generateRandomId() {
+        return Math.floor(100000 + Math.random() * 900000); // 6 अंकों का नंबर
+    }
+
+    // फॉर्म सबमिशन को संभालना
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // फॉर्म को सबमिट होने से रोकना
+
+        // फॉर्म से वैल्यू लेना
+        const name = memberNameInput.value;
+        const district = memberDistrictInput.value;
+        const mobile = memberMobileInput.value;
+        const photoFile = memberPhotoInput.files[0];
+
+        // कार्ड को फॉर्म के डेटा से अपडेट करना
+        cardNameSpan.textContent = name;
+        cardDistrictSpan.textContent = district;
+        cardMobileSpan.textContent = mobile;
+        cardIdSpan.textContent = generateRandomId();
+
+        // फ़ोटो अपलोड को संभालना
+        if (photoFile) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                cardPhoto.src = e.target.result;
+                // फ़ोटो लोड होने के बाद कार्ड और डाउनलोड बटन दिखाएं
+                cardPreview.style.display = 'block';
+                downloadBtn.style.display = 'block';
+            };
+            reader.readAsDataURL(photoFile);
+        } else {
+            // यदि कोई फ़ोटो नहीं है, तो बस कार्ड और डाउनलोड बटन दिखाएं
+            cardPreview.style.display = 'block';
+            downloadBtn.style.display = 'block';
+        }
+    });
+
+    // डाउनलोड बटन पर क्लिक को संभालना
+    downloadBtn.addEventListener('click', function() {
+        const cardElement = document.getElementById('memberCardPreview');
+        
+        // dom-to-image का उपयोग करके कार्ड का PNG बनाएं
+        domtoimage.toPng(cardElement)
+            .then(function (dataUrl) {
+                // FileSaver.js का उपयोग करके इमेज को डाउनलोड करें
+                window.saveAs(dataUrl, 'सदस्य-कार्ड-' + cardNameSpan.textContent + '.png');
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+    });
+});
