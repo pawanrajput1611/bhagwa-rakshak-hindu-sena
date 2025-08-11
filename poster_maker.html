@@ -27,11 +27,11 @@
             border: 1px solid #ccc;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             background-color: #fff;
-            cursor: grab; /* माउस को खींचने के लिए कर्सर */
+            cursor: grab;
         }
         
         #poster-canvas:active {
-            cursor: grabbing; /* खींचते समय कर्सर */
+            cursor: grabbing;
         }
 
         #photo-upload {
@@ -42,10 +42,15 @@
             border: none;
             margin: 5px;
             color: white;
-            background-color: #ff8c00; /* Orange */
+            background-color: #ff8c00;
         }
 
-        #download-button {
+        .action-buttons {
+            display: none; /* Hide buttons until photo is uploaded */
+            margin-top: 10px;
+        }
+        
+        #download-button, #share-button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
@@ -53,8 +58,15 @@
             border: none;
             margin: 5px;
             color: white;
-            background-color: #a52a2a; /* Brownish Red */
-            display: none;
+            font-weight: bold;
+        }
+        
+        #download-button {
+            background-color: #a52a2a;
+        }
+        
+        #share-button {
+            background-color: #1DA1F2; /* Twitter Blue */
         }
     </style>
 </head>
@@ -63,7 +75,10 @@
 <div class="controls">
     <h2>अपना पोस्टर बनाएँ</h2>
     <input type="file" id="photo-upload" accept="image/*">
-    <button id="download-button">पोस्टर डाउनलोड करें</button>
+    <div class="action-buttons">
+        <button id="download-button">पोस्टर डाउनलोड करें</button>
+        <button id="share-button">शेयर करें</button>
+    </div>
 </div>
 
 <canvas id="poster-canvas" width="600" height="600"></canvas>
@@ -73,10 +88,12 @@
         const canvas = document.getElementById('poster-canvas');
         const ctx = canvas.getContext('2d');
         const uploadInput = document.getElementById('photo-upload');
+        const actionButtons = document.querySelector('.action-buttons');
         const downloadButton = document.getElementById('download-button');
+        const shareButton = document.getElementById('share-button');
         
         const posterSize = 600;
-        const logoUrl = 'https://i.imgur.com/your-logo.png'; // यहाँ अपने लोगो का URL डालें
+        const logoUrl = 'https://i.imgur.com/your-logo.png';
         
         let userImage = new Image();
         userImage.crossOrigin = "Anonymous";
@@ -88,23 +105,25 @@
         let isImageLoaded = false;
         let isLogoLoaded = false;
         
-        // Image adjustment variables
         let imageX = 0, imageY = 0;
         let imageScale = 1;
         let isDragging = false;
         let startDragX = 0, startDragY = 0;
         
+        const clipRadius = posterSize * 0.25;
+        const clipCenterX = posterSize / 2;
+        const clipCenterY = posterSize / 2;
+
         userImage.onload = () => {
             isImageLoaded = true;
-            // जब नई इमेज लोड हो, तो उसे फिट करने के लिए शुरुआती स्केल सेट करें
-            const scaleX = posterSize / userImage.width;
-            const scaleY = posterSize / userImage.height;
+            const scaleX = (clipRadius * 2) / userImage.width;
+            const scaleY = (clipRadius * 2) / userImage.height;
             imageScale = Math.max(scaleX, scaleY);
-            imageX = (posterSize - userImage.width * imageScale) / 2;
-            imageY = (posterSize - userImage.height * imageScale) / 2;
+            imageX = clipCenterX - (userImage.width * imageScale) / 2;
+            imageY = clipCenterY - (userImage.height * imageScale) / 2;
             
             drawPoster();
-            downloadButton.style.display = 'inline-block';
+            actionButtons.style.display = 'block'; // Show buttons
         };
         
         logoImage.onload = () => {
@@ -112,36 +131,29 @@
             drawPoster();
         };
 
-        // Load a default image or a blank canvas on start
-        userImage.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='; // A transparent pixel
+        userImage.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='; 
         
         function drawPoster() {
             ctx.clearRect(0, 0, posterSize, posterSize);
 
-            // Background
             const gradient = ctx.createLinearGradient(0, 0, posterSize, posterSize);
             gradient.addColorStop(0, '#ff8c00');
             gradient.addColorStop(1, '#ff4500');
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, posterSize, posterSize);
 
-            // Profile Image with Clipping
             if (isImageLoaded) {
                 ctx.save();
                 ctx.beginPath();
-                // Circular clipping path (टेम्प्लेट के बीच का गोला)
-                const clipRadius = posterSize * 0.4;
-                ctx.arc(posterSize / 2, posterSize / 2, clipRadius, 0, Math.PI * 2, true);
+                ctx.arc(clipCenterX, clipCenterY, clipRadius, 0, Math.PI * 2, true);
                 ctx.closePath();
                 ctx.clip();
                 
-                // Draw the user's photo using the adjusted position and scale
                 ctx.drawImage(userImage, imageX, imageY, userImage.width * imageScale, userImage.height * imageScale);
                 
                 ctx.restore();
             }
             
-            // Text Overlays
             ctx.fillStyle = 'white';
             ctx.textAlign = 'center';
 
@@ -151,19 +163,16 @@
             ctx.font = '24px Arial';
             ctx.fillText('धर्मो रक्षति रक्षितः', posterSize / 2, 120);
 
-            // Bottom Text
             ctx.textAlign = 'left';
             ctx.font = '18px Arial';
             ctx.fillText('हम हैं सनातन संस्कृत के सच्चे रक्षक', 20, posterSize - 120);
             ctx.fillText('जो धर्म के लिए जिएंगे और धर्म के लिए ही', 20, posterSize - 90);
             ctx.fillText('खड़े रहेंगे।', 20, posterSize - 60);
 
-            // Call to action
             ctx.textAlign = 'right';
             ctx.font = 'bold 20px Arial';
             ctx.fillText('@bhagva_rakshak__hindu_sena', posterSize - 20, posterSize - 20);
 
-            // Logo
             if(isLogoLoaded) {
                 const logoSize = 80;
                 ctx.drawImage(logoImage, 20, 20, logoSize, logoSize);
@@ -181,12 +190,18 @@
             }
         });
         
-        // Drag and Zoom functionality
         canvas.addEventListener('mousedown', (e) => {
             if (isImageLoaded) {
-                isDragging = true;
-                startDragX = e.clientX - imageX;
-                startDragY = e.clientY - imageY;
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                
+                const distance = Math.sqrt(Math.pow(mouseX - clipCenterX, 2) + Math.pow(mouseY - clipCenterY, 2));
+                if (distance <= clipRadius) {
+                    isDragging = true;
+                    startDragX = e.clientX - imageX;
+                    startDragY = e.clientY - imageY;
+                }
             }
         });
 
@@ -209,20 +224,18 @@
         canvas.addEventListener('wheel', (e) => {
             e.preventDefault();
             if (isImageLoaded) {
-                const scaleAmount = 1.05; // Zoom speed
-                const rect = canvas.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
+                const scaleAmount = 1.05;
+                const prevScale = imageScale;
 
-                if (e.deltaY < 0) { // Zoom in
+                if (e.deltaY < 0) {
                     imageScale *= scaleAmount;
-                } else { // Zoom out
+                } else {
                     imageScale /= scaleAmount;
                 }
 
-                // Adjust position to zoom around the mouse cursor
-                imageX = mouseX - (mouseX - imageX) * (imageScale / (e.deltaY < 0 ? imageScale / scaleAmount : imageScale * scaleAmount));
-                imageY = mouseY - (mouseY - imageY) * (imageScale / (e.deltaY < 0 ? imageScale / scaleAmount : imageScale * scaleAmount));
+                const zoomFactor = imageScale / prevScale;
+                imageX = clipCenterX - (clipCenterX - imageX) * zoomFactor;
+                imageY = clipCenterY - (clipCenterY - imageY) * zoomFactor;
 
                 drawPoster();
             }
@@ -233,6 +246,27 @@
             link.download = 'Bhagva_Rakshak_Poster.png';
             link.href = canvas.toDataURL('image/png');
             link.click();
+        });
+        
+        shareButton.addEventListener('click', () => {
+            if (navigator.share) {
+                // Check if the Web Share API is supported
+                canvas.toBlob(blob => {
+                    const file = new File([blob], 'Bhagva_Rakshak_Poster.png', { type: 'image/png' });
+                    const shareData = {
+                        files: [file],
+                        title: 'भगवा रक्षक हिन्दू सेना पोस्टर',
+                        text: 'मैंने भगवा रक्षक हिन्दू सेना का यह पोस्टर बनाया है! आप भी बनाएँ!',
+                    };
+                    navigator.share(shareData).catch(error => {
+                        console.error('Error sharing:', error);
+                        alert('शेयर करने में कोई समस्या हुई। कृपया इमेज को डाउनलोड करके मैन्युअल रूप से शेयर करें।');
+                    });
+                }, 'image/png');
+            } else {
+                // Fallback for browsers that do not support Web Share API
+                alert('आपका ब्राउज़र सीधे शेयर करने को सपोर्ट नहीं करता। कृपया डाउनलोड बटन का उपयोग करें और इमेज को मैन्युअल रूप से शेयर करें।');
+            }
         });
     });
 </script>
