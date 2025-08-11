@@ -20,7 +20,7 @@
     .card-form-container {
       max-width: 600px;
       margin: 2rem auto;
-      background-color: var(--card-bg-color);
+      background-color: var(--card-bg-color); /* Assuming these are defined in style.css */
       padding: 3rem;
       border-radius: var(--border-radius);
       box-shadow: var(--box-shadow);
@@ -120,25 +120,26 @@
     .card-logo {
         height: 40px;
         width: auto;
+        max-width: 80px; /* Logo size control */
     }
     
     .card-title {
-      font-family: 'Noto Sans Devanagari', sans-serif; /* Stylish font */
-      font-size: 1.2rem; /* थोड़ा छोटा किया गया ताकि फिट हो सके */
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin: 0 1rem; /* लोगो से दूरी बनाए रखने के लिए */
+      margin: 0 0.5rem;
       text-align: center;
-      flex: 1; /* बीच में जगह लेगा */
+      flex-grow: 2; /* Gives more space to the title */
     }
 
     .card-content-wrapper {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Vertically center align */
+      align-items: center;
       width: 100%;
       padding: 0 1rem;
       box-sizing: border-box;
-      margin-top: 1rem; /* टाइटल के नीचे स्पेस देगा */
+      margin-top: 1rem;
     }
 
     .card-details {
@@ -157,7 +158,7 @@
       border: 2px solid #fff;
       border-radius: 5px;
       overflow: hidden;
-      margin-left: 1rem; /* टेक्स्ट से दूरी */
+      margin-left: 1rem;
     }
 
     .card-photo {
@@ -224,7 +225,7 @@
   </main>
 
   <footer>
-  </footer>
+    </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
