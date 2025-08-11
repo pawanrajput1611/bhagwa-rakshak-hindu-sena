@@ -1,5 +1,4 @@
-
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -28,6 +27,11 @@
             border: 1px solid #ccc;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             background-color: #fff;
+            cursor: grab; /* माउस को खींचने के लिए कर्सर */
+        }
+        
+        #poster-canvas:active {
+            cursor: grabbing; /* खींचते समय कर्सर */
         }
 
         #photo-upload {
@@ -50,7 +54,7 @@
             margin: 5px;
             color: white;
             background-color: #a52a2a; /* Brownish Red */
-            display: none; /* Hide until photo is uploaded */
+            display: none;
         }
     </style>
 </head>
@@ -73,7 +77,6 @@
         
         const posterSize = 600;
         const logoUrl = 'https://i.imgur.com/your-logo.png'; // यहाँ अपने लोगो का URL डालें
-        const defaultImageUrl = 'https://i.imgur.com/default-profile.png'; // यहाँ एक डिफ़ॉल्ट इमेज का URL डालें
         
         let userImage = new Image();
         userImage.crossOrigin = "Anonymous";
@@ -85,10 +88,23 @@
         let isImageLoaded = false;
         let isLogoLoaded = false;
         
+        // Image adjustment variables
+        let imageX = 0, imageY = 0;
+        let imageScale = 1;
+        let isDragging = false;
+        let startDragX = 0, startDragY = 0;
+        
         userImage.onload = () => {
             isImageLoaded = true;
+            // जब नई इमेज लोड हो, तो उसे फिट करने के लिए शुरुआती स्केल सेट करें
+            const scaleX = posterSize / userImage.width;
+            const scaleY = posterSize / userImage.height;
+            imageScale = Math.max(scaleX, scaleY);
+            imageX = (posterSize - userImage.width * imageScale) / 2;
+            imageY = (posterSize - userImage.height * imageScale) / 2;
+            
             drawPoster();
-            downloadButton.style.display = 'inline-block'; // Show download button
+            downloadButton.style.display = 'inline-block';
         };
         
         logoImage.onload = () => {
@@ -96,51 +112,32 @@
             drawPoster();
         };
 
-        // Load default image initially
-        userImage.src = defaultImageUrl;
-
+        // Load a default image or a blank canvas on start
+        userImage.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='; // A transparent pixel
+        
         function drawPoster() {
-            // Clear canvas
             ctx.clearRect(0, 0, posterSize, posterSize);
 
             // Background
             const gradient = ctx.createLinearGradient(0, 0, posterSize, posterSize);
-            gradient.addColorStop(0, '#ff8c00'); // Orange
-            gradient.addColorStop(1, '#ff4500'); // Red-Orange
+            gradient.addColorStop(0, '#ff8c00');
+            gradient.addColorStop(1, '#ff4500');
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, posterSize, posterSize);
 
-            // Profile Image (Drawing a circular image)
-            const imgSize = posterSize * 0.5;
-            const imgX = (posterSize - imgSize) / 2;
-            const imgY = (posterSize - imgSize) / 2;
-            const radius = imgSize / 2;
-            
+            // Profile Image with Clipping
             if (isImageLoaded) {
                 ctx.save();
                 ctx.beginPath();
-                ctx.arc(imgX + radius, imgY + radius, radius, 0, Math.PI * 2, true);
+                // Circular clipping path (टेम्प्लेट के बीच का गोला)
+                const clipRadius = posterSize * 0.4;
+                ctx.arc(posterSize / 2, posterSize / 2, clipRadius, 0, Math.PI * 2, true);
                 ctx.closePath();
                 ctx.clip();
                 
-                const imgAspectRatio = userImage.width / userImage.height;
-                const canvasAspectRatio = 1;
-
-                let finalImgWidth, finalImgHeight, finalImgX, finalImgY;
-
-                if (imgAspectRatio > canvasAspectRatio) {
-                    finalImgHeight = imgSize;
-                    finalImgWidth = imgSize * imgAspectRatio;
-                    finalImgX = imgX - (finalImgWidth - imgSize) / 2;
-                    finalImgY = imgY;
-                } else {
-                    finalImgWidth = imgSize;
-                    finalImgHeight = imgSize / imgAspectRatio;
-                    finalImgX = imgX;
-                    finalImgY = imgY - (finalImgHeight - imgSize) / 2;
-                }
-
-                ctx.drawImage(userImage, finalImgX, finalImgY, finalImgWidth, finalImgHeight);
+                // Draw the user's photo using the adjusted position and scale
+                ctx.drawImage(userImage, imageX, imageY, userImage.width * imageScale, userImage.height * imageScale);
+                
                 ctx.restore();
             }
             
@@ -181,6 +178,53 @@
                     userImage.src = event.target.result;
                 };
                 reader.readAsDataURL(file);
+            }
+        });
+        
+        // Drag and Zoom functionality
+        canvas.addEventListener('mousedown', (e) => {
+            if (isImageLoaded) {
+                isDragging = true;
+                startDragX = e.clientX - imageX;
+                startDragY = e.clientY - imageY;
+            }
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                imageX = e.clientX - startDragX;
+                imageY = e.clientY - startDragY;
+                drawPoster();
+            }
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+        
+        canvas.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (isImageLoaded) {
+                const scaleAmount = 1.05; // Zoom speed
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                if (e.deltaY < 0) { // Zoom in
+                    imageScale *= scaleAmount;
+                } else { // Zoom out
+                    imageScale /= scaleAmount;
+                }
+
+                // Adjust position to zoom around the mouse cursor
+                imageX = mouseX - (mouseX - imageX) * (imageScale / (e.deltaY < 0 ? imageScale / scaleAmount : imageScale * scaleAmount));
+                imageY = mouseY - (mouseY - imageY) * (imageScale / (e.deltaY < 0 ? imageScale / scaleAmount : imageScale * scaleAmount));
+
+                drawPoster();
             }
         });
 
