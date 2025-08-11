@@ -1,24 +1,24 @@
-<!-- bhagwa_rakshak_website/index.html -->
 <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>होम - भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="js/card-generator.js" />
   <link rel="stylesheet" href="css/style.css" />
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+  
     <style>
     .sangthan-logo {
-      width: 330px;  /* लोगो की चौड़ाई 150 पिक्सेल */
-      height: 500px;   /* लोगो की ऊंचाई 50 पिक्सेल */
-      
-    text-align: center; /* लोगो को कंटेनर के सेंटर में लाएगा */
-      
-  
+      width: 330px;
+      height: 500px;
+      text-align: center;
+    }
+    
+    .poster-iframe-container {
+      margin: 40px auto;
+      max-width: 800px; /* अधिकतम चौड़ाई ताकि यह बड़े स्क्रीन पर भी अच्छा दिखे */
     }
     </style>
   
@@ -29,13 +29,7 @@
     <div class="header-content container">
         <div class="logo">
             <a href="index.html">
-                <img src="images/sangthan-logo.png" class="sangthan-logo" { width: 150px; >
-              
-</style>
-
-
-
-              
+                <img src="images/sangthan-logo.png" class="sangthan-logo">
                 भगवा रक्षक हिन्दू सेना
                 <img src="images/bhagwa-dhwaj.png" class="bhagwa-dhwaj">
             </a>
@@ -64,7 +58,6 @@
                 </li>
                 <li><a href="contact.html">संपर्क करें</a></li>
                 <li><a href="join.html" class="cta-button">ज्वॉइन करें</a></li>
-              <a href="poster_maker.html">अपना पोस्टर बनाएँ</a>
               
             </ul>
         </nav>
@@ -83,6 +76,13 @@
       </div>
     </section>
 
+    <div class="poster-iframe-container">
+        <h2 style="text-align: center;">अपना पोस्टर बनाएँ</h2>
+        <iframe src="poster_maker.html" width="100%" height="700px" style="border:none;">
+            आपकी ब्राउज़र iframe को सपोर्ट नहीं करता है।
+        </iframe>
+    </div>
+    
     <section class="about-us-summary">
       <div class="container">
         <h2>हम कौन हैं?</h2>
@@ -135,7 +135,6 @@
     </div>
   </footer>
     <script src="js/script.js"></script>
-  dom-to-image.min.js
-  FileSaver.min.js
 </body>
 </html>
+
