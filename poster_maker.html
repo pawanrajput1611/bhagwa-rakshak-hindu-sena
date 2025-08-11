@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>भगवा रक्षक हिन्दू सेना पोस्टर मेकर</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #poster-canvas {
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #photo-upload, #download-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+            color: white;
+        }
+
+        #photo-upload {
+            background-color: #ff8c00; /* Orange */
+        }
+
+        #download-button {
+            background-color: #a52a2a; /* Brownish Red */
+            display: none; /* Hide until photo is uploaded */
+        }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <h2>अपना पोस्टर बनाएँ</h2>
+    <input type="file" id="photo-upload" accept="image/*">
+    <button id="download-button">पोस्टर डाउनलोड करें</button>
+</div>
+
+<canvas id="poster-canvas" width="600" height="600"></canvas>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('poster-canvas');
+        const ctx = canvas.getContext('2d');
+        const uploadInput = document.getElementById('photo-upload');
+        const downloadButton = document.getElementById('download-button');
+        
+        const posterSize = 600;
+        const logoUrl = 'https://i.imgur.com/your-logo.png'; // यहाँ अपने लोगो का URL डालें
+        const defaultImageUrl = 'https://i.imgur.com/default-profile.png'; // यहाँ एक डिफ़ॉल्ट इमेज का URL डालें
+        
+        let userImage = new Image();
+        userImage.crossOrigin = "Anonymous";
+        userImage.src = defaultImageUrl;
+        userImage.onload = () => {
+            drawPoster();
+        };
+
+        const logoImage = new Image();
+        logoImage.crossOrigin = "Anonymous";
+        logoImage.src = logoUrl;
+        logoImage.onload = () => {
+            drawPoster();
+        };
+
+        function drawPoster() {
+            // Clear canvas
+            ctx.clearRect(0, 0, posterSize, posterSize);
+
+            // Background
+            const gradient = ctx.createLinearGradient(0, 0, posterSize, posterSize);
+            gradient.addColorStop(0, '#ff8c00'); // Orange
+            gradient.addColorStop(1, '#ff4500'); // Red-Orange
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, posterSize, posterSize);
+
+            // Profile Image (Drawing a circular image)
+            const imgSize = posterSize * 0.5;
+            const imgX = (posterSize - imgSize) / 2;
+            const imgY = (posterSize - imgSize) / 2;
+            const radius = imgSize / 2;
+            
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(imgX + radius, imgY + radius, radius, 0, Math.PI * 2, true);
+            ctx.closePath();
+            ctx.clip();
+            
+            // Draw the user's photo
+            const imgAspectRatio = userImage.width / userImage.height;
+            const canvasAspectRatio = 1;
+
+            let finalImgWidth, finalImgHeight, finalImgX, finalImgY;
+
+            if (imgAspectRatio > canvasAspectRatio) {
+                finalImgHeight = imgSize;
+                finalImgWidth = imgSize * imgAspectRatio;
+                finalImgX = imgX - (finalImgWidth - imgSize) / 2;
+                finalImgY = imgY;
+            } else {
+                finalImgWidth = imgSize;
+                finalImgHeight = imgSize / imgAspectRatio;
+                finalImgX = imgX;
+                finalImgY = imgY - (finalImgHeight - imgSize) / 2;
+            }
+
+            ctx.drawImage(userImage, finalImgX, finalImgY, finalImgWidth, finalImgHeight);
+            
+            ctx.restore();
+            
+            // Text Overlays
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
+
+            ctx.font = 'bold 36px Arial';
+            ctx.fillText('भगवा रक्षक हिन्दू सेना', posterSize / 2, 80);
+
+            ctx.font = '24px Arial';
+            ctx.fillText('धर्मो रक्षति रक्षितः', posterSize / 2, 120);
+
+            // Bottom Text
+            ctx.textAlign = 'left';
+            ctx.font = '18px Arial';
+            ctx.fillText('हम हैं सनातन संस्कृत के सच्चे रक्षक', 20, posterSize - 120);
+            ctx.fillText('जो धर्म के लिए जिएंगे और धर्म के लिए ही', 20, posterSize - 90);
+            ctx.fillText('खड़े रहेंगे।', 20, posterSize - 60);
+
+            // Call to action
+            ctx.textAlign = 'right';
+            ctx.font = 'bold 20px Arial';
+            ctx.fillText('@bhagva_rakshak__hindu_sena', posterSize - 20, posterSize - 20);
+
+            // Logo
+            if(logoImage.complete) {
+                const logoSize = 80;
+                ctx.drawImage(logoImage, 20, 20, logoSize, logoSize);
+            }
+        }
+
+        uploadInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    userImage.src = event.target.result;
+                    userImage.onload = () => {
+                        drawPoster();
+                        downloadButton.style.display = 'inline-block'; // Show download button
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        downloadButton.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'Bhagva_Rakshak_Poster.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+    });
+</script>
+
+</body>
+</html>
