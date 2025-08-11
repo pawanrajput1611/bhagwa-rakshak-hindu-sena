@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+
+            <!DOCTYPE html>
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +27,10 @@
         #poster-canvas {
             border: 1px solid #ccc;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
         }
 
-        #photo-upload, #download-button {
+        #photo-upload {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
@@ -36,13 +38,17 @@
             border: none;
             margin: 5px;
             color: white;
-        }
-
-        #photo-upload {
             background-color: #ff8c00; /* Orange */
         }
 
         #download-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+            color: white;
             background-color: #a52a2a; /* Brownish Red */
             display: none; /* Hide until photo is uploaded */
         }
@@ -71,17 +77,27 @@
         
         let userImage = new Image();
         userImage.crossOrigin = "Anonymous";
-        userImage.src = defaultImageUrl;
-        userImage.onload = () => {
-            drawPoster();
-        };
-
+        
         const logoImage = new Image();
         logoImage.crossOrigin = "Anonymous";
         logoImage.src = logoUrl;
+        
+        let isImageLoaded = false;
+        let isLogoLoaded = false;
+        
+        userImage.onload = () => {
+            isImageLoaded = true;
+            drawPoster();
+            downloadButton.style.display = 'inline-block'; // Show download button
+        };
+        
         logoImage.onload = () => {
+            isLogoLoaded = true;
             drawPoster();
         };
+
+        // Load default image initially
+        userImage.src = defaultImageUrl;
 
         function drawPoster() {
             // Clear canvas
@@ -100,33 +116,33 @@
             const imgY = (posterSize - imgSize) / 2;
             const radius = imgSize / 2;
             
-            ctx.save();
-            ctx.beginPath();
-            ctx.arc(imgX + radius, imgY + radius, radius, 0, Math.PI * 2, true);
-            ctx.closePath();
-            ctx.clip();
-            
-            // Draw the user's photo
-            const imgAspectRatio = userImage.width / userImage.height;
-            const canvasAspectRatio = 1;
+            if (isImageLoaded) {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(imgX + radius, imgY + radius, radius, 0, Math.PI * 2, true);
+                ctx.closePath();
+                ctx.clip();
+                
+                const imgAspectRatio = userImage.width / userImage.height;
+                const canvasAspectRatio = 1;
 
-            let finalImgWidth, finalImgHeight, finalImgX, finalImgY;
+                let finalImgWidth, finalImgHeight, finalImgX, finalImgY;
 
-            if (imgAspectRatio > canvasAspectRatio) {
-                finalImgHeight = imgSize;
-                finalImgWidth = imgSize * imgAspectRatio;
-                finalImgX = imgX - (finalImgWidth - imgSize) / 2;
-                finalImgY = imgY;
-            } else {
-                finalImgWidth = imgSize;
-                finalImgHeight = imgSize / imgAspectRatio;
-                finalImgX = imgX;
-                finalImgY = imgY - (finalImgHeight - imgSize) / 2;
+                if (imgAspectRatio > canvasAspectRatio) {
+                    finalImgHeight = imgSize;
+                    finalImgWidth = imgSize * imgAspectRatio;
+                    finalImgX = imgX - (finalImgWidth - imgSize) / 2;
+                    finalImgY = imgY;
+                } else {
+                    finalImgWidth = imgSize;
+                    finalImgHeight = imgSize / imgAspectRatio;
+                    finalImgX = imgX;
+                    finalImgY = imgY - (finalImgHeight - imgSize) / 2;
+                }
+
+                ctx.drawImage(userImage, finalImgX, finalImgY, finalImgWidth, finalImgHeight);
+                ctx.restore();
             }
-
-            ctx.drawImage(userImage, finalImgX, finalImgY, finalImgWidth, finalImgHeight);
-            
-            ctx.restore();
             
             // Text Overlays
             ctx.fillStyle = 'white';
@@ -151,7 +167,7 @@
             ctx.fillText('@bhagva_rakshak__hindu_sena', posterSize - 20, posterSize - 20);
 
             // Logo
-            if(logoImage.complete) {
+            if(isLogoLoaded) {
                 const logoSize = 80;
                 ctx.drawImage(logoImage, 20, 20, logoSize, logoSize);
             }
@@ -163,10 +179,6 @@
                 const reader = new FileReader();
                 reader.onload = (event) => {
                     userImage.src = event.target.result;
-                    userImage.onload = () => {
-                        drawPoster();
-                        downloadButton.style.display = 'inline-block'; // Show download button
-                    };
                 };
                 reader.readAsDataURL(file);
             }
