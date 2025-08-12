@@ -1,151 +1,273 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>होम - भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="css/style.css" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>भगवा रक्षक हिन्दू सेना पोस्टर मेकर</title>
     <style>
-    .sangthan-logo {
-      width: 330px;
-      height: 500px;
-      text-align: center;
-    }
-    
-    .poster-link-container {
-      margin: 40px auto;
-      text-align: center;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            line-height: 1.6;
+            padding: 20px;
+        }
 
-    .poster-link-button {
-      background-color: #a52a2a; /* Brownish Red */
-      color: white;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.2em;
-      font-weight: bold;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-    
-    .poster-link-button:hover {
-      background-color: #8b0000;
-    }
+        .controls {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #poster-canvas {
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            cursor: grab;
+        }
+        
+        #poster-canvas:active {
+            cursor: grabbing;
+        }
+
+        #photo-upload {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+            color: white;
+            background-color: #ff8c00;
+        }
+
+        .action-buttons {
+            display: none;
+            margin-top: 10px;
+        }
+        
+        #download-button, #share-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        #download-button {
+            background-color: #a52a2a;
+        }
+        
+        #share-button {
+            background-color: #1DA1F2;
+        }
     </style>
-  
 </head>
 <body>
 
-    <header>
-    <div class="header-content container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/sangthan-logo.png" class="sangthan-logo">
-                भगवा रक्षक हिन्दू सेना
-                <img src="images/bhagwa-dhwaj.png" class="bhagwa-dhwaj">
-            </a>
-        </div>
+<div class="controls">
+    <h2>अपना पोस्टर बनाएँ</h2>
+    <input type="file" id="photo-upload" accept="image/*">
+    <div class="action-buttons">
+        <button id="download-button">पोस्टर डाउनलोड करें</button>
+        <button id="share-button">शेयर करें</button>
+    </div>
+</div>
+
+<canvas id="poster-canvas" width="600" height="600"></canvas>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('poster-canvas');
+        const ctx = canvas.getContext('2d');
+        const uploadInput = document.getElementById('photo-upload');
+        const actionButtons = document.querySelector('.action-buttons');
+        const downloadButton = document.getElementById('download-button');
+        const shareButton = document.getElementById('share-button');
         
-        <div class="hamburger-menu-icon" onclick="toggleNav()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+        const posterSize = 600;
+        const logoUrl = 'https://i.imgur.com/your-logo.png';
         
-        <nav id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-            <ul>
-                <li><a href="index.html">होम</a></li>
-                <li><a href="about.html">हमारे बारे में</a></li>
-                <li><a href="team.html">टीम</a></li>
-                <li><a href="gallery.html">गैलरी</a></li>
-                <li class="dropdown">
-                    <a href="#">हमारी गाथा <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="dharm-gatha.html">धर्म गाथा</a></li>
-                        <li><a href="aarti.html">आरती</a></li>
-                        <li><a href="kathayein.html">पौराणिक कथाएं</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">संपर्क करें</a></li>
-                <li><a href="join.html" class="cta-button">ज्वॉइन करें</a></li>
-            </ul>
-        </nav>
+        let userImage = new Image();
+        userImage.crossOrigin = "Anonymous";
+        
+        const logoImage = new Image();
+        logoImage.crossOrigin = "Anonymous";
+        logoImage.src = logoUrl;
+        
+        let isImageLoaded = false;
+        let isLogoLoaded = false;
+        
+        let imageX = 0, imageY = 0;
+        let imageScale = 1;
+        let isDragging = false;
+        let startDragX = 0, startDragY = 0;
+        
+        const clipRadius = posterSize * 0.25;
+        const clipCenterX = posterSize / 2;
+        const clipCenterY = posterSize / 2;
 
-    </div>
-</header>
+        userImage.onload = () => {
+            isImageLoaded = true;
+            const scaleX = (clipRadius * 2) / userImage.width;
+            const scaleY = (clipRadius * 2) / userImage.height;
+            imageScale = Math.max(scaleX, scaleY);
+            imageX = clipCenterX - (userImage.width * imageScale) / 2;
+            imageY = clipCenterY - (userImage.height * imageScale) / 2;
+            
+            drawPoster();
+            actionButtons.style.display = 'block';
+        };
+        
+        logoImage.onload = () => {
+            isLogoLoaded = true;
+            drawPoster();
+        };
 
+        userImage.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='; 
+        
+        function drawPoster() {
+            ctx.clearRect(0, 0, posterSize, posterSize);
 
-  <main>
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1>🚩 भगवा रक्षक हिन्दू सेना 🚩</h1>
-        <h2>धर्मो रक्षति रक्षितः</h2>
-        <p>एकता, धर्म और संस्कृति की रक्षा के लिए हम समर्पित हैं।</p>
-        <a href="join.html" class="main-cta-button">हमारे साथ जुड़ें</a>
-      </div>
-    </section>
+            const gradient = ctx.createLinearGradient(0, 0, posterSize, posterSize);
+            gradient.addColorStop(0, '#ff8c00');
+            gradient.addColorStop(1, '#ff4500');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, posterSize, posterSize);
 
-    <div class="poster-link-container">
-        <a href="poster_maker.html" class="poster-link-button">अपना पोस्टर बनाएँ</a>
-    </div>
-    
-    <section class="about-us-summary">
-      <div class="container">
-        <h2>हम कौन हैं?</h2>
-        <p>भगवा रक्षक हिन्दू सेना एक सामाजिक और धार्मिक संगठन है, जिसका उद्देश्य हिंदू संस्कृति, परंपरा और धर्म की रक्षा करना है। हम देशभर में सनातन मूल्यों को पुनर्स्थापित करने के लिए समर्पित हैं और समाज में जागरूकता लाने का प्रयास करते हैं।</p>
-        <a href="about.html" class="read-more-button">और पढ़ें</a>
-      </div>
-    </section>
+            if (isImageLoaded) {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(clipCenterX, clipCenterY, clipRadius, 0, Math.PI * 2, true);
+                ctx.closePath();
+                ctx.clip();
+                
+                ctx.drawImage(userImage, imageX, imageY, userImage.width * imageScale, userImage.height * imageScale);
+                
+                ctx.restore();
+            }
+            
+            ctx.fillStyle = 'white';
+            ctx.textAlign = 'center';
 
-    <section class="mission-vision">
-      <div class="container">
-        <div class="mission-item">
-          <i class="fas fa-hand-holding-heart"></i>
-          <h3>हमारा मिशन</h3>
-          <p>सनातन धर्म के मूल्यों और सिद्धांतों को जन-जन तक पहुंचाना और एक सशक्त, एकजुट हिंदू समाज का निर्माण करना।</p>
-        </div>
-        <div class="mission-item">
-          <i class="fas fa-bullseye"></i>
-          <h3>हमारा लक्ष्य</h3>
-          <p>हिंदू संस्कृति और परंपराओं की रक्षा करते हुए समाज में सकारात्मक बदलाव लाना और जरूरतमंदों की सेवा करना।</p>
-        </div>
-      </div>
-    </section>
+            ctx.font = 'bold 36px Arial';
+            ctx.fillText('भगवा रक्षक हिन्दू सेना', posterSize / 2, 80);
 
-    <section class="slogan-banner">
-      <div class="container">
-        <h2>जय श्री राम!</h2>
-      </div>
-    </section>
-  </main>
+            ctx.font = '24px Arial';
+            ctx.fillText('धर्मो रक्षति रक्षितः', posterSize / 2, 120);
 
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <div>
-          <h3>महत्वपूर्ण लिंक</h3>
-          <ul>
-            <li><a href="about.html">हमारे बारे में</a></li>
-            <li><a href="contact.html">संपर्क करें</a></li>
-            <li><a href="join.html">ज्वॉइन करें</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>हमारा अनुसरण करें</h3>
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/bhagva_rakshak__hindu_sena" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      <p class="copyright">© 2025 भगवा रक्षक हिन्दू सेना</p>
-    </div>
-  </footer>
-    <script src="js/script.js"></script>
+            ctx.textAlign = 'left';
+            ctx.font = '18px Arial';
+            ctx.fillText('हम हैं सनातन संस्कृत के सच्चे रक्षक', 20, posterSize - 120);
+            ctx.fillText('जो धर्म के लिए जिएंगे और धर्म के लिए ही', 20, posterSize - 90);
+            ctx.fillText('खड़े रहेंगे।', 20, posterSize - 60);
+
+            ctx.textAlign = 'right';
+            ctx.font = 'bold 20px Arial';
+            ctx.fillText('@bhagva_rakshak__hindu_sena', posterSize - 20, posterSize - 20);
+
+            if(isLogoLoaded) {
+                const logoSize = 80;
+                ctx.drawImage(logoImage, 20, 20, logoSize, logoSize);
+            }
+        }
+
+        uploadInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    userImage.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        canvas.addEventListener('mousedown', (e) => {
+            if (isImageLoaded) {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                
+                const distance = Math.sqrt(Math.pow(mouseX - clipCenterX, 2) + Math.pow(mouseY - clipCenterY, 2));
+                if (distance <= clipRadius) {
+                    isDragging = true;
+                    startDragX = e.clientX - imageX;
+                    startDragY = e.clientY - imageY;
+                }
+            }
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                imageX = e.clientX - startDragX;
+                imageY = e.clientY - startDragY;
+                drawPoster();
+            }
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            isDragging = false;
+        });
+        
+        canvas.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (isImageLoaded) {
+                const scaleAmount = 1.05;
+                const prevScale = imageScale;
+
+                if (e.deltaY < 0) {
+                    imageScale *= scaleAmount;
+                } else {
+                    imageScale /= scaleAmount;
+                }
+
+                const zoomFactor = imageScale / prevScale;
+                imageX = clipCenterX - (clipCenterX - imageX) * zoomFactor;
+                imageY = clipCenterY - (clipCenterY - imageY) * zoomFactor;
+
+                drawPoster();
+            }
+        });
+
+        downloadButton.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'Bhagva_Rakshak_Poster.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+        
+        shareButton.addEventListener('click', () => {
+            if (navigator.share) {
+                canvas.toBlob(blob => {
+                    const file = new File([blob], 'Bhagva_Rakshak_Poster.png', { type: 'image/png' });
+                    const shareData = {
+                        files: [file],
+                        title: 'भगवा रक्षक हिन्दू सेना पोस्टर',
+                        text: 'मैंने भगवा रक्षक हिन्दू सेना का यह पोस्टर बनाया है! आप भी बनाएँ!',
+                    };
+                    navigator.share(shareData).catch(error => {
+                        console.error('Error sharing:', error);
+                        alert('शेयर करने में कोई समस्या हुई। कृपया इमेज को डाउनलोड करके मैन्युअल रूप से शेयर करें।');
+                    });
+                }, 'image/png');
+            } else {
+                alert('आपका ब्राउज़र सीधे शेयर करने को सपोर्ट नहीं करता। कृपया डाउनलोड बटन का उपयोग करें और इमेज को मैन्युअल रूप से शेयर करें।');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
