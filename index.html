@@ -20,6 +20,27 @@
       margin: 40px auto;
       max-width: 800px; /* अधिकतम चौड़ाई ताकि यह बड़े स्क्रीन पर भी अच्छा दिखे */
     }
+
+    .cta-buttons-container {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* बटनों के बीच की दूरी */
+    }
+
+    .poster-link-button {
+      background-color: #ff8c00; /* Orange */
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .poster-link-button:hover {
+      background-color: #e07b00;
+    }
     </style>
   
 </head>
@@ -57,16 +78,13 @@
                     </ul>
                 </li>
                 <li><a href="contact.html">संपर्क करें</a></li>
-                <li><a href="join.html" class="cta-button">ज्वॉइन करें</a></li>
-            </li>   <a href="poster_maker.html" class="poster-link-button">अपना पोस्टर बनाएँ</a></li>
-            
-              
-  
-              
+                <li class="cta-buttons-container">
+                    <a href="join.html" class="cta-button">ज्वॉइन करें</a>
+                    <a href="poster_maker.html" class="poster-link-button">अपना पोस्टर बनाएँ</a>
+                </li>
             </ul>
         </nav>
-
-
+    </div>
 </header>
 
 
@@ -141,4 +159,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
