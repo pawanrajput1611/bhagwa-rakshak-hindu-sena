@@ -11,24 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const memberMobile = document.getElementById('memberMobile').value;
         const memberPhotoFile = document.getElementById('memberPhoto').files[0];
 
-        // Unique ID बनाएं (उदाहरण के लिए)
         const memberId = 'ID-' + Math.floor(Math.random() * 100000);
 
-        // Card पर जानकारी दिखाएं
         document.getElementById('cardName').textContent = memberName;
         document.getElementById('cardDistrict').textContent = memberDistrict;
         document.getElementById('cardMobile').textContent = memberMobile;
         document.getElementById('cardId').textContent = memberId;
 
-        // फोटो को कार्ड पर दिखाएं
         const reader = new FileReader();
         reader.onload = function(e) {
             const cardPhoto = document.getElementById('cardPhoto');
             cardPhoto.src = e.target.result;
 
-            // फोटो के पूरी तरह से लोड होने का इंतज़ार करें
             cardPhoto.onload = function() {
-                // कार्ड को दिखाना
                 cardPreview.style.display = 'block';
                 downloadBtn.style.display = 'block';
             };
@@ -38,16 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // डाउनलोड बटन पर क्लिक करने पर
     downloadBtn.addEventListener('click', () => {
-        // DOM-to-image को कॉल करने से पहले 500ms (आधा सेकंड) का इंतज़ार करें
-        setTimeout(() => {
-            domtoimage.toPng(cardPreview)
-                .then(function (dataUrl) {
-                    // PNG इमेज को डाउनलोड करें
-                    window.saveAs(dataUrl, 'सदस्य-कार्ड.png');
-                })
-                .catch(function (error) {
-                    console.error('कार्ड डाउनलोड करने में कुछ गड़बड़ हो गई!', error);
-                });
-        }, 500); // 500ms का विलंब यहाँ है
+        // html2canvas का उपयोग करें
+        html2canvas(cardPreview, {
+            useCORS: true,
+            allowTaint: true
+        }).then(function(canvas) {
+            const dataUrl = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = dataUrl;
+            link.download = 'सदस्य-कार्ड.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }).catch(function(error) {
+            console.error('कार्ड डाउनलोड करने में कुछ गड़बड़ हो गई!', error);
+        });
     });
 });
