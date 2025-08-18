@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('memberCardForm');
     const cardPreview = document.getElementById('memberCardPreview');
-    const generateBtn = form.querySelector('.generate-btn');
     const downloadBtn = document.getElementById('downloadBtn');
 
     form.addEventListener('submit', function(event) {
@@ -12,16 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const memberMobile = document.getElementById('memberMobile').value;
         const memberPhotoFile = document.getElementById('memberPhoto').files[0];
 
-        // Unique ID बनाना (उदाहरण के लिए)
+        // Unique ID बनाएं (उदाहरण के लिए)
         const memberId = 'ID-' + Math.floor(Math.random() * 100000);
 
-        // Card पर जानकारी दिखाना
+        // Card पर जानकारी दिखाएं
         document.getElementById('cardName').textContent = memberName;
         document.getElementById('cardDistrict').textContent = memberDistrict;
         document.getElementById('cardMobile').textContent = memberMobile;
         document.getElementById('cardId').textContent = memberId;
 
-        // फोटो को कार्ड पर दिखाना
+        // फोटो को कार्ड पर दिखाएं
         const reader = new FileReader();
         reader.onload = function(e) {
             const cardPhoto = document.getElementById('cardPhoto');
@@ -39,15 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // डाउनलोड बटन पर क्लिक करने पर
     downloadBtn.addEventListener('click', () => {
-        // DOM-to-image लाइब्रेरी का उपयोग करें
-        domtoimage.toPng(cardPreview)
-            .then(function (dataUrl) {
-                // PNG इमेज को डाउनलोड करें
-                window.saveAs(dataUrl, 'सदस्य-कार्ड.png');
-            })
-            .catch(function (error) {
-                console.error('कार्ड डाउनलोड करने में कुछ गड़बड़ हो गई!', error);
-            });
+        // DOM-to-image को कॉल करने से पहले 500ms (आधा सेकंड) का इंतज़ार करें
+        setTimeout(() => {
+            domtoimage.toPng(cardPreview)
+                .then(function (dataUrl) {
+                    // PNG इमेज को डाउनलोड करें
+                    window.saveAs(dataUrl, 'सदस्य-कार्ड.png');
+                })
+                .catch(function (error) {
+                    console.error('कार्ड डाउनलोड करने में कुछ गड़बड़ हो गई!', error);
+                });
+        }, 500); // 500ms का विलंब यहाँ है
     });
 });
-
