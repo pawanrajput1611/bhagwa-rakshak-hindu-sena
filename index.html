@@ -3,63 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>होम - भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="css/style.css" />
 
+  <!-- Primary SEO Meta Tags -->
+  <title>होम - भगवा रक्षक हिन्दू सेना | हिंदू संस्कृति एवं धर्म रक्षा संगठन</title>
+  <meta name="description" content="भगवा रक्षक हिन्दू सेना एक सामाजिक और धार्मिक संगठन है, जो हिंदू संस्कृति, परंपरा और धर्म की रक्षा के लिए समर्पित है। हमारे साथ जुड़ें और सनातन मूल्यों को सशक्त बनाएं।" />
+  <meta name="keywords" content="भगवा रक्षक हिन्दू सेना, हिंदू सेना, सनातन धर्म, हिंदू संस्कृति, धर्म रक्षा" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="भगवा रक्षक हिन्दू सेना" />
+  <link rel="canonical" href="https://www.yourdomain.com/index.html" />
+
+  <!-- Open Graph / Social Share -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="भगवा रक्षक हिन्दू सेना" />
+  <meta property="og:description" content="एकता, धर्म और संस्कृति की रक्षा के लिए समर्पित संगठन। हमारे साथ जुड़ें।" />
+  <meta property="og:image" content="https://www.yourdomain.com/images/sangthan-logo.png" />
+  <meta property="og:url" content="https://www.yourdomain.com/index.html" />
+  <meta property="og:locale" content="hi_IN" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Performance: preconnect before loading external fonts/icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+  <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-    <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- JSON-LD structured data for better Google search appearance -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "भगवा रक्षक हिन्दू सेना",
+    "url": "https://www.yourdomain.com/",
+    "logo": "https://www.yourdomain.com/images/sangthan-logo.png",
+    "sameAs": [
+      "https://www.instagram.com/bhagva_rakshak__hindu_sena"
+    ]
+  }
+  </script>
+
+  <style>
     .sangthan-logo {
       width: 330px;
       height: 500px;
       text-align: center;
     }
-    </style>
-  
+  </style>
 </head>
 <body>
 
-    <header>
+  <header>
     <div class="header-content container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/sangthan-logo.png" class="sangthan-logo">
-                भगवा रक्षक हिन्दू सेना
-                <img src="images/bhagwa-dhwaj.png" class="bhagwa-dhwaj">
-            </a>
-        </div>
-        
-        <div class="hamburger-menu-icon" onclick="toggleNav()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        
-        <nav id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-            <ul>
-                <li><a href="index.html">होम</a></li>
-                <li><a href="about.html">हमारे बारे में</a></li>
-                <li><a href="team.html">टीम</a></li>
-                <li><a href="gallery.html">गैलरी</a></li>
-                <li class="dropdown">
-                    <a href="#">हमारी गाथा <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="dharm-gatha.html">धर्म गाथा</a></li>
-                        <li><a href="aarti.html">आरती</a></li>
-                        <li><a href="kathayein.html">पौराणिक कथाएं</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">संपर्क करें</a></li>
-                <li>
-                    <a href="join.html" class="cta-button">ज्वॉइन करें</a>
-                    <a href="poster_maker.html" class="poster-link-button">अपना पोस्टर बनाएँ</a>
-                </li>
+      <div class="logo">
+        <a href="index.html" aria-label="भगवा रक्षक हिन्दू सेना - होम पेज">
+          <img src="images/sangthan-logo.png" class="sangthan-logo" alt="भगवा रक्षक हिन्दू सेना का लोगो" width="330" height="500" />
+          भगवा रक्षक हिन्दू सेना
+          <img src="images/bhagwa-dhwaj.png" class="bhagwa-dhwaj" alt="भगवा ध्वज" />
+        </a>
+      </div>
+
+      <button type="button" class="hamburger-menu-icon" onclick="toggleNav()" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="mySidenav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="mySidenav" class="sidenav" aria-label="मुख्य मेनू">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()" aria-label="मेनू बंद करें">&times;</a>
+        <ul>
+          <li><a href="index.html" aria-current="page">होम</a></li>
+          <li><a href="about.html">हमारे बारे में</a></li>
+          <li><a href="team.html">टीम</a></li>
+          <li><a href="gallery.html">गैलरी</a></li>
+          <li class="dropdown">
+            <a href="#">हमारी गाथा <i class="fas fa-caret-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="dharm-gatha.html">धर्म गाथा</a></li>
+              <li><a href="aarti.html">आरती</a></li>
+              <li><a href="kathayein.html">पौराणिक कथाएं</a></li>
             </ul>
-        </nav>
+          </li>
+          <li><a href="contact.html">संपर्क करें</a></li>
+          <li>
+            <a href="join.html" class="cta-button">ज्वॉइन करें</a>
+            <a href="poster_maker.html" class="poster-link-button">अपना पोस्टर बनाएँ</a>
+          </li>
+        </ul>
+      </nav>
     </div>
-</header>
+  </header>
 
 
   <main>
@@ -83,12 +119,12 @@
     <section class="mission-vision">
       <div class="container">
         <div class="mission-item">
-          <i class="fas fa-hand-holding-heart"></i>
+          <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
           <h3>हमारा मिशन</h3>
           <p>सनातन धर्म के मूल्यों और सिद्धांतों को जन-जन तक पहुंचाना और एक सशक्त, एकजुट हिंदू समाज का निर्माण करना।</p>
         </div>
         <div class="mission-item">
-          <i class="fas fa-bullseye"></i>
+          <i class="fas fa-bullseye" aria-hidden="true"></i>
           <h3>हमारा लक्ष्य</h3>
           <p>हिंदू संस्कृति और परंपराओं की रक्षा करते हुए समाज में सकारात्मक बदलाव लाना और जरूरतमंदों की सेवा करना।</p>
         </div>
@@ -115,16 +151,15 @@
         </div>
         <div>
           <h3>हमारा अनुसरण करें</h3>
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/bhagva_rakshak__hindu_sena" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook पर हमें फॉलो करें" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/bhagva_rakshak__hindu_sena" class="social-icon" aria-label="Instagram पर हमें फॉलो करें" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter पर हमें फॉलो करें" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
         </div>
       </div>
-      <p class="copyright">© 2025 भगवा रक्षक हिन्दू सेना</p>
+      <p class="copyright">© 2025 भगवा रक्षक हिन्दू सेना। सर्वाधिकार सुरक्षित।</p>
     </div>
   </footer>
-    <script src="js/script.js"></script>
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
