@@ -1,91 +1,282 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Navigation bar functionality
-    const nav = document.querySelector('nav');
-    const header = document.querySelector('header');
-    if (nav && header) {
-        const headerHeight = header.offsetHeight;
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > headerHeight) {
-                nav.classList.add('sticky');
-            } else {
-                nav.classList.remove('sticky');
-            }
-        });
-    }
+/* =========================================================
+   भगवा रक्षक हिन्दू सेना
+   Main Website JavaScript
+   Version: 2026
+   ========================================================= */
 
-    // Sidenav functionality
-    window.toggleNav = function() {
-        const sidenav = document.getElementById("mySidenav");
-        if (sidenav) {
-            sidenav.style.width = sidenav.style.width === "250px" ? "0" : "250px";
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================================
+       MOBILE NAVIGATION
+       ===================================================== */
+
+    const sidenav = document.getElementById("mySidenav");
+    const menuButton = document.querySelector(".hamburger-menu-icon");
+    const closeButton = document.querySelector(".closebtn");
+
+    window.toggleNav = function () {
+        if (!sidenav) return;
+
+        const isOpen = sidenav.classList.toggle("open");
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", String(isOpen));
         }
+
+        document.body.classList.toggle("menu-open", isOpen);
     };
-    
-    // --- Member Card Generator Logic ---
 
-    const form = document.getElementById('memberCardForm');
-    if (form) {
-        const memberNameInput = document.getElementById('memberName');
-        const memberDistrictInput = document.getElementById('memberDistrict');
-        const memberMobileInput = document.getElementById('memberMobile');
-        const memberPhotoInput = document.getElementById('memberPhoto');
-        const downloadBtn = document.getElementById('downloadBtn');
-        const cardPreview = document.getElementById('memberCardPreview');
-        const cardNameSpan = document.getElementById('cardName');
-        const cardDistrictSpan = document.getElementById('cardDistrict');
-        const cardMobileSpan = document.getElementById('cardMobile');
-        const cardIdSpan = document.getElementById('cardId');
-        const cardPhoto = document.getElementById('cardPhoto');
-
-        // Random ID function
-        function generateRandomId() {
-            return Math.floor(100000 + Math.random() * 900000); // 6-digit number
-        }
-
-        // Form submission handling
-        form.addEventListener('submit', function(event) {
+    if (closeButton) {
+        closeButton.addEventListener("click", (event) => {
             event.preventDefault();
 
-            const name = memberNameInput.value;
-            const district = memberDistrictInput.value;
-            const mobile = memberMobileInput.value;
-            const photoFile = memberPhotoInput.files[0];
-
-            cardNameSpan.textContent = name;
-            cardDistrictSpan.textContent = district;
-            cardMobileSpan.textContent = mobile;
-            cardIdSpan.textContent = generateRandomId();
-
-            if (photoFile) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    cardPhoto.src = e.target.result;
-                    cardPreview.style.display = 'block';
-                    downloadBtn.style.display = 'block';
-                };
-                reader.readAsDataURL(photoFile);
-            } else {
-                // If no photo is selected, show a placeholder or just display the card.
-                // You can add a default image here if you have one.
-                cardPhoto.src = "images/default-photo.png"; // Example placeholder
-                cardPreview.style.display = 'block';
-                downloadBtn.style.display = 'block';
+            if (sidenav) {
+                sidenav.classList.remove("open");
             }
-        });
 
-        // Download button handling
-        downloadBtn.addEventListener('click', function() {
-            const cardElement = document.getElementById('memberCardPreview');
-            
-            domtoimage.toPng(cardElement)
-                .then(function (dataUrl) {
-                    window.saveAs(dataUrl, 'सदस्य-कार्ड-' + cardNameSpan.textContent + '.png');
-                })
-                .catch(function (error) {
-                    console.error('oops, something went wrong!', error);
-                });
+            if (menuButton) {
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+
+            document.body.classList.remove("menu-open");
         });
     }
 
-    console.log("Website loaded successfully!");
+    /* Close mobile menu after clicking a normal link */
+    if (sidenav) {
+        sidenav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+
+                if (link.classList.contains("closebtn")) {
+                    return;
+                }
+
+                if (!link.closest(".dropdown")) {
+                    sidenav.classList.remove("open");
+
+                    if (menuButton) {
+                        menuButton.setAttribute("aria-expanded", "false");
+                    }
+
+                    document.body.classList.remove("menu-open");
+                }
+            });
+        });
+    }
+
+
+    /* =====================================================
+       MOBILE DROPDOWN
+       ===================================================== */
+
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    dropdowns.forEach((dropdown) => {
+
+        const dropdownLink = dropdown.querySelector(":scope > a");
+
+        if (!dropdownLink) return;
+
+        dropdownLink.addEventListener("click", (event) => {
+
+            /* Mobile only */
+            if (window.innerWidth <= 820) {
+
+                event.preventDefault();
+
+                dropdowns.forEach((item) => {
+                    if (item !== dropdown) {
+                        item.classList.remove("open");
+                    }
+                });
+
+                dropdown.classList.toggle("open");
+            }
+        });
+    });
+
+
+    /* =====================================================
+       CLOSE MENU WITH ESCAPE KEY
+       ===================================================== */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key !== "Escape") return;
+
+        if (sidenav) {
+            sidenav.classList.remove("open");
+        }
+
+        dropdowns.forEach((dropdown) => {
+            dropdown.classList.remove("open");
+        });
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        document.body.classList.remove("menu-open");
+    });
+
+
+    /* =====================================================
+       CLOSE MENU WHEN CLICKING OUTSIDE
+       ===================================================== */
+
+    document.addEventListener("click", (event) => {
+
+        if (!sidenav || !sidenav.classList.contains("open")) {
+            return;
+        }
+
+        const clickedInsideMenu = sidenav.contains(event.target);
+        const clickedMenuButton = menuButton && menuButton.contains(event.target);
+
+        if (!clickedInsideMenu && !clickedMenuButton) {
+
+            sidenav.classList.remove("open");
+
+            if (menuButton) {
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+
+            document.body.classList.remove("menu-open");
+        }
+    });
+
+
+    /* =====================================================
+       CURRENT PAGE
+       ===================================================== */
+
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll("nav a[href]").forEach((link) => {
+
+        const href = link.getAttribute("href");
+
+        if (!href || href === "#" || href.startsWith("javascript:")) {
+            return;
+        }
+
+        const linkPage = href.split("/").pop();
+
+        if (linkPage === currentPage) {
+            link.setAttribute("aria-current", "page");
+            link.classList.add("current-page");
+        }
+    });
+
+
+    /* =====================================================
+       DYNAMIC COPYRIGHT YEAR
+       ===================================================== */
+
+    const currentYear = new Date().getFullYear();
+
+    document.querySelectorAll(".copyright-year").forEach((element) => {
+        element.textContent = currentYear;
+    });
+
+
+    /* =====================================================
+       BACK TO TOP
+       ===================================================== */
+
+    const backToTop = document.querySelector("[data-back-to-top]");
+
+    if (backToTop) {
+
+        const updateBackToTop = () => {
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        };
+
+        window.addEventListener("scroll", updateBackToTop, {
+            passive: true
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        updateBackToTop();
+    }
+
+
+    /* =====================================================
+       IMAGE ERROR HANDLING
+       ===================================================== */
+
+    document.querySelectorAll("img").forEach((image) => {
+
+        image.addEventListener("error", () => {
+
+            image.classList.add("image-error");
+
+            /*
+             * Missing images are intentionally not replaced.
+             * This keeps the original website behavior while
+             * preventing JavaScript errors.
+             */
+        });
+    });
+
+
+    /* =====================================================
+       FORM SUBMIT PROTECTION
+       ===================================================== */
+
+    document.querySelectorAll("form").forEach((form) => {
+
+        form.addEventListener("submit", () => {
+
+            const submitButton =
+                form.querySelector('button[type="submit"], input[type="submit"]');
+
+            if (!submitButton) return;
+
+            /*
+             * Only add visual loading state.
+             * Actual form submission logic will be handled
+             * separately when we upgrade join/contact pages.
+             */
+            submitButton.classList.add("is-loading");
+        });
+    });
+
+
+    /* =====================================================
+       WINDOW RESIZE
+       ===================================================== */
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 820 && sidenav) {
+
+            sidenav.classList.remove("open");
+
+            dropdowns.forEach((dropdown) => {
+                dropdown.classList.remove("open");
+            });
+
+            if (menuButton) {
+                menuButton.setAttribute("aria-expanded", "false");
+            }
+
+            document.body.classList.remove("menu-open");
+        }
+    });
+
+
+    console.log("भगवा रक्षक हिन्दू सेना वेबसाइट — JavaScript loaded.");
 });
