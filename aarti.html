@@ -1,654 +1,1770 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <title>आरती संग्रह | भगवा रक्षक हिन्दू सेना</title>
+  <meta name="description" content="भगवा रक्षक हिन्दू सेना के आरती संग्रह में श्री राम, हनुमान, शिव, दुर्गा, गणेश, कृष्ण, विष्णु, लक्ष्मी, सरस्वती सहित विभिन्न देवी-देवताओं की आरतियाँ पढ़ें।">
+  <meta name="keywords" content="आरती संग्रह, हिन्दू आरती, श्री राम आरती, हनुमान आरती, शिव आरती, गणेश आरती, दुर्गा आरती, भगवा रक्षक हिन्दू सेना">
 
-    <meta name="description"
-          content="भगवा रक्षक हिन्दू सेना का आरती संग्रह — श्री राम, हनुमान, शिव, दुर्गा, गणेश, कृष्ण, विष्णु, लक्ष्मी, सरस्वती, शनिदेव, सत्यनारायण, गंगा, खाटू श्याम, साईं बाबा, बालाजी, गायत्री और भैरव जी की आरतियां।">
+  <link rel="stylesheet" href="css/style.css">
 
-    <meta name="author"
-          content="भगवा रक्षक हिन्दू सेना">
+  <style>
+    :root {
+      --saffron: #f4511e;
+      --saffron-dark: #c62828;
+      --orange: #ff9800;
+      --gold: #ffc107;
+      --cream: #fff8e8;
+      --white: #ffffff;
+      --text: #3e2723;
+      --muted: #6d4c41;
+      --border: #f3d3a0;
+      --shadow: 0 10px 30px rgba(120, 53, 15, 0.12);
+    }
 
-    <title>आरती संग्रह | भगवा रक्षक हिन्दू सेना</title>
+    * {
+      box-sizing: border-box;
+    }
 
-    <!-- Main Website CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    body {
+      margin: 0;
+      font-family: "Noto Sans Devanagari", "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 152, 0, 0.12), transparent 30%),
+        linear-gradient(180deg, #fffaf0 0%, #fff3df 100%);
+      line-height: 1.7;
+    }
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    /* ================= HEADER ================= */
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #e65100, #f4511e);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    }
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-    <style>
-        /* ==============================================
-           AARTI PAGE
-           ============================================== */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-decoration: none;
+      min-width: 0;
+    }
 
-        .aarti-page {
-            background:
-                linear-gradient(
-                    180deg,
-                    #fff8f2 0%,
-                    #ffffff 45%,
-                    #fff8f2 100%
-                );
-        }
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+      padding: 3px;
+      box-shadow: 0 3px 10px rgba(0,0,0,.2);
+    }
 
-        .aarti-hero {
-            padding: 65px 20px 45px;
-            text-align: center;
-            background:
-                linear-gradient(
-                    135deg,
-                    #fff1e8,
-                    #ffffff
-                );
-            border-bottom: 1px solid #f1ddd2;
-        }
+    .brand-text {
+      line-height: 1.2;
+    }
 
-        .aarti-hero-icon {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: #fff0e7;
-            color: #f4510b;
-            font-size: 2rem;
-        }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
 
-        .aarti-hero h1 {
-            margin: 0 0 10px;
-            color: #d94000;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-        }
+    .brand-subtitle {
+      font-size: 12px;
+      opacity: .9;
+    }
 
-        .aarti-hero p {
-            max-width: 720px;
-            margin: 0 auto;
-            color: #666;
-            font-size: 1rem;
-        }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
 
-        .aarti-container {
-            width: min(94%, 950px);
-            margin: 0 auto;
-            padding: 45px 0 70px;
-        }
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: .25s ease;
+    }
 
-        .aarti-list {
-            display: grid;
-            gap: 12px;
-        }
+    .main-nav a:hover,
+    .main-nav a.active {
+      background: rgba(255,255,255,.18);
+      color: #fff3cd;
+    }
 
-        .aarti-item {
-            overflow: hidden;
-            background: #ffffff;
-            border: 1px solid #eaded7;
-            border-radius: 13px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
+    /* ================= HERO ================= */
 
-        .aarti-button {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 17px 20px;
-            border: 0;
-            background: #ffffff;
-            color: #292929;
-            text-align: left;
-            font-family: inherit;
-            font-size: 1.05rem;
-            font-weight: 700;
-            transition: 0.25s ease;
-        }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(183, 28, 28, .96), rgba(239, 108, 0, .94));
+      color: white;
+      padding: 70px 20px 65px;
+      text-align: center;
+    }
 
-        .aarti-button:hover {
-            background: #fff6f0;
-            color: #d94000;
-        }
+    .hero::before,
+    .hero::after {
+      content: "ॐ";
+      position: absolute;
+      font-size: 150px;
+      opacity: .07;
+      font-weight: 700;
+    }
 
-        .aarti-button .aarti-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .hero::before {
+      left: 5%;
+      top: 5px;
+    }
 
-        .aarti-button .aarti-arrow {
-            flex-shrink: 0;
-            color: #f4510b;
-            transition: transform 0.25s ease;
-        }
+    .hero::after {
+      right: 5%;
+      bottom: -30px;
+    }
 
-        .aarti-button.active .aarti-arrow {
-            transform: rotate(180deg);
-        }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: auto;
+    }
 
-        .aarti-panel {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease;
-            background: #fffdfb;
-        }
+    .hero-icon {
+      font-size: 50px;
+      margin-bottom: 5px;
+    }
 
-        .aarti-content {
-            padding: 5px 22px 25px;
-            border-top: 1px solid #f0e4dd;
-        }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 900;
+    }
 
-        .aarti-content p {
-            margin: 18px 0 0;
-            color: #444;
-            font-size: 1rem;
-            line-height: 2;
-        }
+    .hero p {
+      margin: 0 auto;
+      max-width: 700px;
+      font-size: 17px;
+      opacity: .95;
+    }
 
-        .aarti-note {
-            margin-top: 35px;
-            padding: 18px;
-            border-radius: 12px;
-            background: #fff3e9;
-            border: 1px solid #f4d5c2;
-            color: #754329;
-            text-align: center;
-            font-size: 0.95rem;
-        }
+    /* ================= MAIN ================= */
 
-        @media (max-width: 600px) {
+    .page-container {
+      width: min(1100px, 92%);
+      margin: 45px auto;
+    }
 
-            .aarti-hero {
-                padding: 45px 15px 35px;
-            }
+    .intro-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(244,81,30,.12);
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-            .aarti-container {
-                padding-top: 30px;
-            }
+    .om-symbol {
+      font-size: 42px;
+      color: var(--saffron);
+      font-weight: 900;
+    }
 
-            .aarti-button {
-                padding: 15px;
-                font-size: 0.98rem;
-            }
+    .intro-card h2 {
+      margin: 5px 0 10px;
+      color: var(--saffron-dark);
+      font-size: 28px;
+    }
 
-            .aarti-content {
-                padding: 3px 16px 20px;
-            }
+    .intro-card p {
+      margin: 0 auto;
+      max-width: 800px;
+      color: var(--muted);
+    }
 
-            .aarti-content p {
-                font-size: 0.94rem;
-                line-height: 1.9;
-            }
-        }
-    </style>
+    /* ================= SEARCH ================= */
+
+    .search-box {
+      position: sticky;
+      top: 82px;
+      z-index: 50;
+      margin-bottom: 25px;
+    }
+
+    .search-wrapper {
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 20px rgba(80,40,10,.08);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-icon {
+      font-size: 21px;
+      color: var(--saffron);
+    }
+
+    #aartiSearch {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background: transparent;
+      color: var(--text);
+      font-family: inherit;
+    }
+
+    #aartiSearch::placeholder {
+      color: #9a8073;
+    }
+
+    /* ================= AARTI LIST ================= */
+
+    .aarti-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .aarti-item {
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: 0 5px 18px rgba(100, 50, 10, .07);
+      transition: .25s ease;
+    }
+
+    .aarti-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 9px 25px rgba(100, 50, 10, .12);
+    }
+
+    .accordion {
+      width: 100%;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: linear-gradient(90deg, #fffaf3, #fff);
+      color: var(--text);
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      text-align: left;
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .accordion:hover {
+      background: #fff1dc;
+    }
+
+    .accordion.active {
+      color: white;
+      background: linear-gradient(135deg, var(--saffron-dark), var(--saffron));
+    }
+
+    .aarti-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .aarti-number {
+      min-width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff0dc;
+      color: var(--saffron-dark);
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .accordion.active .aarti-number {
+      background: rgba(255,255,255,.2);
+      color: white;
+    }
+
+    .arrow {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #fff0dc;
+      color: var(--saffron-dark);
+      transition: transform .3s ease;
+      font-size: 14px;
+    }
+
+    .accordion.active .arrow {
+      background: rgba(255,255,255,.2);
+      color: white;
+      transform: rotate(180deg);
+    }
+
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+      background: white;
+    }
+
+    .panel-content {
+      padding: 25px;
+      border-top: 1px solid #f3e0c4;
+    }
+
+    .panel-content p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 2;
+      color: #4e342e;
+    }
+
+    .aarti-end {
+      margin-top: 20px;
+      padding: 12px 15px;
+      border-radius: 10px;
+      background: #fff8e8;
+      border-left: 4px solid var(--orange);
+      color: var(--saffron-dark);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    /* ================= NO RESULT ================= */
+
+    #noResult {
+      display: none;
+      text-align: center;
+      background: white;
+      border-radius: 15px;
+      padding: 35px 20px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    #noResult .icon {
+      font-size: 42px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* ================= QUOTE ================= */
+
+    .quote-card {
+      margin-top: 35px;
+      background: linear-gradient(135deg, #fff3e0, #fffaf4);
+      border: 1px solid #f3d3a0;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .quote-card .quote-symbol {
+      font-size: 36px;
+      color: var(--saffron);
+    }
+
+    .quote-card p {
+      margin: 8px auto 0;
+      max-width: 750px;
+      color: #5d4037;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      margin-top: 60px;
+      background: #2b1712;
+      color: #fbe9dc;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 35px 20px 20px;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffb74d;
+      margin-bottom: 8px;
+    }
+
+    .footer-inner p {
+      margin: 5px 0;
+      color: #ead9d0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: 20px;
+      padding-top: 15px;
+      font-size: 13px;
+      color: #c9b5ac;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-direction: column;
+        padding: 12px 15px;
+      }
+
+      .main-nav {
+        justify-content: center;
+      }
+
+      .search-box {
+        top: 125px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brand-title {
+        font-size: 17px;
+      }
+
+      .brand-subtitle {
+        font-size: 11px;
+      }
+
+      .brand-logo {
+        width: 45px;
+        height: 45px;
+      }
+
+      .main-nav {
+        gap: 2px;
+      }
+
+      .main-nav a {
+        padding: 6px 7px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 50px 16px;
+      }
+
+      .hero-icon {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .page-container {
+        width: 94%;
+        margin: 28px auto;
+      }
+
+      .intro-card {
+        padding: 22px 17px;
+      }
+
+      .intro-card h2 {
+        font-size: 23px;
+      }
+
+      .search-box {
+        top: 120px;
+      }
+
+      .accordion {
+        padding: 15px 13px;
+        font-size: 15px;
+      }
+
+      .aarti-title {
+        gap: 8px;
+      }
+
+      .aarti-number {
+        min-width: 30px;
+        height: 30px;
+        font-size: 12px;
+      }
+
+      .arrow {
+        width: 27px;
+        height: 27px;
+      }
+
+      .panel-content {
+        padding: 18px 15px;
+      }
+
+      .panel-content p {
+        font-size: 15px;
+        line-height: 1.9;
+      }
+    }
+  </style>
 </head>
 
-<body class="aarti-page">
+<body>
 
-<header>
-    <div class="header-content container">
+  <!-- ================= HEADER ================= -->
 
-        <div class="logo">
-            <a href="index.html"
-               aria-label="भगवा रक्षक हिन्दू सेना - होम पेज">
+  <header class="site-header">
+    <div class="header-inner">
 
-                <img src="images/sangthan-logo.png"
-                     class="sangthan-logo"
-                     alt="भगवा रक्षक हिन्दू सेना का लोगो"
-                     width="55"
-                     height="55">
+      <a href="index.html" class="brand">
+        <img
+          src="images/sangthan-logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+          class="brand-logo"
+        >
 
-                <span>भगवा रक्षक हिन्दू सेना</span>
-            </a>
+        <div class="brand-text">
+          <div class="brand-title">भगवा रक्षक हिन्दू सेना</div>
+          <div class="brand-subtitle">धर्म • सेवा • संस्कार</div>
         </div>
+      </a>
 
-        <button type="button"
-                class="hamburger-menu-icon"
-                aria-label="मेनू खोलें"
-                aria-expanded="false"
-                aria-controls="mySidenav">
-
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <nav id="mySidenav"
-             class="sidenav"
-             aria-label="मुख्य मेनू">
-
-            <a href="#"
-               class="closebtn"
-               aria-label="मेनू बंद करें">&times;</a>
-
-            <ul>
-
-                <li>
-                    <a href="index.html">होम</a>
-                </li>
-
-                <li>
-                    <a href="about.html">हमारे बारे में</a>
-                </li>
-
-                <li>
-                    <a href="team.html">टीम</a>
-                </li>
-
-                <li>
-                    <a href="gallery.html">गैलरी</a>
-                </li>
-
-                <li class="dropdown">
-
-                    <a href="#"
-                       aria-haspopup="true">
-                        हमारी गाथा
-                        <i class="fas fa-caret-down"
-                           aria-hidden="true"></i>
-                    </a>
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a href="dharm-gatha.html">
-                                धर्म गाथा
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="aarti.html">
-                                आरती
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="kathayein.html">
-                                पौराणिक कथाएं
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="contact.html">संपर्क करें</a>
-                </li>
-
-                <li>
-                    <a href="join.html"
-                       class="cta-button">
-                        ज्वॉइन करें
-                    </a>
-                </li>
-
-                <li>
-                    <a href="poster_maker.html"
-                       class="poster-link-button">
-                        पोस्टर बनाएँ
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
+      <nav class="main-nav">
+        <a href="index.html">होम</a>
+        <a href="about.html">हमारे बारे में</a>
+        <a href="team.html">टीम</a>
+        <a href="gallery.html">गैलरी</a>
+        <a href="dharm-gatha.html">धर्म गाथा</a>
+        <a href="aarti.html" class="active">आरती</a>
+        <a href="kathayein.html">कथाएँ</a>
+        <a href="contact.html">संपर्क</a>
+        <a href="join.html">ज्वॉइन करें</a>
+      </nav>
 
     </div>
-</header>
+  </header>
 
 
-<main>
+  <!-- ================= HERO ================= -->
 
-    <section class="aarti-hero">
+  <section class="hero">
 
-        <div class="aarti-hero-icon">
-            <i class="fas fa-om"
-               aria-hidden="true"></i>
-        </div>
+    <div class="hero-content">
 
-        <h1>🌸 आरती संग्रह 🌸</h1>
+      <div class="hero-icon">🪔</div>
 
-        <p>
-            श्रद्धा और भक्ति के साथ भगवान के विभिन्न स्वरूपों की आरतियां पढ़ें।
-        </p>
+      <h1>आरती संग्रह</h1>
+
+      <p>
+        श्रद्धा, भक्ति और आध्यात्मिक भावना के साथ
+        विभिन्न देवी-देवताओं की आरतियों का संग्रह।
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="page-container">
+
+    <section class="intro-card">
+
+      <div class="om-symbol">ॐ</div>
+
+      <h2>🌸 भक्तिमय आरती संग्रह 🌸</h2>
+
+      <p>
+        इस संग्रह में भगवान श्री राम, श्री हनुमान, भगवान शिव,
+        माता दुर्गा, श्री गणेश, श्री कृष्ण, भगवान विष्णु,
+        माता लक्ष्मी, माता सरस्वती तथा अन्य देवी-देवताओं की
+        आरतियाँ शामिल हैं।
+      </p>
 
     </section>
 
 
-    <section class="aarti-container">
+    <!-- SEARCH -->
 
-        <div class="aarti-list">
+    <div class="search-box">
 
+      <div class="search-wrapper">
 
-            <!-- श्री राम -->
-            <article class="aarti-item">
+        <span class="search-icon">🔎</span>
 
-                <button class="aarti-button"
-                        type="button"
-                        aria-expanded="false">
+        <input
+          type="search"
+          id="aartiSearch"
+          placeholder="आरती खोजें... जैसे गणेश, शिव, हनुमान"
+          aria-label="आरती खोजें"
+        >
 
-                    <span class="aarti-title">
-                        🚩 श्री रामचन्द्र जी की आरती
-                    </span>
+      </div>
 
-                    <i class="fas fa-chevron-down aarti-arrow"
-                       aria-hidden="true"></i>
+    </div>
 
-                </button>
 
-                <div class="aarti-panel">
+    <!-- AARTI LIST -->
 
-                    <div class="aarti-content">
+    <div class="aarti-list" id="aartiList">
 
-                        <p>
-                            आरती श्री रामायण जी की। कीरति कलित ललित सिय पी की॥<br>
-                            गावत ब्रह्मादिक मुनि नारद। बाल्मीक बिग्यान बिसारद॥<br>
-                            सुक सनकादि शेष अरु सारद। बरनि पवनसुत कीरति नीकी॥<br>
-                            आरती श्री रामायण जी की॥<br><br>
 
-                            गावत बेद पुरान अष्टदस। छओं सास्त्र सब ग्रंथन को रस॥<br>
-                            मुनि जन धन संतन को सरबस। सार अंश सम्मत सब ही की॥<br>
-                            आरती श्री रामायण जी की॥<br><br>
+      <!-- 1 -->
 
-                            गावत संतत शंभु भवानी। अरु घटसंभव मुनिबर ग्यानी॥<br>
-                            ब्यास आदि कबिबर्ज बखानी। कागभुसुंडि गरुड़ के ही की॥<br>
-                            आरती श्री रामायण जी की॥<br><br>
+      <div class="aarti-item">
 
-                            कलमल हरनि बिषय रस फीकी। सुभग सिंगार मुक्ति जुबती की॥<br>
-                            दलन रोग भव मूरि अमी की। तात मातु सब बिधि तुलसी की॥<br>
-                            आरती श्री रामायण जी की। कीरति कलित ललित सिय पी की॥
-                        </p>
+        <button class="accordion">
 
-                    </div>
+          <span class="aarti-title">
+            <span class="aarti-number">1</span>
+            🚩 श्री रामचन्द्र जी की आरती
+          </span>
 
-                </div>
+          <span class="arrow">▼</span>
 
-            </article>
+        </button>
 
+        <div class="panel">
 
-            <!-- हनुमान -->
-            <article class="aarti-item">
+          <div class="panel-content">
 
-                <button class="aarti-button"
-                        type="button"
-                        aria-expanded="false">
+            <p>
+              आरती श्री रामायण जी की। कीरति कलित ललित सिय पी की॥<br>
+              गावत ब्रह्मादिक मुनि नारद। बाल्मीक बिग्यान बिसारद॥<br>
+              सुक सनकादि शेष अरु सारद। बरनि पवनसुत कीरति नीकी॥<br>
+              आरती श्री रामायण जी की।<br><br>
 
-                    <span class="aarti-title">
-                        🙏 श्री हनुमान जी की आरती
-                    </span>
+              गावत बेद पुरान अष्टदस। छओं सास्त्र सब ग्रंथन को रस॥<br>
+              मुनि जन धन संतन को सरबस। सार अंश सम्मत सब ही की॥<br>
+              आरती श्री रामायण जी की।<br><br>
 
-                    <i class="fas fa-chevron-down aarti-arrow"
-                       aria-hidden="true"></i>
+              गावत संतत शंभु भवानी। अरु घटसंभव मुनिबर ग्यानी॥<br>
+              ब्यास आदि कबिबर्ज बखानी। कागभुसुंडि गरुड़ के ही की॥<br>
+              आरती श्री रामायण जी की।<br><br>
 
-                </button>
+              कलमल हरनि बिषय रस फीकी। सुभग सिंगार मुक्ति जुबती की॥<br>
+              दलन रोग भव मूरि अमी की। तात मातु सब बिधि तुलसी की॥<br>
+              आरती श्री रामायण जी की। कीरति कलित ललित सिय पी की॥
+            </p>
 
-                <div class="aarti-panel">
+            <div class="aarti-end">
+              🚩 श्री रामचन्द्र जी की जय 🚩
+            </div>
 
-                    <div class="aarti-content">
+          </div>
 
-                        <p>
-                            आरती कीजै हनुमान लला की। दुष्ट दलन रघुनाथ कला की॥<br>
-                            जाके बल से गिरिवर काँपे। रोग दोष जाके निकट न झाँपे॥<br>
-                            अंजनी पुत्र महा बलदाई। संतन के प्रभु सदा सहाई॥<br>
-                            आरती कीजै हनुमान लला की॥<br><br>
+        </div>
 
-                            दे बीरा रघुनाथ पठाए। लंका जारि सीय सुधि लाए॥<br>
-                            लंका सो कोट समुद्र सी खाई। जात पवनसुत बार न लाई॥<br>
-                            आरती कीजै हनुमान लला की॥<br><br>
+      </div>
 
-                            लंका जारि असुर संहारे। सियाराम जी के काज सँवारे॥<br>
-                            लक्ष्मण मूर्छित पड़े सकारे। आनि संजीवन प्राण उबारे॥<br>
-                            आरती कीजै हनुमान लला की॥<br><br>
 
-                            पैठि पाताल तोरि जमकारे। अहिरावन की भुजा उखारे॥<br>
-                            सुर नर मुनि जन आरती उतारें। जै जै जै हनुमान उचारें॥<br>
-                            आरती कीजै हनुमान लला की॥<br><br>
+      <!-- 2 -->
 
-                            कंचन थाल कपूर लौ छाई। आरती करत अंजनी माई॥<br>
-                            जो हनुमान जी की आरती गावै। बसि बैकुंठ परमपद पावै॥<br>
-                            आरती कीजै हनुमान लला की। दुष्ट दलन रघुनाथ कला की॥
-                        </p>
+      <div class="aarti-item">
 
-                    </div>
+        <button class="accordion">
 
-                </div>
+          <span class="aarti-title">
+            <span class="aarti-number">2</span>
+            🙏 श्री हनुमान जी की आरती
+          </span>
 
-            </article>
+          <span class="arrow">▼</span>
 
+        </button>
 
-            <!-- शिव -->
-            <article class="aarti-item">
+        <div class="panel">
 
-                <button class="aarti-button"
-                        type="button"
-                        aria-expanded="false">
+          <div class="panel-content">
 
-                    <span class="aarti-title">
-                        🔱 श्री शिव जी की आरती
-                    </span>
+            <p>
+              आरती कीजै हनुमान लला की। दुष्ट दलन रघुनाथ कला की॥<br>
+              जाके बल से गिरिवर काँपे। रोग दोष जाके निकट न झाँपे॥<br>
+              अंजनी पुत्र महा बलदाई। संतन के प्रभु सदा सहाई॥<br>
+              आरती कीजै हनुमान लला की॥<br><br>
 
-                    <i class="fas fa-chevron-down aarti-arrow"
-                       aria-hidden="true"></i>
+              दे बीरा रघुनाथ पठाए। लंका जारि सीय सुधि लाए॥<br>
+              लंका सो कोट समुद्र सी खाई। जात पवनसुत बार न लाई॥<br>
+              आरती कीजै हनुमान लला की॥<br><br>
 
-                </button>
+              लंका जारि असुर संहारे। सियाराम जी के काज सँवारे॥<br>
+              लक्ष्मण मूर्छित पड़े सकारे। आनि संजीवन प्राण उबारे॥<br>
+              आरती कीजै हनुमान लला की॥<br><br>
 
-                <div class="aarti-panel">
+              पैठि पाताल तोरि जमकारे। अहिरावन की भुजा उखारे॥<br>
+              सुर नर मुनि जन आरती उतारें। जै जै जै हनुमान उचारें॥<br>
+              आरती कीजै हनुमान लला की॥<br><br>
 
-                    <div class="aarti-content">
+              कंचन थाल कपूर लौ छाई। आरती करत अंजनी माई॥<br>
+              जो हनुमान जी की आरती गावै। बसि बैकुंठ परमपद पावै॥<br>
+              आरती कीजै हनुमान लला की। दुष्ट दलन रघुनाथ कला की॥
+            </p>
 
-                        <p>
-                            ॐ जय शिव ओंकारा, प्रभु जय शिव ओंकारा।<br>
-                            ब्रह्मा, विष्णु, सदाशिव, अर्द्धांगी धारा॥<br>
-                            ॐ जय शिव ओंकारा॥<br><br>
+            <div class="aarti-end">
+              🚩 जय बजरंगबली 🚩
+            </div>
 
-                            एकानन चतुरानन पंचानन राजै।<br>
-                            हंसानन गरुड़ासन वृषवाहन साजै॥<br>
-                            ॐ जय शिव ओंकारा॥<br><br>
+          </div>
 
-                            दो भुज चार चतुर्भुज दश भुज ते सोहे।<br>
-                            तीनो रूप निरखता त्रिभुवन जन मोहे॥<br>
-                            ॐ जय शिव ओंकारा॥<br><br>
+        </div>
 
-                            अक्षमाला वनमाला मुंडमाला धारी।<br>
-                            चंदन मृगमद सोहें भाले शुभकारी॥<br>
-                            ॐ जय शिव ओंकारा॥<br><br>
+      </div>
 
-                            श्वेताम्बर पीताम्बर बाघम्बर अंगे।<br>
-                            सनकादिक गरुड़ादिक भूतादिक संगे॥<br>
-                            ॐ जय शिव ओंकारा॥<br><br>
 
-                            कर के मध्य कमंडलु चक्र त्रिशूल धर्ता।<br>
-                            सुखकारी दुखहारी जग पालनकर्ता॥<br>
-                            ॐ जय शिव ओंकारा॥<br><br>
+      <!-- 3 -->
 
-                            ब्रह्मा, विष्णु, सदाशिव जानत अविवेका।<br>
-                            प्रणवाक्षर के मध्ये ये तीनों एका॥<br>
-                            ॐ जय शिव ओंकारा॥<br><br>
+      <div class="aarti-item">
 
-                            त्रिगुण स्वामी जी की आरती जो कोई नर गावे।<br>
-                            कहत शिवानंद स्वामी सुख संपति पावे॥<br>
-                            ॐ जय शिव ओंकारा॥
-                        </p>
+        <button class="accordion">
 
-                    </div>
+          <span class="aarti-title">
+            <span class="aarti-number">3</span>
+            🔱 श्री शिव जी की आरती
+          </span>
 
-                </div>
+          <span class="arrow">▼</span>
 
-            </article>
+        </button>
 
+        <div class="panel">
 
-            <!-- दुर्गा -->
-            <article class="aarti-item">
+          <div class="panel-content">
 
-                <button class="aarti-button"
-                        type="button"
-                        aria-expanded="false">
+            <p>
+              ॐ जय शिव ओंकारा, प्रभु जय शिव ओंकारा।<br>
+              ब्रह्मा, विष्णु, सदाशिव, अर्द्धांगी धारा॥<br>
+              ॐ जय शिव ओंकारा।<br><br>
 
-                    <span class="aarti-title">
-                        🌹 माँ दुर्गा जी की आरती
-                    </span>
+              एकानन चतुरानन पंचानन राजै।<br>
+              हंसानन गरुड़ासन वृषवाहन साजै॥<br>
+              ॐ जय शिव ओंकारा।<br><br>
 
-                    <i class="fas fa-chevron-down aarti-arrow"
-                       aria-hidden="true"></i>
+              दो भुज चार चतुर्भुज दश भुज ते सोहे।<br>
+              तीनो रूप निरखता त्रिभुवन जन मोहे॥<br>
+              ॐ जय शिव ओंकारा।<br><br>
 
-                </button>
+              अक्षमाला वनमाला मुंडमाला धारी।<br>
+              चंदन मृगमद सोहें भाले शुभकारी॥<br>
+              ॐ जय शिव ओंकारा।<br><br>
 
-                <div class="aarti-panel">
+              श्वेताम्बर पीताम्बर बाघम्बर अंगे।<br>
+              सनकादिक गरुड़ादिक भूतादिक संगे॥<br>
+              ॐ जय शिव ओंकारा।<br><br>
 
-                    <div class="aarti-content">
+              कर के मध्य कमंडलु चक्र त्रिशूल धर्ता।<br>
+              सुखकारी दुखहारी जग पालनकर्ता॥<br>
+              ॐ जय शिव ओंकारा।<br><br>
 
-                        <p>
-                            जय अम्बे गौरी, मैया जय श्यामा गौरी।<br>
-                            तुमको निशदिन ध्यावत, हरि ब्रह्मा शिवरी॥<br>
-                            जय अम्बे गौरी॥<br><br>
+              ब्रह्मा, विष्णु, सदाशिव जानत अविवेका।<br>
+              प्रणवाक्षर के मध्ये ये तीनों एका॥<br>
+              ॐ जय शिव ओंकारा।<br><br>
 
-                            मांग सिंदूर विराजत, टीको मृगमद को।<br>
-                            उज्ज्वल से दो नैना, चंद्रबदन नीको॥<br>
-                            जय अम्बे गौरी॥<br><br>
+              त्रिगुण स्वामी जी की आरती जो कोई नर गावे।<br>
+              कहत शिवानंद स्वामी सुख संपति पावे॥<br>
+              ॐ जय शिव ओंकारा।
+            </p>
 
-                            कनक समान कलेवर, रक्तांबर राजै।<br>
-                            रक्तपुष्प गल माला, कंठन पर साजै॥<br>
-                            जय अम्बे गौरी॥<br><br>
+            <div class="aarti-end">
+              🔱 हर हर महादेव 🔱
+            </div>
 
-                            केहरि वाहन राजत, खड्ग खप्पर धारी।<br>
-                            सुर-नर मुनिजन सेवत, तिनके दुखहारी॥<br>
-                            जय अम्बे गौरी॥<br><br>
+          </div>
 
-                            कानन कुंडल शोभित, नासाग्रे मोती।<br>
-                            कोटिक चंद्र दिवाकर, राजत सम ज्योति॥<br>
-                            जय अम्बे गौरी॥<br><br>
+        </div>
 
-                            शुम्भ-निशुम्भ बिदारे, महिषासुर घाती।<br>
-                            धूम्र विलोचन नैना, निशदिन मदमाती॥<br>
-                            जय अम्बे गौरी॥<br><br>
+      </div>
 
-                            चंड-मुंड संहारे, शोणित बीज हरे।<br>
-                            मधु-कैटभ दोउ मारे, सुर भय दूर करे॥<br>
-                            जय अम्बे गौरी॥<br><br>
 
-                            ब्रह्माणी, रुद्राणी तुम कमला रानी।<br>
-                            आगम-निगम बखानी, तुम शिव पटरानी॥<br>
-                            जय अम्बे गौरी॥<br><br>
+      <!-- 4 -->
 
-                            चौंसठ योगिनी गावत, नृत्य करत भैरों।<br>
-                            बाजत ताल मृदंगा, अरु बाजत डमरू॥<br>
-                            जय अम्बे गौरी॥<br><br>
+      <div class="aarti-item">
 
-                            तुम हो जग की माता, तुम ही हो भर्ता।<br>
-                            भगतन की दुख हर्ता, सुख संपति कर्ता॥<br>
-                            जय अम्बे गौरी॥<br><br>
+        <button class="accordion">
 
-                            भुजा चार अति शोभित, खड्ग खप्पर धारी।<br>
-                            मनवांछित फल पावत, सेवत नर-नारी॥<br>
-                            जय अम्बे गौरी॥<br><br>
+          <span class="aarti-title">
+            <span class="aarti-number">4</span>
+            🌹 माँ दुर्गा जी की आरती
+          </span>
 
-                            श्री अम्बे जी की आरती, जो कोई नर गावे।<br>
-                            कहत शिवानंद स्वामी, सुख संपति पावे॥<br>
-                            जय अम्बे गौरी॥
-                        </p>
+          <span class="arrow">▼</span>
 
-                    </div>
+        </button>
 
-                </div>
+        <div class="panel">
 
-            </article>
+          <div class="panel-content">
 
+            <p>
+              जय अम्बे गौरी, मैया जय श्यामा गौरी।
+              तुमको निशदिन ध्यावत, हरि ब्रह्मा शिवरी॥<br>
+              जय अम्बे गौरी।<br><br>
 
-            <!-- गणेश -->
-            <article class="aarti-item">
+              मांग सिंदूर विराजत, टीको मृगमद को।
+              उज्ज्वल से दो नैना, चंद्रबदन नीको॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                <button class="aarti-button"
-                        type="button"
-                        aria-expanded="false">
+              कनक समान कलेवर, रक्तांबर राजै।
+              रक्तपुष्प गल माला, कंठन पर साजै॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                    <span class="aarti-title">
-                        🙏 श्री गणेश जी की आरती
-                    </span>
+              केहरि वाहन राजत, खड्ग खप्पर धारी।
+              सुर-नर मुनिजन सेवत, तिनके दुखहारी॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                    <i class="fas fa-chevron-down aarti-arrow"
-                       aria-hidden="true"></i>
+              कानन कुंडल शोभित, नासाग्रे मोती।
+              कोटिक चंद्र दिवाकर, राजत सम ज्योति॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                </button>
+              शुम्भ-निशुम्भ बिदारे, महिषासुर घाती।
+              धूम्र विलोचन नैना, निशदिन मदमाती॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                <div class="aarti-panel">
+              चंड-मुंड संहारे, शोणित बीज हरे।
+              मधु-कैटभ दोउ मारे, सुर भय दूर करे॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                    <div class="aarti-content">
+              ब्रह्माणी, रुद्राणी तुम कमला रानी।
+              आगम-निगम बखानी, तुम शिव पटरानी॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                        <p>
-                            जय गणेश, जय गणेश, जय गणेश देवा।<br>
-                            माता जाकी पार्वती, पिता महादेवा॥<br>
-                            जय गणेश, जय गणेश॥<br><br>
+              चौंसठ योगिनी गावत, नृत्य करत भैरों।
+              बाजत ताल मृदंगा, अरु बाजत डमरू॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                            एक दंत दयावंत, चार भुजाधारी।<br>
-                            माथे पर तिलक सोहे, मूसे की सवारी॥<br>
-                            पान चढ़े, फूल चढ़े और चढ़े मेवा।<br>
-                            लडडुअन का भोग लागे, संत करे सेवा॥<br>
-                            जय गणेश, जय गणेश॥<br><br>
+              तुम हो जग की माता, तुम ही हो भर्ता।
+              भगतन की दुख हर्ता, सुख संपति कर्ता॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                            अंधन को आँख देत, कोढ़िन को काया।<br>
-                            बांझन को पुत्र देत, निर्धन को माया॥<br>
-                            सूर श्याम शरण आए, सफल कीजे सेवा।<br>
-                            माता जाकी पार्वती, पिता महादेवा॥<br>
-                            जय गणेश, जय गणेश॥
-                        </p>
+              भुजा चार अति शोभित, खड्ग खप्पर धारी।
+              मनवांछित फल पावत, सेवत नर-नारी॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                    </div>
+              कंचन थाल विराजत, अगर कपूर बाती।
+              श्री मालकेतु में राजत, कोटि रतन ज्योति॥<br>
+              जय अम्बे गौरी।<br><br>
 
-                </div>
+              श्री अम्बे जी की आरती, जो कोई नर गावे।
+              कहत शिवानंद स्वामी, सुख संपति पावे॥<br>
+              जय अम्बे गौरी।
+            </p>
 
-            </article>
+            <div class="aarti-end">
+              🌺 जय माता दी 🌺
+            </div>
 
+          </div>
 
-            <!-- कृष्ण -->
-            <article class="aarti-item">
+        </div>
 
-                <button class="aarti-button"
-                        type="button"
-                        aria-expanded="false">
+      </div>
 
-                    <span class="aarti-title">
-                        🙏 श्री कृष्ण जी की आरती
-                    </span>
 
-                    <i class="fas fa-chevron-down aarti-arrow"
-                       aria-hidden="true"></i>
+      <!-- 5 -->
 
-                </button>
+      <div class="aarti-item">
 
-                <div class="aarti-panel">
+        <button class="accordion">
 
-                    <div class="aarti-content">
+          <span class="aarti-title">
+            <span class="aarti-number">5</span>
+            🙏 श्री गणेश जी की आरती
+          </span>
 
-                        <p>
-                            आरती कुंजबिहारी की, श्री गिरिधर कृष्णमुरारी की॥<br>
-                            आरती कुंजबिहारी की॥<br><br>
+          <span class="arrow">▼</span>
 
-                            गले में बैजंती माला, बजावै मुरली मधुर बाला।<br>
-                            श्रवण में कुंडल झलकाला, नंद के आनंद नंदलाला।<br><br>
+        </button>
 
-                            गगन सम अंग कांति काली, राधिका चमक रही आली।<br>
-                            लतन में ठाढ़े बनमाली, भ्रमर करत है जयमाला॥<br>
-                            आरती कुंजबिहारी की॥<br><br>
+        <div class="panel">
 
-                            कनक मय मोर मुकुट बिलसै, देवता दरसन को तरसै।<br>
-                            गगन सों सुमन बरसावै, आरती कुंजबिहारी की॥<br><br>
+          <div class="panel-content">
 
-                            आरती कुंजबिहारी की, श्री गिरिधर कृष्णमुरारी की॥
-                 
+            <p>
+              जय गणेश, जय गणेश, जय गणेश देवा।
+              माता जाकी पार्वती, पिता महादेवा॥<br>
+              जय गणेश, जय गणेश...<br><br>
+
+              एक दंत दयावंत, चार भुजाधारी।
+              माथे पर तिलक सोहे, मूसे की सवारी॥<br>
+              पान चढ़े, फूल चढ़े और चढ़े मेवा।
+              लडडुअन का भोग लागे, संत करे सेवा॥<br>
+              जय गणेश, जय गणेश...<br><br>
+
+              अंधन को आँख देत, कोढ़िन को काया।
+              बांझन को पुत्र देत, निर्धन को माया॥<br>
+              सूर श्याम शरण आए, सफल कीजे सेवा।
+              माता जाकी पार्वती, पिता महादेवा॥<br>
+              जय गणेश, जय गणेश...
+            </p>
+
+            <div class="aarti-end">
+              🐘 गणपति बप्पा मोरया 🐘
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 6 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">6</span>
+            🙏 श्री कृष्ण जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              आरती कुंजबिहारी की, श्री गिरिधर कृष्णमुरारी की॥<br>
+              आरती कुंजबिहारी की॥<br><br>
+
+              गले में बैजंती माला, बजावै मुरली मधुर बाला।
+              श्रवण में कुंडल झलकाला, नंद के आनंद नंदलाला।<br>
+              गगन सम अंग कांति काली, राधिका चमक रही आली।
+              लतन में ठाढ़े बनमाली, भ्रमर करत है जयमाला॥<br>
+              आरती कुंजबिहारी की, श्री गिरिधर कृष्णमुरारी की॥<br><br>
+
+              कनक मय मोर मुकुट बिलसै, देवता दरसन को तरसै।
+              गगन सों सुमन बरसावै, आरती कुंजबिहारी की॥<br>
+              जहाँ ते प्रगट भई गंगा, कलुष हरनि श्री यमुना गंगा।
+              स्मरण से होत मन पावन, मनमोहनी मनभावन।<br>
+              बसी वृंदावन में रसना, करैं नैनन में अंबर रचना।
+              दरसन को तरसैं, आरती कुंजबिहारी की॥<br>
+              आरती कुंजबिहारी की, श्री गिरिधर कृष्णमुरारी की॥
+            </p>
+
+            <div class="aarti-end">
+              🦚 राधे राधे 🦚
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 7 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">7</span>
+            🙏 श्री विष्णु जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              ॐ जय जगदीश हरे, स्वामी जय जगदीश हरे।
+              भक्त जनों के संकट, क्षण में दूर करे॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              जो ध्यावे फल पावे, दुख बिनसे मन का।
+              सुख सम्पत्ति घर आवे, कष्ट मिटे तन का॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              मात पिता तुम मेरे, शरण गहूँ मैं किसकी।
+              तुम बिन और न दूजा, आस करूँ मैं जिसकी॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              तुम पूरन परमात्मा, तुम अन्तर्यामी।
+              पारब्रह्म परमेश्वर, तुम सब के स्वामी॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              तुम करुणा के सागर, तुम पालनकर्ता।
+              मैं मूरख खल कामी, कृपा करो भर्ता॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              तुम हो एक अगोचर, सब के प्राणपति।
+              किस विधि मिलूँ दयामय, तुमको मैं कुमति॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              दीनबन्धु दुखहर्ता, ठाकुर तुम मेरे।
+              अपने हाथ उठाओ, द्वार पड़ा तेरे॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              विषय विकार मिटाओ, पाप हरो देवा।
+              श्रद्धा भक्ति बढ़ाओ, संतन की सेवा॥<br>
+              ॐ जय जगदीश हरे...<br><br>
+
+              तन मन धन सब कुछ है तेरा, स्वामी सब कुछ है तेरा।
+              तेरा तुझको अर्पण, क्या लागे मेरा॥<br>
+              ॐ जय जगदीश हरे...
+            </p>
+
+            <div class="aarti-end">
+              🪔 ॐ जय जगदीश हरे 🪔
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 8 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">8</span>
+            🙏 श्री लक्ष्मी जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              ॐ जय लक्ष्मी माता, मैया जय लक्ष्मी माता।
+              तुमको निशिदिन सेवत, हरि विष्णु विधाता॥<br>
+              ॐ जय लक्ष्मी माता...<br><br>
+
+              उमा रमा ब्रह्माणी, तुम ही जग माता।
+              सूर्य चन्द्रमा ध्यावत, नारद ऋषि गाता॥<br>
+              ॐ जय लक्ष्मी माता...<br><br>
+
+              दुर्गा रूप निरंजनी, सुख सम्पत्ति दाता।
+              जो कोई तुमको ध्यावत, ऋद्धि-सिद्धि धन पाता॥<br>
+              ॐ जय लक्ष्मी माता...<br><br>
+
+              तुम पाताल निवासिनि, तुम ही शुभ दाता।
+              कर्म प्रभाव प्रकाशिनी, भवनिधि की त्राता॥<br>
+              ॐ जय लक्ष्मी माता...<br><br>
+
+              जिस घर में तुम रहती, सब सद्गुण आता।
+              सब संभव हो जाता, मन नहीं घबराता॥<br>
+              ॐ जय लक्ष्मी माता...<br><br>
+
+              तुम बिन यज्ञ न होते, वस्त्र न कोई आता।
+              खान-पान का वैभव, सब तुमसे आता॥<br>
+              ॐ जय लक्ष्मी माता...<br><br>
+
+              शुभ गुण सुंदर लावण्य, क्षीरोदधि जाता।
+              रतन चतुर्दश तुम बिन, कोई नहीं पाता॥<br>
+              ॐ जय लक्ष्मी माता...<br><br>
+
+              महालक्ष्मी जी की आरती, जो कोई नर गाता।
+              उर आनंद समाता, पाप उतर जाता॥<br>
+              ॐ जय लक्ष्मी माता...
+            </p>
+
+            <div class="aarti-end">
+              🌸 जय माँ लक्ष्मी 🌸
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 9 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">9</span>
+            🙏 श्री सरस्वती जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              जय सरस्वती माता, मैया जय सरस्वती माता।
+              सदगुण वैभव शालिनी, त्रिभुवन विख्याता॥<br>
+              जय सरस्वती माता...<br><br>
+
+              चन्द्रवदनि पद्मासिनी, द्युति मंगलकारी।
+              सोहे शुभ हंस सवारी, अतुल तेजधारी॥<br>
+              जय सरस्वती माता...<br><br>
+
+              बाएं कर में वीणा, दाएं कर में माला।
+              शुभ वरदान दे, मैया शुभ वरदान दे॥<br>
+              जय सरस्वती माता...<br><br>
+
+              कौमार्य के दिन में, पूजती सब देव।
+              ब्रह्माणी रूद्र रूपिणी, करती सब सेवा॥<br>
+              जय सरस्वती माता...<br><br>
+
+              चार वेद की ज्ञान देती, मैया चार वेद की ज्ञान देती।
+              विद्या और ज्ञान देती, मैया विद्या और ज्ञान देती॥<br>
+              जय सरस्वती माता...<br><br>
+
+              जय सरस्वती माता, मैया जय सरस्वती माता।
+              सदगुण वैभव शालिनी, त्रिभुवन विख्याता॥<br>
+              जय सरस्वती माता...
+            </p>
+
+            <div class="aarti-end">
+              📚 जय माँ सरस्वती 📚
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 10 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">10</span>
+            🙏 श्री शनि देव जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              जय जय श्री शनिदेव भक्तन हितकारी।
+              सूर्य पुत्र प्रभु छाया महतारी॥<br>
+              जय जय श्री शनिदेव...<br><br>
+
+              श्याम अंग वक्र-दृष्टि चतुर्भुजा धारी।
+              नीलंबर धार नाथ गज की असवारी॥<br>
+              जय जय श्री शनिदेव...<br><br>
+
+              क्रीट मुकुट शीश राजत है।
+              मोदक लड्डू हाथन में सोहत है।<br>
+              कर धनुष बाण पाणि लिए,
+              भक्तन के दुःख हरत है।<br>
+              जय जय श्री शनिदेव...<br><br>
+
+              शनि देव जी की आरती जो कोई नर गावे।
+              सुख संपत्ति पावे, कष्ट दूर भगावे॥<br>
+              जय जय श्री शनिदेव...
+            </p>
+
+            <div class="aarti-end">
+              🙏 जय श्री शनिदेव 🙏
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 11 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">11</span>
+            🙏 श्री सत्यनारायण जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              जय लक्ष्मी रमणा, श्री जय लक्ष्मी रमणा।
+              सत्यनारायण स्वामी, जन पातक हरणा॥<br>
+              ॐ जय लक्ष्मी रमणा…<br><br>
+
+              रत्न जड़ित सिंहासन, अद्भुत छवि राजै।
+              नारद करत निरन्तर, घण्टा ध्वनि बाजै॥<br>
+              ॐ जय लक्ष्मी रमणा…<br><br>
+
+              प्रकट भये कलि कारण, द्विज को दरस दियो।
+              बूढ़ो ब्राह्मण बनकर, कंचन महल कियो॥<br>
+              ॐ जय लक्ष्मी रमणा…<br><br>
+
+              दूर्बल भील कराल, जिन पर कृपा करी।
+              चक्रपाणि भृकुटी से, विप्र रूप धरी॥<br>
+              ॐ जय लक्ष्मी रमणा…<br><br>
+
+              सत्यव्रत जब ध्यायो, पुत्र सखा संग आयो।
+              मन इच्छित फल पायो, स्वामी मन इच्छित फल पायो॥<br>
+              ॐ जय लक्ष्मी रमणा…<br><br>
+
+              सत्यनारायण जी की आरती, जो कोई नर गावे।
+              सुख सम्पत्ति घर आवे, वैभव यश पावे॥<br>
+              ॐ जय लक्ष्मी रमणा…
+            </p>
+
+            <div class="aarti-end">
+              🙏 सत्यनारायण भगवान की जय 🙏
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 12 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">12</span>
+            🙏 श्री गंगा जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              ॐ जय गंगे माता, श्री जय गंगे माता।
+              जो नर तुमको ध्याता, मन वांछित फल पाता॥<br>
+              ॐ जय गंगे माता…<br><br>
+
+              चन्द्र सी ज्योति तुम्हारी, जल निर्मल आता।
+              शरण पड़े जो तुम्हारी, सो भव पार हो जाता॥<br>
+              ॐ जय गंगे माता…<br><br>
+
+              पुत्र सगर के तारे, सब जग को ज्ञाता।
+              कृपा दृष्टि हो तुम्हारी, सो भव पार हो जाता॥<br>
+              ॐ जय गंगे माता…<br><br>
+
+              जो गंगाजल पीता, पाप से कट जाता।
+              जन्म मरण का चक्कर, सब ही मिट जाता॥<br>
+              ॐ जय गंगे माता…<br><br>
+
+              जय गंगा माता, मैया जय गंगा माता।
+              तुमको जो कोई ध्याता, सो भव पार हो जाता॥<br>
+              ॐ जय गंगे माता…
+            </p>
+
+            <div class="aarti-end">
+              🌊 हर हर गंगे 🌊
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 13 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">13</span>
+            🙏 श्री खाटू श्याम जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              ॐ जय श्री श्याम हरे, बाबा जय श्री श्याम हरे।
+              खाटूधाम में तुम हो बिराजे, दुःख हरते हो तुम सारे॥<br>
+              ॐ जय श्री श्याम हरे...<br><br>
+
+              श्याम-श्याम कहते मन, प्रेम में हो जाए।
+              एक बार जो आए तेरे, चरणों में खो जाए॥<br>
+              ॐ जय श्री श्याम हरे...<br><br>
+
+              दीन-दुखियों के तुम, पालन हारे हो।
+              शीश के दानी हो, भक्तों के प्यारे हो॥<br>
+              ॐ जय श्री श्याम हरे...<br><br>
+
+              मोर-मुकुट तेरे माथे, श्याम सलोने तुम।
+              सबकी बिगड़ी बनाते हो, दयालु तुम॥<br>
+              ॐ जय श्री श्याम हरे...<br><br>
+
+              श्री खाटू श्याम जी की आरती, जो कोई नर गावे।
+              मन वांछित फल पावे, सुख समृद्धि पावे॥<br>
+              ॐ जय श्री श्याम हरे…
+            </p>
+
+            <div class="aarti-end">
+              💙 हारे का सहारा बाबा श्याम हमारा 💙
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 14 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">14</span>
+            🙏 श्री साईं बाबा जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              आरती श्री साईं गुरुवर की, परमानंद सदा सुरवर की।
+              जाकी कृपा विपद मिट जाए, दुख दरिद्र सब मिट जाए।<br>
+              आरती श्री साईं गुरुवर की...<br><br>
+
+              सत्य धर्म का जिसने पालन किया,
+              सर्वधर्म समभाव का जिसने पाठ पढ़ाया।<br>
+              उनकी लीला अपरंपार,
+              भक्तों का जिसने किया उद्धार।<br>
+              आरती श्री साईं गुरुवर की...<br><br>
+
+              शिर्डी के साईं बाबा, भक्तों का तुमने उद्धार किया।
+              सबका मालिक एक है, यह ज्ञान तुमने हमें दिया।<br>
+              आरती श्री साईं गुरुवर की...<br><br>
+
+              जो भी शरण में आया, उसके कष्टों को मिटाया।
+              साईं बाबा की आरती, जो कोई गावे।
+              सुख समृद्धि पावे, परम शांति पावे।<br>
+              आरती श्री साईं गुरुवर की...
+            </p>
+
+            <div class="aarti-end">
+              🙏 सबका मालिक एक 🙏
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 15 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">15</span>
+            🙏 श्री बालाजी महाराज की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              जय हनुमान, जय जय बालाजी।
+              संकटमोचन, दुखभंजन, मंगलमूर्ति बालाजी॥<br>
+              जय हनुमान, जय जय बालाजी...<br><br>
+
+              अंजनि सुत महावीर, तुम हो सबसे महान।
+              राम काज करने वाले, तुम ही हो हनुमान॥<br>
+              जय हनुमान, जय जय बालाजी...<br><br>
+
+              रोम-रोम में राम बसे, तुम हो राम के दास।
+              तुम्हारी कृपा से ही, सफल हो हर काम॥<br>
+              जय हनुमान, जय जय बालाजी...<br><br>
+
+              भूत-पिशाच निकट नहीं आवे,
+              महावीर जब नाम सुनावे।<br>
+              बालाजी की आरती, जो कोई गावे।
+              सुख शांति और यश पावे॥<br>
+              जय हनुमान, जय जय बालाजी...
+            </p>
+
+            <div class="aarti-end">
+              🚩 जय बालाजी महाराज 🚩
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 16 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">16</span>
+            🙏 श्री गायत्री जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              जयति जय गायत्री माता, जयति जय गायत्री माता।
+              आदि शक्ति तुम, ब्रह्माणी तुम, जय जय जगदम्बा माता॥<br>
+              जयति जय गायत्री माता...<br><br>
+
+              तुम बिन यज्ञ न होते, तुम बिन जप न होते।
+              तुम हो ज्ञान का सागर, तुम ही हो विधाता॥<br>
+              जयति जय गायत्री माता...<br><br>
+
+              जो तुमको मन से ध्यावे, भव सागर तर जावे।
+              तुम्हारी कृपा से ही, जग में नाम पावे॥<br>
+              जयति जय गायत्री माता...<br><br>
+
+              जयति जय गायत्री माता, जयति जय गायत्री माता।
+              सदगुण वैभव शालिनी, त्रिभुवन विख्याता॥<br>
+              जयति जय गायत्री माता...
+            </p>
+
+            <div class="aarti-end">
+              🌺 जय गायत्री माता 🌺
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 17 -->
+
+      <div class="aarti-item">
+
+        <button class="accordion">
+
+          <span class="aarti-title">
+            <span class="aarti-number">17</span>
+            🙏 श्री भैरव जी की आरती
+          </span>
+
+          <span class="arrow">▼</span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              जय भैरव देवा, प्रभु जय भैरव देवा।
+              दुख दारिद्र्य विनाशन, सकल भक्तन की सेवा॥<br>
+              जय भैरव देवा...<br><br>
+
+              तुम हो भैरव बलकारी, काल भैरव तुम हो।
+              कष्ट हरण कर देवा, रक्षा करो तुम॥<br>
+              जय भैरव देवा...<br><br>
+
+              श्वान सवारी तुम्हारी, हाथ में खप्पर।
+              त्रिशूलधारी तुम हो, भयभीत हो सब॥<br>
+              जय भैरव देवा...<br><br>
+
+              जो कोई आरती गावे, भैरव देवा की।
+              सुख सम्पत्ति पावे, कृपा हो तेरी॥<br>
+              जय भैरव देवा...
+            </p>
+
+            <div class="aarti-end">
+              🔱 जय काल भैरव महाराज 🔱
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <!-- NO RESULT -->
+
+    <div id="noResult">
+
+      <span class="icon">🔎</span>
+
+      <strong>कोई आरती नहीं मिली</strong>
+
+      <p>
+        कृपया दूसरा नाम या शब्द खोजकर देखें।
+      </p>
+
+    </div>
+
+
+    <!-- QUOTE -->
+
+    <section class="quote-card">
+
+      <div class="quote-symbol">🪔</div>
+
+      <p>
+        "भक्ति में शक्ति है, श्रद्धा में विश्वास है और
+        सेवा में ही सच्चा धर्म है।"
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-title">
+        भगवा रक्षक हिन्दू सेना
+      </div>
+
+      <p>
+        धर्म • सेवा • संस्कार
+      </p>
+
+      <p>
+        श्रद्धा, सेवा और संस्कार के साथ समाज में सकारात्मक योगदान।
+      </p>
+
+      <div class="footer-bottom">
+        © 2026 भगवा रक्षक हिन्दू सेना | सर्वाधिकार सुरक्षित
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* ==========================================
+       ACCORDION
+    ========================================== */
+
+    const accordions = document.querySelectorAll(".accordion");
+
+    accordions.forEach((accordion) => {
+
+      accordion.addEventListener("click", function () {
+
+        const currentPanel = this.nextElementSibling;
+        const isOpen = this.classList.contains("active");
+
+        /* सभी बंद करें */
+
+        accordions.forEach((item) => {
+
+          item.classList.remove("active");
+
+          const panel = item.nextElementSibling;
+
+          if (panel) {
+            panel.style.maxHeight = null;
+          }
+
+        });
+
+        /* अगर वर्तमान बंद था तो खोलें */
+
+        if (!isOpen) {
+
+          this.classList.add("active");
+
+          currentPanel.style.maxHeight =
+            currentPanel.scrollHeight + "px";
+
+        }
+
+      });
+
+    });
+
+
+    /* ==========================================
+       SEARCH
+    ========================================== */
+
+    const searchInput = document.getElementById("aartiSearch");
+    const aartiItems = document.querySelectorAll(".aarti-item");
+    const noResult = document.getElementById("noResult");
+
+    searchInput.addEventListener("input", function () {
+
+      const searchText =
+        this.value.toLowerCase().trim();
+
+      let found = false;
+
+      aartiItems.forEach((item) => {
+
+        const text =
+          item.textContent.toLowerCase();
+
+        if (text.includes(searchText)) {
+
+          item.style.display = "";
+          found = true;
+
+        } else {
+
+          item.style.display = "none";
+
+        }
+
+      });
+
+      noResult.style.display =
+        found ? "none" : "block";
+
+    });
+
+
+    /* ==========================================
+       WINDOW RESIZE
+       Open panel height update
+    ========================================== */
+
+    window.addEventListener("resize", function () {
+
+      const activeAccordion =
+        document.querySelector(".accordion.active");
+
+      if (activeAccordion) {
+
+        const panel =
+          activeAccordion.nextElementSibling;
+
+        panel.style.maxHeight =
+          panel.scrollHeight + "px";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
