@@ -1,230 +1,970 @@
-<!-- bhagwa_rakshak_website/team.html -->
 <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>टीम - भगवा रक्षक हिन्दू सेना</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <meta name="description"
+        content="भगवा रक्षक हिन्दू सेना की टीम और संगठन से जुड़े प्रमुख सदस्यों के बारे में जानकारी।">
+
+  <meta name="keywords"
+        content="भगवा रक्षक हिन्दू सेना, टीम, सदस्य, पवन राजपूत, संगठन">
+
+  <meta name="author" content="भगवा रक्षक हिन्दू सेना">
+
+  <title>हमारी टीम | भगवा रक्षक हिन्दू सेना</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
     :root {
-      --primary-color: #FF6600; /* केसरिया */
-      --secondary-color: #4CAF50; /* हरा */
-      --text-color: #333;
-      --bg-color: #f0f2f5;
-      --card-bg-color: #ffffff;
-      --border-radius: 10px;
-      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --saffron: #f26b21;
+      --saffron-dark: #c94d0b;
+      --gold: #ffb300;
+      --dark: #171717;
+      --text: #333;
+      --muted: #666;
+      --white: #fff;
+      --light: #fff8f2;
+      --border: #eeeeee;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
     }
-    
-    body {
-      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+
+    * {
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      box-sizing: border-box;
     }
-    
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans Devanagari", "Poppins", sans-serif;
+      background: #f7f7f7;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
     header {
       width: 100%;
-      background: var(--primary-color);
+      background: linear-gradient(135deg, #e85b0b, #ff7a18);
       color: white;
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: var(--box-shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
     }
-    
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
+
+    .header-container {
+      width: min(1200px, 94%);
+      min-height: 78px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
     }
-    
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+
+      object-fit: contain;
+
+      background: white;
+      border-radius: 50%;
+      padding: 4px;
+
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
     nav {
-      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      flex-wrap: wrap;
+      gap: 4px;
     }
-    
+
     nav a {
       color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1rem;
-      font-weight: 400;
-      transition: color 0.3s ease;
+
+      padding: 8px 10px;
+
+      border-radius: 8px;
+
+      font-size: 0.88rem;
+      font-weight: 600;
+
+      transition: 0.25s ease;
     }
-    
-    nav a:hover {
-      color: #ffd700; /* गहरा सुनहरा */
+
+    nav a:hover,
+    nav a.active {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff1b8;
     }
-    
-    main {
-      background: var(--card-bg-color);
-      padding: 40px;
-      margin: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      width: 90%;
-      max-width: 1000px;
+
+    /* =========================
+       PAGE HERO
+    ========================== */
+
+    .page-hero {
+      background:
+        linear-gradient(
+          rgba(120, 42, 0, 0.78),
+          rgba(120, 42, 0, 0.78)
+        ),
+        linear-gradient(135deg, #ff7b00, #ffb300);
+
+      color: white;
       text-align: center;
+
+      padding: 70px 20px 65px;
     }
-    
-    h2 {
-      color: var(--primary-color);
-      font-weight: 700;
-      margin-top: 0;
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .page-hero p {
+      max-width: 720px;
+      margin: auto;
+
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    .hero-line {
+      width: 80px;
+      height: 4px;
+
+      background: var(--gold);
+
+      margin: 20px auto 0;
+
+      border-radius: 50px;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      width: min(1150px, 94%);
+      margin: 45px auto 70px;
+    }
+
+    .section-heading {
+      text-align: center;
       margin-bottom: 30px;
     }
 
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      justify-content: center;
+    .section-heading h2 {
+      color: var(--saffron-dark);
+
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+
+      font-weight: 800;
+
+      margin-bottom: 8px;
     }
 
+    .section-heading p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* =========================
+       TEAM GRID
+    ========================== */
+
+    .team-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 25px;
+    }
+
+    /* =========================
+       TEAM CARD
+    ========================== */
+
     .team-member {
-      background-color: #f9f9f9;
-      border-radius: var(--border-radius);
-      padding: 20px;
+      background: white;
+
+      border-radius: var(--radius);
+
+      padding: 30px 22px;
+
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      box-shadow: var(--shadow);
+
+      border-top: 4px solid var(--saffron);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .team-member:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-7px);
+
+      box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.12);
+    }
+
+    /* =========================
+       MEMBER IMAGE
+    ========================== */
+
+    .image-wrapper {
+      width: 155px;
+      height: 155px;
+
+      margin: 0 auto 18px;
+
+      position: relative;
     }
 
     .team-member-img {
-      width: 150px;
-      height: 150px;
+      width: 155px;
+      height: 155px;
+
       border-radius: 50%;
+
       object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid var(--primary-color);
+
+      border: 5px solid var(--saffron);
+
+      background: #fff2e7;
+
+      display: block;
     }
 
+    .image-wrapper::after {
+      content: "";
+
+      position: absolute;
+
+      right: 5px;
+      bottom: 5px;
+
+      width: 18px;
+      height: 18px;
+
+      background: #22c55e;
+
+      border: 3px solid white;
+
+      border-radius: 50%;
+    }
+
+    /* =========================
+       MEMBER DETAILS
+    ========================== */
+
     .team-member h3 {
-      font-size: 1.5rem;
-      color: var(--text-color);
+      color: var(--dark);
+
+      font-size: 1.4rem;
+
+      font-weight: 800;
+
       margin-bottom: 5px;
     }
 
-    .team-member p.role {
-      font-size: 1.1rem;
-      color: var(--primary-color);
-      font-weight: 600;
-      margin-bottom: 15px;
+    .role {
+      color: var(--saffron-dark);
+
+      font-size: 1rem;
+
+      font-weight: 700;
+
+      margin-bottom: 12px;
     }
 
-    .team-member p.bio {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 15px;
+    .bio {
+      color: var(--muted);
+
+      font-size: 0.92rem;
+
+      min-height: 75px;
+
+      margin-bottom: 18px;
     }
+
+    /* =========================
+       SOCIAL BUTTONS
+    ========================== */
 
     .social-links {
+      display: flex;
+
+      justify-content: center;
+
+      gap: 9px;
+
       margin-top: 10px;
     }
 
     .social-links a {
-      color: var(--text-color);
-      font-size: 1.2rem;
-      margin: 0 8px;
-      transition: color 0.3s ease;
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #fff1e7;
+
+      color: var(--saffron-dark);
+
+      font-size: 0.85rem;
+
+      font-weight: 700;
+
+      transition: 0.25s ease;
     }
 
     .social-links a:hover {
-      color: var(--primary-color);
+      background: var(--saffron);
+
+      color: white;
+
+      transform: translateY(-3px);
     }
+
+    /* =========================
+       NOTE / ADD MEMBER
+    ========================== */
+
+    .team-note {
+      margin-top: 30px;
+
+      background: linear-gradient(
+        135deg,
+        #fff7ed,
+        #ffffff
+      );
+
+      border: 1px solid #ffe0c2;
+
+      border-radius: var(--radius);
+
+      padding: 25px;
+
+      text-align: center;
+    }
+
+    .team-note h3 {
+      color: var(--saffron-dark);
+
+      margin-bottom: 6px;
+    }
+
+    .team-note p {
+      color: var(--muted);
+
+      max-width: 700px;
+
+      margin: auto;
+    }
+
+    /* =========================
+       JOIN CTA
+    ========================== */
+
+    .join-cta {
+      margin-top: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d9530b,
+          #f47a19
+        );
+
+      color: white;
+
+      padding: 38px 25px;
+
+      text-align: center;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+    }
+
+    .join-cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .join-cta p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+
+      background: white;
+
+      color: var(--saffron-dark);
+
+      padding: 11px 25px;
+
+      border-radius: 50px;
+
+      font-weight: 800;
+
+      transition: 0.25s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      width: 100%;
-      background: #333;
-      color: white;
+      background: #171717;
+
+      color: #ddd;
+
       text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
+
+      padding: 30px 20px;
     }
+
+    .footer-brand {
+      color: white;
+
+      font-size: 1.2rem;
+
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #ccc;
+
+      margin: 0 7px;
+
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: #ff8a2a;
+    }
+
+    .copyright {
+      color: #999;
+      font-size: 0.84rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .header-container {
+        flex-direction: column;
+
+        padding: 12px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .team-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .brand {
+        font-size: 0.98rem;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      nav {
+        gap: 2px;
+      }
+
+      nav a {
+        font-size: 0.76rem;
+        padding: 6px 7px;
+      }
+
+      .page-hero {
+        padding: 50px 15px;
+      }
+
+      main {
+        width: 92%;
+        margin-top: 28px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-member {
+        padding: 28px 18px;
+      }
+
+      .bio {
+        min-height: auto;
+      }
+
+      .join-cta {
+        padding: 30px 18px;
+      }
+
+    }
+
   </style>
 </head>
+
 <body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
-    <h1>भगवा रक्षक हिन्दू सेना</h1>
-    <nav>
-      <a href="index.html">होम</a>
-      <a href="about.html">हमारे बारे में</a>
-      <a href="team.html">टीम</a>
-      <a href="gallery.html">गैलरी</a>
-      <a href="contact.html">संपर्क करें</a>
-      <a href="join.html">ज्वॉइन करें</a>
-      <a href="card.html">सदस्य कार्ड</a>
-    </nav>
-  </header>
 
-  <main>
-    <h2>हमारी टीम</h2>
-    <div class="team-grid">
-      <div class="team-member">
-        <img src="images/pawan_rajput.jpg" alt="पवन राजपूत" class="team-member-img">
-        <h3>पवन राजपूत</h3>
-        <p class="role">संस्थापक एवं अध्यक्ष</p>
-        <p class="bio">पवन राजपूत ने भगवा रक्षक हिन्दू सेना की स्थापना सनातन धर्म के सिद्धांतों को बढ़ावा देने के उद्देश्य से की।</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      
-      <div class="team-member">
-        <img src="images/rahul_rajput.jpg" alt="राहुल राजपूत" class="team-member-img">
-        <h3>राहुल राजपूत</h3>
-        <p class="role">सह-संस्थापक एवं संयोजक</p>
-        <p class="bio">राहुल राजपूत संगठन के दैनिक कार्यों को संभालते हैं और विभिन्न परियोजनाओं का समन्वय करते हैं।</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-      
-      <div class="team-member">
-        <img src="images/suresh_sharma.jpg" alt="सुरेश शर्मा" class="team-member-img">
-        <h3>सुरेश शर्मा</h3>
-        <p class="role">मीडिया प्रमुख</p>
-        <p class="bio">सुरेश शर्मा संगठन की मीडिया और संचार रणनीतियों का प्रबंधन करते हैं।</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
+    <div class="header-container">
 
-      <div class="team-member">
-        <img src="images/new_member.jpg" alt="नए सदस्य" class="team-member-img">
-        <h3>नए सदस्य</h3>
-        <p class="role">पद का नाम</p>
-        <p class="bio">सदस्य का संक्षिप्त परिचय।</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
+      <a href="index.html" class="brand">
+
+        <img
+          src="images/hindu sena logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+        >
+
+        <span>
+          भगवा रक्षक हिन्दू सेना
+        </span>
+
+      </a>
+
+      <nav aria-label="मुख्य मेनू">
+
+        <a href="index.html">
+          होम
+        </a>
+
+        <a href="about.html">
+          हमारे बारे में
+        </a>
+
+        <a href="team.html" class="active">
+          टीम
+        </a>
+
+        <a href="gallery.html">
+          गैलरी
+        </a>
+
+        <a href="dharm-gatha.html">
+          धर्म गाथा
+        </a>
+
+        <a href="aarti.html">
+          आरती
+        </a>
+
+        <a href="kathayein.html">
+          कथाएँ
+        </a>
+
+        <a href="contact.html">
+          संपर्क
+        </a>
+
+        <a href="join.html">
+          जुड़ें
+        </a>
+
+        <a href="card.html">
+          सदस्य कार्ड
+        </a>
+
+      </nav>
 
     </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="page-hero">
+
+    <h1>
+      हमारी टीम
+    </h1>
+
+    <p>
+      संगठन से जुड़े सदस्यों और उनके योगदान के बारे में जानकारी।
+    </p>
+
+    <div class="hero-line"></div>
+
+  </section>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+    <div class="section-heading">
+
+      <h2>
+        संगठन की टीम
+      </h2>
+
+      <p>
+        संगठन की गतिविधियों और सेवा कार्यों को आगे बढ़ाने में
+        सहयोग करने वाले सदस्यों की जानकारी।
+      </p>
+
+    </div>
+
+
+    <section class="team-grid">
+
+
+      <!-- =========================
+           PAWAN RAJPUT
+      ========================== -->
+
+      <article class="team-member">
+
+        <div class="image-wrapper">
+
+          <img
+            src="images/pawan.jpg"
+            alt="पवन राजपूत"
+            class="team-member-img"
+            loading="lazy"
+          >
+
+        </div>
+
+        <h3>
+          पवन राजपूत
+        </h3>
+
+        <p class="role">
+          संस्थापक एवं अध्यक्ष
+        </p>
+
+        <p class="bio">
+          संगठन के सामाजिक एवं सेवा कार्यों को आगे बढ़ाने
+          तथा विभिन्न गतिविधियों के समन्वय में योगदान।
+        </p>
+
+        <div class="social-links">
+
+          <a
+            href="#"
+            aria-label="Facebook"
+          >
+            f
+          </a>
+
+          <a
+            href="#"
+            aria-label="Instagram"
+          >
+            ◎
+          </a>
+
+          <a
+            href="#"
+            aria-label="Twitter"
+          >
+            𝕏
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           MEMBER 2
+      ========================== -->
+
+      <article class="team-member">
+
+        <div class="image-wrapper">
+
+          <div
+            class="team-member-img"
+            style="
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-size:3rem;
+              font-weight:800;
+              color:#c94d0b;
+            "
+            aria-label="सदस्य फोटो उपलब्ध नहीं"
+          >
+            रा
+          </div>
+
+        </div>
+
+        <h3>
+          राहुल राजपूत
+        </h3>
+
+        <p class="role">
+          सह-संस्थापक एवं संयोजक
+        </p>
+
+        <p class="bio">
+          संगठन की गतिविधियों और विभिन्न कार्यक्रमों के
+          समन्वय में सहयोग।
+        </p>
+
+        <div class="social-links">
+
+          <a href="#" aria-label="Facebook">
+            f
+          </a>
+
+          <a href="#" aria-label="Instagram">
+            ◎
+          </a>
+
+          <a href="#" aria-label="Twitter">
+            𝕏
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           MEMBER 3
+      ========================== -->
+
+      <article class="team-member">
+
+        <div class="image-wrapper">
+
+          <div
+            class="team-member-img"
+            style="
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-size:3rem;
+              font-weight:800;
+              color:#c94d0b;
+            "
+            aria-label="सदस्य फोटो उपलब्ध नहीं"
+          >
+            सु
+          </div>
+
+        </div>
+
+        <h3>
+          सुरेश शर्मा
+        </h3>
+
+        <p class="role">
+          मीडिया प्रमुख
+        </p>
+
+        <p class="bio">
+          संगठन की मीडिया एवं संचार संबंधी गतिविधियों
+          में सहयोग और समन्वय।
+        </p>
+
+        <div class="social-links">
+
+          <a href="#" aria-label="Facebook">
+            f
+          </a>
+
+          <a href="#" aria-label="Instagram">
+            ◎
+          </a>
+
+          <a href="#" aria-label="Twitter">
+            𝕏
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+
+    <!-- =========================
+         NOTE
+    ========================== -->
+
+    <section class="team-note">
+
+      <h3>
+        👥 टीम में नए सदस्यों के लिए
+      </h3>
+
+      <p>
+        संगठन की टीम में अन्य पदाधिकारियों एवं सदस्यों की
+        जानकारी बाद में इसी पेज पर जोड़ी जा सकती है।
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         JOIN CTA
+    ========================== -->
+
+    <section class="join-cta">
+
+      <h2>
+        आप भी संगठन से जुड़ सकते हैं
+      </h2>
+
+      <p>
+        सामाजिक, धार्मिक और सेवा गतिविधियों में
+        अपना योगदान देने के लिए हमारे साथ जुड़ें।
+      </p>
+
+      <a
+        href="join.html"
+        class="cta-button"
+      >
+        संगठन से जुड़ें →
+      </a>
+
+    </section>
+
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
-    <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
+
+    <div class="footer-brand">
+      भगवा रक्षक हिन्दू सेना
+    </div>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        होम
+      </a>
+
+      <a href="about.html">
+        हमारे बारे में
+      </a>
+
+      <a href="team.html">
+        टीम
+      </a>
+
+      <a href="gallery.html">
+        गैलरी
+      </a>
+
+      <a href="contact.html">
+        संपर्क
+      </a>
+
+      <a href="join.html">
+        जुड़ें
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 भगवा रक्षक हिन्दू सेना. सर्वाधिकार सुरक्षित।
+    </div>
+
   </footer>
+
 </body>
 </html>
