@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>भगवा रक्षक हिन्दू सेना | धर्म • सेवा • संस्कार</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#f4511e">
+
+    <title>
+        भगवा रक्षक हिन्दू सेना | धर्म • सेवा • संस्कार
+    </title>
 
     <meta name="description"
           content="भगवा रक्षक हिन्दू सेना — धर्म, सेवा, संस्कार और सामाजिक जागरूकता के लिए समर्पित संगठन।">
@@ -12,22 +21,43 @@
     <meta name="keywords"
           content="भगवा रक्षक हिन्दू सेना, हिंदू सेना, सनातन धर्म, धर्म सेवा संस्कार">
 
-    <meta name="author" content="भगवा रक्षक हिन्दू सेना">
+    <meta name="author"
+          content="भगवा रक्षक हिन्दू सेना">
 
-    <link rel="icon" type="image/png" href="images/sangthan-logo.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Favicon -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <link rel="icon"
+          type="image/png"
+          href="images/sangthan-logo.png">
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 
     <style>
+
+        /* =========================================
+           BASIC RESET
+        ========================================= */
 
         * {
             margin: 0;
@@ -35,25 +65,36 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+            margin: 0;
             font-family: "Noto Sans Devanagari", sans-serif;
             background: #fffaf5;
             color: #222;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-        }
 
         img {
             max-width: 100%;
             display: block;
         }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        button {
+            font-family: inherit;
+        }
+
 
         .container {
             width: min(1150px, 92%);
@@ -61,9 +102,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            HEADER
-        ========================== */
+        ========================================= */
 
         header {
             width: 100%;
@@ -75,22 +116,27 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
 
+
         .header-content {
-            min-height: 78px;
+            min-height: 76px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 20px;
         }
 
+
+        /* LOGO */
+
         .logo a {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             color: #222;
-            font-size: 23px;
+            font-size: 22px;
             font-weight: 800;
         }
+
 
         .logo img {
             width: 54px;
@@ -100,1077 +146,992 @@
         }
 
 
-        /* =========================
+        /* =========================================
            DESKTOP NAVIGATION
-        ========================== */
+        ========================================= */
 
         .sidenav > ul {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 3px;
             list-style: none;
         }
 
+
         .sidenav li {
-            position: relative;
             list-style: none;
+            position: relative;
         }
+
 
         .sidenav > ul > li > a {
             display: block;
-            padding: 12px 13px;
+            padding: 11px 12px;
             color: #222;
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 8px;
             transition: 0.25s;
+            cursor: pointer;
         }
+
 
         .sidenav > ul > li > a:hover {
             color: #f4511e;
-            background: #fff3eb;
+            background: #fff2eb;
         }
 
 
-        /* Dropdown */
+        /* =========================================
+           STORY DROPDOWN - DESKTOP
+        ========================================= */
 
         .dropdown-menu {
             position: absolute;
             top: calc(100% + 5px);
             right: 0;
-            min-width: 210px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+            width: 220px;
+
+            background: #ffffff;
+
             padding: 8px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 12px 35px rgba(0,0,0,0.15);
+
             display: none;
-            z-index: 10000;
+
+            z-index: 10020;
         }
+
 
         .dropdown:hover .dropdown-menu {
             display: block;
         }
 
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+
         .dropdown-menu li a {
             display: block;
-            padding: 11px 13px;
+
+            padding: 12px;
+
             color: #333;
-            border-radius: 8px;
+
             font-size: 15px;
             font-weight: 600;
+
+            border-radius: 8px;
+
+            cursor: pointer;
         }
+
 
         .dropdown-menu li a:hover {
-            background: #fff1e8;
             color: #f4511e;
+            background: #fff3ec;
         }
 
 
-        /* Buttons */
+        /* =========================================
+           JOIN BUTTON
+        ========================================= */
 
         .cta-button {
             background: #f4511e !important;
-            color: white !important;
+            color: #ffffff !important;
             padding: 11px 18px !important;
+            border-radius: 8px !important;
         }
+
 
         .cta-button:hover {
             background: #d84315 !important;
         }
+
+
+        /* Poster button desktop hidden */
 
         .poster-link-button {
             display: none !important;
         }
 
 
-        /* =========================
-           MOBILE MENU BUTTON
-        ========================== */
+        /* =========================================
+           HAMBURGER
+        ========================================= */
 
         .hamburger-menu-icon {
+
             display: none;
+
             width: 54px;
             height: 54px;
-            border: 1px solid #e5e5e5;
+
+            border: 1px solid #e2e2e2;
+
             background: #ffffff;
+
             border-radius: 14px;
+
             cursor: pointer;
+
             padding: 10px;
+
             flex-direction: column;
-            justify-content: center;
+
             align-items: center;
+
+            justify-content: center;
+
             gap: 6px;
-            z-index: 10002;
+
+            position: relative;
+
+            z-index: 10005;
+
             -webkit-tap-highlight-color: transparent;
         }
 
+
         .hamburger-menu-icon .bar {
+
             width: 30px;
             height: 4px;
-            border-radius: 5px;
+
             background: #f4511e;
+
+            border-radius: 5px;
+
+            display: block;
+
             pointer-events: none;
         }
 
 
-        /* =========================
+        /* =========================================
            HERO
-        ========================== */
+        ========================================= */
 
         .hero-section {
-            min-height: 620px;
+
+            min-height: 610px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             text-align: center;
+
             position: relative;
-            overflow: hidden;
 
             background:
                 linear-gradient(
-                    rgba(25,25,25,0.62),
-                    rgba(25,25,25,0.62)
+                    rgba(20,20,20,0.62),
+                    rgba(20,20,20,0.62)
                 ),
                 radial-gradient(
                     circle at center,
-                    #777,
-                    #555
+                    #777777,
+                    #555555
                 );
         }
 
+
         .hero-content {
+
             width: min(900px, 90%);
-            color: white;
+
+            color: #ffffff;
         }
+
 
         .hero-content h1 {
-            font-size: clamp(38px, 6vw, 68px);
+
+            font-size:
+                clamp(38px, 6vw, 68px);
+
             line-height: 1.3;
+
             font-weight: 800;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.45);
+
             margin-bottom: 22px;
+
+            text-shadow:
+                0 4px 10px rgba(0,0,0,0.45);
         }
+
 
         .hero-content h2 {
+
             color: #ffd180;
-            font-size: clamp(24px, 4vw, 38px);
-            margin-bottom: 22px;
+
+            font-size:
+                clamp(23px, 4vw, 38px);
+
+            margin-bottom: 20px;
         }
+
 
         .hero-content p {
-            font-size: clamp(18px, 3vw, 25px);
-            margin-bottom: 35px;
+
+            font-size:
+                clamp(17px, 3vw, 24px);
+
+            line-height: 1.8;
+
+            margin-bottom: 32px;
         }
 
+
         .main-cta-button {
+
             display: inline-block;
+
             background: #f4511e;
-            color: white;
+
+            color: #ffffff;
+
             padding: 16px 34px;
+
             border-radius: 14px;
+
             font-size: 20px;
+
             font-weight: 700;
-            box-shadow: 0 8px 25px rgba(244,81,30,0.35);
+
+            box-shadow:
+                0 8px 25px rgba(244,81,30,0.35);
+
             transition: 0.25s;
         }
 
+
         .main-cta-button:hover {
+
             transform: translateY(-3px);
+
             background: #e64a19;
         }
 
 
-        /* =========================
+        /* =========================================
            ABOUT
-        ========================== */
+        ========================================= */
 
         .about-us-summary {
+
             padding: 90px 0;
-            background: white;
+
+            background: #ffffff;
+
             text-align: center;
         }
 
+
         .about-us-summary h2 {
+
             color: #e64a19;
-            font-size: clamp(34px, 5vw, 50px);
+
+            font-size:
+                clamp(34px, 5vw, 50px);
+
             margin-bottom: 25px;
         }
 
+
         .about-us-summary p {
+
             max-width: 850px;
+
             margin: auto;
+
             font-size: 18px;
+
             line-height: 2;
-            color: #666;
+
+            color: #666666;
         }
 
+
         .read-more-button {
+
             display: inline-block;
+
             margin-top: 30px;
-            background: #222;
-            color: white;
+
+            background: #222222;
+
+            color: #ffffff;
+
             padding: 13px 25px;
+
             border-radius: 10px;
+
             font-weight: 700;
         }
 
 
-        /* =========================
+        .read-more-button:hover {
+
+            background: #f4511e;
+        }
+
+
+        /* =========================================
            MISSION
-        ========================== */
+        ========================================= */
 
         .mission-vision {
+
             padding: 80px 0;
+
             background: #fff4ec;
         }
 
+
         .mission-grid {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 30px;
         }
 
+
         .mission-item {
-            background: white;
+
+            background: #ffffff;
+
             padding: 40px 30px;
+
             border-radius: 18px;
+
             text-align: center;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+
+            box-shadow:
+                0 8px 30px rgba(0,0,0,0.07);
         }
 
+
         .mission-item i {
+
             width: 70px;
             height: 70px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
-            margin: auto auto 20px;
+
+            margin: 0 auto 20px;
+
             border-radius: 50%;
+
             background: #fff0e8;
+
             color: #f4511e;
+
             font-size: 30px;
         }
 
+
         .mission-item h3 {
+
             font-size: 26px;
+
             margin-bottom: 15px;
         }
 
+
         .mission-item p {
-            color: #666;
+
+            color: #666666;
+
             line-height: 1.9;
+
+            font-size: 16px;
         }
 
 
-        /* =========================
+        /* =========================================
            SLOGAN
-        ========================== */
+        ========================================= */
 
         .slogan-banner {
+
             padding: 55px 0;
+
             background: #f4511e;
-            color: white;
+
+            color: #ffffff;
+
             text-align: center;
         }
 
+
         .slogan-banner h2 {
-            font-size: clamp(30px, 5vw, 48px);
+
+            font-size:
+                clamp(30px, 5vw, 48px);
         }
 
 
-        /* =========================
+        /* =========================================
            FOOTER
-        ========================== */
+        ========================================= */
 
         footer {
+
             background: #171717;
-            color: white;
+
+            color: #ffffff;
+
             padding: 55px 0 25px;
         }
 
+
         .footer-grid {
+
             display: grid;
-            grid-template-columns: 1fr 1fr;
+
+            grid-template-columns:
+                1fr 1fr;
+
             gap: 40px;
         }
 
+
         footer h3 {
+
             color: #ffab70;
+
             margin-bottom: 18px;
         }
 
+
         footer ul {
+
             list-style: none;
         }
 
+
         footer li {
+
             margin-bottom: 10px;
         }
 
+
         footer a {
-            color: #ddd;
+
+            color: #dddddd;
         }
 
+
         footer a:hover {
+
             color: #ff8a50;
         }
 
+
         .social-icons {
+
             display: flex;
+
             gap: 12px;
         }
 
+
         .social-icon {
+
             width: 42px;
             height: 42px;
+
             display: flex;
+
             align-items: center;
             justify-content: center;
+
             border-radius: 50%;
+
             background: #292929;
+
+            color: #ffffff;
+
             font-size: 18px;
         }
 
-        .copyright {
-            border-top: 1px solid #333;
-            margin-top: 35px;
-            padding-top: 20px;
-            text-align: center;
-            color: #aaa;
+
+        .social-icon:hover {
+
+            background: #f4511e;
+
+            color: #ffffff;
         }
 
 
-        /* =========================
+        .copyright {
+
+            border-top: 1px solid #333333;
+
+            margin-top: 35px;
+
+            padding-top: 20px;
+
+            text-align: center;
+
+            color: #aaaaaa;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
            MOBILE
-        ========================== */
+        ========================================= */
 
         @media (max-width: 768px) {
 
+
+            /* Header */
+
             .header-content {
+
                 min-height: 70px;
+
+                width: 92%;
             }
 
+
             .logo a {
+
                 font-size: 16px;
+
                 gap: 8px;
             }
 
+
             .logo img {
+
                 width: 46px;
                 height: 46px;
             }
 
+
+            /* Hamburger */
+
             .hamburger-menu-icon {
+
                 display: flex;
             }
 
 
-            /* Mobile Side Menu */
+            /* =====================================
+               MOBILE SIDE MENU
+            ===================================== */
 
             .sidenav {
-                position: fixed;
+
+                position: fixed !important;
+
                 top: 0;
-                right: -100%;
-                width: min(330px, 88vw);
+
+                right: -280px;
+
+                width: 280px !important;
+
+                max-width: 82vw;
+
                 height: 100vh;
-                background: white;
-                z-index: 10001;
+
+                background: #ffffff;
+
                 overflow-y: auto;
-                transition: right 0.3s ease;
-                box-shadow: -8px 0 30px rgba(0,0,0,0.20);
+
+                overflow-x: hidden;
+
+                transition:
+                    right 0.3s ease;
+
+                /*
+                   VERY IMPORTANT:
+                   Menu overlay से ऊपर
+                */
+
+                z-index: 10001 !important;
+
+                box-shadow:
+                    -8px 0 25px rgba(0,0,0,0.18);
             }
+
 
             .sidenav.active {
-                right: 0;
+
+                right: 0 !important;
             }
+
+
+            /* Menu List */
 
             .sidenav > ul {
-                display: block;
-                padding: 80px 18px 30px;
+
+                display: block !important;
+
+                padding:
+                    76px 16px 25px;
+
+                margin: 0;
+
+                list-style: none;
             }
+
 
             .sidenav > ul > li {
-                border-bottom: 1px solid #eeeeee;
+
+                width: 100%;
+
+                border-bottom:
+                    1px solid #eeeeee;
             }
+
 
             .sidenav > ul > li > a {
-                padding: 17px 12px;
+
+                display: block;
+
+                width: 100%;
+
+                padding:
+                    15px 10px;
+
+                color: #222222 !important;
+
                 font-size: 17px;
+
+                font-weight: 700;
+
+                cursor: pointer;
+
+                -webkit-tap-highlight-color:
+                    transparent;
             }
 
 
-            /* Close */
+            .sidenav > ul > li > a:active {
+
+                background: #fff1e9;
+
+                color: #f4511e !important;
+            }
+
+
+            /* =====================================
+               CLOSE BUTTON
+            ===================================== */
 
             .closebtn {
+
                 position: absolute !important;
+
                 top: 14px;
-                right: 18px;
-                width: 48px;
-                height: 48px;
+
+                right: 14px;
+
+                width: 42px;
+
+                height: 42px;
+
                 display: flex !important;
+
                 align-items: center;
+
                 justify-content: center;
-                background: #fff3ed;
-                color: #f4511e !important;
+
                 border-radius: 50%;
-                font-size: 35px !important;
+
+                background: #fff1e9;
+
+                color: #f4511e !important;
+
+                font-size: 30px !important;
+
+                font-weight: 500;
+
                 line-height: 1;
-                z-index: 10003;
+
+                z-index: 10004 !important;
+
+                cursor: pointer;
             }
 
 
-            /* Mobile dropdown */
+            /* =====================================
+               MOBILE STORY DROPDOWN
+            ===================================== */
 
             .dropdown-menu {
-                position: static;
-                min-width: auto;
+
+                position: static !important;
+
                 display: none;
-                box-shadow: none;
+
+                width: 100%;
+
                 background: #fff8f3;
-                padding: 5px 10px;
+
+                padding: 4px 8px;
+
+                margin: 0 0 8px;
+
+                box-shadow: none;
+
                 border-radius: 8px;
             }
 
-            .dropdown.open .dropdown-menu {
-                display: block;
+
+            .dropdown.open
+            .dropdown-menu {
+
+                display: block !important;
             }
+
 
             .dropdown-menu li {
-                border-bottom: 1px solid #f0e0d5;
+
+                width: 100%;
+
+                border-bottom:
+                    1px solid #f0dfd5;
             }
+
+
+            .dropdown-menu li:last-child {
+
+                border-bottom: none;
+            }
+
 
             .dropdown-menu li a {
-                padding: 13px 10px;
+
+                display: block;
+
+                width: 100%;
+
+                padding: 12px 10px;
+
+                color: #333333 !important;
+
+                font-size: 15px;
+
+                font-weight: 600;
+
+                cursor: pointer;
             }
 
+
+            .dropdown-menu li a:active {
+
+                background: #ffe7d8;
+
+                color: #f4511e !important;
+            }
+
+
+            /* =====================================
+               JOIN BUTTON
+            ===================================== */
 
             .cta-button {
-                margin-top: 10px;
+
+                display: block !important;
+
+                width: 100%;
+
                 text-align: center;
-                border-radius: 8px;
+
+                margin-top: 12px;
+
+                padding:
+                    13px 10px !important;
+
+                border-radius: 8px !important;
             }
+
+
+            /* =====================================
+               POSTER BUTTON
+            ===================================== */
 
             .poster-link-button {
+
                 display: block !important;
-                background: #222;
-                color: white !important;
-                padding: 13px !important;
+
+                width: 100%;
+
                 text-align: center;
+
+                background: #222222;
+
+                color: #ffffff !important;
+
+                padding:
+                    13px 10px !important;
+
+                margin-top: 10px;
+
                 border-radius: 8px;
-                margin-top: 8px;
             }
 
+
+            /* =====================================
+               HERO
+            ===================================== */
 
             .hero-section {
-                min-height: 490px;
+
+                min-height: 500px;
+
+                padding:
+                    50px 0;
             }
+
+
+            .hero-content {
+
+                width: 90%;
+            }
+
 
             .hero-content h1 {
-                font-size: 37px;
+
+                font-size: 36px;
+
+                line-height: 1.4;
             }
+
 
             .hero-content h2 {
-                font-size: 24px;
+
+                font-size: 23px;
             }
 
+
             .hero-content p {
+
                 font-size: 16px;
+
                 line-height: 1.8;
             }
 
+
             .main-cta-button {
+
                 font-size: 17px;
-                padding: 14px 24px;
+
+                padding:
+                    14px 24px;
             }
 
 
+            /* =====================================
+               ABOUT
+            ===================================== */
+
             .about-us-summary {
+
                 padding: 60px 0;
             }
 
+
+            .about-us-summary h2 {
+
+                font-size: 36px;
+            }
+
+
             .about-us-summary p {
+
                 font-size: 16px;
+
                 line-height: 1.9;
             }
 
 
-            .mission-grid {
-                grid-template-columns: 1fr;
+            /* =====================================
+               MISSION
+            ===================================== */
+
+            .mission-vision {
+
+                padding: 55px 0;
             }
 
+
+            .mission-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .mission-item {
+
+                padding: 32px 22px;
+            }
+
+
+            /* =====================================
+               FOOTER
+            ===================================== */
 
             .footer-grid {
+
                 grid-template-columns: 1fr;
+
+                gap: 30px;
             }
+
+
+            .copyright {
+
+                line-height: 1.7;
+            }
+
         }
 
 
-        /* =========================
-           OVERLAY
-        ========================== */
+        /* =========================================
+           MOBILE MENU OVERLAY
+           
+           IMPORTANT:
+           Overlay की z-index menu से कम है
+        ========================================= */
 
         .menu-overlay {
+
             display: none;
+
             position: fixed;
+
             inset: 0;
-            background: rgba(0,0,0,0.45);
-            z-index: 10000;
-        }
 
-        .menu-overlay.active {
-            display: block;
-        }
+            background:
+                rgba(0,0,0,0.45);
 
-    </style>
-</head>
+            /*
+               Menu = 10001
+               Overlay = 9998
 
-
-<body>
-
-<!-- =========================
-     HEADER
-========================== -->
-
-<header>
-
-    <div class="header-content container">
-
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/sangthan-logo.png"
-                     alt="भगवा रक्षक हिन्दू सेना लोगो">
-
-                <span>भगवा रक्षक हिन्दू सेना</span>
-            </a>
-        </div>
-
-
-        <!-- Mobile Button -->
-
-        <button
-            type="button"
-            class="hamburger-menu-icon"
-            id="menuToggle"
-            aria-label="मेनू खोलें"
-            aria-expanded="false">
-
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-
-        </button>
-
-
-        <!-- Navigation -->
-
-        <nav
-            id="mySidenav"
-            class="sidenav"
-            aria-label="मुख्य मेनू">
-
-            <a
-                href="#"
-                class="closebtn"
-                id="closeMenu"
-                aria-label="मेनू बंद करें">
-                &times;
-            </a>
-
-
-            <ul>
-
-                <li>
-                    <a href="index.html">
-                        होम
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="about.html">
-                        हमारे बारे में
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="team.html">
-                        टीम
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="gallery.html">
-                        गैलरी
-                    </a>
-                </li>
-
-
-                <!-- हमारी गाथा -->
-
-                <li class="dropdown" id="storyDropdown">
-
-                    <a
-                        href="#"
-                        id="storyButton">
-                        हमारी गाथा
-                        <i class="fas fa-caret-down"></i>
-                    </a>
-
-
-                    <ul class="dropdown-menu">
-
-                        <li>
-                            <a href="dharm-gatha.html">
-                                📖 धर्म गाथा
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="aarti.html">
-                                🪔 आरती
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="kathayein.html">
-                                📚 पौराणिक कथाएं
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-                <li>
-                    <a href="contact.html">
-                        संपर्क करें
-                    </a>
-                </li>
-
-
-                <li>
-                    <a
-                        href="join.html"
-                        class="cta-button">
-                        ज्वॉइन करें
-                    </a>
-                </li>
-
-
-                <li>
-                    <a
-                        href="poster_maker.html"
-                        class="poster-link-button">
-                        🎨 अपना पोस्टर बनाएँ
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- Overlay -->
-
-<div
-    class="menu-overlay"
-    id="menuOverlay">
-</div>
-
-
-<!-- =========================
-     MAIN
-========================== -->
-
-<main>
-
-
-    <!-- HERO -->
-
-    <section class="hero-section">
-
-        <div class="hero-content">
-
-            <h1>
-                🚩 भगवा रक्षक हिन्दू सेना 🚩
-            </h1>
-
-            <h2>
-                धर्मो रक्षति रक्षितः
-            </h2>
-
-            <p>
-                एकता, धर्म और संस्कृति की रक्षा के लिए हम समर्पित हैं।
-            </p>
-
-            <a
-                href="join.html"
-                class="main-cta-button">
-
-                हमारे साथ जुड़ें
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="about-us-summary">
-
-        <div class="container">
-
-            <h2>
-                हम कौन हैं?
-            </h2>
-
-            <p>
-                भगवा रक्षक हिन्दू सेना एक सामाजिक और धार्मिक संगठन है,
-                जो धर्म, संस्कृति, सेवा और सामाजिक जागरूकता के माध्यम से
-                समाज में सकारात्मक योगदान देने का प्रयास करता है।
-            </p>
-
-            <a
-                href="about.html"
-                class="read-more-button">
-
-                और पढ़ें
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- MISSION -->
-
-    <section class="mission-vision">
-
-        <div class="container">
-
-            <div class="mission-grid">
-
-
-                <div class="mission-item">
-
-                    <i class="fas fa-hand-holding-heart"></i>
-
-                    <h3>
-                        हमारा मिशन
-                    </h3>
-
-                    <p>
-                        सनातन धर्म के मूल्यों और सिद्धांतों को
-                        जन-जन तक पहुँचाना तथा सेवा और सामाजिक
-                        जागरूकता के कार्यों को बढ़ावा देना।
-                    </p>
-
-                </div>
-
-
-                <div class="mission-item">
-
-                    <i class="fas fa-bullseye"></i>
-
-                    <h3>
-                        हमारा लक्ष्य
-                    </h3>
-
-                    <p>
-                        समाज में एकता, सेवा, संस्कार और सकारात्मक
-                        सामाजिक सहभागिता को बढ़ावा देना।
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SLOGAN -->
-
-    <section class="slogan-banner">
-
-        <div class="container">
-
-            <h2>
-                जय श्री राम! 🚩
-            </h2>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-
-            <div>
-
-                <h3>
-                    महत्वपूर्ण लिंक
-                </h3>
-
-                <ul>
-
-                    <li>
-                        <a href="about.html">
-                            हमारे बारे में
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="team.html">
-                            टीम
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="gallery.html">
-                            गैलरी
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">
-                            संपर्क करें
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="join.html">
-                            ज्वॉइन करें
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    हमारा अनुसरण करें
-                </h3>
-
-                <div class="social-icons">
-
-                    <a
-                        href="https://www.instagram.com/bhagva_rakshak__hindu_sena?stkn=M3B2M3U5YWMyd2Iw"
-                        class="social-icon"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram">
-
-                        <i class="fab fa-instagram"></i>
-
-                    </a>
-
-
-                    <a
-                        href="mailto:bhagvarakshakhindusena@gmail.com"
-                        class="social-icon"
-                        aria-label="Email">
-
-                        <i class="fas fa-envelope"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <p class="copyright">
-
-            © 2026 भगवा रक्षक हिन्दू सेना।
-            सर्वाधिकार सुरक्षित।
-
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================== -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const sideNav =
-        document.getElementById("mySidenav");
-
-    const closeMenu =
-        document.getElementById("closeMenu");
-
-    const menuOverlay =
-        document.getElementById("menuOverlay");
-
-    const storyDropdown =
-        document.getElementById("storyDropdown");
-
-    const storyButton =
-        document.getElementById("storyButton");
-
-
-    /* Open Menu */
-
-    menuToggle.addEventListener("click", function () {
-
-        sideNav.classList.add("active");
-
-        menuOverlay.classList.add("active");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-    });
-
-
-    /* Close Menu */
-
-    function closeMobileMenu() {
-
-        sideNav.classList.remove("active");
-
-        menuOverlay.classList.remove("active");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    }
-
-
-    closeMenu.addEventListener(
-        "click",
-        function (e) {
-
-            e.preventDefault();
-
-            closeMobileMenu();
-
-        }
-    );
-
-
-    menuOverlay.addEventListener(
-        "click",
-        closeMobileMenu
-    );
-
-
-    /* Our Story Dropdown */
-
-    storyButton.addEventListener(
-        "click",
-        function (e) {
-
-            e.preventDefault();
-
-            storyDropdown.classList.toggle("open");
-
-        }
-    );
-
-
-    /* सभी Menu Links */
-
-    const menuLinks =
-        sideNav.querySelectorAll(
-            "a:not(#closeMenu):not(#storyButton)"
-        );
-
-
-    menuLinks.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                closeMobileMenu();
-
-            }
-        );
-
-    });
-
-
-    /* ESC से Menu बंद */
-
-    document.addEventListener(
-        "keydown",
-        function (e) {
-
-            if (e.key === "Escape") {
-
-                closeMobileMenu();
-
-            }
-
-        }
-    );
-
-
-    /* Desktop पर mobile classes हटाएँ */
-
-    window.addEventListener(
-        "resize",
-        function () {
-
-            if (window.innerWidth > 768) {
-
-                closeMobileMenu();
-
-                storyDropdown.classList.remove("open");
-
-            }
-
-        }
-    );
-
-});
-
-</script>
-
-
-</body>
-</html>
+               इसलिए menu clickabl
