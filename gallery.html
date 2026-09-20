@@ -1,234 +1,1299 @@
-<!-- bhagwa_rakshak_website/gallery.html -->
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>फोटो गैलरी - भगवा रक्षक हिन्दू सेना</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <meta name="description"
+        content="भगवा रक्षक हिन्दू सेना की फोटो गैलरी। संगठन के कार्यक्रमों, सेवा कार्यों और सामाजिक गतिविधियों की झलक।">
+
+  <meta name="keywords"
+        content="भगवा रक्षक हिन्दू सेना, फोटो गैलरी, कार्यक्रम, सेवा कार्य, धार्मिक आयोजन">
+
+  <meta name="author" content="भगवा रक्षक हिन्दू सेना">
+
+  <title>फोटो गैलरी | भगवा रक्षक हिन्दू सेना</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
     :root {
-      --primary-color: #FF6600; /* केसरिया */
-      --secondary-color: #4CAF50; /* हरा */
-      --text-color: #333;
-      --bg-color: #f0f2f5;
-      --card-bg-color: #ffffff;
-      --border-radius: 10px;
-      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --saffron: #f26b21;
+      --saffron-dark: #c94d0b;
+      --gold: #ffb300;
+      --dark: #171717;
+      --text: #333;
+      --muted: #666;
+      --white: #fff;
+      --light: #fff8f2;
+      --border: #eeeeee;
+
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+      --radius: 18px;
     }
-    
-    body {
-      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+
+    * {
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      box-sizing: border-box;
     }
-    
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        "Noto Sans Devanagari",
+        "Poppins",
+        sans-serif;
+
+      background: #f7f7f7;
+
+      color: var(--text);
+
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
     header {
       width: 100%;
-      background: var(--primary-color);
+
+      background:
+        linear-gradient(
+          135deg,
+          #e85b0b,
+          #ff7a18
+        );
+
       color: white;
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: var(--box-shadow);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.15);
     }
-    
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
+
+    .header-container {
+      width: min(1200px, 94%);
+
+      min-height: 78px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
     }
-    
+
+    .brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      color: white;
+
+      font-size: 1.1rem;
+
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 52px;
+
+      height: 52px;
+
+      object-fit: contain;
+
+      background: white;
+
+      border-radius: 50%;
+
+      padding: 4px;
+
+      box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
     nav {
-      margin-top: 10px;
+      display: flex;
+
+      align-items: center;
+
+      justify-content: flex-end;
+
+      flex-wrap: wrap;
+
+      gap: 4px;
     }
-    
+
     nav a {
       color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1rem;
-      font-weight: 400;
-      transition: color 0.3s ease;
+
+      padding: 8px 10px;
+
+      border-radius: 8px;
+
+      font-size: 0.88rem;
+
+      font-weight: 600;
+
+      transition: 0.25s ease;
     }
-    
-    nav a:hover {
-      color: #ffd700; /* गहरा सुनहरा */
+
+    nav a:hover,
+    nav a.active {
+      background:
+        rgba(255, 255, 255, 0.18);
+
+      color: #fff1b8;
     }
-    
-    main {
-      background: var(--card-bg-color);
-      padding: 40px;
-      margin: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      width: 90%;
-      max-width: 1200px;
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .page-hero {
+      background:
+        linear-gradient(
+          rgba(120, 42, 0, 0.78),
+          rgba(120, 42, 0, 0.78)
+        ),
+        linear-gradient(
+          135deg,
+          #ff7b00,
+          #ffb300
+        );
+
+      color: white;
+
       text-align: center;
+
+      padding: 70px 20px 65px;
     }
-    
-    h2 {
-      color: var(--primary-color);
-      font-weight: 700;
-      margin-top: 0;
+
+    .page-hero h1 {
+      font-size:
+        clamp(2rem, 5vw, 3.3rem);
+
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .page-hero p {
+      max-width: 750px;
+
+      margin: auto;
+
+      font-size: 1.05rem;
+
+      opacity: 0.95;
+    }
+
+    .hero-line {
+      width: 80px;
+
+      height: 4px;
+
+      background: var(--gold);
+
+      margin: 20px auto 0;
+
+      border-radius: 50px;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      width: min(1150px, 94%);
+
+      margin: 45px auto 70px;
+    }
+
+    .section-heading {
+      text-align: center;
+
       margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      color: var(--saffron-dark);
+
+      font-size:
+        clamp(1.7rem, 4vw, 2.3rem);
+
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+
+      max-width: 720px;
+
+      margin: auto;
+    }
+
+    /* =========================
+       GALLERY
+    ========================== */
+
+    .gallery-wrapper {
+      background: white;
+
+      padding: 30px;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      justify-content: center;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 22px;
     }
 
     .gallery-item {
-      overflow: hidden;
-      border-radius: var(--border-radius);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
       position: relative;
+
+      overflow: hidden;
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff0e3,
+          #ffe0c7
+        );
+
+      aspect-ratio: 4 / 3;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.08);
+
+      border: 1px solid #f2d7c0;
     }
 
     .gallery-item img {
       width: 100%;
-      height: 250px;
+
+      height: 100%;
+
       object-fit: cover;
+
       display: block;
-      transition: transform 0.3s ease-in-out;
+
+      transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.05);
+      transform: scale(1.06);
+
+      filter: brightness(0.72);
     }
-    
-    /* Overlay for Lightbox */
+
+    .gallery-overlay {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      padding: 18px;
+
+      background:
+        linear-gradient(
+          transparent,
+          rgba(0, 0, 0, 0.78)
+        );
+
+      color: white;
+
+      opacity: 0;
+
+      transform: translateY(10px);
+
+      transition: 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    .gallery-overlay h3 {
+      font-size: 1rem;
+
+      margin-bottom: 2px;
+    }
+
+    .gallery-overlay span {
+      font-size: 0.8rem;
+
+      opacity: 0.9;
+    }
+
+    /* =========================
+       IMAGE PLACEHOLDER
+    ========================== */
+
+    .placeholder {
+      width: 100%;
+
+      height: 100%;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      color: var(--saffron-dark);
+
+      padding: 20px;
+    }
+
+    .placeholder-icon {
+      font-size: 3rem;
+
+      margin-bottom: 8px;
+    }
+
+    .placeholder strong {
+      font-size: 1rem;
+    }
+
+    .placeholder small {
+      color: #8b6b55;
+
+      margin-top: 3px;
+    }
+
+    /* =========================
+       INFO BOX
+    ========================== */
+
+    .gallery-info {
+      margin-top: 25px;
+
+      padding: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff7ed,
+          #ffffff
+        );
+
+      border:
+
+        1px solid #ffe0c2;
+
+      border-radius: 15px;
+
+      text-align: center;
+    }
+
+    .gallery-info h3 {
+      color: var(--saffron-dark);
+
+      margin-bottom: 5px;
+    }
+
+    .gallery-info p {
+      color: var(--muted);
+
+      font-size: 0.92rem;
+    }
+
+    /* =========================
+       LIGHTBOX
+    ========================== */
+
     .lightbox-overlay {
       display: none;
+
       position: fixed;
-      top: 0;
-      left: 0;
+
+      inset: 0;
+
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
+
+      background:
+        rgba(0, 0, 0, 0.93);
+
+      z-index: 5000;
+
       align-items: center;
-      z-index: 1000;
+
+      justify-content: center;
+
+      padding: 30px;
+    }
+
+    .lightbox-overlay.show {
+      display: flex;
     }
 
     .lightbox-content {
-      max-width: 90%;
-      max-height: 90%;
+      position: relative;
+
+      max-width: 1100px;
+
+      width: 100%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
     }
 
     .lightbox-content img {
-      width: auto;
-      max-height: 80vh;
-      display: block;
-      border-radius: var(--border-radius);
+      max-width: 100%;
+
+      max-height: 82vh;
+
+      object-fit: contain;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 10px 50px rgba(0, 0, 0, 0.5);
     }
-    
+
     .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
+      position: fixed;
+
+      top: 18px;
+
+      right: 25px;
+
+      width: 48px;
+
+      height: 48px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.14);
+
       color: white;
-      font-size: 40px;
-      font-weight: bold;
+
+      font-size: 2rem;
+
       cursor: pointer;
+
+      transition: 0.25s ease;
     }
+
+    .lightbox-close:hover {
+      background: var(--saffron);
+
+      transform: rotate(90deg);
+    }
+
+    .lightbox-caption {
+      position: fixed;
+
+      left: 50%;
+
+      bottom: 22px;
+
+      transform: translateX(-50%);
+
+      color: white;
+
+      background:
+        rgba(0, 0, 0, 0.55);
+
+      padding: 7px 16px;
+
+      border-radius: 50px;
+
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .join-cta {
+      margin-top: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d9530b,
+          #f47a19
+        );
+
+      color: white;
+
+      padding: 38px 25px;
+
+      text-align: center;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+    }
+
+    .join-cta h2 {
+      font-size: 1.8rem;
+
+      margin-bottom: 8px;
+    }
+
+    .join-cta p {
+      max-width: 700px;
+
+      margin: 0 auto 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+
+      background: white;
+
+      color: var(--saffron-dark);
+
+      padding: 11px 25px;
+
+      border-radius: 50px;
+
+      font-weight: 800;
+
+      transition: 0.25s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      width: 100%;
-      background: #333;
-      color: white;
+      background: #171717;
+
+      color: #ddd;
+
       text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
+
+      padding: 30px 20px;
     }
+
+    .footer-brand {
+      color: white;
+
+      font-size: 1.2rem;
+
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #ccc;
+
+      margin: 0 7px;
+
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: #ff8a2a;
+    }
+
+    .copyright {
+      color: #999;
+
+      font-size: 0.84rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .header-container {
+        flex-direction: column;
+
+        padding: 12px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .gallery-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .brand {
+        font-size: 0.98rem;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      nav {
+        gap: 2px;
+      }
+
+      nav a {
+        font-size: 0.76rem;
+
+        padding: 6px 7px;
+      }
+
+      .page-hero {
+        padding: 50px 15px;
+      }
+
+      main {
+        width: 92%;
+
+        margin-top: 28px;
+      }
+
+      .gallery-wrapper {
+        padding: 15px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+      }
+
+      .gallery-item {
+        aspect-ratio: 16 / 11;
+      }
+
+      .gallery-overlay {
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+
+      .join-cta {
+        padding: 30px 18px;
+      }
+
+      .lightbox-overlay {
+        padding: 15px;
+      }
+
+    }
+
   </style>
 </head>
+
 <body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
-    <h1>भगवा रक्षक हिन्दू सेना</h1>
-    <nav>
-      <a href="index.html">होम</a>
-      <a href="about.html">हमारे बारे में</a>
-      <a href="team.html">टीम</a>
-      <a href="gallery.html">गैलरी</a>
-      <a href="contact.html">संपर्क करें</a>
-      <a href="join.html">ज्वॉइन करें</a>
-      <a href="card.html">सदस्य कार्ड</a>
-    </nav>
+
+    <div class="header-container">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="images/hindu sena logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+        >
+
+        <span>
+          भगवा रक्षक हिन्दू सेना
+        </span>
+
+      </a>
+
+      <nav aria-label="मुख्य मेनू">
+
+        <a href="index.html">
+          होम
+        </a>
+
+        <a href="about.html">
+          हमारे बारे में
+        </a>
+
+        <a href="team.html">
+          टीम
+        </a>
+
+        <a
+          href="gallery.html"
+          class="active"
+        >
+          गैलरी
+        </a>
+
+        <a href="dharm-gatha.html">
+          धर्म गाथा
+        </a>
+
+        <a href="aarti.html">
+          आरती
+        </a>
+
+        <a href="kathayein.html">
+          कथाएँ
+        </a>
+
+        <a href="contact.html">
+          संपर्क
+        </a>
+
+        <a href="join.html">
+          जुड़ें
+        </a>
+
+        <a href="card.html">
+          सदस्य कार्ड
+        </a>
+
+      </nav>
+
+    </div>
+
   </header>
 
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="page-hero">
+
+    <h1>
+      फोटो गैलरी
+    </h1>
+
+    <p>
+      संगठन के कार्यक्रमों, सेवा कार्यों और
+      विभिन्न गतिविधियों की तस्वीरें।
+    </p>
+
+    <div class="hero-line"></div>
+
+  </section>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
   <main>
-    <h2>हमारी झलकियाँ</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="images/photo1.jpg" alt="कार्यक्रम की तस्वीर 1" onclick="openLightbox('images/photo1.jpg')">
-      </div>
-      
-      <div class="gallery-item">
-        <img src="images/photo2.jpg" alt="रैली की तस्वीर 2" onclick="openLightbox('images/photo2.jpg')">
-      </div>
-      
-      <div class="gallery-item">
-        <img src="images/photo3.jpg" alt="सदस्यों की तस्वीर 3" onclick="openLightbox('images/photo3.jpg')">
-      </div>
-      
-      <div class="gallery-item">
-        <img src="images/photo4.jpg" alt="समर्पण समारोह 4" onclick="openLightbox('images/photo4.jpg')">
-      </div>
-      
-      <div class="gallery-item">
-        <img src="images/photo5.jpg" alt="धार्मिक आयोजन 5" onclick="openLightbox('images/photo5.jpg')">
-      </div>
-      
-      <div class="gallery-item">
-        <img src="images/photo6.jpg" alt="सेवा कार्य 6" onclick="openLightbox('images/photo6.jpg')">
-      </div>
+
+    <div class="section-heading">
+
+      <h2>
+        हमारी झलकियाँ
+      </h2>
+
+      <p>
+        यहां संगठन से जुड़े कार्यक्रमों और
+        सामाजिक गतिविधियों की यादें साझा की जा सकती हैं।
+      </p>
 
     </div>
+
+
+    <section class="gallery-wrapper">
+
+      <div class="gallery-grid">
+
+
+        <!-- PHOTO 1 -->
+
+        <div
+          class="gallery-item"
+          onclick="openLightbox(
+            'images/photo1.jpg',
+            'संगठन का कार्यक्रम'
+          )"
+        >
+
+          <div class="placeholder">
+
+            <div class="placeholder-icon">
+              📸
+            </div>
+
+            <strong>
+              कार्यक्रम की तस्वीर
+            </strong>
+
+            <small>
+              photo1.jpg
+            </small>
+
+          </div>
+
+          <div class="gallery-overlay">
+
+            <h3>
+              संगठन का कार्यक्रम
+            </h3>
+
+            <span>
+              फोटो देखने के लिए क्लिक करें
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div
+          class="gallery-item"
+          onclick="openLightbox(
+            'images/photo2.jpg',
+            'सामाजिक कार्यक्रम'
+          )"
+        >
+
+          <div class="placeholder">
+
+            <div class="placeholder-icon">
+              🧡
+            </div>
+
+            <strong>
+              सामाजिक कार्यक्रम
+            </strong>
+
+            <small>
+              photo2.jpg
+            </small>
+
+          </div>
+
+          <div class="gallery-overlay">
+
+            <h3>
+              सामाजिक कार्यक्रम
+            </h3>
+
+            <span>
+              फोटो देखने के लिए क्लिक करें
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div
+          class="gallery-item"
+          onclick="openLightbox(
+            'images/photo3.jpg',
+            'सदस्यों की तस्वीर'
+          )"
+        >
+
+          <div class="placeholder">
+
+            <div class="placeholder-icon">
+              👥
+            </div>
+
+            <strong>
+              सदस्यों की तस्वीर
+            </strong>
+
+            <small>
+              photo3.jpg
+            </small>
+
+          </div>
+
+          <div class="gallery-overlay">
+
+            <h3>
+              संगठन के सदस्य
+            </h3>
+
+            <span>
+              फोटो देखने के लिए क्लिक करें
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div
+          class="gallery-item"
+          onclick="openLightbox(
+            'images/photo4.jpg',
+            'धार्मिक आयोजन'
+          )"
+        >
+
+          <div class="placeholder">
+
+            <div class="placeholder-icon">
+              🙏
+            </div>
+
+            <strong>
+              धार्मिक आयोजन
+            </strong>
+
+            <small>
+              photo4.jpg
+            </small>
+
+          </div>
+
+          <div class="gallery-overlay">
+
+            <h3>
+              धार्मिक आयोजन
+            </h3>
+
+            <span>
+              फोटो देखने के लिए क्लिक करें
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 5 -->
+
+        <div
+          class="gallery-item"
+          onclick="openLightbox(
+            'images/photo5.jpg',
+            'सेवा कार्य'
+          )"
+        >
+
+          <div class="placeholder">
+
+            <div class="placeholder-icon">
+              🤝
+            </div>
+
+            <strong>
+              सेवा कार्य
+            </strong>
+
+            <small>
+              photo5.jpg
+            </small>
+
+          </div>
+
+          <div class="gallery-overlay">
+
+            <h3>
+              सेवा कार्य
+            </h3>
+
+            <span>
+              फोटो देखने के लिए क्लिक करें
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- PHOTO 6 -->
+
+        <div
+          class="gallery-item"
+          onclick="openLightbox(
+            'images/photo6.jpg',
+            'विशेष कार्यक्रम'
+          )"
+        >
+
+          <div class="placeholder">
+
+            <div class="placeholder-icon">
+              🕉️
+            </div>
+
+            <strong>
+              विशेष कार्यक्रम
+            </strong>
+
+            <small>
+              photo6.jpg
+            </small>
+
+          </div>
+
+          <div class="gallery-overlay">
+
+            <h3>
+              विशेष कार्यक्रम
+            </h3>
+
+            <span>
+              फोटो देखने के लिए क्लिक करें
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="gallery-info">
+
+        <h3>
+          📷 अपनी तस्वीरें बाद में आसानी से जोड़ें
+        </h3>
+
+        <p>
+          नई तस्वीरें <strong>images</strong> folder में डालकर
+          उनके नाम gallery के code में जोड़े जा सकते हैं।
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="join-cta">
+
+      <h2>
+        संगठन की गतिविधियों से जुड़ें
+      </h2>
+
+      <p>
+        सामाजिक और सेवा गतिविधियों में अपना योगदान
+        देने के लिए हमारे साथ जुड़ें।
+      </p>
+
+      <a
+        href="join.html"
+        class="cta-button"
+      >
+        संगठन से जुड़ें →
+      </a>
+
+    </section>
+
   </main>
-  
-  <div class="lightbox-overlay" id="lightbox">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+
+
+  <!-- =========================
+       LIGHTBOX
+  ========================== -->
+
+  <div
+    class="lightbox-overlay"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="फोटो देखने का विकल्प"
+  >
+
+    <button
+      class="lightbox-close"
+      onclick="closeLightbox()"
+      aria-label="फोटो बंद करें"
+      type="button"
+    >
+      ×
+    </button>
+
     <div class="lightbox-content">
-      <img src="" alt="बड़ी तस्वीर" id="lightbox-image">
+
+      <img
+        src=""
+        alt="बड़ी तस्वीर"
+        id="lightbox-image"
+      >
+
     </div>
+
+    <div
+      class="lightbox-caption"
+      id="lightbox-caption"
+    ></div>
+
   </div>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
-    <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
+
+    <div class="footer-brand">
+      भगवा रक्षक हिन्दू सेना
+    </div>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        होम
+      </a>
+
+      <a href="about.html">
+        हमारे बारे में
+      </a>
+
+      <a href="team.html">
+        टीम
+      </a>
+
+      <a href="gallery.html">
+        गैलरी
+      </a>
+
+      <a href="contact.html">
+        संपर्क
+      </a>
+
+      <a href="join.html">
+        जुड़ें
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 भगवा रक्षक हिन्दू सेना. सर्वाधिकार सुरक्षित।
+    </div>
+
   </footer>
-  
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
-    function openLightbox(imageSrc) {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImage = document.getElementById('lightbox-image');
-      lightboxImage.src = imageSrc;
-      lightbox.style.display = 'flex';
+
+    function openLightbox(imageSrc, caption) {
+
+      const lightbox =
+        document.getElementById("lightbox");
+
+      const image =
+        document.getElementById("lightbox-image");
+
+      const captionBox =
+        document.getElementById("lightbox-caption");
+
+      image.src = imageSrc;
+
+      image.onerror = function () {
+
+        image.style.display = "none";
+
+        captionBox.textContent =
+          "यह फोटो अभी images folder में उपलब्ध नहीं है।";
+
+      };
+
+      image.onload = function () {
+
+        image.style.display = "block";
+
+      };
+
+      captionBox.textContent = caption;
+
+      lightbox.classList.add("show");
+
+      document.body.style.overflow = "hidden";
     }
-    
-    function closeLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      lightbox.style.display = 'none';
-    }
-    
-    // क्लोज करने के लिए जब overlay पर क्लिक हो
-    document.getElementById('lightbox').addEventListener('click', (e) => {
-      if (e.target.id === 'lightbox') {
-        closeLightbox();
-      }
-    });
-  </script>
-</body>
-</html>
+
+
+    func
