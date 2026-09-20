@@ -3,174 +3,1111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ज्वॉइन करें - भगवा रक्षक हिन्दू सेना</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>ज्वॉइन करें | भगवा रक्षक हिन्दू सेना</title>
+  <meta name="description" content="भगवा रक्षक हिन्दू सेना से जुड़ने के लिए सदस्यता आवेदन करें।">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root {
-      --primary-color: #FF6600; /* केसरिया */
-      --secondary-color: #4CAF50; /* हरा */
-      --text-color: #333;
-      --bg-color: #f0f2f5;
-      --form-bg-color: #ffffff;
-      --border-radius: 10px;
-      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --saffron: #f4511e;
+      --saffron-dark: #d84315;
+      --orange: #ff9800;
+      --gold: #ffb300;
+      --cream: #fff8ef;
+      --white: #ffffff;
+      --dark: #24150d;
+      --text: #4b3427;
+      --muted: #76675e;
+      --border: #eadbd0;
+      --shadow: 0 12px 35px rgba(86, 42, 14, 0.10);
+      --radius: 18px;
     }
-    
-    body {
-      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
     }
-    
-    header {
-      width: 100%;
-      background: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: var(--box-shadow);
+
+    html {
+      scroll-behavior: smooth;
     }
-    
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
+
+    body {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255, 152, 0, 0.10), transparent 30%),
+        linear-gradient(180deg, #fffaf5 0%, #fff4e8 100%);
+      color: var(--text);
+      line-height: 1.7;
     }
-    
-    nav {
-      margin-top: 10px;
-    }
-    
-    nav a {
-      color: white;
+
+    a {
+      color: inherit;
       text-decoration: none;
-      margin: 0 15px;
-      font-size: 1rem;
-      font-weight: 400;
-      transition: color 0.3s ease;
     }
-    
-    nav a:hover {
-      color: #ffd700; /* गहरा सुनहरा */
+
+    img {
+      max-width: 100%;
+      display: block;
     }
-    
-    main {
-      background: var(--form-bg-color);
-      padding: 40px;
-      margin: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      width: 90%;
-      max-width: 500px;
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(244, 81, 30, 0.12);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff3e0;
+      border: 2px solid rgba(244, 81, 30, 0.18);
+      padding: 4px;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--saffron-dark);
+      line-height: 1.3;
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 8px 11px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #503a2d;
+      transition: 0.25s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #fff0e5;
+      color: var(--saffron-dark);
+    }
+
+    nav a.join-btn {
+      background: linear-gradient(135deg, var(--saffron), var(--orange));
+      color: white;
+      padding: 9px 15px;
+      box-shadow: 0 5px 14px rgba(244, 81, 30, 0.20);
+    }
+
+    nav a.join-btn:hover {
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0 55px;
+      background:
+        linear-gradient(135deg, rgba(255, 243, 224, 0.95), rgba(255, 248, 239, 0.95));
+      border-bottom: 1px solid rgba(244, 81, 30, 0.08);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 152, 0, 0.08);
+      right: -90px;
+      top: -100px;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      background: rgba(244, 81, 30, 0.07);
+      left: -70px;
+      bottom: -80px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
+      max-width: 850px;
+      margin: auto;
     }
-    
-    h2 {
-      color: var(--primary-color);
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff;
+      color: var(--saffron-dark);
+      border: 1px solid #f5d2bd;
+      border-radius: 999px;
+      padding: 7px 15px;
+      font-size: 13px;
       font-weight: 700;
-      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 50px);
+      line-height: 1.2;
+      color: #341b0f;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: var(--saffron);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      padding: 55px 0 70px;
+    }
+
+    .join-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .info-card,
+    .form-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .info-card {
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .info-card h2,
+    .form-card h2 {
+      color: var(--saffron-dark);
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .info-card > p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      display: grid;
+      gap: 13px;
       margin-bottom: 25px;
     }
-    
-    form {
-      text-align: left;
-    }
 
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: 600;
-      color: var(--text-color);
-    }
-    
-    form input[type="text"], 
-    form input[type="tel"] {
-      width: 100%;
+    .benefit-list li {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      background: #fff8f2;
+      border: 1px solid #f2dfd2;
       padding: 12px;
-      margin-top: 8px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-family: 'Noto Sans Devanagari', sans-serif;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      font-size: 14px;
     }
 
-    form input[type="text"]:focus, 
-    form input[type="tel"]:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
-      outline: none;
+    .benefit-icon {
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      background: #fff0e3;
+      color: var(--saffron);
+      border-radius: 50%;
+      font-size: 15px;
     }
-    
-    form input[type="submit"] {
+
+    .contact-box {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .contact-box h3 {
+      font-size: 17px;
+      color: #3c281d;
+      margin-bottom: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 9px 0;
+      color: var(--saffron-dark);
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .form-card {
+      padding: 32px;
+    }
+
+    .form-card-header {
+      margin-bottom: 25px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-card-header p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 17px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #463126;
+      margin-bottom: 7px;
+    }
+
+    label span {
+      color: var(--saffron);
+    }
+
+    input,
+    select,
+    textarea {
       width: 100%;
-      padding: 15px;
-      margin-top: 25px;
-      background-color: var(--primary-color);
-      color: white;
+      border: 1px solid #dccbc0;
+      background: #fffdfa;
+      color: #34251d;
+      border-radius: 11px;
+      padding: 12px 13px;
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #a49389;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 4px rgba(244, 81, 30, 0.10);
+      background: white;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .consent input {
+      width: 17px;
+      height: 17px;
+      margin-top: 3px;
+      flex: 0 0 17px;
+      accent-color: var(--saffron);
+    }
+
+    .submit-btn {
+      width: 100%;
       border: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      font-weight: 600;
+      border-radius: 12px;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, var(--saffron), var(--orange));
+      color: white;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 800;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 8px 20px rgba(244, 81, 30, 0.22);
+      transition: 0.25s ease;
     }
-    
-    form input[type="submit"]:hover {
-      background-color: #e65c00;
+
+    .submit-btn:hover {
       transform: translateY(-2px);
+      box-shadow: 0 11px 25px rgba(244, 81, 30, 0.28);
     }
+
+    .submit-note {
+      text-align: center;
+      color: #88776d;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .success-message {
+      display: none;
+      padding: 14px;
+      background: #edf9ef;
+      border: 1px solid #bde4c4;
+      border-radius: 11px;
+      color: #236b31;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    /* ================= QUOTE ================= */
+
+    .quote-box {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #fff2e4, #fffaf5);
+      border: 1px solid #f1d8c7;
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .quote-box strong {
+      display: block;
+      color: var(--saffron-dark);
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .quote-box span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ================= FOOTER ================= */
 
     footer {
-      width: 100%;
-      background: var(--text-color);
+      background: #28170e;
+      color: #f8e9dd;
+      padding: 42px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 35px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    footer h3 {
+      color: #ffb366;
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      font-size: 13px;
+      color: #dbc9bc;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
       color: white;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin: 5px 0;
+    }
+
+    .copyright {
       text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
+      padding-top: 18px;
+      font-size: 12px;
+      color: #bda99b;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 950px) {
+      .header-inner {
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      .join-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card {
+        position: static;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 22px, 1120px);
+      }
+
+      .header-inner {
+        align-items: center;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      .brand-title {
+        font-size: 16px;
+      }
+
+      nav ul {
+        gap: 2px;
+      }
+
+      nav a {
+        padding: 7px 8px;
+        font-size: 12px;
+      }
+
+      nav a.join-btn {
+        padding: 7px 10px;
+      }
+
+      .hero {
+        padding: 50px 0 42px;
+      }
+
+      main {
+        padding: 35px 0 50px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .info-card,
+      .form-card {
+        padding: 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- ================= HEADER ================= -->
+
   <header>
-    <h1>भगवा रक्षक हिन्दू सेना</h1>
-    <nav>
-      <a href="index.html">होम</a>
-      <a href="about.html">हमारे बारे में</a>
-      <a href="team.html">टीम</a>
-      <a href="gallery.html">गैलरी</a>
-      <a href="contact.html">संपर्क करें</a>
-      <a href="join.html">ज्वॉइन करें</a>
-      <a href="card.html">सदस्य कार्ड</a>
-    </nav>
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand">
+        <img
+          src="images/hindu sena logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+          class="brand-logo"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="brand-text">
+          <div class="brand-title">भगवा रक्षक हिन्दू सेना</div>
+          <div class="brand-subtitle">धर्म • सेवा • संस्कार</div>
+        </div>
+      </a>
+
+      <nav aria-label="मुख्य मेनू">
+        <ul>
+          <li><a href="index.html">होम</a></li>
+          <li><a href="about.html">हमारे बारे में</a></li>
+          <li><a href="team.html">टीम</a></li>
+          <li><a href="gallery.html">गैलरी</a></li>
+
+          <li>
+            <a href="dharm-gatha.html">धर्म गाथा</a>
+          </li>
+
+          <li>
+            <a href="aarti.html">आरती</a>
+          </li>
+
+          <li>
+            <a href="kathayein.html">कथाएँ</a>
+          </li>
+
+          <li><a href="contact.html">संपर्क</a></li>
+
+          <li>
+            <a href="join.html" class="join-btn active">ज्वॉइन करें</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
   </header>
 
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-badge">
+        🙏 संगठन से जुड़ें
+      </div>
+
+      <h1>
+        भगवा रक्षक हिन्दू सेना में
+        <span>ज्वॉइन करें</span>
+      </h1>
+
+      <p>
+        यदि आप संगठन की सामाजिक, धार्मिक और सेवा गतिविधियों से जुड़ना चाहते हैं,
+        तो नीचे दिया गया सदस्यता आवेदन भरें।
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ================= MAIN ================= -->
+
   <main>
-    <h2>सदस्यता लें</h2>
-    <form action="#" method="POST">
-      <label for="name">नाम:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="district">जिला:</label>
-      <input type="text" id="district" name="district" required>
-      
-      <label for="phone">मोबाइल नंबर:</label>
-      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
-      
-      <input type="submit" value="सबमिट करें">
-    </form>
+    <div class="container">
+
+      <div class="join-layout">
+
+        <!-- LEFT INFO -->
+
+        <aside class="info-card">
+
+          <h2>संगठन से जुड़ें</h2>
+
+          <p>
+            सदस्यता आवेदन में सही जानकारी भरें। आवेदन तैयार होने के बाद
+            इसे संगठन के आधिकारिक ईमेल पर भेजा जा सकता है।
+          </p>
+
+          <ul class="benefit-list">
+
+            <li>
+              <span class="benefit-icon">🤝</span>
+              <span>
+                सामाजिक एवं सेवा गतिविधियों में सहभागिता
+              </span>
+            </li>
+
+            <li>
+              <span class="benefit-icon">🙏</span>
+              <span>
+                धार्मिक एवं सांस्कृतिक कार्यक्रमों में सहयोग
+              </span>
+            </li>
+
+            <li>
+              <span class="benefit-icon">🇮🇳</span>
+              <span>
+                समाजहित से जुड़े सकारात्मक कार्यों में योगदान
+              </span>
+            </li>
+
+            <li>
+              <span class="benefit-icon">📢</span>
+              <span>
+                संगठन की गतिविधियों एवं कार्यक्रमों से जुड़ने का अवसर
+              </span>
+            </li>
+
+          </ul>
+
+
+          <div class="contact-box">
+
+            <h3>सीधा संपर्क</h3>
+
+            <a
+              class="contact-link"
+              href="mailto:bhagvarakshakhindusena@gmail.com"
+            >
+              📧 bhagvarakshakhindusena@gmail.com
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://www.instagram.com/bhagva_rakshak__hindu_sena?stkn=M3B2M3U5YWMyd2Iw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📷 Instagram — @bhagva_rakshak__hindu_sena
+            </a>
+
+          </div>
+
+        </aside>
+
+
+        <!-- RIGHT FORM -->
+
+        <section class="form-card">
+
+          <div class="form-card-header">
+            <h2>सदस्यता आवेदन</h2>
+            <p>
+              नीचे अपनी जानकारी भरें। <strong>*</strong> वाले फ़ील्ड आवश्यक हैं।
+            </p>
+          </div>
+
+          <div id="successMessage" class="success-message">
+            आपका आवेदन तैयार हो गया है। आपके ईमेल ऐप में आधिकारिक ईमेल पता
+            और आवेदन की जानकारी भरी हुई मिलेगी। वहाँ से आप इसे भेज सकते हैं।
+          </div>
+
+
+          <form id="joinForm">
+
+            <div class="form-row">
+
+              <div class="form-group">
+                <label for="name">
+                  पूरा नाम <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="अपना पूरा नाम लिखें"
+                  required
+                >
+              </div>
+
+
+              <div class="form-group">
+                <label for="phone">
+                  मोबाइल नंबर <span>*</span>
+                </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="10 अंकों का मोबाइल नंबर"
+                  inputmode="numeric"
+                  pattern="[0-9]{10}"
+                  maxlength="10"
+                  required
+                >
+              </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group">
+                <label for="email">
+                  ईमेल
+                </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="आपका ईमेल पता"
+                >
+              </div>
+
+
+              <div class="form-group">
+                <label for="district">
+                  जिला <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="district"
+                  name="district"
+                  placeholder="अपना जिला लिखें"
+                  required
+                >
+              </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group">
+                <label for="state">
+                  राज्य <span>*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="state"
+                  name="state"
+                  placeholder="अपना राज्य लिखें"
+                  required
+                >
+              </div>
+
+
+              <div class="form-group">
+                <label for="village">
+                  गाँव / शहर
+                </label>
+
+                <input
+                  type="text"
+                  id="village"
+                  name="village"
+                  placeholder="गाँव या शहर का नाम"
+                >
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="interest">
+                आप किस प्रकार जुड़ना चाहते हैं?
+              </label>
+
+              <select id="interest" name="interest">
+
+                <option value="">
+                  विकल्प चुनें
+                </option>
+
+                <option value="सामाजिक सेवा">
+                  सामाजिक सेवा
+                </option>
+
+                <option value="धार्मिक एवं सांस्कृतिक कार्यक्रम">
+                  धार्मिक एवं सांस्कृतिक कार्यक्रम
+                </option>
+
+                <option value="युवा गतिविधियाँ">
+                  युवा गतिविधियाँ
+                </option>
+
+                <option value="संगठन की सामान्य गतिविधियाँ">
+                  संगठन की सामान्य गतिविधियाँ
+                </option>
+
+                <option value="अन्य">
+                  अन्य
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="message">
+                संदेश / अतिरिक्त जानकारी
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="अपने बारे में या संगठन से जुड़ने की इच्छा के बारे में लिखें..."
+              ></textarea>
+
+            </div>
+
+
+            <label class="consent">
+
+              <input
+                type="checkbox"
+                id="consent"
+                required
+              >
+
+              <span>
+                मैं पुष्टि करता/करती हूँ कि मेरे द्वारा दी गई जानकारी
+                मेरी जानकारी के अनुसार सही है।
+              </span>
+
+            </label>
+
+
+            <button type="submit" class="submit-btn">
+              📩 सदस्यता आवेदन भेजें
+            </button>
+
+            <div class="submit-note">
+              बटन दबाने पर आपके डिवाइस का डिफ़ॉल्ट ईमेल ऐप खुलेगा।
+            </div>
+
+          </form>
+
+        </section>
+
+      </div>
+
+
+      <div class="quote-box">
+        <strong>“धर्म • सेवा • संस्कार”</strong>
+        <span>
+          सकारात्मक सामाजिक एवं सेवा कार्यों में सहभागिता के लिए आपका स्वागत है।
+        </span>
+      </div>
+
+    </div>
   </main>
 
+
+  <!-- ================= FOOTER ================= -->
+
   <footer>
-    <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>भगवा रक्षक हिन्दू सेना</h3>
+
+          <p>
+            धर्म • सेवा • संस्कार
+          </p>
+
+          <p style="margin-top:8px;">
+            संगठन की गतिविधियों, सेवा कार्यों एवं कार्यक्रमों से संबंधित
+            जानकारी के लिए आधिकारिक संपर्क माध्यमों का उपयोग करें।
+          </p>
+        </div>
+
+
+        <div>
+          <h3>महत्वपूर्ण लिंक</h3>
+
+          <ul>
+            <li><a href="index.html">होम</a></li>
+            <li><a href="about.html">हमारे बारे में</a></li>
+            <li><a href="team.html">टीम</a></li>
+            <li><a href="gallery.html">गैलरी</a></li>
+            <li><a href="contact.html">संपर्क करें</a></li>
+            <li><a href="join.html">ज्वॉइन करें</a></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h3>हमसे जुड़ें</h3>
+
+          <a
+            class="social-link"
+            href="mailto:bhagvarakshakhindusena@gmail.com"
+          >
+            📧 Email
+          </a>
+
+          <br>
+
+          <a
+            class="social-link"
+            href="https://www.instagram.com/bhagva_rakshak__hindu_sena?stkn=M3B2M3U5YWMyd2Iw"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            📷 Instagram
+          </a>
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 भगवा रक्षक हिन्दू सेना • सर्वाधिकार सुरक्षित
+      </div>
+
+    </div>
+
   </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+    const joinForm = document.getElementById("joinForm");
+    const successMessage = document.getElementById("successMessage");
+
+    const officialEmail = "bhagvarakshakhindusena@gmail.com";
+
+    joinForm.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      if (!joinForm.checkValidity()) {
+        joinForm.reportValidity();
+        return;
+      }
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const district = document.getElementById("district").value.trim();
+      const state = document.getElementById("state").value.trim();
+      const village = document.getElementById("village").value.trim();
+      const interest = document.getElementById("interest").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = "सदस्यता आवेदन - भगवा रक्षक हिन्दू सेना";
+
+      const body =
+        "नमस्कार भगवा रक्षक हिन्दू सेना,%0D%0A%0D%0A" +
+
+        "मैं संगठन से जुड़ने के लिए सदस्यता आवेदन करना चाहता/चाहती हूँ।%0D%0A%0D%0A" +
+
+        "नाम: " + encodeURIComponent(name) + "%0D%0A" +
+        "मोबाइल नंबर: " + encodeURIComponent(phone) + "%0D%0A" +
+        "ईमेल: " + encodeURIComponent(email || "उपलब्ध नहीं") + "%0D%0A" +
+        "जिला: " + encodeURIComponent(district) + "%0D%0A" +
+        "राज्य: " + encodeURIComponent(state) + "%0D%0A" +
+        "गाँव / शहर: " + encodeURIComponent(village || "उपलब्ध नहीं") + "%0D%0A" +
+        "रुचि: " + encodeURIComponent(interest || "सामान्य सदस्यता") + "%0D%0A" +
+        "अतिरिक्त संदेश: " + encodeURIComponent(message || "कोई अतिरिक्त संदेश नहीं") +
+
+        "%0D%0A%0D%0Aधन्यवाद।";
+
+      const mailtoUrl =
+        "mailto:" +
+        officialEmail +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        body;
+
+      successMessage.style.display = "block";
+
+      window.location.href = mailtoUrl;
+    });
+  </script>
+
 </body>
 </html>
