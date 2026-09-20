@@ -1,273 +1,2298 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>भगवा रक्षक हिन्दू सेना पोस्टर मेकर</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            line-height: 1.6;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .controls {
-            margin-bottom: 20px;
-            text-align: center;
-        }
+  <title>पोस्टर मेकर | भगवा रक्षक हिन्दू सेना</title>
 
-        #poster-canvas {
-            border: 1px solid #ccc;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            background-color: #fff;
-            cursor: grab;
-        }
-        
-        #poster-canvas:active {
-            cursor: grabbing;
-        }
+  <meta
+    name="description"
+    content="भगवा रक्षक हिन्दू सेना का डिजिटल पोस्टर बनाएँ, फोटो सेट करें और PNG में डाउनलोड या शेयर करें।"
+  >
 
-        #photo-upload {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            border: none;
-            margin: 5px;
-            color: white;
-            background-color: #ff8c00;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .action-buttons {
-            display: none;
-            margin-top: 10px;
-        }
-        
-        #download-button, #share-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            border: none;
-            margin: 5px;
-            color: white;
-            font-weight: bold;
-        }
-        
-        #download-button {
-            background-color: #a52a2a;
-        }
-        
-        #share-button {
-            background-color: #1DA1F2;
-        }
-    </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --saffron: #f4511e;
+      --saffron-dark: #d84315;
+      --orange: #ff9800;
+      --gold: #ffb300;
+      --cream: #fff8ef;
+      --white: #ffffff;
+      --dark: #28170e;
+      --text: #493328;
+      --muted: #76665c;
+      --border: #eadbd0;
+      --shadow: 0 12px 35px rgba(86, 42, 14, 0.11);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255, 152, 0, 0.10),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #fffaf5 0%,
+          #fff4e8 100%
+        );
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(244, 81, 30, 0.12);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #fff3e0;
+      border: 2px solid rgba(244, 81, 30, 0.18);
+      padding: 4px;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--saffron-dark);
+      line-height: 1.3;
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 8px 11px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #503a2d;
+      transition: 0.25s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #fff0e5;
+      color: var(--saffron-dark);
+    }
+
+    nav a.join-btn {
+      background: linear-gradient(
+        135deg,
+        var(--saffron),
+        var(--orange)
+      );
+      color: white;
+      padding: 9px 15px;
+      box-shadow: 0 5px 14px rgba(244, 81, 30, 0.20);
+    }
+
+    nav a.join-btn:hover {
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 58px 0 48px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 243, 224, 0.96),
+          rgba(255, 248, 239, 0.96)
+        );
+      border-bottom: 1px solid rgba(244, 81, 30, 0.08);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 280px;
+      height: 280px;
+      background: rgba(255, 152, 0, 0.08);
+      right: -90px;
+      top: -100px;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      background: rgba(244, 81, 30, 0.07);
+      left: -70px;
+      bottom: -80px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 820px;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: white;
+      color: var(--saffron-dark);
+      border: 1px solid #f5d2bd;
+      border-radius: 999px;
+      padding: 7px 15px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.2;
+      color: #341b0f;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span {
+      color: var(--saffron);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      padding: 48px 0 70px;
+    }
+
+    .maker-layout {
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .control-card,
+    .canvas-card {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* ================= CONTROLS ================= */
+
+    .control-card {
+      padding: 26px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .control-card h2,
+    .canvas-card h2 {
+      color: var(--saffron-dark);
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .control-intro {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .control-section {
+      padding-bottom: 19px;
+      margin-bottom: 19px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .control-section:last-of-type {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .control-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      color: #463126;
+      margin-bottom: 8px;
+    }
+
+    .file-input {
+      width: 100%;
+      border: 1px dashed #dfbda8;
+      background: #fff8f2;
+      padding: 12px;
+      border-radius: 11px;
+      font-size: 13px;
+    }
+
+    .control-help {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .range-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .range-row input {
+      flex: 1;
+      accent-color: var(--saffron);
+    }
+
+    .zoom-value {
+      min-width: 48px;
+      text-align: center;
+      background: #fff0e5;
+      color: var(--saffron-dark);
+      border-radius: 8px;
+      padding: 4px 7px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .button-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .action-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 11px;
+      padding: 12px 15px;
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .reset-btn {
+      background: #6d5b50;
+    }
+
+    .download-btn {
+      background: linear-gradient(
+        135deg,
+        var(--saffron),
+        var(--orange)
+      );
+      box-shadow: 0 7px 18px rgba(244, 81, 30, 0.20);
+    }
+
+    .share-btn {
+      background: #2374c6;
+    }
+
+    .action-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .tip-box {
+      margin-top: 18px;
+      padding: 12px;
+      background: #fff8f2;
+      border: 1px solid #f2dfd2;
+      border-radius: 11px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ================= CANVAS ================= */
+
+    .canvas-card {
+      padding: 26px;
+      min-width: 0;
+    }
+
+    .canvas-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .canvas-header p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .canvas-wrapper {
+      width: 100%;
+      max-width: 720px;
+      margin: auto;
+      padding: 16px;
+      background:
+        linear-gradient(
+          135deg,
+          #fff3e7,
+          #fffaf6
+        );
+      border: 1px solid #efddd0;
+      border-radius: 16px;
+    }
+
+    #poster-canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 680px;
+      margin: auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.16);
+      cursor: grab;
+      touch-action: none;
+    }
+
+    #poster-canvas:active {
+      cursor: grabbing;
+    }
+
+    .canvas-help {
+      text-align: center;
+      color: #8b786b;
+      font-size: 12px;
+      margin-top: 13px;
+    }
+
+    .status-message {
+      display: none;
+      margin-top: 15px;
+      padding: 11px;
+      text-align: center;
+      border-radius: 10px;
+      background: #edf8ef;
+      border: 1px solid #c5e4ca;
+      color: #286b34;
+      font-size: 12px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #28170e;
+      color: #f8e9dd;
+      padding: 42px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 35px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+
+    footer h3 {
+      color: #ffb366;
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      font-size: 13px;
+      color: #dbc9bc;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 18px;
+      font-size: 12px;
+      color: #bda99b;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 950px) {
+
+      .header-inner {
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      .maker-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .control-card {
+        position: static;
+      }
+
+      .canvas-card {
+        order: 2;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .container {
+        width: min(100% - 22px, 1160px);
+      }
+
+      .brand-title {
+        font-size: 16px;
+      }
+
+      nav ul {
+        gap: 2px;
+      }
+
+      nav a {
+        padding: 7px 8px;
+        font-size: 12px;
+      }
+
+      nav a.join-btn {
+        padding: 7px 10px;
+      }
+
+      .hero {
+        padding: 46px 0 38px;
+      }
+
+      main {
+        padding: 32px 0 50px;
+      }
+
+      .control-card,
+      .canvas-card {
+        padding: 20px;
+      }
+
+      .canvas-wrapper {
+        padding: 8px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="controls">
-    <h2>अपना पोस्टर बनाएँ</h2>
-    <input type="file" id="photo-upload" accept="image/*">
-    <div class="action-buttons">
-        <button id="download-button">पोस्टर डाउनलोड करें</button>
-        <button id="share-button">शेयर करें</button>
+  <!-- ================= HEADER ================= -->
+
+  <header>
+
+    <div class="container header-inner">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="images/hindu sena logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+          class="brand-logo"
+          onerror="this.style.display='none';"
+        >
+
+        <div>
+
+          <div class="brand-title">
+            भगवा रक्षक हिन्दू सेना
+          </div>
+
+          <div class="brand-subtitle">
+            धर्म • सेवा • संस्कार
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <nav aria-label="मुख्य मेनू">
+
+        <ul>
+
+          <li>
+            <a href="index.html">होम</a>
+          </li>
+
+          <li>
+            <a href="about.html">हमारे बारे में</a>
+          </li>
+
+          <li>
+            <a href="team.html">टीम</a>
+          </li>
+
+          <li>
+            <a href="gallery.html">गैलरी</a>
+          </li>
+
+          <li>
+            <a href="dharm-gatha.html">धर्म गाथा</a>
+          </li>
+
+          <li>
+            <a href="aarti.html">आरती</a>
+          </li>
+
+          <li>
+            <a href="kathayein.html">कथाएँ</a>
+          </li>
+
+          <li>
+            <a href="contact.html">संपर्क</a>
+          </li>
+
+          <li>
+            <a
+              href="join.html"
+              class="join-btn"
+            >
+              ज्वॉइन करें
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
     </div>
-</div>
 
-<canvas id="poster-canvas" width="600" height="600"></canvas>
+  </header>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.getElementById('poster-canvas');
-        const ctx = canvas.getContext('2d');
-        const uploadInput = document.getElementById('photo-upload');
-        const actionButtons = document.querySelector('.action-buttons');
-        const downloadButton = document.getElementById('download-button');
-        const shareButton = document.getElementById('share-button');
-        
-        const posterSize = 600;
-        const logoUrl = 'https://i.imgur.com/your-logo.png';
-        
-        let userImage = new Image();
-        userImage.crossOrigin = "Anonymous";
-        
-        const logoImage = new Image();
-        logoImage.crossOrigin = "Anonymous";
-        logoImage.src = logoUrl;
-        
-        let isImageLoaded = false;
-        let isLogoLoaded = false;
-        
-        let imageX = 0, imageY = 0;
-        let imageScale = 1;
-        let isDragging = false;
-        let startDragX = 0, startDragY = 0;
-        
-        const clipRadius = posterSize * 0.25;
-        const clipCenterX = posterSize / 2;
-        const clipCenterY = posterSize / 2;
 
-        userImage.onload = () => {
-            isImageLoaded = true;
-            const scaleX = (clipRadius * 2) / userImage.width;
-            const scaleY = (clipRadius * 2) / userImage.height;
-            imageScale = Math.max(scaleX, scaleY);
-            imageX = clipCenterX - (userImage.width * imageScale) / 2;
-            imageY = clipCenterY - (userImage.height * imageScale) / 2;
-            
-            drawPoster();
-            actionButtons.style.display = 'block';
-        };
-        
-        logoImage.onload = () => {
-            isLogoLoaded = true;
-            drawPoster();
-        };
+  <!-- ================= HERO ================= -->
 
-        userImage.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='; 
-        
-        function drawPoster() {
-            ctx.clearRect(0, 0, posterSize, posterSize);
+  <section class="hero">
 
-            const gradient = ctx.createLinearGradient(0, 0, posterSize, posterSize);
-            gradient.addColorStop(0, '#ff8c00');
-            gradient.addColorStop(1, '#ff4500');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, posterSize, posterSize);
+    <div class="container hero-content">
 
-            if (isImageLoaded) {
-                ctx.save();
-                ctx.beginPath();
-                ctx.arc(clipCenterX, clipCenterY, clipRadius, 0, Math.PI * 2, true);
-                ctx.closePath();
-                ctx.clip();
-                
-                ctx.drawImage(userImage, imageX, imageY, userImage.width * imageScale, userImage.height * imageScale);
-                
-                ctx.restore();
-            }
-            
-            ctx.fillStyle = 'white';
-            ctx.textAlign = 'center';
+      <div class="hero-badge">
+        🎨 डिजिटल पोस्टर मेकर
+      </div>
 
-            ctx.font = 'bold 36px Arial';
-            ctx.fillText('भगवा रक्षक हिन्दू सेना', posterSize / 2, 80);
+      <h1>
+        अपना <span>पोस्टर</span> बनाएँ
+      </h1>
 
-            ctx.font = '24px Arial';
-            ctx.fillText('धर्मो रक्षति रक्षितः', posterSize / 2, 120);
+      <p>
+        अपनी फोटो जोड़ें, फोटो को सही position पर सेट करें और
+        भगवा रक्षक हिन्दू सेना का पोस्टर PNG में डाउनलोड या शेयर करें।
+      </p>
 
-            ctx.textAlign = 'left';
-            ctx.font = '18px Arial';
-            ctx.fillText('हम हैं सनातन संस्कृत के सच्चे रक्षक', 20, posterSize - 120);
-            ctx.fillText('जो धर्म के लिए जिएंगे और धर्म के लिए ही', 20, posterSize - 90);
-            ctx.fillText('खड़े रहेंगे।', 20, posterSize - 60);
+    </div>
 
-            ctx.textAlign = 'right';
-            ctx.font = 'bold 20px Arial';
-            ctx.fillText('@bhagva_rakshak__hindu_sena', posterSize - 20, posterSize - 20);
+  </section>
 
-            if(isLogoLoaded) {
-                const logoSize = 80;
-                ctx.drawImage(logoImage, 20, 20, logoSize, logoSize);
-            }
+
+  <!-- ================= MAIN ================= -->
+
+  <main>
+
+    <div class="container">
+
+      <div class="maker-layout">
+
+
+        <!-- ================= CONTROLS ================= -->
+
+        <section class="control-card">
+
+          <h2>
+            पोस्टर सेटिंग्स
+          </h2>
+
+          <p class="control-intro">
+            पहले अपनी फोटो चुनें। फिर फोटो को canvas पर drag करके
+            position बदलें और zoom slider से आकार सेट करें।
+          </p>
+
+
+          <div class="control-section">
+
+            <label
+              class="control-label"
+              for="photo-upload"
+            >
+              📷 अपनी फोटो चुनें
+            </label>
+
+            <input
+              type="file"
+              id="photo-upload"
+              class="file-input"
+              accept="image/jpeg,image/png,image/webp"
+            >
+
+            <div class="control-help">
+              JPG, PNG या WEBP फोटो का उपयोग करें।
+            </div>
+
+          </div>
+
+
+          <div class="control-section">
+
+            <label
+              class="control-label"
+              for="zoom-control"
+            >
+              🔍 फोटो Zoom
+            </label>
+
+            <div class="range-row">
+
+              <input
+                type="range"
+                id="zoom-control"
+                min="0.5"
+                max="3"
+                step="0.01"
+                value="1"
+                disabled
+              >
+
+              <span
+                class="zoom-value"
+                id="zoom-value"
+              >
+                100%
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="button-grid">
+
+            <button
+              type="button"
+              class="action-btn reset-btn"
+              id="reset-button"
+              disabled
+            >
+              ↺ फोटो Reset करें
+            </button>
+
+            <button
+              type="button"
+              class="action-btn download-btn"
+              id="download-button"
+              disabled
+            >
+              ⬇️ पोस्टर डाउनलोड करें
+            </button>
+
+            <button
+              type="button"
+              class="action-btn share-btn"
+              id="share-button"
+              disabled
+            >
+              📤 पोस्टर शेयर करें
+            </button>
+
+          </div>
+
+
+          <div class="tip-box">
+            💡 <strong>Tip:</strong>
+            मोबाइल पर फोटो को उंगली से drag करें।
+            Zoom slider से फोटो का आकार बदलें।
+          </div>
+
+        </section>
+
+
+        <!-- ================= CANVAS ================= -->
+
+        <section class="canvas-card">
+
+          <div class="canvas-header">
+
+            <h2>
+              पोस्टर Preview
+            </h2>
+
+            <p>
+              आपकी फोटो यहाँ दिखाई देगी।
+            </p>
+
+          </div>
+
+
+          <div class="canvas-wrapper">
+
+            <canvas
+              id="poster-canvas"
+              width="1200"
+              height="1200"
+              aria-label="पोस्टर preview"
+            ></canvas>
+
+          </div>
+
+
+          <div class="canvas-help">
+            🖱️ Desktop: फोटो को mouse से drag करें।
+            &nbsp;|&nbsp;
+            📱 Mobile: फोटो को touch करके drag करें।
+          </div>
+
+
+          <div
+            class="status-message"
+            id="status-message"
+          ></div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <h3>
+            भगवा रक्षक हिन्दू सेना
+          </h3>
+
+          <p>
+            धर्म • सेवा • संस्कार
+          </p>
+
+          <p style="margin-top:8px;">
+            संगठन की गतिविधियों एवं सेवा कार्यों से संबंधित
+            जानकारी के लिए आधिकारिक माध्यमों का उपयोग करें।
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            महत्वपूर्ण लिंक
+          </h3>
+
+          <ul>
+
+            <li>
+              <a href="index.html">
+                होम
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html">
+                हमारे बारे में
+              </a>
+            </li>
+
+            <li>
+              <a href="gallery.html">
+                गैलरी
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html">
+                संपर्क करें
+              </a>
+            </li>
+
+            <li>
+              <a href="join.html">
+                ज्वॉइन करें
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            हमसे जुड़ें
+          </h3>
+
+          <p>
+            📧
+            <a href="mailto:bhagvarakshakhindusena@gmail.com">
+              bhagvarakshakhindusena@gmail.com
+            </a>
+          </p>
+
+          <p style="margin-top:8px;">
+
+            📷
+            <a
+              href="https://www.instagram.com/bhagva_rakshak__hindu_sena?stkn=M3B2M3U5YWMyd2Iw"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 भगवा रक्षक हिन्दू सेना • सर्वाधिकार सुरक्षित
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const canvas =
+        document.getElementById("poster-canvas");
+
+      const ctx =
+        canvas.getContext("2d");
+
+      const uploadInput =
+        document.getElementById("photo-upload");
+
+      const zoomControl =
+        document.getElementById("zoom-control");
+
+      const zoomValue =
+        document.getElementById("zoom-value");
+
+      const resetButton =
+        document.getElementById("reset-button");
+
+      const downloadButton =
+        document.getElementById("download-button");
+
+      const shareButton =
+        document.getElementById("share-button");
+
+      const statusMessage =
+        document.getElementById("status-message");
+
+
+      const posterSize = 1200;
+
+
+      let userImage = new Image();
+
+      let logoImage = new Image();
+
+      let imageLoaded = false;
+
+      let logoLoaded = false;
+
+
+      let imageX = posterSize / 2;
+
+      let imageY = posterSize / 2;
+
+      let imageScale = 1;
+
+      let baseScale = 1;
+
+
+      let dragging = false;
+
+      let pointerStartX = 0;
+
+      let pointerStartY = 0;
+
+      let imageStartX = 0;
+
+      let imageStartY = 0;
+
+
+      /*
+        Poster image area
+      */
+
+      const photoCenterX =
+        posterSize / 2;
+
+      const photoCenterY =
+        455;
+
+      const photoRadius =
+        245;
+
+
+      /*
+        Existing local logo
+      */
+
+      logoImage.onload = () => {
+
+        logoLoaded = true;
+
+        drawPoster();
+
+      };
+
+      logoImage.onerror = () => {
+
+        logoLoaded = false;
+
+        drawPoster();
+
+      };
+
+      logoImage.src =
+        "images/hindu sena logo.png";
+
+
+      /* =====================================================
+         STATUS
+      ===================================================== */
+
+      function showStatus(message) {
+
+        statusMessage.textContent =
+          message;
+
+        statusMessage.style.display =
+          "block";
+
+      }
+
+
+      function hideStatus() {
+
+        statusMessage.style.display =
+          "none";
+
+      }
+
+
+      /* =====================================================
+         DRAW POSTER
+      ===================================================== */
+
+      function drawPoster() {
+
+        ctx.clearRect(
+          0,
+          0,
+          posterSize,
+          posterSize
+        );
+
+
+        /*
+          Background
+        */
+
+        const gradient =
+          ctx.createLinearGradient(
+            0,
+            0,
+            posterSize,
+            posterSize
+          );
+
+        gradient.addColorStop(
+          0,
+          "#8f250c"
+        );
+
+        gradient.addColorStop(
+          0.42,
+          "#d84315"
+        );
+
+        gradient.addColorStop(
+          0.72,
+          "#f4511e"
+        );
+
+        gradient.addColorStop(
+          1,
+          "#ff9800"
+        );
+
+        ctx.fillStyle =
+          gradient;
+
+        ctx.fillRect(
+          0,
+          0,
+          posterSize,
+          posterSize
+        );
+
+
+        /*
+          Decorative circles
+        */
+
+        ctx.save();
+
+        ctx.globalAlpha = 0.12;
+
+        ctx.fillStyle = "#ffffff";
+
+        ctx.beginPath();
+
+        ctx.arc(
+          1100,
+          120,
+          190,
+          0,
+          Math.PI * 2
+        );
+
+        ctx.fill();
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+          100,
+          1110,
+          230,
+          0,
+          Math.PI * 2
+        );
+
+        ctx.fill();
+
+        ctx.restore();
+
+
+        /*
+          Top logo
+        */
+
+        if (logoLoaded) {
+
+          const logoSize = 125;
+
+          ctx.drawImage(
+            logoImage,
+            45,
+            45,
+            logoSize,
+            logoSize
+          );
+
         }
 
-        uploadInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    userImage.src = event.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        
-        canvas.addEventListener('mousedown', (e) => {
-            if (isImageLoaded) {
-                const rect = canvas.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
-                
-                const distance = Math.sqrt(Math.pow(mouseX - clipCenterX, 2) + Math.pow(mouseY - clipCenterY, 2));
-                if (distance <= clipRadius) {
-                    isDragging = true;
-                    startDragX = e.clientX - imageX;
-                    startDragY = e.clientY - imageY;
+
+        /*
+          Organization title
+        */
+
+        ctx.textAlign =
+          "center";
+
+        ctx.fillStyle =
+          "#ffffff";
+
+        ctx.font =
+          "800 68px 'Noto Sans Devanagari', Arial";
+
+        ctx.fillText(
+          "भगवा रक्षक हिन्दू सेना",
+          posterSize / 2,
+          105
+        );
+
+
+        ctx.font =
+          "600 38px 'Noto Sans Devanagari', Arial";
+
+        ctx.fillStyle =
+          "#ffe0b2";
+
+        ctx.fillText(
+          "धर्म • सेवा • संस्कार",
+          posterSize / 2,
+          160
+        );
+
+
+        /*
+          Photo circle shadow
+        */
+
+        ctx.save();
+
+        ctx.beginPath();
+
+        ctx.arc(
+          photoCenterX,
+          photoCenterY,
+          photoRadius + 13,
+          0,
+          Math.PI * 2
+        );
+
+        ctx.fillStyle =
+          "rgba(255,255,255,0.30)";
+
+        ctx.shadowColor =
+          "rgba(0,0,0,0.30)";
+
+        ctx.shadowBlur = 25;
+
+        ctx.fill();
+
+        ctx.restore();
+
+
+        /*
+          User photo
+        */
+
+        if (imageLoaded) {
+
+          ctx.save();
+
+          ctx.beginPath();
+
+          ctx.arc(
+            photoCenterX,
+            photoCenterY,
+            photoRadius,
+            0,
+            Math.PI * 2
+          );
+
+          ctx.closePath();
+
+          ctx.clip();
+
+
+          const drawWidth =
+            userImage.width * imageScale;
+
+          const drawHeight =
+            userImage.height * imageScale;
+
+
+          ctx.drawImage(
+            userImage,
+            imageX - drawWidth / 2,
+            imageY - drawHeight / 2,
+            drawWidth,
+            drawHeight
+          );
+
+
+          ctx.restore();
+
+
+          /*
+            Photo border
+          */
+
+          ctx.beginPath();
+
+          ctx.arc(
+            photoCenterX,
+            photoCenterY,
+            photoRadius,
+            0,
+            Math.PI * 2
+          );
+
+          ctx.lineWidth = 12;
+
+          ctx.strokeStyle =
+            "#ffffff";
+
+          ctx.stroke();
+
+        } else {
+
+          /*
+            Empty photo placeholder
+          */
+
+          ctx.beginPath();
+
+          ctx.arc(
+            photoCenterX,
+            photoCenterY,
+            photoRadius,
+            0,
+            Math.PI * 2
+          );
+
+          ctx.fillStyle =
+            "rgba(255,255,255,0.13)";
+
+          ctx.fill();
+
+          ctx.lineWidth = 8;
+
+          ctx.strokeStyle =
+            "rgba(255,255,255,0.45)";
+
+          ctx.stroke();
+
+
+          ctx.fillStyle =
+            "#ffffff";
+
+          ctx.font =
+            "700 34px 'Noto Sans Devanagari', Arial";
+
+          ctx.textAlign =
+            "center";
+
+          ctx.fillText(
+            "अपनी फोटो चुनें",
+            photoCenterX,
+            photoCenterY
+          );
+
+        }
+
+
+        /*
+          Lower message panel
+        */
+
+        const panelX = 75;
+
+        const panelY = 760;
+
+        const panelWidth =
+          posterSize - 150;
+
+        const panelHeight =
+          300;
+
+
+        ctx.fillStyle =
+          "rgba(84, 24, 7, 0.42)";
+
+        roundRect(
+          ctx,
+          panelX,
+          panelY,
+          panelWidth,
+          panelHeight,
+          28
+        );
+
+        ctx.fill();
+
+
+        /*
+          Main slogan
+        */
+
+        ctx.textAlign =
+          "center";
+
+        ctx.fillStyle =
+          "#ffffff";
+
+        ctx.font =
+          "800 46px 'Noto Sans Devanagari', Arial";
+
+        ctx.fillText(
+          "धर्मो रक्षति रक्षितः",
+          posterSize / 2,
+          825
+        );
+
+
+        ctx.font =
+          "600 30px 'Noto Sans Devanagari', Arial";
+
+        ctx.fillStyle =
+          "#ffe0b2";
+
+        ctx.fillText(
+          "सनातन संस्कृति • सेवा • संस्कार",
+          posterSize / 2,
+          875
+        );
+
+
+        ctx.font =
+          "500 26px 'Noto Sans Devanagari', Arial";
+
+        ctx.fillStyle =
+          "#ffffff";
+
+        ctx.fillText(
+          "समाजहित एवं सेवा कार्यों में सहभागिता",
+          posterSize / 2,
+          925
+        );
+
+
+        /*
+          Bottom branding
+        */
+
+        ctx.font =
+          "800 29px Arial";
+
+        ctx.fillStyle =
+          "#ffffff";
+
+        ctx.fillText(
+          "@bhagva_rakshak__hindu_sena",
+          posterSize / 2,
+          1010
+        );
+
+
+        ctx.font =
+          "600 27px 'Noto Sans Devanagari', Arial";
+
+        ctx.fillStyle =
+          "#ffe0b2";
+
+        ctx.fillText(
+          "भगवा रक्षक हिन्दू सेना",
+          posterSize / 2,
+          1065
+        );
+
+
+        /*
+          Decorative bottom line
+        */
+
+        ctx.fillStyle =
+          "#ffcc80";
+
+        roundRect(
+          ctx,
+          360,
+          1095,
+          480,
+          8,
+          4
+        );
+
+        ctx.fill();
+
+      }
+
+
+      /* =====================================================
+         ROUND RECT
+      ===================================================== */
+
+      function roundRect(
+        context,
+        x,
+        y,
+        width,
+        height,
+        radius
+      ) {
+
+        context.beginPath();
+
+        context.moveTo(
+          x + radius,
+          y
+        );
+
+        context.lineTo(
+          x + width - radius,
+          y
+        );
+
+        context.quadraticCurveTo(
+          x + width,
+          y,
+          x + width,
+          y + radius
+        );
+
+        context.lineTo(
+          x + width,
+          y + height - radius
+        );
+
+        context.quadraticCurveTo(
+          x + width,
+          y + height,
+          x + width - radius,
+          y + height
+        );
+
+        context.lineTo(
+          x + radius,
+          y + height
+        );
+
+        context.quadraticCurveTo(
+          x,
+          y + height,
+          x,
+          y + height - radius
+        );
+
+        context.lineTo(
+          x,
+          y + radius
+        );
+
+        context.quadraticCurveTo(
+          x,
+          y,
+          x + radius,
+          y
+        );
+
+        context.closePath();
+
+      }
+
+
+      /* =====================================================
+         LOAD USER PHOTO
+      ===================================================== */
+
+      uploadInput.addEventListener(
+        "change",
+        (event) => {
+
+          const file =
+            event.target.files[0];
+
+          if (!file) {
+            return;
+          }
+
+
+          const allowedTypes = [
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+          ];
+
+
+          if (!allowedTypes.includes(file.type)) {
+
+            alert(
+              "कृपया JPG, PNG या WEBP फोटो चुनें।"
+            );
+
+            uploadInput.value = "";
+
+            return;
+          }
+
+
+          if (file.size > 8 * 1024 * 1024) {
+
+            alert(
+              "फोटो का आकार 8 MB से कम होना चाहिए।"
+            );
+
+            uploadInput.value = "";
+
+            return;
+          }
+
+
+          const reader =
+            new FileReader();
+
+
+          reader.onload = (e) => {
+
+            const newImage =
+              new Image();
+
+
+            newImage.onload = () => {
+
+              userImage =
+                newImage;
+
+              imageLoaded =
+                true;
+
+
+              /*
+                Fit image inside circle
+              */
+
+              const scaleX =
+                (photoRadius * 2) /
+                userImage.width;
+
+              const scaleY =
+                (photoRadius * 2) /
+                userImage.height;
+
+
+              baseScale =
+                Math.max(
+                  scaleX,
+                  scaleY
+                );
+
+
+              imageScale =
+                baseScale;
+
+
+              imageX =
+                photoCenterX;
+
+              imageY =
+                photoCenterY;
+
+
+              /*
+                Slider starts at 100%
+              */
+
+              zoomControl.value =
+                "1";
+
+              zoomValue.textContent =
+                "100%";
+
+
+              zoomControl.disabled =
+                false;
+
+              resetButton.disabled =
+                false;
+
+              downloadButton.disabled =
+                false;
+
+              shareButton.disabled =
+                false;
+
+
+              hideStatus();
+
+              drawPoster();
+
+            };
+
+
+            newImage.onerror = () => {
+
+              alert(
+                "फोटो लोड नहीं हो सकी। कृपया दूसरी फोटो चुनें।"
+              );
+
+            };
+
+
+            newImage.src =
+              e.target.result;
+
+          };
+
+
+          reader.readAsDataURL(file);
+
+        }
+      );
+
+
+      /* =====================================================
+         ZOOM
+      ===================================================== */
+
+      zoomControl.addEventListener(
+        "input",
+        () => {
+
+          if (!imageLoaded) {
+            return;
+          }
+
+
+          const newMultiplier =
+            parseFloat(
+              zoomControl.value
+            );
+
+
+          imageScale =
+            baseScale *
+            newMultiplier;
+
+
+          zoomValue.textContent =
+            Math.round(
+              newMultiplier * 100
+            ) + "%";
+
+
+          drawPoster();
+
+        }
+      );
+
+
+      /* =====================================================
+         RESET
+      ===================================================== */
+
+      resetButton.addEventListener(
+        "click",
+        () => {
+
+          if (!imageLoaded) {
+            return;
+          }
+
+
+          imageScale =
+            baseScale;
+
+          imageX =
+            photoCenterX;
+
+          imageY =
+            photoCenterY;
+
+
+          zoomControl.value =
+            "1";
+
+          zoomValue.textContent =
+            "100%";
+
+
+          drawPoster();
+
+          showStatus(
+            "✅ फोटो की position और zoom reset कर दिया गया।"
+          );
+
+        }
+      );
+
+
+      /* =====================================================
+         POINTER HELPERS
+      ===================================================== */
+
+      function getCanvasPoint(event) {
+
+        const rect =
+          canvas.getBoundingClientRect();
+
+
+        const scaleX =
+          posterSize /
+          rect.width;
+
+
+        const scaleY =
+          posterSize /
+          rect.height;
+
+
+        return {
+
+          x:
+            (event.clientX - rect.left) *
+            scaleX,
+
+          y:
+            (event.clientY - rect.top) *
+            scaleY
+
+        };
+
+      }
+
+
+      /* =====================================================
+         DRAG PHOTO
+      ===================================================== */
+
+      canvas.addEventListener(
+        "pointerdown",
+        (event) => {
+
+          if (!imageLoaded) {
+            return;
+          }
+
+
+          const point =
+            getCanvasPoint(event);
+
+
+          const distance =
+            Math.sqrt(
+              Math.pow(
+                point.x - photoCenterX,
+                2
+              ) +
+              Math.pow(
+                point.y - photoCenterY,
+                2
+              )
+            );
+
+
+          if (
+            distance <=
+            photoRadius + 30
+          ) {
+
+            dragging =
+              true;
+
+
+            pointerStartX =
+              point.x;
+
+            pointerStartY =
+              point.y;
+
+
+            imageStartX =
+              imageX;
+
+            imageStartY =
+              imageY;
+
+
+            canvas.setPointerCapture(
+              event.pointerId
+            );
+
+          }
+
+        }
+      );
+
+
+      canvas.addEventListener(
+        "pointermove",
+        (event) => {
+
+          if (!dragging) {
+            return;
+          }
+
+
+          const point =
+            getCanvasPoint(event);
+
+
+          const dx =
+            point.x -
+            pointerStartX;
+
+
+          const dy =
+            point.y -
+            pointerStartY;
+
+
+          imageX =
+            imageStartX + dx;
+
+          imageY =
+            imageStartY + dy;
+
+
+          drawPoster();
+
+        }
+      );
+
+
+      function stopDragging(event) {
+
+        if (!dragging) {
+          return;
+        }
+
+
+        dragging =
+          false;
+
+
+        try {
+
+          canvas.releasePointerCapture(
+            event.pointerId
+          );
+
+        } catch (error) {
+
+          /* Pointer capture may already be released. */
+
+        }
+
+      }
+
+
+      canvas.addEventListener(
+        "pointerup",
+        stopDragging
+      );
+
+      canvas.addEventListener(
+        "pointercancel",
+        stopDragging
+      );
+
+      canvas.addEventListener(
+        "pointerleave",
+        (event) => {
+
+          /*
+            Don't stop dragging on mobile
+            simply because the finger moves
+            slightly outside the canvas.
+          */
+
+          if (
+            event.pointerType === "mouse"
+          ) {
+
+            dragging =
+              false;
+
+          }
+
+        }
+      );
+
+
+      /* =====================================================
+         MOUSE WHEEL ZOOM
+      ===================================================== */
+
+      canvas.addEventListener(
+        "wheel",
+        (event) => {
+
+          if (!imageLoaded) {
+            return;
+          }
+
+
+          event.preventDefault();
+
+
+          let current =
+            parseFloat(
+              zoomControl.value
+            );
+
+
+          if (event.deltaY < 0) {
+
+            current += 0.05;
+
+          } else {
+
+            current -= 0.05;
+
+          }
+
+
+          current =
+            Math.max(
+              0.5,
+              Math.min(
+                3,
+                current
+              )
+            );
+
+
+          zoomControl.value =
+            current.toFixed(2);
+
+
+          imageScale =
+            baseScale *
+            current;
+
+
+          zoomValue.textContent =
+            Math.round(
+              current * 100
+            ) + "%";
+
+
+          drawPoster();
+
+        },
+        {
+          passive: false
+        }
+      );
+
+
+      /* =====================================================
+         DOWNLOAD
+      ===================================================== */
+
+      downloadButton.addEventListener(
+        "click",
+        () => {
+
+          if (!imageLoaded) {
+
+            alert(
+              "पहले अपनी फोटो चुनें।"
+            );
+
+            return;
+          }
+
+
+          canvas.toBlob(
+            (blob) => {
+
+              if (!blob) {
+
+                alert(
+                  "पोस्टर तैयार नहीं हो सका।"
+                );
+
+                return;
+              }
+
+
+              const link =
+                document.createElement("a");
+
+
+              const date =
+                new Date();
+
+
+              const dateString =
+                date
+                  .toISOString()
+                  .slice(0, 10);
+
+
+              link.download =
+                `Bhagwa-Rakshak-Hindu-Sena-Poster-${dateString}.png`;
+
+
+              link.href =
+                URL.createObjectURL(blob);
+
+
+              document.body.appendChild(
+                link
+              );
+
+
+              link.click();
+
+
+              document.body.removeChild(
+                link
+              );
+
+
+              setTimeout(() => {
+
+                URL.revokeObjectURL(
+                  link.href
+                );
+
+              }, 1000);
+
+
+              showStatus(
+                "✅ पोस्टर PNG में डाउनलोड हो गया।"
+              );
+
+            },
+            "image/png"
+          );
+
+        }
+      );
+
+
+      /* =====================================================
+         SHARE
+      ===================================================== */
+
+      shareButton.addEventListener(
+        "click",
+        async () => {
+
+          if (!imageLoaded) {
+
+            alert(
+              "पहले अपनी फोटो चुनें।"
+            );
+
+            return;
+          }
+
+
+          if (!navigator.share) {
+
+            alert(
+              "आपका browser direct sharing को support नहीं करता। पहले पोस्टर डाउनलोड करके WhatsApp या Instagram पर शेयर करें।"
+            );
+
+            return;
+          }
+
+
+          canvas.toBlob(
+            async (blob) => {
+
+              if (!blob) {
+                return;
+              }
+
+
+              const file =
+                new File(
+                  [
+                    blob
+                  ],
+                  "Bhagwa-Rakshak-Hindu-Sena-Poster.png",
+                  {
+                    type:
+                      "image/png"
+                  }
+                );
+
+
+              const shareData = {
+
+                files: [
+                  file
+                ],
+
+                title:
+                  "भगवा रक्षक हिन्दू सेना",
+
+                text:
+                  "भगवा रक्षक हिन्दू सेना का पोस्टर"
+
+              };
+
+
+              try {
+
+                if (
+                  navigator.canShare &&
+                  !navigator.canShare({
+                    files: [file]
+                  })
+                ) {
+
+                  throw new Error(
+                    "File sharing not supported"
+                  );
+
                 }
-            }
-        });
 
-        canvas.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                imageX = e.clientX - startDragX;
-                imageY = e.clientY - startDragY;
-                drawPoster();
-            }
-        });
 
-        canvas.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
+                await navigator.share(
+                  shareData
+                );
 
-        canvas.addEventListener('mouseleave', () => {
-            isDragging = false;
-        });
-        
-        canvas.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            if (isImageLoaded) {
-                const scaleAmount = 1.05;
-                const prevScale = imageScale;
 
-                if (e.deltaY < 0) {
-                    imageScale *= scaleAmount;
-                } else {
-                    imageScale /= scaleAmount;
+                showStatus(
+                  "✅ पोस्टर शेयर करने के लिए तैयार है।"
+                );
+
+              } catch (error) {
+
+                /*
+                  User cancel करने पर error message
+                  दिखाने की जरूरत नहीं।
+                */
+
+                if (
+                  error.name !==
+                  "AbortError"
+                ) {
+
+                  alert(
+                    "शेयर करने में समस्या हुई। पोस्टर डाउनलोड करके manually शेयर करें।"
+                  );
+
                 }
 
-                const zoomFactor = imageScale / prevScale;
-                imageX = clipCenterX - (clipCenterX - imageX) * zoomFactor;
-                imageY = clipCenterY - (clipCenterY - imageY) * zoomFactor;
+              }
 
-                drawPoster();
-            }
-        });
+            },
+            "image/png"
+          );
 
-        downloadButton.addEventListener('click', () => {
-            const link = document.createElement('a');
-            link.download = 'Bhagva_Rakshak_Poster.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-        });
-        
-        shareButton.addEventListener('click', () => {
-            if (navigator.share) {
-                canvas.toBlob(blob => {
-                    const file = new File([blob], 'Bhagva_Rakshak_Poster.png', { type: 'image/png' });
-                    const shareData = {
-                        files: [file],
-                        title: 'भगवा रक्षक हिन्दू सेना पोस्टर',
-                        text: 'मैंने भगवा रक्षक हिन्दू सेना का यह पोस्टर बनाया है! आप भी बनाएँ!',
-                    };
-                    navigator.share(shareData).catch(error => {
-                        console.error('Error sharing:', error);
-                        alert('शेयर करने में कोई समस्या हुई। कृपया इमेज को डाउनलोड करके मैन्युअल रूप से शेयर करें।');
-                    });
-                }, 'image/png');
-            } else {
-                alert('आपका ब्राउज़र सीधे शेयर करने को सपोर्ट नहीं करता। कृपया डाउनलोड बटन का उपयोग करें और इमेज को मैन्युअल रूप से शेयर करें।');
-            }
-        });
+        }
+      );
+
+
+      /* =====================================================
+         INITIAL DRAW
+      ===================================================== */
+
+      drawPoster();
+
     });
-</script>
+  </script>
 
 </body>
 </html>
