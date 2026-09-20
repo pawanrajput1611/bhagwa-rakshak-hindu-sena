@@ -1,363 +1,2394 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>पौराणिक कथाएं - भगवा रक्षक हिन्दू सेना</title>
-  
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>पौराणिक कथाएँ | भगवा रक्षक हिन्दू सेना</title>
+
+  <meta
+    name="description"
+    content="भगवा रक्षक हिन्दू सेना के पौराणिक कथा संग्रह में श्री राम, श्री कृष्ण, हनुमान, गणेश, भगवान शिव, प्रह्लाद, गंगा अवतरण, कर्ण और महाभारत की कथाएँ पढ़ें।"
+  >
+
+  <meta
+    name="keywords"
+    content="पौराणिक कथाएँ, हिन्दू कथाएँ, श्री राम कथा, कृष्ण कथा, हनुमान कथा, गणेश कथा, शिव कथा, महाभारत, भगवा रक्षक हिन्दू सेना"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+
   <style>
-    /* Custom CSS for Kathayein Page */
-    .kathayein-main {
-      padding: 4rem 0;
+    :root {
+      --saffron: #f4511e;
+      --saffron-dark: #c62828;
+      --orange: #ff9800;
+      --gold: #ffc107;
+      --cream: #fff8e8;
+      --white: #ffffff;
+      --text: #3e2723;
+      --muted: #6d4c41;
+      --border: #f1d2a4;
+      --shadow: 0 10px 30px rgba(100, 50, 10, 0.12);
     }
-    
-    .kathayein-main h2 {
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        "Noto Sans Devanagari",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255, 152, 0, 0.12),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #fffaf1 0%,
+          #fff2dc 100%
+        );
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e65100,
+          #f4511e
+        );
+
+      box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+
+      padding: 10px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      color: white;
+      text-decoration: none;
+
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+
+      object-fit: contain;
+
+      background: white;
+      border-radius: 50%;
+
+      padding: 3px;
+
+      box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand-text {
+      line-height: 1.2;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      flex-wrap: wrap;
+
+      gap: 5px;
+    }
+
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+
+      padding: 8px 10px;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+
+      transition: 0.25s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff3cd;
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(183, 28, 28, 0.97),
+          rgba(239, 108, 0, 0.95)
+        );
+
+      color: white;
+
+      padding: 70px 20px 65px;
+
       text-align: center;
-      color: var(--primary-color);
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
     }
-    
-    .katha-card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+
+    .hero::before,
+    .hero::after {
+      content: "ॐ";
+
+      position: absolute;
+
+      font-size: 150px;
+
+      opacity: 0.07;
+
+      font-weight: 700;
     }
-    
-    .katha-card {
-      background-color: var(--card-bg-color);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
+
+    .hero::before {
+      left: 5%;
+      top: 0;
+    }
+
+    .hero::after {
+      right: 5%;
+      bottom: -30px;
+    }
+
+    .hero-content {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 850px;
+
+      margin: auto;
+    }
+
+    .hero-icon {
+      font-size: 50px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+
+      font-size:
+        clamp(30px, 5vw, 52px);
+
+      font-weight: 900;
+    }
+
+    .hero p {
+      margin: auto;
+
+      max-width: 700px;
+
+      font-size: 17px;
+
+      opacity: 0.95;
+    }
+
+
+    /* =========================================
+       MAIN
+    ========================================= */
+
+    .page-container {
+      width: min(1100px, 92%);
+
+      margin: 45px auto;
+    }
+
+    .intro-card {
+      background: white;
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      box-shadow: var(--shadow);
+
+      border:
+        1px solid rgba(244, 81, 30, 0.12);
+
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer; /* To indicate clickable card */
+
+      margin-bottom: 35px;
     }
-    
-    .katha-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    .om-symbol {
+      font-size: 42px;
+
+      color: var(--saffron);
+
+      font-weight: 900;
     }
-    
-    .katha-card-image {
+
+    .intro-card h2 {
+      margin: 5px 0 10px;
+
+      color: var(--saffron-dark);
+
+      font-size: 28px;
+    }
+
+    .intro-card p {
+      max-width: 800px;
+
+      margin: auto;
+
+      color: var(--muted);
+    }
+
+
+    /* =========================================
+       SEARCH
+    ========================================= */
+
+    .search-box {
+      position: sticky;
+
+      top: 82px;
+
+      z-index: 50;
+
+      margin-bottom: 25px;
+    }
+
+    .search-wrapper {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 12px;
+
+      background:
+        rgba(255, 255, 255, 0.96);
+
+      backdrop-filter: blur(10px);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 14px;
+
+      box-shadow:
+        0 6px 20px rgba(80, 40, 10, 0.08);
+    }
+
+    .search-icon {
+      font-size: 21px;
+
+      color: var(--saffron);
+    }
+
+    #kathaSearch {
       width: 100%;
-      height: 200px;
+
+      border: none;
+
+      outline: none;
+
+      background: transparent;
+
+      font-family: inherit;
+
+      font-size: 16px;
+
+      color: var(--text);
+    }
+
+    #kathaSearch::placeholder {
+      color: #9a8073;
+    }
+
+
+    /* =========================================
+       KATHA GRID
+    ========================================= */
+
+    .section-heading {
+      text-align: center;
+
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+
+      color: var(--saffron-dark);
+
+      font-size: 30px;
+    }
+
+    .section-heading p {
+      margin: 5px 0 0;
+
+      color: var(--muted);
+    }
+
+    .katha-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        );
+
+      gap: 20px;
+    }
+
+
+    /* =========================================
+       KATHA CARD
+    ========================================= */
+
+    .katha-card {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 220px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        linear-gradient(
+          135deg,
+          #fffaf2,
+          #ffffff
+        );
+
+      box-shadow:
+        0 8px 25px
+        rgba(100, 50, 10, 0.09);
+
+      cursor: pointer;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .katha-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 15px 32px
+        rgba(100, 50, 10, 0.16);
+    }
+
+    .katha-image {
+      width: 100%;
+
+      height: 145px;
+
       object-fit: cover;
-      border-radius: var(--border-radius);
-      margin-bottom: 1.5rem;
+
+      display: block;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ffcc80,
+          #ffe0b2
+        );
     }
-    
-    .katha-card h3 {
-      font-size: 1.8rem;
-      color: var(--text-color-dark);
-      margin-bottom: 1rem;
+
+    .image-fallback {
+      width: 100%;
+
+      height: 145px;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      flex-direction: column;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff0d2,
+          #ffd180
+        );
+
+      color: var(--saffron-dark);
+
+      font-size: 36px;
     }
-    
-    /* Full Katha Section */
+
+    .image-fallback span {
+      font-size: 12px;
+
+      margin-top: 4px;
+
+      font-weight: 700;
+    }
+
+    .katha-info {
+      padding: 17px 16px;
+    }
+
+    .katha-number {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 28px;
+      height: 28px;
+
+      margin-right: 7px;
+
+      border-radius: 50%;
+
+      background: #fff0dc;
+
+      color: var(--saffron-dark);
+
+      font-size: 12px;
+
+      font-weight: 900;
+    }
+
+    .katha-info h3 {
+      display: inline;
+
+      margin: 0;
+
+      color: var(--text);
+
+      font-size: 18px;
+    }
+
+    .read-more {
+      display: block;
+
+      margin-top: 8px;
+
+      color: var(--saffron);
+
+      font-size: 13px;
+
+      font-weight: 800;
+    }
+
+
+    /* =========================================
+       FULL KATHA
+    ========================================= */
+
+    #kathaContent {
+      margin-top: 35px;
+    }
+
     .full-katha {
-      display: none; /* Initially hidden */
-      margin-top: 4rem;
-      background-color: var(--card-bg-color);
-      padding: 3rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      text-align: left;
+      display: none;
+
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      box-shadow: var(--shadow);
+
+      animation:
+        fadeIn 0.35s ease;
     }
 
     .full-katha.active {
-      display: block; /* Show when active */
+      display: block;
     }
-    
-    .full-katha h3 {
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .katha-header {
       text-align: center;
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 2rem;
+
+      margin-bottom: 25px;
     }
-    
-    .full-katha img {
+
+    .katha-header .symbol {
+      font-size: 38px;
+
+      color: var(--saffron);
+    }
+
+    .katha-header h2 {
+      margin: 3px 0;
+
+      color: var(--saffron-dark);
+
+      font-size:
+        clamp(25px, 4vw, 36px);
+    }
+
+    .katha-header p {
+      margin: 0;
+
+      color: var(--muted);
+    }
+
+    .full-katha-image {
       width: 100%;
-      max-height: 500px;
+
+      max-height: 450px;
+
       object-fit: cover;
-      border-radius: var(--border-radius);
-      margin-bottom: 2rem;
-    }
-    
-    .full-katha p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
+
+      border-radius: 15px;
+
+      margin-bottom: 25px;
+
+      background: #ffe0b2;
     }
 
-    .close-katha-btn {
-        display: block;
-        width: 150px;
-        margin: 2rem auto 0;
-        background-color: var(--primary-color);
-        color: var(--text-color-light);
-        text-align: center;
-        padding: 0.8rem;
-        border-radius: var(--border-radius);
-        cursor: pointer;
+    .full-katha-image.fallback {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      height: 250px;
+
+      color: var(--saffron-dark);
+
+      font-size: 50px;
     }
 
+    .story-text {
+      max-width: 850px;
+
+      margin: auto;
+    }
+
+    .story-text p {
+      margin: 0 0 18px;
+
+      font-size: 17px;
+
+      line-height: 2;
+
+      color: #4e342e;
+    }
+
+    .message-box {
+      margin-top: 25px;
+
+      padding: 18px 20px;
+
+      border-left:
+        5px solid var(--orange);
+
+      border-radius: 10px;
+
+      background: #fff8e8;
+
+      color: var(--saffron-dark);
+
+      font-weight: 700;
+    }
+
+    .close-btn {
+      display: block;
+
+      width: fit-content;
+
+      margin: 30px auto 0;
+
+      border: none;
+
+      cursor: pointer;
+
+      padding: 11px 25px;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--saffron-dark),
+          var(--saffron)
+        );
+
+      color: white;
+
+      font-family: inherit;
+
+      font-size: 15px;
+
+      font-weight: 800;
+    }
+
+    .close-btn:hover {
+      opacity: 0.9;
+    }
+
+
+    /* =========================================
+       NO RESULT
+    ========================================= */
+
+    #noResult {
+      display: none;
+
+      text-align: center;
+
+      background: white;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 15px;
+
+      padding: 35px 20px;
+
+      color: var(--muted);
+    }
+
+    #noResult .icon {
+      display: block;
+
+      font-size: 42px;
+
+      margin-bottom: 8px;
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      margin-top: 60px;
+
+      background: #2b1712;
+
+      color: #fbe9dc;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+
+      margin: auto;
+
+      padding: 35px 20px 20px;
+
+      text-align: center;
+    }
+
+    .footer-title {
+      color: #ffb74d;
+
+      font-size: 20px;
+
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .footer-inner p {
+      margin: 5px 0;
+
+      color: #ead9d0;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+
+      padding-top: 15px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+
+      color: #c9b5ac;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 900px) {
+
+      .header-inner {
+        flex-direction: column;
+
+        padding: 12px 15px;
+      }
+
+      .main-nav {
+        justify-content: center;
+      }
+
+      .search-box {
+        top: 125px;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      .brand-title {
+        font-size: 17px;
+      }
+
+      .brand-subtitle {
+        font-size: 11px;
+      }
+
+      .brand-logo {
+        width: 45px;
+        height: 45px;
+      }
+
+      .main-nav {
+        gap: 2px;
+      }
+
+      .main-nav a {
+        padding: 6px 7px;
+
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 50px 16px;
+      }
+
+      .hero-icon {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .page-container {
+        width: 94%;
+
+        margin: 28px auto;
+      }
+
+      .intro-card {
+        padding: 22px 17px;
+      }
+
+      .intro-card h2 {
+        font-size: 23px;
+      }
+
+      .search-box {
+        top: 120px;
+      }
+
+      .katha-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 12px;
+      }
+
+      .katha-card {
+        min-height: 190px;
+      }
+
+      .katha-image,
+      .image-fallback {
+        height: 105px;
+      }
+
+      .katha-info {
+        padding: 12px;
+      }
+
+      .katha-info h3 {
+        font-size: 14px;
+      }
+
+      .katha-number {
+        width: 24px;
+        height: 24px;
+
+        font-size: 10px;
+
+        margin-right: 4px;
+      }
+
+      .read-more {
+        font-size: 11px;
+      }
+
+      .full-katha {
+        padding: 20px 15px;
+      }
+
+      .story-text p {
+        font-size: 15px;
+
+        line-height: 1.9;
+      }
+    }
   </style>
 </head>
+
+
 <body>
-  
-  <header>
-    <div class="header-content container">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/sangthan-logo.png" alt="संगठन का लोगो" class="sangthan-logo">
-                भगवा रक्षक हिन्दू सेना
-                <img src="images/bhagwa-dhwaj.png" alt="भगवा ध्वज" class="bhagwa-dhwaj">
-            </a>
+
+
+  <!-- =========================================
+       HEADER
+  ========================================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="images/sangthan-logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+          class="brand-logo"
+        >
+
+        <div class="brand-text">
+
+          <div class="brand-title">
+            भगवा रक्षक हिन्दू सेना
+          </div>
+
+          <div class="brand-subtitle">
+            धर्म • सेवा • संस्कार
+          </div>
+
         </div>
-        
-        <div class="hamburger-menu-icon" onclick="toggleNav()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        
-        <nav id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-            <ul>
-                <li><a href="index.html">होम</a></li>
-                <li><a href="about.html">हमारे बारे में</a></li>
-                <li><a href="team.html">टीम</a></li>
-                <li><a href="gallery.html">गैलरी</a></li>
-                <li class="dropdown">
-                    <a href="#" class="active">हमारी गाथा <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="dharm-gatha.html">धर्म गाथा</a></li>
-                        <li><a href="aarti.html">आरती</a></li>
-                        <li><a href="kathayein.html" class="active">पौराणिक कथाएं</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">संपर्क करें</a></li>
-                <li><a href="join.html" class="cta-button">ज्वॉइन करें</a></li>
-            </ul>
-        </nav>
+
+      </a>
+
+
+      <nav class="main-nav">
+
+        <a href="index.html">
+          होम
+        </a>
+
+        <a href="about.html">
+          हमारे बारे में
+        </a>
+
+        <a href="team.html">
+          टीम
+        </a>
+
+        <a href="gallery.html">
+          गैलरी
+        </a>
+
+        <a href="dharm-gatha.html">
+          धर्म गाथा
+        </a>
+
+        <a href="aarti.html">
+          आरती
+        </a>
+
+        <a
+          href="kathayein.html"
+          class="active"
+        >
+          कथाएँ
+        </a>
+
+        <a href="contact.html">
+          संपर्क
+        </a>
+
+        <a href="join.html">
+          ज्वॉइन करें
+        </a>
+
+      </nav>
+
     </div>
+
   </header>
 
-  <main class="kathayein-main">
-    <div class="container">
-      <h2>पौराणिक कथाएं</h2>
-      
-      <div class="katha-card-container">
-        
-        <div class="katha-card" data-katha-id="katha-1">
-          <img src="images/shri-ram.jpg" alt="श्री राम का जन्म" class="katha-card-image">
-          <h3>श्री राम का जन्म</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-2">
-          <img src="images/govardhan-parvat.jpg" alt="भगवान कृष्ण और गोवर्धन पर्वत" class="katha-card-image">
-          <h3>भगवान कृष्ण और गोवर्धन पर्वत</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-3">
-          <img src="images/hanuman-sanjeevani.jpg" alt="हनुमान और संजीवनी" class="katha-card-image">
-          <h3>हनुमान और संजीवनी</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-4">
-          <img src="images/mahabali-hanuman.jpg" alt="महाबली हनुमान" class="katha-card-image">
-          <h3>महाबली हनुमान</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-5">
-          <img src="images/ganesh-moon.jpg" alt="गणेश और चन्द्रमा" class="katha-card-image">
-          <h3>गणेश और चन्द्रमा</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-6">
-          <img src="images/shiva-sati.jpg" alt="शिव और सती" class="katha-card-image">
-          <h3>शिव और सती</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-7">
-          <img src="images/prahlad-holika.jpg" alt="प्रह्लाद और होलिका" class="katha-card-image">
-          <h3>प्रह्लाद और होलिका</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-8">
-          <img src="images/ganga-avataran.jpg" alt="गंगा अवतरण" class="katha-card-image">
-          <h3>गंगा अवतरण</h3>
-        </div>
-        
-        <div class="katha-card" data-katha-id="katha-9">
-          <img src="images/karna.jpg" alt="कर्ण का कवच कुंडल" class="katha-card-image">
-          <h3>कर्ण का कवच कुंडल</h3>
-        </div>
 
-        <div class="katha-card" data-katha-id="katha-10">
-          <img src="images/mahabharata.jpg" alt="महाभारत का युद्ध" class="katha-card-image">
-          <h3>महाभारत का युद्ध</h3>
-        </div>
+  <!-- =========================================
+       HERO
+  ========================================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-icon">
+        📖
       </div>
 
-      <div id="katha-full-content">
-        <div id="katha-1-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>श्री राम का जन्म</h3>
-          <img src="images/shri-ram.jpg" alt="श्री राम का जन्म">
-          <p>
-            त्रेतायुग में, अयोध्या के प्रतापी राजा दशरथ थे। उनकी तीन रानियां थीं - कौशल्या, सुमित्रा और कैकेयी। राजा दशरथ को कोई पुत्र नहीं था, इसलिए वे बहुत चिंतित थे। उन्होंने पुत्रेष्टि यज्ञ करने का निर्णय लिया। यज्ञ के बाद, अग्निदेव ने उन्हें एक दिव्य खीर का कटोरा दिया, जिसे उन्होंने अपनी रानियों में बाँट दिया। कुछ समय बाद, चैत्र मास के शुक्ल पक्ष की नवमी को, रानी कौशल्या ने भगवान विष्णु के सातवें अवतार, भगवान राम को जन्म दिया। उसी दिन, रानी कैकेयी ने भरत को और रानी सुमित्रा ने लक्ष्मण और शत्रुघ्न को जन्म दिया। भगवान राम का जन्म बुराई पर अच्छाई की जीत और धर्म की स्थापना का प्रतीक है।
-          </p>
-        </div>
+      <h1>
+        पौराणिक कथाएँ
+      </h1>
 
-        <div id="katha-2-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>भगवान कृष्ण और गोवर्धन पर्वत</h3>
-          <img src="images/govardhan-parvat.jpg" alt="भगवान कृष्ण और गोवर्धन पर्वत">
-          <p>
-            एक बार, वृंदावन के लोग इंद्र देव की पूजा की तैयारी कर रहे थे ताकि वे अपनी फसल और मवेशियों को सुरक्षित रख सकें। छोटे भगवान कृष्ण ने अपने पिता नंदबाबा से पूछा कि वे इंद्र की पूजा क्यों करते हैं, जबकि गोवर्धन पर्वत ही उनकी रक्षा करता है। कृष्ण ने सुझाव दिया कि सभी गोवर्धन पर्वत की पूजा करें। यह सुनकर इंद्र क्रोधित हो गए और वृंदावन को नष्ट करने के लिए मूसलाधार बारिश भेजी। तब कृष्ण ने अपनी छोटी उंगली पर गोवर्धन पर्वत को उठा लिया और सभी ग्रामवासियों और पशुओं को उसके नीचे शरण दी। सात दिनों और सात रातों तक पर्वत को उठाए रखने के बाद, इंद्र को अपनी गलती का एहसास हुआ और उन्होंने कृष्ण से माफी मांगी।
-          </p>
-        </div>
+      <p>
+        भारतीय संस्कृति, धर्म और परंपराओं से जुड़ी
+        प्रेरणादायक कथाओं का संग्रह।
+      </p>
 
-        <div id="katha-3-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>हनुमान और संजीवनी</h3>
-          <img src="images/hanuman-sanjeevani.jpg" alt="हनुमान और संजीवनी">
-          <p>
-            लंका युद्ध के दौरान, जब मेघनाद के बाण से लक्ष्मण मूर्छित हो गए, तो उन्हें बचाने के लिए हिमालय पर पाई जाने वाली संजीवनी बूटी की आवश्यकता थी। हनुमान को यह कार्य सौंपा गया। जब वे संजीवनी बूटी को नहीं पहचान पाए, तो उन्होंने पूरा द्रोणागिरि पर्वत ही उठा लिया और उसे लंका ले आए। उनकी भक्ति, शक्ति और समर्पण ने लक्ष्मण के प्राण बचाए और युद्ध में विजय सुनिश्चित की।
-          </p>
-        </div>
-        
-        <div id="katha-4-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>महाबली हनुमान</h3>
-          <img src="images/mahabali-hanuman.jpg" alt="महाबली हनुमान">
-          <p>
-            बाल हनुमान की शरारतों और उनकी शक्तियों की कई कहानियाँ हैं। एक बार, जब वे बहुत छोटे थे, तो उन्होंने सूरज को एक लाल फल समझकर उसे खाने के लिए उड़ चले। देवताओं ने उनकी शक्ति से भयभीत होकर उन्हें शांत करने के लिए इंद्र के वज्र से उन पर प्रहार किया। इससे हनुमान मूर्छित हो गए। बाद में, सभी देवताओं ने उन्हें कई वरदान दिए, जिससे वे महाबली बने।
-          </p>
-        </div>
-
-        <div id="katha-5-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>गणेश और चन्द्रमा</h3>
-          <img src="images/ganesh-moon.jpg" alt="गणेश और चन्द्रमा">
-          <p>
-            एक बार, भगवान गणेश मोदक खाकर वापस लौट रहे थे, तभी रास्ते में चन्द्रमा ने उनका उपहास किया। इससे क्रोधित होकर गणेश ने चन्द्रमा को श्राप दिया कि जो भी उन्हें देखेगा, उस पर कलंक लगेगा। जब सभी देवता चिंतित हुए, तो गणेश ने श्राप को वापस लेने के लिए कहा कि यह श्राप केवल भाद्रपद मास की चतुर्थी (गणेश चतुर्थी) को ही प्रभावी होगा।
-          </p>
-        </div>
-
-        <div id="katha-6-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>शिव और सती</h3>
-          <img src="images/shiva-sati.jpg" alt="शिव और सती">
-          <p>
-            सती, राजा दक्ष की पुत्री थीं और भगवान शिव से प्रेम करती थीं। जब राजा दक्ष ने एक बड़ा यज्ञ आयोजित किया और जानबूझकर शिव को आमंत्रित नहीं किया, तो सती बहुत दुखी हुईं। वे बिना बुलाए ही यज्ञ में चली गईं, जहाँ उनके पिता ने शिव का अपमान किया। यह अपमान सहन न कर पाने पर सती ने स्वयं को यज्ञ की अग्नि में भस्म कर लिया। सती के इस आत्मदाह के बाद, शिव क्रोध में आ गए और उन्होंने दक्ष का यज्ञ नष्ट कर दिया।
-          </p>
-        </div>
-
-        <div id="katha-7-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>प्रह्लाद और होलिका</h3>
-          <img src="images/prahlad-holika.jpg" alt="प्रह्लाद और होलिका">
-          <p>
-            प्रह्लाद एक महान विष्णु भक्त थे, लेकिन उनके पिता हिरण्यकश्यप को यह पसंद नहीं था। हिरण्यकश्यप ने प्रह्लाद को कई बार मारने का प्रयास किया। उसकी बहन होलिका को वरदान था कि वह आग में नहीं जलेगी। वह प्रह्लाद को लेकर अग्नि में बैठ गई, लेकिन भगवान विष्णु की कृपा से प्रह्लाद बच गए और होलिका जलकर भस्म हो गई। यह कथा भक्ति की शक्ति और बुराई पर अच्छाई की विजय को दर्शाती है।
-          </p>
-        </div>
-        
-        <div id="katha-8-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>गंगा अवतरण</h3>
-          <img src="images/ganga-avataran.jpg" alt="गंगा अवतरण">
-          <p>
-            राजा सगर के साठ हजार पुत्रों को कपिल मुनि के श्राप से मुक्ति दिलाने के लिए उनके वंशज भागीरथ ने कठोर तपस्या की। उनकी तपस्या से प्रसन्न होकर ब्रह्मा जी ने गंगा को धरती पर लाने का वरदान दिया। लेकिन गंगा का प्रवाह इतना तेज था कि वह धरती को नष्ट कर सकता था। तब भागीरथ के अनुरोध पर भगवान शिव ने गंगा को अपनी जटाओं में धारण किया, जिससे उनका प्रवाह शांत हो गया और वे धीरे-धीरे धरती पर आईं। भागीरथ ने गंगा को सागर तक पहुँचाया, जिससे उनके पूर्वजों को मोक्ष मिला।
-          </p>
-        </div>
-
-        <div id="katha-9-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>कर्ण का कवच कुंडल</h3>
-          <img src="images/karna.jpg" alt="कर्ण का कवच कुंडल">
-          <p>
-            सूर्यपुत्र कर्ण को जन्म से ही एक दिव्य कवच और कुंडल प्राप्त थे जो उसे अजेय बनाते थे। महाभारत के युद्ध से पहले, देवराज इंद्र ने एक ब्राह्मण के वेश में कर्ण के पास जाकर दान में उसका कवच और कुंडल माँग लिया। अपनी दानवीरता के कारण कर्ण ने बिना सोचे-समझे उन्हें दान कर दिया। इसके बदले में इंद्र ने उसे 'शक्ति' नामक अस्त्र दिया, जिसे वह केवल एक बार ही प्रयोग कर सकता था। यह कथा कर्ण की दानवीरता और उसके दुर्भाग्य को दर्शाती है।
-          </p>
-        </div>
-
-        <div id="katha-10-content" class="full-katha">
-          <span class="close-katha-btn" onclick="closeKatha()">वापस जाएँ</span>
-          <h3>महाभारत का युद्ध</h3>
-          <img src="images/mahabharata.jpg" alt="महाभारत का युद्ध">
-          <p>
-            यह कथा कौरवों और पांडवों के बीच हुए महान युद्ध की है, जो धर्म और अधर्म, न्याय और अन्याय के बीच का संघर्ष था। कुरुक्षेत्र के मैदान में 18 दिनों तक चला यह युद्ध इतिहास का सबसे बड़ा युद्ध माना जाता है। भगवान श्री कृष्ण ने इस युद्ध में अर्जुन के सारथी बनकर उन्हें गीता का उपदेश दिया। अंत में, धर्म की जीत हुई और पांडवों ने हस्तिनापुर का राज संभाला।
-          </p>
-        </div>
-        
-      </div>
-      
     </div>
+
+  </section>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
+
+  <main class="page-container">
+
+
+    <!-- INTRO -->
+
+    <section class="intro-card">
+
+      <div class="om-symbol">
+        ॐ
+      </div>
+
+      <h2>
+        🌸 कथा संग्रह 🌸
+      </h2>
+
+      <p>
+        प्राचीन भारतीय परंपराओं और धार्मिक ग्रंथों में
+        वर्णित प्रसिद्ध कथाओं को सरल भाषा में पढ़ें।
+        किसी भी कथा पर क्लिक करके उसकी पूरी जानकारी देखें।
+      </p>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+      <div class="search-wrapper">
+
+        <span class="search-icon">
+          🔎
+        </span>
+
+        <input
+          type="search"
+          id="kathaSearch"
+          placeholder="कथा खोजें... जैसे राम, कृष्ण, हनुमान"
+          aria-label="कथा खोजें"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- HEADING -->
+
+    <div class="section-heading">
+
+      <h2>
+        📚 प्रमुख पौराणिक कथाएँ
+      </h2>
+
+      <p>
+        कथा पढ़ने के लिए किसी कार्ड पर क्लिक करें
+      </p>
+
+    </div>
+
+
+    <!-- =========================================
+         KATHA GRID
+    ========================================== -->
+
+    <div class="katha-grid" id="kathaGrid">
+
+
+      <!-- 1 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-1"
+      >
+
+        <img
+          src="images/shri-ram.jpg"
+          alt="श्री राम का जन्म"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🙏
+          <span>श्री राम</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            1
+          </span>
+
+          <h3>
+            श्री राम का जन्म
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 2 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-2"
+      >
+
+        <img
+          src="images/govardhan-parvat.jpg"
+          alt="भगवान कृष्ण और गोवर्धन पर्वत"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🦚
+          <span>श्री कृष्ण</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            2
+          </span>
+
+          <h3>
+            भगवान कृष्ण और गोवर्धन पर्वत
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 3 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-3"
+      >
+
+        <img
+          src="images/hanuman-sanjeevani.jpg"
+          alt="हनुमान और संजीवनी"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🚩
+          <span>हनुमान जी</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            3
+          </span>
+
+          <h3>
+            हनुमान और संजीवनी
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 4 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-4"
+      >
+
+        <img
+          src="images/mahabali-hanuman.jpg"
+          alt="महाबली हनुमान"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🚩
+          <span>महाबली हनुमान</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            4
+          </span>
+
+          <h3>
+            महाबली हनुमान
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 5 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-5"
+      >
+
+        <img
+          src="images/ganesh-moon.jpg"
+          alt="गणेश और चन्द्रमा"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🐘
+          <span>श्री गणेश</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            5
+          </span>
+
+          <h3>
+            गणेश और चन्द्रमा
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 6 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-6"
+      >
+
+        <img
+          src="images/shiva-sati.jpg"
+          alt="शिव और सती"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🔱
+          <span>भगवान शिव</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            6
+          </span>
+
+          <h3>
+            शिव और सती
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 7 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-7"
+      >
+
+        <img
+          src="images/prahlad-holika.jpg"
+          alt="प्रह्लाद और होलिका"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🔥
+          <span>प्रह्लाद</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            7
+          </span>
+
+          <h3>
+            प्रह्लाद और होलिका
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 8 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-8"
+      >
+
+        <img
+          src="images/ganga-avataran.jpg"
+          alt="गंगा अवतरण"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🌊
+          <span>गंगा अवतरण</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            8
+          </span>
+
+          <h3>
+            गंगा अवतरण
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 9 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-9"
+      >
+
+        <img
+          src="images/karna.jpg"
+          alt="कर्ण का कवच कुंडल"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🏹
+          <span>महाभारत</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            9
+          </span>
+
+          <h3>
+            कर्ण का कवच कुंडल
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- 10 -->
+
+      <article
+        class="katha-card"
+        data-katha-id="katha-10"
+      >
+
+        <img
+          src="images/mahabharata.jpg"
+          alt="महाभारत का युद्ध"
+          class="katha-image"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        >
+
+        <div class="image-fallback">
+          🏹
+          <span>महाभारत</span>
+        </div>
+
+        <div class="katha-info">
+
+          <span class="katha-number">
+            10
+          </span>
+
+          <h3>
+            महाभारत का युद्ध
+          </h3>
+
+          <span class="read-more">
+            कथा पढ़ें →
+          </span>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- NO RESULT -->
+
+    <div id="noResult">
+
+      <span class="icon">
+        🔎
+      </span>
+
+      <strong>
+        कोई कथा नहीं मिली
+      </strong>
+
+      <p>
+        कृपया दूसरा नाम या शब्द खोजकर देखें।
+      </p>
+
+    </div>
+
+
+    <!-- =========================================
+         FULL KATHA CONTENT
+    ========================================== -->
+
+    <div id="kathaContent">
+
+
+      <!-- 1 -->
+
+      <article
+        id="katha-1-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🙏
+          </div>
+
+          <h2>
+            श्री राम का जन्म
+          </h2>
+
+          <p>
+            भगवान श्री राम के जन्म की कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/shri-ram.jpg"
+          alt="श्री राम का जन्म"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            त्रेतायुग में अयोध्या के प्रतापी राजा दशरथ थे।
+            उनकी तीन रानियाँ थीं—कौशल्या, सुमित्रा और कैकेयी।
+            राजा दशरथ को कोई पुत्र नहीं था, इसलिए वे चिंतित थे।
+          </p>
+
+          <p>
+            उन्होंने पुत्रेष्टि यज्ञ करने का निर्णय लिया।
+            यज्ञ के बाद अग्निदेव ने उन्हें दिव्य खीर प्रदान की,
+            जिसे उन्होंने अपनी रानियों में बाँट दिया।
+          </p>
+
+          <p>
+            चैत्र मास के शुक्ल पक्ष की नवमी को माता कौशल्या के
+            यहाँ भगवान श्री राम का जन्म हुआ। इसी समय
+            कैकेयी के यहाँ भरत तथा सुमित्रा के यहाँ
+            लक्ष्मण और शत्रुघ्न का जन्म हुआ।
+          </p>
+
+          <div class="message-box">
+            🌸 संदेश: श्री राम का जीवन धर्म, मर्यादा,
+            सत्य और कर्तव्य पालन की प्रेरणा देता है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 2 -->
+
+      <article
+        id="katha-2-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🦚
+          </div>
+
+          <h2>
+            भगवान कृष्ण और गोवर्धन पर्वत
+          </h2>
+
+          <p>
+            श्री कृष्ण की बाल लीलाओं से जुड़ी प्रसिद्ध कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/govardhan-parvat.jpg"
+          alt="भगवान कृष्ण और गोवर्धन पर्वत"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            एक बार वृंदावन के लोग इंद्र देव की पूजा की तैयारी
+            कर रहे थे। बाल कृष्ण ने पूछा कि इंद्र की पूजा क्यों
+            की जाती है, जबकि गोवर्धन पर्वत उनके जीवन और
+            पशुधन के लिए महत्वपूर्ण है।
+          </p>
+
+          <p>
+            कृष्ण की बात मानकर लोगों ने गोवर्धन पर्वत की पूजा की।
+            इससे इंद्र देव क्रोधित हुए और उन्होंने भारी वर्षा
+            करवाई।
+          </p>
+
+          <p>
+            तब भगवान कृष्ण ने अपनी छोटी उंगली पर गोवर्धन पर्वत
+            उठा लिया और ग्रामवासियों तथा उनके पशुओं को उसके
+            नीचे आश्रय दिया। कई दिनों बाद इंद्र को अपनी भूल का
+            एहसास हुआ और उन्होंने कृष्ण से क्षमा माँगी।
+          </p>
+
+          <div class="message-box">
+            🌸 संदेश: अहंकार का त्याग और प्रकृति के प्रति
+            सम्मान इस कथा का महत्वपूर्ण संदेश है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 3 -->
+
+      <article
+        id="katha-3-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🚩
+          </div>
+
+          <h2>
+            हनुमान और संजीवनी
+          </h2>
+
+          <p>
+            श्री हनुमान जी की शक्ति और समर्पण की कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/hanuman-sanjeevani.jpg"
+          alt="हनुमान और संजीवनी"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            लंका युद्ध के दौरान मेघनाद के बाण से लक्ष्मण
+            मूर्छित हो गए। उन्हें बचाने के लिए वैद्य ने
+            हिमालय से संजीवनी बूटी लाने की आवश्यकता बताई।
+          </p>
+
+          <p>
+            हनुमान जी संजीवनी बूटी लेने हिमालय पहुँचे।
+            जब वे सही बूटी पहचान नहीं पाए, तो उन्होंने
+            पूरा पर्वत ही उठा लिया और उसे लंका ले आए।
+          </p>
+
+          <p>
+            संजीवनी के प्रभाव से लक्ष्मण स्वस्थ हुए।
+            हनुमान जी की भक्ति, शक्ति और समर्पण ने
+            इस प्रसंग को रामायण की प्रमुख कथाओं में स्थान दिया।
+          </p>
+
+          <div class="message-box">
+            🚩 संदेश: सच्ची निष्ठा और समर्पण से कठिन
+            से कठिन कार्य भी पूरा किया जा सकता है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 4 -->
+
+      <article
+        id="katha-4-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🚩
+          </div>
+
+          <h2>
+            महाबली हनुमान
+          </h2>
+
+          <p>
+            बाल हनुमान की अद्भुत शक्ति की कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/mahabali-hanuman.jpg"
+          alt="महाबली हनुमान"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            बाल हनुमान अत्यंत शक्तिशाली और चंचल थे।
+            एक दिन उन्होंने आकाश में सूर्य को लाल फल समझकर
+            उसे खाने के लिए उसकी ओर उड़ान भर दी।
+          </p>
+
+          <p>
+            उनकी गति देखकर देवता चिंतित हुए। इसी प्रसंग में
+            इंद्र के वज्र का प्रहार हनुमान जी पर हुआ और वे
+            मूर्छित हो गए।
+          </p>
+
+          <p>
+            बाद में विभिन्न देवताओं ने उन्हें अनेक दिव्य
+            शक्तियाँ और वरदान प्रदान किए। इसी कारण हनुमान
+            जी को अपार शक्ति, बुद्धि और साहस का प्रतीक माना जाता है।
+          </p>
+
+          <div class="message-box">
+            🚩 संदेश: शक्ति के साथ विनम्रता, बुद्धि और
+            सदुपयोग का महत्व समझना चाहिए।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 5 -->
+
+      <article
+        id="katha-5-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🐘
+          </div>
+
+          <h2>
+            गणेश और चन्द्रमा
+          </h2>
+
+          <p>
+            भगवान गणेश और चन्द्रमा से जुड़ी प्रसिद्ध कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/ganesh-moon.jpg"
+          alt="गणेश और चन्द्रमा"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            एक प्रसिद्ध कथा के अनुसार भगवान गणेश एक बार
+            मोदक ग्रहण करने के बाद अपने वाहन मूषक पर जा रहे थे।
+            मार्ग में चन्द्रमा ने उनके रूप को देखकर उपहास किया।
+          </p>
+
+          <p>
+            इससे गणेश जी क्रोधित हुए और उन्होंने चन्द्रमा को
+            श्राप दिया। बाद में देवताओं के अनुरोध पर
+            श्राप के प्रभाव को सीमित किया गया।
+          </p>
+
+          <p>
+            इसी कथा के कारण गणेश चतुर्थी से जुड़ी कुछ
+            लोकपरंपराओं में चन्द्र दर्शन को लेकर विशेष मान्यता
+            देखने को मिलती है।
+          </p>
+
+          <div class="message-box">
+            🐘 संदेश: किसी के रूप या परिस्थिति का उपहास
+            नहीं करना चाहिए।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 6 -->
+
+      <article
+        id="katha-6-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🔱
+          </div>
+
+          <h2>
+            शिव और सती
+          </h2>
+
+          <p>
+            माता सती और भगवान शिव की कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/shiva-sati.jpg"
+          alt="शिव और सती"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            माता सती राजा दक्ष की पुत्री थीं और उनका विवाह
+            भगवान शिव से हुआ था। राजा दक्ष ने एक विशाल यज्ञ
+            आयोजित किया, जिसमें भगवान शिव को आमंत्रित नहीं किया।
+          </p>
+
+          <p>
+            माता सती बिना आमंत्रण के यज्ञ में पहुँचीं।
+            वहाँ भगवान शिव के प्रति अपमानजनक बातें सुनकर
+            वे अत्यंत दुखी हुईं।
+          </p>
+
+          <p>
+            पुराणों में वर्णित कथा के अनुसार माता सती ने
+            यज्ञ की अग्नि में अपना शरीर त्याग दिया। इसके बाद
+            भगवान शिव ने क्रोध में दक्ष के यज्ञ को नष्ट किया।
+          </p>
+
+          <div class="message-box">
+            🔱 संदेश: सम्मान, अहंकार और संबंधों के महत्व
+            को समझने की प्रेरणा इस कथा से मिलती है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 7 -->
+
+      <article
+        id="katha-7-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🔥
+          </div>
+
+          <h2>
+            प्रह्लाद और होलिका
+          </h2>
+
+          <p>
+            भक्ति और विश्वास से जुड़ी प्रसिद्ध कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/prahlad-holika.jpg"
+          alt="प्रह्लाद और होलिका"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            प्रह्लाद भगवान विष्णु के महान भक्त माने जाते हैं।
+            उनके पिता हिरण्यकश्यप को उनकी भक्ति पसंद नहीं थी।
+          </p>
+
+          <p>
+            हिरण्यकश्यप ने प्रह्लाद को अनेक प्रकार से
+            दंड देने का प्रयास किया। अंततः उसकी बहन होलिका
+            प्रह्लाद को लेकर अग्नि में बैठी।
+          </p>
+
+          <p>
+            कथा के अनुसार भगवान विष्णु की कृपा से प्रह्लाद
+            सुरक्षित रहे जबकि होलिका अग्नि में जल गई।
+            इसी प्रसंग से होली के पर्व की एक प्रमुख
+            धार्मिक कथा जुड़ी हुई है।
+          </p>
+
+          <div class="message-box">
+            🔥 संदेश: विश्वास, भक्ति और सत्य के प्रति
+            दृढ़ता की प्रेरणा इस कथा से मिलती है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 8 -->
+
+      <article
+        id="katha-8-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🌊
+          </div>
+
+          <h2>
+            गंगा अवतरण
+          </h2>
+
+          <p>
+            भागीरथ की तपस्या और गंगा के पृथ्वी पर आगमन की कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/ganga-avataran.jpg"
+          alt="गंगा अवतरण"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            पुराणों में वर्णित कथा के अनुसार राजा सगर के
+            पुत्रों की मुक्ति के लिए उनके वंशज भागीरथ ने
+            कठोर तपस्या की।
+          </p>
+
+          <p>
+            उनकी तपस्या से प्रसन्न होकर गंगा को पृथ्वी पर
+            लाने का मार्ग बना। गंगा के वेग को संभालने के लिए
+            भगवान शिव ने उन्हें अपनी जटाओं में धारण किया।
+          </p>
+
+          <p>
+            इसके बाद गंगा पृथ्वी पर प्रवाहित हुईं और
+            भागीरथ अपने पूर्वजों की मुक्ति के लिए उन्हें
+            आगे ले गए।
+          </p>
+
+          <div class="message-box">
+            🌊 संदेश: धैर्य, तपस्या और दृढ़ संकल्प से
+            कठिन लक्ष्य की ओर आगे बढ़ने की प्रेरणा मिलती है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 9 -->
+
+      <article
+        id="katha-9-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🏹
+          </div>
+
+          <h2>
+            कर्ण का कवच कुंडल
+          </h2>
+
+          <p>
+            महाभारत के दानवीर कर्ण की प्रसिद्ध कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/karna.jpg"
+          alt="कर्ण का कवच कुंडल"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            महाभारत की परंपरा में कर्ण को सूर्यपुत्र बताया गया है।
+            जन्म से ही उन्हें दिव्य कवच और कुंडल प्राप्त थे,
+            जिन्हें उनकी सुरक्षा से जोड़ा जाता है।
+          </p>
+
+          <p>
+            युद्ध से पहले देवराज इंद्र ब्राह्मण के वेश में
+            कर्ण के पास पहुँचे और उनसे कवच तथा कुंडल दान में
+            माँगे।
+          </p>
+
+          <p>
+            कर्ण ने अपनी दानवीरता के कारण उन्हें अपने शरीर से
+            अलग करके दान कर दिया। इसके बदले इंद्र ने उन्हें
+            शक्ति नामक दिव्य अस्त्र प्रदान किया।
+          </p>
+
+          <div class="message-box">
+            🏹 संदेश: कर्ण की कथा दान, वचन और त्याग से जुड़े
+            अनेक नैतिक प्रश्नों पर विचार करने की प्रेरणा देती है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+      <!-- 10 -->
+
+      <article
+        id="katha-10-content"
+        class="full-katha"
+      >
+
+        <div class="katha-header">
+
+          <div class="symbol">
+            🏹
+          </div>
+
+          <h2>
+            महाभारत का युद्ध
+          </h2>
+
+          <p>
+            कुरुक्षेत्र और श्रीमद्भगवद्गीता से जुड़ी कथा
+          </p>
+
+        </div>
+
+        <img
+          src="images/mahabharata.jpg"
+          alt="महाभारत का युद्ध"
+          class="full-katha-image"
+          onerror="this.style.display='none';"
+        >
+
+        <div class="story-text">
+
+          <p>
+            महाभारत में कौरवों और पांडवों के बीच संघर्ष
+            कुरुक्षेत्र के युद्ध तक पहुँचा। यह युद्ध
+            परंपरा के अनुसार 18 दिनों तक चला।
+          </p>
+
+          <p>
+            युद्धभूमि में अर्जुन अपने संबंधियों और गुरुओं को
+            सामने देखकर मोह और दुविधा में पड़ गए। तब
+            भगवान श्री कृष्ण ने उन्हें कर्म, धर्म और आत्मा
+            से संबंधित उपदेश दिया, जिसे श्रीमद्भगवद्गीता
+            के रूप में जाना जाता है।
+          </p>
+
+          <p>
+            महाभारत की कथा में युद्ध के साथ-साथ परिवार,
+            कर्तव्य, नीति, धर्म और मानवीय निर्णयों के
+            अनेक पहलुओं का वर्णन मिलता है।
+          </p>
+
+          <div class="message-box">
+            🕉️ संदेश: कर्तव्य, आत्मचिंतन और सही निर्णय के
+            महत्व पर महाभारत गहन विचार प्रस्तुत करता है।
+          </div>
+
+        </div>
+
+        <button class="close-btn">
+          ↑ कथाओं पर वापस जाएँ
+        </button>
+
+      </article>
+
+
+    </div>
+
+
   </main>
 
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
   <footer>
-    <div class="container">
-      <div class="footer-links">
-        <div>
-          <h3>महत्वपूर्ण लिंक</h3>
-          <ul>
-            <li><a href="about.html">हमारे बारे में</a></li>
-            <li><a href="contact.html">संपर्क करें</a></li>
-            <li><a href="join.html">ज्वॉइन करें</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>हमारा अनुसरण करें</h3>
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/bhagva_rakshak__hindu_sena" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        </div>
+
+    <div class="footer-inner">
+
+      <div class="footer-title">
+        भगवा रक्षक हिन्दू सेना
       </div>
-      <p class="copyright">© 2025 भगवा रक्षक हिन्दू सेना</p>
+
+      <p>
+        धर्म • सेवा • संस्कार
+      </p>
+
+      <p>
+        भारतीय संस्कृति और परंपराओं से जुड़ी
+        जानकारी एवं प्रेरणादायक सामग्री।
+      </p>
+
+      <div class="footer-bottom">
+        © 2026 भगवा रक्षक हिन्दू सेना |
+        सर्वाधिकार सुरक्षित
+      </div>
+
     </div>
+
   </footer>
 
-  <script src="js/script.js"></script>
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================== -->
+
   <script>
-    // JavaScript for opening and closing the full katha content
-    document.addEventListener('DOMContentLoaded', function() {
-        const kathaCards = document.querySelectorAll('.katha-card');
-        const fullKathaContainer = document.getElementById('katha-full-content');
 
-        kathaCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const kathaId = card.getAttribute('data-katha-id');
-                const kathaContent = document.getElementById(`${kathaId}-content`);
+    const kathaCards =
+      document.querySelectorAll(".katha-card");
 
-                // Hide all full katha sections first
-                document.querySelectorAll('.full-katha').forEach(content => {
-                    content.classList.remove('active');
-                });
-                
-                // Show the clicked katha
-                kathaContent.classList.add('active');
-                
-                // Scroll to the top of the full katha section
-                fullKathaContainer.scrollIntoView({ behavior: 'smooth' });
-            });
+    const fullKathas =
+      document.querySelectorAll(".full-katha");
+
+    const kathaContent =
+      document.getElementById("kathaContent");
+
+    const kathaGrid =
+      document.getElementById("kathaGrid");
+
+    const searchInput =
+      document.getElementById("kathaSearch");
+
+    const noResult =
+      document.getElementById("noResult");
+
+
+    /* =========================================
+       OPEN KATHA
+    ========================================== */
+
+    function openKatha(kathaId) {
+
+      fullKathas.forEach((katha) => {
+
+        katha.classList.remove("active");
+
+      });
+
+
+      const selectedKatha =
+        document.getElementById(
+          kathaId + "-content"
+        );
+
+
+      if (!selectedKatha) {
+        return;
+      }
+
+
+      selectedKatha.classList.add("active");
+
+
+      setTimeout(() => {
+
+        kathaContent.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
         });
+
+      }, 80);
+
+    }
+
+
+    /* =========================================
+       CARD CLICK
+    ========================================== */
+
+    kathaCards.forEach((card) => {
+
+      card.addEventListener("click", () => {
+
+        const kathaId =
+          card.getAttribute("data-katha-id");
+
+        openKatha(kathaId);
+
+      });
+
     });
 
-    function closeKatha() {
-        const fullKathaContainer = document.getElementById('katha-full-content');
-        document.querySelectorAll('.full-katha').forEach(content => {
-            content.classList.remove('active');
+
+    /* =========================================
+       CLOSE KATHA
+    ========================================== */
+
+    document
+      .querySelectorAll(".close-btn")
+      .forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+          fullKathas.forEach((katha) => {
+
+            katha.classList.remove("active");
+
+          });
+
+
+          setTimeout(() => {
+
+            kathaGrid.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }, 80);
+
         });
-        
-        // Scroll back to the top of the card container
-        const kathaCardContainer = document.querySelector('.katha-card-container');
-        kathaCardContainer.scrollIntoView({ behavior: 'smooth' });
-    }
+
+      });
+
+
+    /* =========================================
+       SEARCH
+    ========================================== */
+
+    searchInput.addEventListener(
+      "input",
+      function () {
+
+        const searchText =
+          this.value
+            .toLowerCase()
+            .trim();
+
+
+        let found = false;
+
+
+        kathaCards.forEach((card) => {
+
+          const cardText =
+            card.textContent.toLowerCase();
+
+
+          if (
+            cardText.includes(searchText)
+          ) {
+
+            card.style.display = "";
+            found = true;
+
+          } else {
+
+            card.style.display = "none";
+
+          }
+
+        });
+
+
+        noResult.style.display =
+          found ? "none" : "block";
+
+
+        /*
+          Search करते समय खुली हुई कथा
+          बंद कर देते हैं।
+        */
+
+        if (searchText.length > 0) {
+
+          fullKathas.forEach((katha) => {
+
+            katha.classList.remove("active");
+
+          });
+
+        }
+
+      }
+    );
+
+
+    /* =========================================
+       ESC KEY
+    ========================================== */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+
+          fullKathas.forEach((katha) => {
+
+            katha.classList.remove("active");
+
+          });
+
+        }
+
+      }
+    );
+
   </script>
+
+
 </body>
 </html>
