@@ -1,6 +1,7 @@
 DOCTYPE html>
 <html lang="hi">
 <head>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -45,8 +46,99 @@ DOCTYPE html>
     ]
   }
   </script>
+<style>
+.hamburger-menu-icon {
+    display: none;
+    width: 54px;
+    height: 54px;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+    padding: 12px;
+    position: relative;
+    z-index: 10001;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    -webkit-tap-highlight-color: transparent;
+}
 
-  <style>
+.hamburger-menu-icon span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: #f4511e;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+
+    .header-content {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .hamburger-menu-icon {
+        display: flex;
+    }
+
+    .sidenav {
+        position: fixed !important;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100vh;
+        overflow-x: hidden;
+        background: #ffffff;
+        z-index: 10000;
+        transition: width 0.3s ease;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    }
+
+    .sidenav.active {
+        width: 290px !important;
+    }
+
+    .sidenav ul {
+        display: block !important;
+        padding: 80px 20px 20px;
+        margin: 0;
+    }
+
+    .sidenav ul li {
+        margin: 0 !important;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sidenav ul li a {
+        display: block;
+        color: #333 !important;
+        padding: 14px 10px;
+        font-size: 17px;
+    }
+
+    .sidenav .closebtn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 38px;
+        color: #f4511e !important;
+        z-index: 10002;
+    }
+}
+
+@media (min-width: 769px) {
+    .sidenav .closebtn {
+        display: none;
+    }
+}
+
+
     .sangthan-logo {
       width: 330px;
       height: 500px;
