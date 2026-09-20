@@ -1,166 +1,975 @@
-<!-- bhagwa_rakshak_website/about.html -->
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>हमारे बारे में - भगवा रक्षक हिन्दू सेना</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+
+  <meta name="description"
+        content="भगवा रक्षक हिन्दू सेना के बारे में जानें। संगठन के उद्देश्य, मिशन, सामाजिक गतिविधियों और मूल्यों की जानकारी।">
+
+  <meta name="keywords"
+        content="भगवा रक्षक हिन्दू सेना, हिन्दू सेना, सनातन धर्म, सामाजिक संगठन, धार्मिक संगठन">
+
+  <meta name="author" content="भगवा रक्षक हिन्दू सेना">
+
+  <title>हमारे बारे में | भगवा रक्षक हिन्दू सेना</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root {
-      --primary-color: #FF6600; /* केसरिया */
-      --secondary-color: #4CAF50; /* हरा */
-      --text-color: #333;
-      --bg-color: #f0f2f5;
-      --card-bg-color: #ffffff;
-      --border-radius: 10px;
-      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    
-    body {
-      font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    
-    header {
-      width: 100%;
-      background: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      box-shadow: var(--box-shadow);
-    }
-    
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    
-    nav {
-      margin-top: 10px;
-    }
-    
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1rem;
-      font-weight: 400;
-      transition: color 0.3s ease;
-    }
-    
-    nav a:hover {
-      color: #ffd700; /* गहरा सुनहरा */
-    }
-    
-    main {
-      background: var(--card-bg-color);
-      padding: 40px;
-      margin: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      width: 90%;
-      max-width: 800px;
-      line-height: 1.6;
-    }
-    
-    h2 {
-      color: var(--primary-color);
-      font-weight: 700;
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    
-    .section {
-      margin-bottom: 30px;
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-left: 5px solid var(--primary-color);
-      border-radius: 5px;
+      --saffron: #f26b21;
+      --saffron-dark: #c94d0b;
+      --gold: #ffb300;
+      --dark: #171717;
+      --text: #333333;
+      --muted: #666666;
+      --light: #fff8f2;
+      --white: #ffffff;
+      --border: #eeeeee;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
     }
 
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--text-color);
-      margin-top: 0;
-      margin-bottom: 15px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    
-    .slogan {
-      text-align: center;
-      margin: 40px 0;
-      padding: 20px;
-      background-color: var(--primary-color);
-      color: white;
-      font-size: 2rem;
-      font-weight: 700;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
+
+    html {
+      scroll-behavior: smooth;
     }
-    
-    footer {
+
+    body {
+      font-family: "Noto Sans Devanagari", "Poppins", sans-serif;
+      background: #f7f7f7;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
       width: 100%;
-      background: var(--text-color);
+      background: linear-gradient(
+        135deg,
+        #e85b0b,
+        #ff7a18
+      );
+
       color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-container {
+      width: min(1200px, 94%);
+      margin: auto;
+
+      min-height: 78px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: white;
+      font-weight: 800;
+      font-size: 1.15rem;
+
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+
+      object-fit: contain;
+
+      background: white;
+      border-radius: 50%;
+      padding: 4px;
+
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    nav a {
+      color: white;
+
+      padding: 8px 10px;
+
+      border-radius: 8px;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      transition: 0.25s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff4c2;
+    }
+
+    /* =========================
+       PAGE HERO
+    ========================== */
+
+    .page-hero {
+      background:
+        linear-gradient(
+          rgba(120, 42, 0, 0.78),
+          rgba(120, 42, 0, 0.78)
+        ),
+        linear-gradient(135deg, #ff7b00, #ffb300);
+
+      color: white;
+
       text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
+
+      padding: 70px 20px 65px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+
+      margin-bottom: 12px;
+    }
+
+    .page-hero p {
+      max-width: 750px;
+      margin: auto;
+
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    .hero-line {
+      width: 80px;
+      height: 4px;
+
+      background: var(--gold);
+
+      margin: 20px auto 0;
+
+      border-radius: 50px;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      width: min(1100px, 94%);
+      margin: 45px auto 70px;
+    }
+
+    /* =========================
+       INTRO CARD
+    ========================== */
+
+    .intro-card {
+      background: var(--white);
+
+      padding: 35px;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 30px;
+
+      text-align: center;
+    }
+
+    .intro-card h2 {
+      color: var(--saffron-dark);
+
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+
+      margin-bottom: 15px;
+
+      font-weight: 800;
+    }
+
+    .intro-card p {
+      max-width: 850px;
+      margin: auto;
+
+      color: var(--muted);
+    }
+
+    .jai-shree-ram {
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding: 9px 24px;
+
+      border-radius: 50px;
+
+      background: linear-gradient(
+        135deg,
+        var(--saffron),
+        #ff941f
+      );
+
+      color: white;
+
+      font-size: 1.15rem;
+      font-weight: 800;
+
+      box-shadow: 0 5px 15px rgba(242, 107, 33, 0.25);
+    }
+
+    /* =========================
+       CONTENT GRID
+    ========================== */
+
+    .content-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 25px;
+
+      margin-bottom: 30px;
+    }
+
+    .info-card {
+      background: white;
+
+      padding: 30px;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      border-top: 4px solid var(--saffron);
+
+      transition: transform 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.11);
+    }
+
+    .info-card h3 {
+      color: var(--saffron-dark);
+
+      font-size: 1.35rem;
+
+      margin-bottom: 15px;
+
+      font-weight: 800;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .info-card ul {
+      padding-left: 22px;
+    }
+
+    .info-card li {
+      margin-bottom: 10px;
+      color: #4b4b4b;
+    }
+
+    .info-card li::marker {
+      color: var(--saffron);
+    }
+
+    /* =========================
+       VALUES
+    ========================== */
+
+    .values-section {
+      background: linear-gradient(
+        135deg,
+        #fff7ed,
+        #fff
+      );
+
+      padding: 35px;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 30px;
+
+      border: 1px solid #ffe2c7;
+    }
+
+    .values-section h2 {
+      text-align: center;
+
+      color: var(--saffron-dark);
+
+      margin-bottom: 25px;
+
+      font-size: 1.8rem;
+    }
+
+    .values-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .value-box {
+      background: white;
+
+      border-radius: 14px;
+
+      padding: 22px 15px;
+
+      text-align: center;
+
+      border: 1px solid var(--border);
+
+      transition: 0.25s ease;
+    }
+
+    .value-box:hover {
+      transform: translateY(-4px);
+
+      border-color: #ffc28d;
+    }
+
+    .value-icon {
+      width: 50px;
+      height: 50px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 auto 10px;
+
+      border-radius: 50%;
+
+      background: #fff0e3;
+
+      font-size: 1.4rem;
+    }
+
+    .value-box h3 {
+      color: var(--dark);
+
+      font-size: 1.05rem;
+
+      margin-bottom: 5px;
+    }
+
+    .value-box p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* =========================
+       LOGO SECTION
+    ========================== */
+
+    .logo-section {
+      background: white;
+
+      border-radius: var(--radius);
+
+      padding: 35px;
+
+      text-align: center;
+
+      box-shadow: var(--shadow);
+
+      margin-bottom: 30px;
+    }
+
+    .logo-section h2 {
+      color: var(--saffron-dark);
+
+      margin-bottom: 20px;
+    }
+
+    .organization-logo {
+      width: 190px;
+      height: 190px;
+
+      max-width: 70vw;
+
+      object-fit: contain;
+
+      display: block;
+
+      margin: auto;
+
+      border-radius: 50%;
+
+      background: white;
+
+      padding: 8px;
+
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .join-cta {
+      background:
+        linear-gradient(
+          135deg,
+          #d9530b,
+          #f47a19
+        );
+
+      color: white;
+
+      padding: 38px 25px;
+
+      text-align: center;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+    }
+
+    .join-cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .join-cta p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+
+      background: white;
+
+      color: var(--saffron-dark);
+
+      padding: 11px 25px;
+
+      border-radius: 50px;
+
+      font-weight: 800;
+
+      transition: 0.25s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #171717;
+
+      color: #ddd;
+
+      text-align: center;
+
+      padding: 30px 20px;
+    }
+
+    .footer-brand {
+      color: white;
+
+      font-size: 1.2rem;
+
+      font-weight: 800;
+
+      margin-bottom: 7px;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #ccc;
+
+      margin: 0 8px;
+
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: #ff8a2a;
+    }
+
+    .copyright {
+      color: #999;
+
+      font-size: 0.85rem;
+
+      margin-top: 10px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .header-container {
+        flex-direction: column;
+
+        padding: 12px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .brand {
+        font-size: 1rem;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      nav {
+        gap: 2px;
+      }
+
+      nav a {
+        font-size: 0.78rem;
+        padding: 6px 7px;
+      }
+
+      .page-hero {
+        padding: 50px 15px;
+      }
+
+      main {
+        width: 92%;
+        margin-top: 25px;
+      }
+
+      .intro-card,
+      .info-card,
+      .values-section,
+      .logo-section {
+        padding: 24px 18px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .join-cta {
+        padding: 30px 18px;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
-    <h1>भगवा रक्षक हिन्दू सेना</h1>
-    <nav>
-      <a href="index.html">होम</a>
-      <a href="about.html">हमारे बारे में</a>
-      <a href="team.html">टीम</a>
-      <a href="gallery.html">गैलरी</a>
-      <a href="contact.html">संपर्क करें</a>
-      <a href="join.html">ज्वॉइन करें</a>
-      <a href="card.html">सदस्य कार्ड</a>
-    </nav>
+
+    <div class="header-container">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="images/hindu sena logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+        >
+
+        <span>भगवा रक्षक हिन्दू सेना</span>
+
+      </a>
+
+      <nav aria-label="मुख्य मेनू">
+
+        <a href="index.html">होम</a>
+
+        <a href="about.html" class="active">
+          हमारे बारे में
+        </a>
+
+        <a href="team.html">
+          टीम
+        </a>
+
+        <a href="gallery.html">
+          गैलरी
+        </a>
+
+        <a href="dharm-gatha.html">
+          धर्म गाथा
+        </a>
+
+        <a href="aarti.html">
+          आरती
+        </a>
+
+        <a href="kathayein.html">
+          कथाएँ
+        </a>
+
+        <a href="contact.html">
+          संपर्क
+        </a>
+
+        <a href="join.html">
+          जुड़ें
+        </a>
+
+      </nav>
+
+    </div>
+
   </header>
 
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="page-hero">
+
+    <h1>हमारे बारे में</h1>
+
+    <p>
+      भगवा रक्षक हिन्दू सेना के उद्देश्य,
+      विचार, सामाजिक गतिविधियों और मूल्यों के बारे में जानें।
+    </p>
+
+    <div class="hero-line"></div>
+
+  </section>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
   <main>
-    <h2>भगवा रक्षक हिन्दू सेना - एक परिचय</h2>
-    <div class="slogan">जय श्री राम!</div>
 
-    <div class="section">
-      <h3 class="section-title">हमारा उद्देश्य और मिशन</h3>
-      <p>भगवा रक्षक हिन्दू सेना एक समर्पित सामाजिक और धार्मिक संगठन है, जो **सनातन धर्म** और **हिन्दू संस्कृति** की रक्षा, संवर्धन और पुनर्स्थापना के लिए कार्यरत है। हमारा मिशन भारतीय मूल्यों, परंपराओं और गौरवशाली इतिहास को आने वाली पीढ़ियों तक पहुँचाना है।</p>
-      <p>हमारा उद्देश्य केवल धार्मिक गतिविधियों तक सीमित नहीं है, बल्कि हम समाज में जागरूकता फैलाने, जरूरतमंदों की मदद करने और एक सशक्त हिंदू राष्ट्र के निर्माण के लिए भी प्रतिबद्ध हैं।</p>
-    </div>
+    <!-- INTRO -->
 
-    <div class="section">
-      <h3 class="section-title">हमारी मुख्य गतिविधियाँ</h3>
-      <ul>
-        <li>**धर्म और संस्कृति की रक्षा:** धार्मिक स्थलों की सुरक्षा, सांस्कृतिक कार्यक्रमों का आयोजन और सनातन मूल्यों का प्रचार-प्रसार करना।</li>
-        <li>**सामाजिक कार्य:** गरीबों और जरूरतमंदों के लिए अन्नदान, रक्तदान शिविर और स्वास्थ्य सेवाएँ प्रदान करना।</li>
-        <li>**युवाओं को जोड़ना:** युवाओं में राष्ट्रवाद और धार्मिक चेतना जगाना, उन्हें संगठन से जोड़कर राष्ट्र निर्माण में योगदान देने के लिए प्रेरित करना।</li>
-        <li>**एकता और भाईचारा:** विभिन्न हिंदू समुदायों के बीच एकता और सद्भाव को बढ़ावा देना।</li>
-      </ul>
-    </div>
+    <section class="intro-card">
 
-    <p>हमारा मानना है कि एक मजबूत राष्ट्र की नींव उसकी संस्कृति और मूल्यों पर टिकी होती है। भगवा रक्षक हिन्दू सेना इसी नींव को मजबूत बनाने के लिए हर संभव प्रयास कर रही है।</p>
-     <div class="center-container">
-    <img src="images/hindu sena logo.png" alt="sangthan Logo" "width="500" height="300">
-     </div>
+      <h2>
+        भगवा रक्षक हिन्दू सेना — एक परिचय
+      </h2>
+
+      <p>
+        भगवा रक्षक हिन्दू सेना एक सामाजिक एवं धार्मिक संगठन है,
+        जिसका उद्देश्य भारतीय संस्कृति, परंपराओं, सेवा और
+        सामाजिक जागरूकता से जुड़े कार्यों में योगदान देना है।
+      </p>
+
+      <div class="jai-shree-ram">
+        जय श्री राम!
+      </div>
+
+    </section>
+
+
+    <!-- MISSION + ACTIVITIES -->
+
+    <section class="content-grid">
+
+      <article class="info-card">
+
+        <h3>
+          🎯 हमारा उद्देश्य और मिशन
+        </h3>
+
+        <p>
+          संगठन का उद्देश्य भारतीय संस्कृति और परंपराओं के प्रति
+          जागरूकता बढ़ाना तथा सामाजिक सेवा एवं सकारात्मक
+          सामुदायिक गतिविधियों में योगदान देना है।
+        </p>
+
+        <p>
+          हम युवाओं और समाज के विभिन्न वर्गों को सेवा,
+          सहयोग, अनुशासन और सामाजिक जिम्मेदारी से जोड़ने
+          के लिए कार्य करने का प्रयास करते हैं।
+        </p>
+
+      </article>
+
+
+      <article class="info-card">
+
+        <h3>
+          🤝 हमारी मुख्य गतिविधियाँ
+        </h3>
+
+        <ul>
+
+          <li>
+            धार्मिक एवं सांस्कृतिक कार्यक्रमों में सहयोग।
+          </li>
+
+          <li>
+            जरूरतमंद लोगों की सहायता और सामाजिक सेवा।
+          </li>
+
+          <li>
+            रक्तदान एवं जन-जागरूकता जैसे सेवा कार्यों में योगदान।
+          </li>
+
+          <li>
+            युवाओं को सामाजिक एवं रचनात्मक गतिविधियों से जोड़ना।
+          </li>
+
+          <li>
+            समाज में एकता, सहयोग और भाईचारे को बढ़ावा देना।
+          </li>
+
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <!-- VALUES -->
+
+    <section class="values-section">
+
+      <h2>
+        हमारे प्रमुख मूल्य
+      </h2>
+
+      <div class="values-grid">
+
+        <div class="value-box">
+
+          <div class="value-icon">
+            🙏
+          </div>
+
+          <h3>
+            संस्कार
+          </h3>
+
+          <p>
+            भारतीय संस्कृति और अच्छे संस्कारों को महत्व।
+          </p>
+
+        </div>
+
+
+        <div class="value-box">
+
+          <div class="value-icon">
+            🤝
+          </div>
+
+          <h3>
+            सेवा
+          </h3>
+
+          <p>
+            समाज के जरूरतमंद लोगों की सहायता का प्रयास।
+          </p>
+
+        </div>
+
+
+        <div class="value-box">
+
+          <div class="value-icon">
+            🕉️
+          </div>
+
+          <h3>
+            संस्कृति
+          </h3>
+
+          <p>
+            भारतीय धार्मिक एवं सांस्कृतिक परंपराओं के प्रति सम्मान।
+          </p>
+
+        </div>
+
+
+        <div class="value-box">
+
+          <div class="value-icon">
+            🇮🇳
+          </div>
+
+          <h3>
+            जिम्मेदारी
+          </h3>
+
+          <p>
+            समाज और देश के प्रति सकारात्मक जिम्मेदारी की भावना।
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ORGANIZATION LOGO -->
+
+    <section class="logo-section">
+
+      <h2>
+        भगवा रक्षक हिन्दू सेना
+      </h2>
+
+      <img
+        src="images/hindu sena logo.png"
+        alt="भगवा रक्षक हिन्दू सेना का लोगो"
+        class="organization-logo"
+        loading="lazy"
+      >
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="join-cta">
+
+      <h2>
+        संगठन से जुड़ना चाहते हैं?
+      </h2>
+
+      <p>
+        सामाजिक, धार्मिक और सेवा गतिविधियों में
+        अपना योगदान देने के लिए हमारे साथ जुड़ें।
+      </p>
+
+      <a
+        href="join.html"
+        class="cta-button"
+      >
+        संगठन से जुड़ें →
+      </a>
+
+    </section>
+
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
-    <p>© 2025 भगवा रक्षक हिन्दू सेना</p>
+
+    <div class="footer-brand">
+      भगवा रक्षक हिन्दू सेना
+    </div>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        होम
+      </a>
+
+      <a href="about.html">
+        हमारे बारे में
+      </a>
+
+      <a href="team.html">
+        टीम
+      </a>
+
+      <a href="gallery.html">
+        गैलरी
+      </a>
+
+      <a href="contact.html">
+        संपर्क
+      </a>
+
+      <a href="join.html">
+        जुड़ें
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 भगवा रक्षक हिन्दू सेना. सर्वाधिकार सुरक्षित।
+    </div>
+
   </footer>
+
 </body>
 </html>
