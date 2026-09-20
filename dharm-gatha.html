@@ -3,73 +3,1139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="धर्म गाथा - श्रीराम, राजा हरिश्चंद्र, श्रीकृष्ण और भारतीय धर्म एवं संस्कृति से जुड़ी प्रेरणादायक कथाएँ।">
+
+  <meta name="keywords"
+        content="धर्म गाथा, श्रीराम, हरिश्चंद्र, श्रीकृष्ण, भगवद्गीता, हिन्दू धर्म, भारतीय संस्कृति">
+
+  <meta name="author" content="भगवा रक्षक हिन्दू सेना">
+
   <title>धर्म गाथा | भगवा रक्षक हिन्दू सेना</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+
+    :root {
+      --saffron: #f26b21;
+      --saffron-dark: #c94d0b;
+      --gold: #ffb300;
+      --dark: #171717;
+      --text: #333;
+      --muted: #666;
+      --white: #fff;
+      --light: #fff8f2;
+      --border: #eeeeee;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-color: #fff8e1;
-      font-family: 'Segoe UI', sans-serif;
-      color: #4e2600;
+      font-family:
+        "Noto Sans Devanagari",
+        "Poppins",
+        sans-serif;
+
+      background: #f7f7f7;
+
+      color: var(--text);
+
+      line-height: 1.8;
     }
-    h1 {
-      background-color: #ff6f00;
+
+    a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      width: 100%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e85b0b,
+          #ff7a18
+        );
+
       color: white;
-      padding: 15px;
-      text-align: center;
-      border-radius: 10px;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.15);
     }
-    .accordion {
-      background-color: #ffe0b2;
-      color: #4e2600;
-      cursor: pointer;
-      padding: 15px;
-      margin: 10px 0;
-      border: none;
+
+    .header-container {
+      width: min(1200px, 94%);
+
+      min-height: 78px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      color: white;
+
+      font-size: 1.1rem;
+
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+    .brand img {
+      width: 52px;
+
+      height: 52px;
+
+      object-fit: contain;
+
+      background: white;
+
+      border-radius: 50%;
+
+      padding: 4px;
+
+      box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: flex-end;
+
+      flex-wrap: wrap;
+
+      gap: 4px;
+    }
+
+    nav a {
+      color: white;
+
+      padding: 8px 10px;
+
       border-radius: 8px;
-      text-align: left;
-      font-size: 16px;
-      transition: 0.3s;
+
+      font-size: 0.88rem;
+
+      font-weight: 600;
+
+      transition: 0.25s ease;
     }
-    .active, .accordion:hover {
-      background-color: #ffb74d;
+
+    nav a:hover,
+    nav a.active {
+      background:
+        rgba(255, 255, 255, 0.18);
+
+      color: #fff1b8;
     }
-    .panel {
-      padding: 0 15px;
-      background-color: white;
-      display: none;
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .page-hero {
+      background:
+        linear-gradient(
+          rgba(120, 42, 0, 0.78),
+          rgba(120, 42, 0, 0.78)
+        ),
+        linear-gradient(
+          135deg,
+          #ff7b00,
+          #ffb300
+        );
+
+      color: white;
+
+      text-align: center;
+
+      padding: 70px 20px 65px;
+    }
+
+    .page-hero h1 {
+      font-size:
+        clamp(2rem, 5vw, 3.3rem);
+
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .page-hero p {
+      max-width: 760px;
+
+      margin: auto;
+
+      font-size: 1.05rem;
+
+      opacity: 0.95;
+    }
+
+    .hero-line {
+      width: 80px;
+
+      height: 4px;
+
+      background: var(--gold);
+
+      margin: 20px auto 0;
+
+      border-radius: 50px;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      width: min(1000px, 94%);
+
+      margin: 45px auto 70px;
+    }
+
+    .intro-card {
+      background: white;
+
+      padding: 32px;
+
+      border-radius: var(--radius);
+
+      box-shadow: var(--shadow);
+
+      text-align: center;
+
+      margin-bottom: 30px;
+    }
+
+    .intro-card h2 {
+      color: var(--saffron-dark);
+
+      font-size:
+        clamp(1.5rem, 4vw, 2.1rem);
+
+      margin-bottom: 10px;
+
+      font-weight: 800;
+    }
+
+    .intro-card p {
+      color: var(--muted);
+
+      max-width: 760px;
+
+      margin: auto;
+    }
+
+    .om-symbol {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 55px;
+
+      height: 55px;
+
+      margin-bottom: 12px;
+
+      border-radius: 50%;
+
+      background: #fff0e3;
+
+      color: var(--saffron-dark);
+
+      font-size: 2rem;
+
+      font-weight: 700;
+    }
+
+    /* =========================
+       GATHA CARD
+    ========================== */
+
+    .gatha-list {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 15px;
+    }
+
+    .gatha-item {
+      background: white;
+
+      border-radius: 15px;
+
+      box-shadow: var(--shadow);
+
       overflow: hidden;
-      border-left: 3px solid #ff6f00;
-      border-radius: 0 0 8px 8px;
+
+      border: 1px solid #f0f0f0;
     }
+
+    .accordion {
+      width: 100%;
+
+      border: none;
+
+      outline: none;
+
+      background: white;
+
+      color: var(--dark);
+
+      cursor: pointer;
+
+      padding: 20px 22px;
+
+      text-align: left;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      font-family: inherit;
+
+      font-size: 1.05rem;
+
+      font-weight: 800;
+
+      transition: 0.25s ease;
+    }
+
+    .accordion:hover {
+      background: #fff8f2;
+    }
+
+    .accordion.active {
+      background:
+        linear-gradient(
+          135deg,
+          #fff1e5,
+          #fff8f2
+        );
+
+      color: var(--saffron-dark);
+    }
+
+    .accordion-title {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+    }
+
+    .number {
+      width: 38px;
+
+      height: 38px;
+
+      min-width: 38px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #fff0e3;
+
+      color: var(--saffron-dark);
+
+      font-size: 0.9rem;
+
+      font-weight: 800;
+    }
+
+    .arrow {
+      width: 32px;
+
+      height: 32px;
+
+      min-width: 32px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #fff0e3;
+
+      color: var(--saffron-dark);
+
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .panel {
+      max-height: 0;
+
+      overflow: hidden;
+
+      background: white;
+
+      transition:
+        max-height 0.35s ease;
+    }
+
+    .panel-content {
+      padding:
+        0 24px 24px 72px;
+
+      color: var(--muted);
+
+      border-top: 1px solid #f5f5f5;
+    }
+
+    .panel-content p {
+      padding-top: 18px;
+    }
+
+    .lesson {
+      margin-top: 15px;
+
+      padding: 12px 15px;
+
+      border-left: 4px solid var(--saffron);
+
+      background: #fff8f2;
+
+      border-radius: 0 10px 10px 0;
+
+      color: #5b432f;
+
+      font-size: 0.94rem;
+    }
+
+    .lesson strong {
+      color: var(--saffron-dark);
+    }
+
+    /* =========================
+       QUOTE
+    ========================== */
+
+    .quote-box {
+      margin-top: 30px;
+
+      padding: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d9530b,
+          #f47a19
+        );
+
+      color: white;
+
+      border-radius: var(--radius);
+
+      text-align: center;
+
+      box-shadow: var(--shadow);
+    }
+
+    .quote-box .quote-symbol {
+      font-size: 2.5rem;
+
+      line-height: 1;
+
+      opacity: 0.8;
+    }
+
+    .quote-box p {
+      max-width: 750px;
+
+      margin: 10px auto;
+
+      font-size: 1.08rem;
+
+      font-weight: 600;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #171717;
+
+      color: #ddd;
+
+      text-align: center;
+
+      padding: 30px 20px;
+    }
+
+    .footer-brand {
+      color: white;
+
+      font-size: 1.2rem;
+
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #ccc;
+
+      margin: 0 7px;
+
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: #ff8a2a;
+    }
+
+    .copyright {
+      color: #999;
+
+      font-size: 0.84rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .header-container {
+        flex-direction: column;
+
+        padding: 12px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .brand {
+        font-size: 0.98rem;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      nav {
+        gap: 2px;
+      }
+
+      nav a {
+        font-size: 0.76rem;
+
+        padding: 6px 7px;
+      }
+
+      .page-hero {
+        padding: 50px 15px;
+      }
+
+      main {
+        width: 92%;
+
+        margin-top: 28px;
+      }
+
+      .intro-card {
+        padding: 25px 18px;
+      }
+
+      .accordion {
+        padding: 16px;
+      }
+
+      .accordion-title {
+        gap: 9px;
+      }
+
+      .number {
+        width: 34px;
+
+        height: 34px;
+
+        min-width: 34px;
+      }
+
+      .panel-content {
+        padding:
+          0 18px 20px 18px;
+      }
+
+      .quote-box {
+        padding: 28px 18px;
+      }
+
+    }
+
   </style>
 </head>
+
 <body>
-  <h1>🔱 धर्म गाथा 🔱</h1>
 
-  <button class="accordion">1️⃣ श्रीराम का वनवास</button>
-  <div class="panel">
-    <p>जब राजा दशरथ ने कैकयी के वचनों को पूरा करने के लिए राम को वनवास दिया, तब श्रीराम ने धर्म का पालन करते हुए बिना विरोध के वन गमन किया।</p>
-  </div>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-  <button class="accordion">2️⃣ हरिश्चंद्र की सत्यनिष्ठा</button>
-  <div class="panel">
-    <p>राजा हरिश्चंद्र ने सत्य की रक्षा के लिए सब कुछ त्याग दिया, यहां तक कि पत्नी और पुत्र को भी। यह धर्म पालन की अद्वितीय गाथा है।</p>
-  </div>
+  <header>
 
-  <button class="accordion">3️⃣ श्रीकृष्ण का गीता उपदेश</button>
-  <div class="panel">
-    <p>महाभारत के युद्ध भूमि में अर्जुन को मोह से मुक्त कर धर्म का मार्ग दिखाने के लिए श्रीकृष्ण ने गीता का उपदेश दिया।</p>
-  </div>
+    <div class="header-container">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="images/hindu sena logo.png"
+          alt="भगवा रक्षक हिन्दू सेना लोगो"
+        >
+
+        <span>
+          भगवा रक्षक हिन्दू सेना
+        </span>
+
+      </a>
+
+      <nav aria-label="मुख्य मेनू">
+
+        <a href="index.html">
+          होम
+        </a>
+
+        <a href="about.html">
+          हमारे बारे में
+        </a>
+
+        <a href="team.html">
+          टीम
+        </a>
+
+        <a href="gallery.html">
+          गैलरी
+        </a>
+
+        <a
+          href="dharm-gatha.html"
+          class="active"
+        >
+          धर्म गाथा
+        </a>
+
+        <a href="aarti.html">
+          आरती
+        </a>
+
+        <a href="kathayein.html">
+          कथाएँ
+        </a>
+
+        <a href="contact.html">
+          संपर्क
+        </a>
+
+        <a href="join.html">
+          जुड़ें
+        </a>
+
+        <a href="card.html">
+          सदस्य कार्ड
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="page-hero">
+
+    <h1>
+      🔱 धर्म गाथा 🔱
+    </h1>
+
+    <p>
+      भारतीय धर्म, संस्कृति और परंपरा से जुड़ी
+      प्रेरणादायक कथाओं एवं आदर्शों की झलक।
+    </p>
+
+    <div class="hero-line"></div>
+
+  </section>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+    <section class="intro-card">
+
+      <div class="om-symbol">
+        ॐ
+      </div>
+
+      <h2>
+        धर्म और आदर्शों की प्रेरणादायक गाथाएँ
+      </h2>
+
+      <p>
+        भारतीय परंपरा में अनेक ऐसी कथाएँ हैं जो सत्य,
+        कर्तव्य, त्याग, धर्म और जीवन-मूल्यों की प्रेरणा देती हैं।
+        नीचे किसी भी विषय पर क्लिक करके उसका संक्षिप्त परिचय पढ़ें।
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         GATHA LIST
+    ========================== -->
+
+    <section class="gatha-list">
+
+
+      <!-- 1 -->
+
+      <div class="gatha-item">
+
+        <button class="accordion" type="button">
+
+          <span class="accordion-title">
+
+            <span class="number">
+              1
+            </span>
+
+            <span>
+              श्रीराम का वनवास
+            </span>
+
+          </span>
+
+          <span class="arrow">
+            ↓
+          </span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              रामायण की परंपरा के अनुसार, राजा दशरथ द्वारा
+              दिए गए वचन को निभाने के लिए श्रीराम ने वनवास
+              स्वीकार किया। उन्होंने व्यक्तिगत सुख से ऊपर
+              पिता के वचन और अपने कर्तव्य को महत्व दिया।
+            </p>
+
+            <div class="lesson">
+              <strong>प्रेरणा:</strong>
+              कर्तव्य, संयम और वचन के प्रति निष्ठा।
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 2 -->
+
+      <div class="gatha-item">
+
+        <button class="accordion" type="button">
+
+          <span class="accordion-title">
+
+            <span class="number">
+              2
+            </span>
+
+            <span>
+              राजा हरिश्चंद्र की सत्यनिष्ठा
+            </span>
+
+          </span>
+
+          <span class="arrow">
+            ↓
+          </span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              राजा हरिश्चंद्र की कथा भारतीय परंपरा में सत्य के
+              प्रति दृढ़ निष्ठा के उदाहरण के रूप में प्रसिद्ध है।
+              कथा में वे कठिन परिस्थितियों के बावजूद सत्य का
+              पालन करते हुए दिखाई देते हैं।
+            </p>
+
+            <div class="lesson">
+              <strong>प्रेरणा:</strong>
+              कठिन परिस्थितियों में भी सत्य और सिद्धांतों
+              के प्रति दृढ़ रहना।
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 3 -->
+
+      <div class="gatha-item">
+
+        <button class="accordion" type="button">
+
+          <span class="accordion-title">
+
+            <span class="number">
+              3
+            </span>
+
+            <span>
+              श्रीकृष्ण का गीता उपदेश
+            </span>
+
+          </span>
+
+          <span class="arrow">
+            ↓
+          </span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              महाभारत के युद्धक्षेत्र में अर्जुन के मन में
+              उत्पन्न दुविधा के समय श्रीकृष्ण ने उन्हें अपने
+              कर्तव्य और कर्म के महत्व का उपदेश दिया।
+              यही संवाद भगवद्गीता के रूप में प्रसिद्ध है।
+            </p>
+
+            <div class="lesson">
+              <strong>प्रेरणा:</strong>
+              अपने कर्तव्य को समझना, कर्म पर ध्यान देना
+              और कठिन समय में धैर्य रखना।
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 4 -->
+
+      <div class="gatha-item">
+
+        <button class="accordion" type="button">
+
+          <span class="accordion-title">
+
+            <span class="number">
+              4
+            </span>
+
+            <span>
+              भक्त प्रह्लाद की भक्ति
+            </span>
+
+          </span>
+
+          <span class="arrow">
+            ↓
+          </span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              पुराणिक परंपरा में भक्त प्रह्लाद को भगवान विष्णु
+              के प्रति अटूट भक्ति के लिए जाना जाता है। कथा में
+              अनेक कठिन परिस्थितियों के बावजूद उनकी भक्ति
+              और विश्वास बना रहता है।
+            </p>
+
+            <div class="lesson">
+              <strong>प्रेरणा:</strong>
+              विश्वास, भक्ति और अपने आदर्शों के प्रति दृढ़ता।
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- 5 -->
+
+      <div class="gatha-item">
+
+        <button class="accordion" type="button">
+
+          <span class="accordion-title">
+
+            <span class="number">
+              5
+            </span>
+
+            <span>
+              महाराणा प्रताप का स्वाभिमान
+            </span>
+
+          </span>
+
+          <span class="arrow">
+            ↓
+          </span>
+
+        </button>
+
+        <div class="panel">
+
+          <div class="panel-content">
+
+            <p>
+              महाराणा प्रताप मेवाड़ के शासक थे और भारतीय
+              इतिहास में अपने संघर्ष, स्वाभिमान और स्वतंत्रता
+              के लिए प्रसिद्ध हैं। उनके जीवन से जुड़े अनेक
+              प्रसंग साहस और दृढ़ संकल्प की चर्चा करते हैं।
+            </p>
+
+            <div class="lesson">
+              <strong>प्रेरणा:</strong>
+              आत्मसम्मान, साहस और विपरीत परिस्थितियों में
+              दृढ़ संकल्प।
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+    <!-- =========================
+         QUOTE
+    ========================== -->
+
+    <section class="quote-box">
+
+      <div class="quote-symbol">
+        ❝
+      </div>
+
+      <p>
+        धर्म केवल शब्द नहीं, बल्कि सत्य, कर्तव्य,
+        सेवा और अच्छे आचरण से जुड़ा जीवन-मूल्य है।
+      </p>
+
+      <div class="quote-symbol">
+        ❞
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-brand">
+      भगवा रक्षक हिन्दू सेना
+    </div>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        होम
+      </a>
+
+      <a href="about.html">
+        हमारे बारे में
+      </a>
+
+      <a href="team.html">
+        टीम
+      </a>
+
+      <a href="gallery.html">
+        गैलरी
+      </a>
+
+      <a href="contact.html">
+        संपर्क
+      </a>
+
+      <a href="join.html">
+        जुड़ें
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 भगवा रक्षक हिन्दू सेना. सर्वाधिकार सुरक्षित।
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
   <script>
-    const acc = document.getElementsByClassName("accordion");
-    for (let i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        const panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-      });
-    }
+
+    const accordions =
+      document.querySelectorAll(".accordion");
+
+
+    accordions.forEach(function (accordion) {
+
+      accordion.addEventListener(
+        "click",
+        function () {
+
+          const panel =
+            this.nextElementSibling;
+
+          const isOpen =
+            this.classList.contains("active");
+
+
+          /*
+            पहले सभी panels बंद करें
+          */
+
+          accordions.forEach(function (item) {
+
+            item.classList.remove("active");
+
+            item.nextElementSibling.style.maxHeight =
+              null;
+
+          });
+
+
+          /*
+            जिस item पर click हुआ
+            केवल उसे खोलें
+          */
+
+          if (!isOpen) {
+
+            this.classList.add("active");
+
+            panel.style.maxHeight =
+              panel.scrollHeight + "px";
+
+          }
+
+        }
+      );
+
+    });
+
   </script>
+
 </body>
 </html>
