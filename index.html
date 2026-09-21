@@ -18,25 +18,14 @@
     <meta name="description"
           content="भगवा रक्षक हिन्दू सेना — धर्म, सेवा, संस्कार और सामाजिक जागरूकता के लिए समर्पित संगठन।">
 
-    <meta name="keywords"
-          content="भगवा रक्षक हिन्दू सेना, हिंदू सेना, सनातन धर्म, धर्म सेवा संस्कार">
-
-    <meta name="author"
-          content="भगवा रक्षक हिन्दू सेना">
-
-
-    <!-- Favicon -->
-
+    <!-- FAVICON -->
     <link
-    rel="icon"
-    type="image/png"
-    href="images/sangthan-logo.png">
-    alt="भगवा रक्षक हिन्दू सेना लोगो">
-          
+        rel="icon"
+        type="image/png"
+        href="images/sangthan-logo.png">
 
 
-    <!-- Google Font -->
-
+    <!-- GOOGLE FONT -->
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -49,8 +38,7 @@
         rel="stylesheet">
 
 
-    <!-- Font Awesome -->
-
+    <!-- FONT AWESOME -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -58,21 +46,15 @@
 
     <style>
 
-        /* =========================================
-           BASIC RESET
-        ========================================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
             margin: 0;
@@ -82,22 +64,18 @@
             overflow-x: hidden;
         }
 
-
         img {
             max-width: 100%;
             display: block;
         }
 
-
         a {
             text-decoration: none;
         }
 
-
         button {
             font-family: inherit;
         }
-
 
         .container {
             width: min(1150px, 92%);
@@ -105,20 +83,19 @@
         }
 
 
-        /* =========================================
+        /* =========================
            HEADER
-        ========================================= */
+        ========================= */
 
         header {
             width: 100%;
-            background: #ffffff;
-            border-bottom: 1px solid #eeeeee;
+            background: #fff;
+            border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
             z-index: 9999;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-
 
         .header-content {
             min-height: 76px;
@@ -140,18 +117,17 @@
             font-weight: 800;
         }
 
-
         .logo img {
-            width: 54px;
-            height: 54px;
+            width: 55px;
+            height: 55px;
             object-fit: contain;
             border-radius: 8px;
         }
 
 
-        /* =========================================
-           DESKTOP NAVIGATION
-        ========================================= */
+        /* =========================
+           DESKTOP NAV
+        ========================= */
 
         .sidenav > ul {
             display: flex;
@@ -160,12 +136,10 @@
             list-style: none;
         }
 
-
         .sidenav li {
             list-style: none;
             position: relative;
         }
-
 
         .sidenav > ul > li > a {
             display: block;
@@ -178,64 +152,41 @@
             cursor: pointer;
         }
 
-
         .sidenav > ul > li > a:hover {
             color: #f4511e;
             background: #fff2eb;
         }
 
 
-        /* =========================================
-           STORY DROPDOWN - DESKTOP
-        ========================================= */
+        /* =========================
+           DROPDOWN
+        ========================= */
 
         .dropdown-menu {
             position: absolute;
             top: calc(100% + 5px);
             right: 0;
-
             width: 220px;
-
-            background: #ffffff;
-
+            background: #fff;
             padding: 8px;
-
             border-radius: 12px;
-
-            box-shadow:
-                0 12px 35px rgba(0,0,0,0.15);
-
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
             display: none;
-
             z-index: 10020;
         }
-
 
         .dropdown:hover .dropdown-menu {
             display: block;
         }
 
-
-        .dropdown-menu li {
-            width: 100%;
-        }
-
-
         .dropdown-menu li a {
             display: block;
-
             padding: 12px;
-
             color: #333;
-
             font-size: 15px;
             font-weight: 600;
-
             border-radius: 8px;
-
-            cursor: pointer;
         }
-
 
         .dropdown-menu li a:hover {
             color: #f4511e;
@@ -243,45 +194,34 @@
         }
 
 
-        /* =========================================
+        /* =========================
            JOIN BUTTON
-        ========================================= */
+        ========================= */
 
         .cta-button {
             background: #f4511e !important;
-            color: #ffffff !important;
+            color: #fff !important;
             padding: 11px 18px !important;
             border-radius: 8px !important;
         }
-
 
         .cta-button:hover {
             background: #d84315 !important;
         }
 
 
-        /* Poster button desktop hidden */
-
-        .poster-link-button {
-            display: none !important;
-        }
-
-
-        /* =========================================
+        /* =========================
            HAMBURGER
-        ========================================= */
+        ========================= */
 
         .hamburger-menu-icon {
-
             display: none;
 
             width: 54px;
             height: 54px;
 
             border: 1px solid #e2e2e2;
-
-            background: #ffffff;
-
+            background: #fff;
             border-radius: 14px;
 
             cursor: pointer;
@@ -289,48 +229,33 @@
             padding: 10px;
 
             flex-direction: column;
-
             align-items: center;
-
             justify-content: center;
 
             gap: 6px;
 
             position: relative;
-
             z-index: 10005;
-
-            -webkit-tap-highlight-color: transparent;
         }
-
 
         .hamburger-menu-icon .bar {
-
             width: 30px;
             height: 4px;
-
             background: #f4511e;
-
             border-radius: 5px;
-
             display: block;
-
-            pointer-events: none;
         }
 
 
-        /* =========================================
+        /* =========================
            HERO
-        ========================================= */
+        ========================= */
 
         .hero-section {
-
             min-height: 610px;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             text-align: center;
@@ -339,77 +264,46 @@
 
             background:
                 linear-gradient(
-                    rgba(20,20,20,0.62),
-                    rgba(20,20,20,0.62)
+                    rgba(20,20,20,0.65),
+                    rgba(20,20,20,0.65)
                 ),
-                radial-gradient(
-                    circle at center,
-                    #777777,
-                    #555555
-                );
+                #555;
         }
-
 
         .hero-content {
-
             width: min(900px, 90%);
-
-            color: #ffffff;
+            color: #fff;
         }
 
-
         .hero-content h1 {
-
-            font-size:
-                clamp(38px, 6vw, 68px);
-
+            font-size: clamp(38px, 6vw, 68px);
             line-height: 1.3;
-
             font-weight: 800;
-
             margin-bottom: 22px;
 
             text-shadow:
                 0 4px 10px rgba(0,0,0,0.45);
         }
 
-
         .hero-content h2 {
-
             color: #ffd180;
-
-            font-size:
-                clamp(23px, 4vw, 38px);
-
+            font-size: clamp(23px, 4vw, 38px);
             margin-bottom: 20px;
         }
 
-
         .hero-content p {
-
-            font-size:
-                clamp(17px, 3vw, 24px);
-
+            font-size: clamp(17px, 3vw, 24px);
             line-height: 1.8;
-
             margin-bottom: 32px;
         }
 
-
         .main-cta-button {
-
             display: inline-block;
-
             background: #f4511e;
-
-            color: #ffffff;
-
+            color: #fff;
             padding: 16px 34px;
-
             border-radius: 14px;
-
             font-size: 20px;
-
             font-weight: 700;
 
             box-shadow:
@@ -418,123 +312,81 @@
             transition: 0.25s;
         }
 
-
         .main-cta-button:hover {
-
             transform: translateY(-3px);
-
             background: #e64a19;
         }
 
 
-        /* =========================================
+        /* =========================
            ABOUT
-        ========================================= */
+        ========================= */
 
         .about-us-summary {
-
             padding: 90px 0;
-
-            background: #ffffff;
-
+            background: #fff;
             text-align: center;
         }
 
-
         .about-us-summary h2 {
-
             color: #e64a19;
-
-            font-size:
-                clamp(34px, 5vw, 50px);
-
+            font-size: clamp(34px, 5vw, 50px);
             margin-bottom: 25px;
         }
 
-
         .about-us-summary p {
-
             max-width: 850px;
-
             margin: auto;
-
             font-size: 18px;
-
             line-height: 2;
-
-            color: #666666;
+            color: #666;
         }
 
-
         .read-more-button {
-
             display: inline-block;
-
             margin-top: 30px;
-
-            background: #222222;
-
-            color: #ffffff;
-
+            background: #222;
+            color: #fff;
             padding: 13px 25px;
-
             border-radius: 10px;
-
             font-weight: 700;
         }
 
-
         .read-more-button:hover {
-
             background: #f4511e;
         }
 
 
-        /* =========================================
+        /* =========================
            MISSION
-        ========================================= */
+        ========================= */
 
         .mission-vision {
-
             padding: 80px 0;
-
             background: #fff4ec;
         }
 
-
         .mission-grid {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
 
-
         .mission-item {
-
-            background: #ffffff;
-
+            background: #fff;
             padding: 40px 30px;
-
             border-radius: 18px;
-
             text-align: center;
 
             box-shadow:
                 0 8px 30px rgba(0,0,0,0.07);
         }
 
-
         .mission-item i {
-
             width: 70px;
             height: 70px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
@@ -543,234 +395,155 @@
             border-radius: 50%;
 
             background: #fff0e8;
-
             color: #f4511e;
 
             font-size: 30px;
         }
 
-
         .mission-item h3 {
-
             font-size: 26px;
-
             margin-bottom: 15px;
         }
 
-
         .mission-item p {
-
-            color: #666666;
-
+            color: #666;
             line-height: 1.9;
-
             font-size: 16px;
         }
 
 
-        /* =========================================
+        /* =========================
            SLOGAN
-        ========================================= */
+        ========================= */
 
         .slogan-banner {
-
             padding: 55px 0;
-
             background: #f4511e;
-
-            color: #ffffff;
-
+            color: #fff;
             text-align: center;
         }
 
-
         .slogan-banner h2 {
-
-            font-size:
-                clamp(30px, 5vw, 48px);
+            font-size: clamp(30px, 5vw, 48px);
         }
 
 
-        /* =========================================
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         footer {
-
             background: #171717;
-
-            color: #ffffff;
-
+            color: #fff;
             padding: 55px 0 25px;
         }
 
-
         .footer-grid {
-
             display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
-
         footer h3 {
-
             color: #ffab70;
-
             margin-bottom: 18px;
         }
 
-
         footer ul {
-
             list-style: none;
         }
 
-
         footer li {
-
             margin-bottom: 10px;
         }
 
-
         footer a {
-
-            color: #dddddd;
+            color: #ddd;
         }
 
-
         footer a:hover {
-
             color: #ff8a50;
         }
 
-
         .social-icons {
-
             display: flex;
-
             gap: 12px;
         }
 
-
         .social-icon {
-
             width: 42px;
             height: 42px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
 
             border-radius: 50%;
 
             background: #292929;
-
-            color: #ffffff;
+            color: #fff;
 
             font-size: 18px;
         }
 
-
         .social-icon:hover {
-
             background: #f4511e;
-
-            color: #ffffff;
         }
 
-
         .copyright {
-
-            border-top: 1px solid #333333;
-
+            border-top: 1px solid #333;
             margin-top: 35px;
-
             padding-top: 20px;
-
             text-align: center;
-
-            color: #aaaaaa;
-
+            color: #aaa;
             font-size: 14px;
         }
 
 
-        /* =========================================
+        /* =========================
            MOBILE
-        ========================================= */
+        ========================= */
 
         @media (max-width: 768px) {
 
-
-            /* Header */
-
             .header-content {
-
                 min-height: 70px;
-
                 width: 92%;
             }
 
-
             .logo a {
-
                 font-size: 16px;
-
                 gap: 8px;
             }
 
-
             .logo img {
-
-                width: 46px;
-                height: 46px;
+                width: 48px;
+                height: 48px;
             }
 
-
-            /* Hamburger */
-
             .hamburger-menu-icon {
-
                 display: flex;
             }
 
 
-            /* =====================================
-               MOBILE SIDE MENU
-            ===================================== */
+            /* MOBILE SIDE MENU */
 
             .sidenav {
-
                 position: fixed !important;
 
                 top: 0;
-
-                right: -280px;
+                right: -290px;
 
                 width: 280px !important;
-
                 max-width: 82vw;
 
                 height: 100vh;
 
-                background: #ffffff;
+                background: #fff;
 
                 overflow-y: auto;
 
-                overflow-x: hidden;
-
-                transition:
-                    right 0.3s ease;
-
-                /*
-                   VERY IMPORTANT:
-                   Menu overlay से ऊपर
-                */
+                transition: right 0.3s ease;
 
                 z-index: 10001 !important;
 
@@ -778,87 +551,59 @@
                     -8px 0 25px rgba(0,0,0,0.18);
             }
 
-
             .sidenav.active {
-
                 right: 0 !important;
             }
 
 
-            /* Menu List */
+            /* MOBILE LIST */
 
             .sidenav > ul {
-
                 display: block !important;
 
-                padding:
-                    76px 16px 25px;
+                padding: 76px 16px 25px;
 
                 margin: 0;
 
                 list-style: none;
             }
 
-
             .sidenav > ul > li {
-
                 width: 100%;
 
                 border-bottom:
-                    1px solid #eeeeee;
+                    1px solid #eee;
             }
 
-
             .sidenav > ul > li > a {
-
                 display: block;
 
                 width: 100%;
 
-                padding:
-                    15px 10px;
+                padding: 15px 10px;
 
-                color: #222222 !important;
+                color: #222 !important;
 
                 font-size: 17px;
 
                 font-weight: 700;
-
-                cursor: pointer;
-
-                -webkit-tap-highlight-color:
-                    transparent;
             }
 
 
-            .sidenav > ul > li > a:active {
-
-                background: #fff1e9;
-
-                color: #f4511e !important;
-            }
-
-
-            /* =====================================
-               CLOSE BUTTON
-            ===================================== */
+            /* CLOSE BUTTON */
 
             .closebtn {
-
                 position: absolute !important;
 
                 top: 14px;
-
                 right: 14px;
 
                 width: 42px;
-
                 height: 42px;
 
                 display: flex !important;
 
                 align-items: center;
-
                 justify-content: center;
 
                 border-radius: 50%;
@@ -869,22 +614,13 @@
 
                 font-size: 30px !important;
 
-                font-weight: 500;
-
-                line-height: 1;
-
                 z-index: 10004 !important;
-
-                cursor: pointer;
             }
 
 
-            /* =====================================
-               MOBILE STORY DROPDOWN
-            ===================================== */
+            /* MOBILE DROPDOWN */
 
             .dropdown-menu {
-
                 position: static !important;
 
                 display: none;
@@ -895,68 +631,34 @@
 
                 padding: 4px 8px;
 
-                margin: 0 0 8px;
+                margin-bottom: 8px;
 
                 box-shadow: none;
-
-                border-radius: 8px;
             }
 
-
-            .dropdown.open
-            .dropdown-menu {
-
+            .dropdown.open .dropdown-menu {
                 display: block !important;
             }
 
-
             .dropdown-menu li {
-
-                width: 100%;
-
                 border-bottom:
                     1px solid #f0dfd5;
             }
 
-
-            .dropdown-menu li:last-child {
-
-                border-bottom: none;
-            }
-
-
             .dropdown-menu li a {
-
                 display: block;
-
-                width: 100%;
 
                 padding: 12px 10px;
 
-                color: #333333 !important;
+                color: #333 !important;
 
                 font-size: 15px;
-
-                font-weight: 600;
-
-                cursor: pointer;
             }
 
 
-            .dropdown-menu li a:active {
-
-                background: #ffe7d8;
-
-                color: #f4511e !important;
-            }
-
-
-            /* =====================================
-               JOIN BUTTON
-            ===================================== */
+            /* JOIN */
 
             .cta-button {
-
                 display: block !important;
 
                 width: 100%;
@@ -965,31 +667,24 @@
 
                 margin-top: 12px;
 
-                padding:
-                    13px 10px !important;
-
-                border-radius: 8px !important;
+                padding: 13px 10px !important;
             }
 
 
-            /* =====================================
-               POSTER BUTTON
-            ===================================== */
+            /* POSTER */
 
             .poster-link-button {
-
                 display: block !important;
 
                 width: 100%;
 
                 text-align: center;
 
-                background: #222222;
+                background: #222;
 
-                color: #ffffff !important;
+                color: #fff !important;
 
-                padding:
-                    13px 10px !important;
+                padding: 13px 10px !important;
 
                 margin-top: 10px;
 
@@ -997,133 +692,88 @@
             }
 
 
-            /* =====================================
-               HERO
-            ===================================== */
+            /* HERO */
 
             .hero-section {
-
                 min-height: 500px;
-
-                padding:
-                    50px 0;
+                padding: 50px 0;
             }
 
-
             .hero-content {
-
                 width: 90%;
             }
 
-
             .hero-content h1 {
-
                 font-size: 36px;
-
                 line-height: 1.4;
             }
 
-
             .hero-content h2 {
-
                 font-size: 23px;
             }
 
-
             .hero-content p {
-
                 font-size: 16px;
-
                 line-height: 1.8;
             }
 
-
             .main-cta-button {
-
                 font-size: 17px;
-
-                padding:
-                    14px 24px;
+                padding: 14px 24px;
             }
 
 
-            /* =====================================
-               ABOUT
-            ===================================== */
+            /* ABOUT */
 
             .about-us-summary {
-
                 padding: 60px 0;
             }
 
-
             .about-us-summary h2 {
-
                 font-size: 36px;
             }
 
-
             .about-us-summary p {
-
                 font-size: 16px;
-
                 line-height: 1.9;
             }
 
 
-            /* =====================================
-               MISSION
-            ===================================== */
+            /* MISSION */
 
             .mission-vision {
-
                 padding: 55px 0;
             }
 
-
             .mission-grid {
-
                 grid-template-columns: 1fr;
-
                 gap: 20px;
             }
 
-
             .mission-item {
-
                 padding: 32px 22px;
             }
 
 
-            /* =====================================
-               FOOTER
-            ===================================== */
+            /* FOOTER */
 
             .footer-grid {
-
                 grid-template-columns: 1fr;
-
                 gap: 30px;
             }
 
-
             .copyright {
-
                 line-height: 1.7;
             }
 
         }
 
 
-        /* =========================================
-           MOBILE MENU OVERLAY
-           
-           IMPORTANT:
-           Overlay की z-index menu से कम है
-        ========================================= */
+        /* =========================
+           MENU OVERLAY
+        ========================= */
 
         .menu-overlay {
-
             display: none;
 
             position: fixed;
@@ -1133,36 +783,11 @@
             background:
                 rgba(0,0,0,0.45);
 
-            /*
-               Menu = 10001
-               Overlay = 9998
-
-               इसलिए menu clickable रहेगा
-            */
-
             z-index: 9998 !important;
-
-            cursor: pointer;
         }
-
 
         .menu-overlay.active {
-
             display: block;
-        }
-
-
-        /* =========================================
-           DESKTOP - HIDE MOBILE CLOSE
-        ========================================= */
-
-        @media (min-width: 769px) {
-
-            .closebtn {
-
-                display: none !important;
-            }
-
         }
 
     </style>
@@ -1173,20 +798,25 @@
 <body>
 
 
-<!-- =========================================
+<!-- =================================
      HEADER
-========================================= -->
+================================= -->
 
 <header>
 
     <div class="header-content container">
 
 
-        <!-- LOGO -->
+        <!-- WEBSITE LOGO -->
 
         <div class="logo">
 
             <a href="index.html">
+
+                <!--
+                    IMPORTANT:
+                    आपका नया logo यहीं से आएगा
+                -->
 
                 <img
                     src="images/sangthan-logo.png"
@@ -1201,9 +831,7 @@
         </div>
 
 
-        <!-- =====================================
-             MOBILE HAMBURGER
-        ====================================== -->
+        <!-- MOBILE MENU BUTTON -->
 
         <button
             type="button"
@@ -1219,9 +847,7 @@
         </button>
 
 
-        <!-- =====================================
-             NAVIGATION
-        ====================================== -->
+        <!-- NAVIGATION -->
 
         <nav
             id="mySidenav"
@@ -1229,7 +855,7 @@
             aria-label="मुख्य मेनू">
 
 
-            <!-- CLOSE BUTTON -->
+            <!-- CLOSE -->
 
             <a
                 href="#"
@@ -1245,138 +871,83 @@
             <ul>
 
 
-                <!-- HOME -->
-
                 <li>
-
                     <a href="index.html">
-
                         होम
-
                     </a>
-
                 </li>
 
 
-                <!-- ABOUT -->
-
                 <li>
-
                     <a href="about.html">
-
                         हमारे बारे में
-
                     </a>
-
                 </li>
 
 
-                <!-- TEAM -->
-
                 <li>
-
                     <a href="team.html">
-
                         टीम
-
                     </a>
-
                 </li>
 
-
-                <!-- GALLERY -->
 
                 <li>
-
                     <a href="gallery.html">
-
                         गैलरी
-
                     </a>
-
                 </li>
 
 
-                <!-- =================================
-                     OUR STORY
-                ================================== -->
+                <!-- हमारी गाथा -->
 
                 <li
                     class="dropdown"
                     id="storyDropdown">
-
 
                     <a
                         href="#"
                         id="storyButton">
 
                         हमारी गाथा
-
-                        <i
-                            class="fas fa-caret-down">
-                        </i>
+                        <i class="fas fa-caret-down"></i>
 
                     </a>
 
 
                     <ul class="dropdown-menu">
 
-
                         <li>
-
                             <a href="dharm-gatha.html">
-
                                 📖 धर्म गाथा
-
                             </a>
-
                         </li>
 
-
                         <li>
-
                             <a href="aarti.html">
-
                                 🪔 आरती
-
                             </a>
-
                         </li>
-
 
                         <li>
-
                             <a href="kathayein.html">
-
                                 📚 पौराणिक कथाएं
-
                             </a>
-
                         </li>
-
 
                     </ul>
 
                 </li>
 
 
-                <!-- CONTACT -->
-
                 <li>
-
                     <a href="contact.html">
-
                         संपर्क करें
-
                     </a>
-
                 </li>
 
 
-                <!-- JOIN -->
-
                 <li>
-
                     <a
                         href="join.html"
                         class="cta-button">
@@ -1384,14 +955,10 @@
                         ज्वॉइन करें
 
                     </a>
-
                 </li>
 
 
-                <!-- POSTER MAKER -->
-
                 <li>
-
                     <a
                         href="poster_maker.html"
                         class="poster-link-button">
@@ -1399,7 +966,6 @@
                         🎨 अपना पोस्टर बनाएँ
 
                     </a>
-
                 </li>
 
 
@@ -1412,9 +978,7 @@
 </header>
 
 
-<!-- =========================================
-     OVERLAY
-========================================= -->
+<!-- MENU OVERLAY -->
 
 <div
     id="menuOverlay"
@@ -1422,613 +986,6 @@
 </div>
 
 
-<!-- =========================================
+<!-- =================================
      MAIN
-========================================= -->
-
-<main>
-
-
-    <!-- =====================================
-         HERO SECTION
-    ====================================== -->
-
-    <section class="hero-section">
-
-        <div class="hero-content">
-
-
-            <h1>
-
-                🚩 भगवा रक्षक हिन्दू सेना 🚩
-
-            </h1>
-
-
-            <h2>
-
-                धर्मो रक्षति रक्षितः
-
-            </h2>
-
-
-            <p>
-
-                एकता, धर्म और संस्कृति की रक्षा के लिए
-                हम समर्पित हैं।
-
-            </p>
-
-
-            <a
-                href="join.html"
-                class="main-cta-button">
-
-                हमारे साथ जुड़ें
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================
-         ABOUT SECTION
-    ====================================== -->
-
-    <section
-        class="about-us-summary">
-
-        <div class="container">
-
-
-            <h2>
-
-                हम कौन हैं?
-
-            </h2>
-
-
-            <p>
-
-                भगवा रक्षक हिन्दू सेना एक सामाजिक और
-                धार्मिक संगठन है, जो धर्म, संस्कृति,
-                सेवा और सामाजिक जागरूकता के माध्यम से
-                समाज में सकारात्मक योगदान देने का
-                प्रयास करता है।
-
-            </p>
-
-
-            <a
-                href="about.html"
-                class="read-more-button">
-
-                और पढ़ें
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================
-         MISSION SECTION
-    ====================================== -->
-
-    <section
-        class="mission-vision">
-
-        <div class="container">
-
-
-            <div class="mission-grid">
-
-
-                <!-- MISSION -->
-
-                <div class="mission-item">
-
-
-                    <i class="fas fa-hand-holding-heart"></i>
-
-
-                    <h3>
-
-                        हमारा मिशन
-
-                    </h3>
-
-
-                    <p>
-
-                        सनातन धर्म के मूल्यों और सिद्धांतों
-                        को जन-जन तक पहुँचाना तथा सेवा और
-                        सामाजिक जागरूकता के कार्यों को
-                        बढ़ावा देना।
-
-                    </p>
-
-
-                </div>
-
-
-                <!-- VISION -->
-
-                <div class="mission-item">
-
-
-                    <i class="fas fa-bullseye"></i>
-
-
-                    <h3>
-
-                        हमारा लक्ष्य
-
-                    </h3>
-
-
-                    <p>
-
-                        समाज में एकता, सेवा, संस्कार और
-                        सकारात्मक सामाजिक सहभागिता को
-                        बढ़ावा देना।
-
-                    </p>
-
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================
-         SLOGAN
-    ====================================== -->
-
-    <section
-        class="slogan-banner">
-
-        <div class="container">
-
-            <h2>
-
-                जय श्री राम! 🚩
-
-            </h2>
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-    <div class="container">
-
-
-        <div class="footer-grid">
-
-
-            <!-- LINKS -->
-
-            <div>
-
-
-                <h3>
-
-                    महत्वपूर्ण लिंक
-
-                </h3>
-
-
-                <ul>
-
-
-                    <li>
-
-                        <a href="about.html">
-
-                            हमारे बारे में
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="team.html">
-
-                            टीम
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="gallery.html">
-
-                            गैलरी
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="contact.html">
-
-                            संपर्क करें
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="join.html">
-
-                            ज्वॉइन करें
-
-                        </a>
-
-                    </li>
-
-
-                </ul>
-
-            </div>
-
-
-            <!-- SOCIAL -->
-
-            <div>
-
-
-                <h3>
-
-                    हमारा अनुसरण करें
-
-                </h3>
-
-
-                <div class="social-icons">
-
-
-                    <!-- Instagram -->
-
-                    <a
-                        href="https://www.instagram.com/bhagva_rakshak__hindu_sena?stkn=M3B2M3U5YWMyd2Iw"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="social-icon"
-                        aria-label="Instagram">
-
-                        <i class="fab fa-instagram"></i>
-
-                    </a>
-
-
-                    <!-- Email -->
-
-                    <a
-                        href="mailto:bhagvarakshakhindusena@gmail.com"
-                        class="social-icon"
-                        aria-label="Email">
-
-                        <i class="fas fa-envelope"></i>
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-        <p class="copyright">
-
-            © 2026 भगवा रक्षक हिन्दू सेना।
-            सर्वाधिकार सुरक्षित।
-
-        </p>
-
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-
-        /* =====================================
-           ELEMENTS
-        ====================================== */
-
-        const menuToggle =
-            document.getElementById(
-                "menuToggle"
-            );
-
-
-        const sideNav =
-            document.getElementById(
-                "mySidenav"
-            );
-
-
-        const closeMenu =
-            document.getElementById(
-                "closeMenu"
-            );
-
-
-        const menuOverlay =
-            document.getElementById(
-                "menuOverlay"
-            );
-
-
-        const storyDropdown =
-            document.getElementById(
-                "storyDropdown"
-            );
-
-
-        const storyButton =
-            document.getElementById(
-                "storyButton"
-            );
-
-
-        /* =====================================
-           OPEN MOBILE MENU
-        ====================================== */
-
-        if (menuToggle) {
-
-            menuToggle.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
-
-                    sideNav.classList.add(
-                        "active"
-                    );
-
-
-                    menuOverlay.classList.add(
-                        "active"
-                    );
-
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "true"
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =====================================
-           CLOSE FUNCTION
-        ====================================== */
-
-        function closeMobileMenu() {
-
-            sideNav.classList.remove(
-                "active"
-            );
-
-
-            menuOverlay.classList.remove(
-                "active"
-            );
-
-
-            if (menuToggle) {
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-
-            if (storyDropdown) {
-
-                storyDropdown.classList.remove(
-                    "open"
-                );
-
-            }
-
-        }
-
-
-        /* =====================================
-           CLOSE BUTTON
-        ====================================== */
-
-        if (closeMenu) {
-
-            closeMenu.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
-                    closeMobileMenu();
-
-                }
-            );
-
-        }
-
-
-        /* =====================================
-           OVERLAY CLICK
-        ====================================== */
-
-        if (menuOverlay) {
-
-            menuOverlay.addEventListener(
-                "click",
-                function () {
-
-                    closeMobileMenu();
-
-                }
-            );
-
-        }
-
-
-        /* =====================================
-           STORY DROPDOWN
-        ====================================== */
-
-        if (storyButton) {
-
-            storyButton.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
-
-
-                    storyDropdown.classList.toggle(
-                        "open"
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =====================================
-           NORMAL MENU LINKS
-        ====================================== */
-
-        if (sideNav) {
-
-            const links =
-                sideNav.querySelectorAll(
-                    "a:not(#closeMenu):not(#storyButton)"
-                );
-
-
-            links.forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        function () {
-
-                            closeMobileMenu();
-
-                        }
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* =====================================
-           ESC KEY
-        ====================================== */
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
-                    closeMobileMenu();
-
-                }
-
-            }
-        );
-
-
-        /* =====================================
-           RESIZE
-        ====================================== */
-
-        window.addEventListener(
-            "resize",
-            function () {
-
-                if (
-                    window.innerWidth > 768
-                ) {
-
-                    closeMobileMenu();
-
-                }
-
-            }
-        );
-
-
-    }
-);
-
-</script>
-
-
-</body>
-
-</html>
+=======
