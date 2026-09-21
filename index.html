@@ -1134,4 +1134,898 @@
                Menu = 10001
                Overlay = 9998
 
-               इसलिए menu clickabl
+               इसलिए menu clickable रहेगा
+            */
+
+            z-index: 9998 !important;
+
+            cursor: pointer;
+        }
+
+
+        .menu-overlay.active {
+
+            display: block;
+        }
+
+
+        /* =========================================
+           DESKTOP - HIDE MOBILE CLOSE
+        ========================================= */
+
+        @media (min-width: 769px) {
+
+            .closebtn {
+
+                display: none !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header>
+
+    <div class="header-content container">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <a href="index.html">
+
+                <img
+                    src="images/sangthan-logo.png"
+                    alt="भगवा रक्षक हिन्दू सेना लोगो">
+
+                <span>
+                    भगवा रक्षक हिन्दू सेना
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- =====================================
+             MOBILE HAMBURGER
+        ====================================== -->
+
+        <button
+            type="button"
+            id="menuToggle"
+            class="hamburger-menu-icon"
+            aria-label="मेनू खोलें"
+            aria-expanded="false">
+
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+
+        </button>
+
+
+        <!-- =====================================
+             NAVIGATION
+        ====================================== -->
+
+        <nav
+            id="mySidenav"
+            class="sidenav"
+            aria-label="मुख्य मेनू">
+
+
+            <!-- CLOSE BUTTON -->
+
+            <a
+                href="#"
+                id="closeMenu"
+                class="closebtn"
+                aria-label="मेनू बंद करें">
+
+                &times;
+
+            </a>
+
+
+            <ul>
+
+
+                <!-- HOME -->
+
+                <li>
+
+                    <a href="index.html">
+
+                        होम
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li>
+
+                    <a href="about.html">
+
+                        हमारे बारे में
+
+                    </a>
+
+                </li>
+
+
+                <!-- TEAM -->
+
+                <li>
+
+                    <a href="team.html">
+
+                        टीम
+
+                    </a>
+
+                </li>
+
+
+                <!-- GALLERY -->
+
+                <li>
+
+                    <a href="gallery.html">
+
+                        गैलरी
+
+                    </a>
+
+                </li>
+
+
+                <!-- =================================
+                     OUR STORY
+                ================================== -->
+
+                <li
+                    class="dropdown"
+                    id="storyDropdown">
+
+
+                    <a
+                        href="#"
+                        id="storyButton">
+
+                        हमारी गाथा
+
+                        <i
+                            class="fas fa-caret-down">
+                        </i>
+
+                    </a>
+
+
+                    <ul class="dropdown-menu">
+
+
+                        <li>
+
+                            <a href="dharm-gatha.html">
+
+                                📖 धर्म गाथा
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="aarti.html">
+
+                                🪔 आरती
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="kathayein.html">
+
+                                📚 पौराणिक कथाएं
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
+
+                <!-- CONTACT -->
+
+                <li>
+
+                    <a href="contact.html">
+
+                        संपर्क करें
+
+                    </a>
+
+                </li>
+
+
+                <!-- JOIN -->
+
+                <li>
+
+                    <a
+                        href="join.html"
+                        class="cta-button">
+
+                        ज्वॉइन करें
+
+                    </a>
+
+                </li>
+
+
+                <!-- POSTER MAKER -->
+
+                <li>
+
+                    <a
+                        href="poster_maker.html"
+                        class="poster-link-button">
+
+                        🎨 अपना पोस्टर बनाएँ
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     OVERLAY
+========================================= -->
+
+<div
+    id="menuOverlay"
+    class="menu-overlay">
+</div>
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main>
+
+
+    <!-- =====================================
+         HERO SECTION
+    ====================================== -->
+
+    <section class="hero-section">
+
+        <div class="hero-content">
+
+
+            <h1>
+
+                🚩 भगवा रक्षक हिन्दू सेना 🚩
+
+            </h1>
+
+
+            <h2>
+
+                धर्मो रक्षति रक्षितः
+
+            </h2>
+
+
+            <p>
+
+                एकता, धर्म और संस्कृति की रक्षा के लिए
+                हम समर्पित हैं।
+
+            </p>
+
+
+            <a
+                href="join.html"
+                class="main-cta-button">
+
+                हमारे साथ जुड़ें
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ABOUT SECTION
+    ====================================== -->
+
+    <section
+        class="about-us-summary">
+
+        <div class="container">
+
+
+            <h2>
+
+                हम कौन हैं?
+
+            </h2>
+
+
+            <p>
+
+                भगवा रक्षक हिन्दू सेना एक सामाजिक और
+                धार्मिक संगठन है, जो धर्म, संस्कृति,
+                सेवा और सामाजिक जागरूकता के माध्यम से
+                समाज में सकारात्मक योगदान देने का
+                प्रयास करता है।
+
+            </p>
+
+
+            <a
+                href="about.html"
+                class="read-more-button">
+
+                और पढ़ें
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MISSION SECTION
+    ====================================== -->
+
+    <section
+        class="mission-vision">
+
+        <div class="container">
+
+
+            <div class="mission-grid">
+
+
+                <!-- MISSION -->
+
+                <div class="mission-item">
+
+
+                    <i class="fas fa-hand-holding-heart"></i>
+
+
+                    <h3>
+
+                        हमारा मिशन
+
+                    </h3>
+
+
+                    <p>
+
+                        सनातन धर्म के मूल्यों और सिद्धांतों
+                        को जन-जन तक पहुँचाना तथा सेवा और
+                        सामाजिक जागरूकता के कार्यों को
+                        बढ़ावा देना।
+
+                    </p>
+
+
+                </div>
+
+
+                <!-- VISION -->
+
+                <div class="mission-item">
+
+
+                    <i class="fas fa-bullseye"></i>
+
+
+                    <h3>
+
+                        हमारा लक्ष्य
+
+                    </h3>
+
+
+                    <p>
+
+                        समाज में एकता, सेवा, संस्कार और
+                        सकारात्मक सामाजिक सहभागिता को
+                        बढ़ावा देना।
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SLOGAN
+    ====================================== -->
+
+    <section
+        class="slogan-banner">
+
+        <div class="container">
+
+            <h2>
+
+                जय श्री राम! 🚩
+
+            </h2>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <!-- LINKS -->
+
+            <div>
+
+
+                <h3>
+
+                    महत्वपूर्ण लिंक
+
+                </h3>
+
+
+                <ul>
+
+
+                    <li>
+
+                        <a href="about.html">
+
+                            हमारे बारे में
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="team.html">
+
+                            टीम
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="gallery.html">
+
+                            गैलरी
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="contact.html">
+
+                            संपर्क करें
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="join.html">
+
+                            ज्वॉइन करें
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div>
+
+
+                <h3>
+
+                    हमारा अनुसरण करें
+
+                </h3>
+
+
+                <div class="social-icons">
+
+
+                    <!-- Instagram -->
+
+                    <a
+                        href="https://www.instagram.com/bhagva_rakshak__hindu_sena?stkn=M3B2M3U5YWMyd2Iw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-icon"
+                        aria-label="Instagram">
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+
+                    <!-- Email -->
+
+                    <a
+                        href="mailto:bhagvarakshakhindusena@gmail.com"
+                        class="social-icon"
+                        aria-label="Email">
+
+                        <i class="fas fa-envelope"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <p class="copyright">
+
+            © 2026 भगवा रक्षक हिन्दू सेना।
+            सर्वाधिकार सुरक्षित।
+
+        </p>
+
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =====================================
+           ELEMENTS
+        ====================================== */
+
+        const menuToggle =
+            document.getElementById(
+                "menuToggle"
+            );
+
+
+        const sideNav =
+            document.getElementById(
+                "mySidenav"
+            );
+
+
+        const closeMenu =
+            document.getElementById(
+                "closeMenu"
+            );
+
+
+        const menuOverlay =
+            document.getElementById(
+                "menuOverlay"
+            );
+
+
+        const storyDropdown =
+            document.getElementById(
+                "storyDropdown"
+            );
+
+
+        const storyButton =
+            document.getElementById(
+                "storyButton"
+            );
+
+
+        /* =====================================
+           OPEN MOBILE MENU
+        ====================================== */
+
+        if (menuToggle) {
+
+            menuToggle.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+
+                    sideNav.classList.add(
+                        "active"
+                    );
+
+
+                    menuOverlay.classList.add(
+                        "active"
+                    );
+
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           CLOSE FUNCTION
+        ====================================== */
+
+        function closeMobileMenu() {
+
+            sideNav.classList.remove(
+                "active"
+            );
+
+
+            menuOverlay.classList.remove(
+                "active"
+            );
+
+
+            if (menuToggle) {
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+
+            if (storyDropdown) {
+
+                storyDropdown.classList.remove(
+                    "open"
+                );
+
+            }
+
+        }
+
+
+        /* =====================================
+           CLOSE BUTTON
+        ====================================== */
+
+        if (closeMenu) {
+
+            closeMenu.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    closeMobileMenu();
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           OVERLAY CLICK
+        ====================================== */
+
+        if (menuOverlay) {
+
+            menuOverlay.addEventListener(
+                "click",
+                function () {
+
+                    closeMobileMenu();
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           STORY DROPDOWN
+        ====================================== */
+
+        if (storyButton) {
+
+            storyButton.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+
+                    storyDropdown.classList.toggle(
+                        "open"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           NORMAL MENU LINKS
+        ====================================== */
+
+        if (sideNav) {
+
+            const links =
+                sideNav.querySelectorAll(
+                    "a:not(#closeMenu):not(#storyButton)"
+                );
+
+
+            links.forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            closeMobileMenu();
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           ESC KEY
+        ====================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================
+           RESIZE
+        ====================================== */
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    window.innerWidth > 768
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
