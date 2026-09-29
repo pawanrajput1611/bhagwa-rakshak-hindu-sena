@@ -3,770 +3,849 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
 
-    <meta name="theme-color"
-          content="#f4511e">
+<meta name="theme-color" content="#f4511e">
 
-    <title>
-        पोस्टर बनाएँ | भगवा रक्षक हिन्दू सेना
-    </title>
+<title>अपना पोस्टर बनाएँ | भगवा रक्षक हिन्दू सेना</title>
 
-    <meta name="description"
-          content="भगवा रक्षक हिन्दू सेना के लिए अपना पोस्टर बनाएँ।">
+<meta name="description"
+      content="भगवा रक्षक हिन्दू सेना के लिए अपना HD पोस्टर बनाएँ। फोटो लगाएँ, Zoom करें और पोस्टर डाउनलोड करें।">
 
 
-    <!-- =========================
-         GOOGLE FONT
-    ========================== -->
+<style>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+/* =====================================================
+   BASIC
+===================================================== */
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+html{
+    scroll-behavior:smooth;
+}
 
+body{
+    font-family:
+    "Noto Sans Devanagari",
+    "Arial",
+    sans-serif;
 
-    <style>
+    background:#fff8f2;
+    color:#222;
 
-        /* ========================================
-           RESET
-        ======================================== */
+    overflow-x:hidden;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+button,
+input{
+    font-family:inherit;
+}
 
+img{
+    max-width:100%;
+    display:block;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+a{
+    text-decoration:none;
+}
 
 
-        body {
-            font-family:
-                "Noto Sans Devanagari",
-                sans-serif;
+/* =====================================================
+   HEADER
+===================================================== */
 
-            background: #fff7f1;
+.site-header{
 
-            color: #222;
+    width:100%;
 
-            overflow-x: hidden;
-        }
+    background:#fff;
 
+    border-bottom:1px solid #eee;
 
-        img {
-            max-width: 100%;
-        }
+    box-shadow:
+    0 3px 15px rgba(0,0,0,.08);
 
+    position:sticky;
 
-        button,
-        input {
-            font-family: inherit;
-        }
+    top:0;
 
+    z-index:9999;
+}
 
-        a {
-            text-decoration: none;
-        }
+.header-inner{
 
+    width:min(1150px,94%);
 
-        /* ========================================
-           HEADER
-        ======================================== */
+    min-height:78px;
 
-        header {
-            width: 100%;
+    margin:auto;
 
-            background: #ffffff;
+    display:flex;
 
-            border-bottom:
-                1px solid #eeeeee;
+    align-items:center;
 
-            box-shadow:
-                0 3px 15px
-                rgba(0,0,0,0.08);
+    justify-content:space-between;
 
-            position: sticky;
+    gap:15px;
+}
 
-            top: 0;
 
-            z-index: 9999;
-        }
+/* LOGO */
 
+.brand{
 
-        .header-inner {
-            width: min(1150px, 92%);
+    display:flex;
 
-            min-height: 72px;
+    align-items:center;
 
-            margin: auto;
+    gap:12px;
 
-            display: flex;
+    color:#222;
 
-            align-items: center;
+    min-width:0;
+}
 
-            justify-content: space-between;
+.brand img{
 
-            gap: 15px;
-        }
+    width:58px;
 
+    height:58px;
 
-        .brand {
-            display: flex;
+    object-fit:contain;
 
-            align-items: center;
+    border-radius:10px;
 
-            gap: 10px;
+    flex-shrink:0;
+}
 
-            color: #222;
+.brand-name{
 
-            font-size: 19px;
+    font-size:21px;
 
-            font-weight: 800;
-        }
+    font-weight:800;
 
+    white-space:nowrap;
+}
 
-        .brand img {
-            width: 50px;
 
-            height: 50px;
+/* BACK BUTTON */
 
-            object-fit: contain;
+.back-btn{
 
-            border-radius: 7px;
-        }
+    background:#f4511e;
 
+    color:#fff;
 
-        .back-btn {
-            background: #f4511e;
+    border:none;
 
-            color: white;
+    padding:13px 22px;
 
-            padding: 10px 17px;
+    border-radius:12px;
 
-            border-radius: 9px;
+    font-size:16px;
 
-            font-size: 14px;
+    font-weight:800;
 
-            font-weight: 700;
-        }
+    cursor:pointer;
 
+    transition:.25s;
+}
 
-        .back-btn:hover {
-            background: #d84315;
-        }
+.back-btn:hover{
 
+    background:#d84315;
 
-        /* ========================================
-           PAGE
-        ======================================== */
+    transform:translateY(-2px);
+}
 
-        .page {
-            width: min(1200px, 94%);
 
-            margin: auto;
+/* =====================================================
+   PAGE
+===================================================== */
 
-            padding:
-                35px 0 60px;
-        }
+.page{
 
+    width:min(1150px,94%);
 
-        .page-title {
-            text-align: center;
+    margin:auto;
 
-            margin-bottom: 28px;
-        }
+    padding:45px 0 70px;
+}
 
 
-        .page-title h1 {
-            color: #e64a19;
+/* TITLE */
 
-            font-size:
-                clamp(28px, 5vw, 44px);
+.page-title{
 
-            font-weight: 900;
+    text-align:center;
 
-            margin-bottom: 8px;
-        }
+    margin-bottom:35px;
+}
 
+.page-title h1{
 
-        .page-title p {
-            color: #666;
+    color:#e64a19;
 
-            font-size: 16px;
-        }
+    font-size:
+    clamp(34px,6vw,58px);
 
+    font-weight:900;
 
-        /* ========================================
-           MAIN WORK AREA
-        ======================================== */
+    line-height:1.25;
 
-        .maker-layout {
+    margin-bottom:12px;
+}
 
-            display: grid;
+.page-title p{
 
-            grid-template-columns:
-                360px 1fr;
+    color:#666;
 
-            gap: 30px;
+    font-size:
+    clamp(17px,3vw,23px);
 
-            align-items: start;
-        }
+    line-height:1.7;
+}
 
 
-        /* ========================================
-           CONTROL PANEL
-        ======================================== */
+/* =====================================================
+   MAIN GRID
+===================================================== */
 
-        .controls {
+.editor-grid{
 
-            background: #ffffff;
+    display:grid;
 
-            border-radius: 18px;
+    grid-template-columns:
+    minmax(0,1.25fr)
+    minmax(300px,.75fr);
 
-            padding: 24px;
+    gap:30px;
 
-            box-shadow:
-                0 8px 30px
-                rgba(0,0,0,0.08);
+    align-items:start;
+}
 
-            border:
-                1px solid #f0dfd5;
 
-            position: sticky;
+/* =====================================================
+   CARD
+===================================================== */
 
-            top: 95px;
-        }
+.card{
 
+    background:#fff;
 
-        .controls h2 {
+    border:1px solid #eadfd8;
 
-            font-size: 23px;
+    border-radius:22px;
 
-            margin-bottom: 20px;
+    padding:25px;
 
-            color: #e64a19;
-        }
+    box-shadow:
+    0 8px 30px rgba(0,0,0,.07);
+}
 
+.card-title{
 
-        .control-group {
+    text-align:center;
 
-            margin-bottom: 22px;
-        }
+    font-size:27px;
 
+    font-weight:900;
 
-        .control-group label {
+    margin-bottom:22px;
 
-            display: block;
+    color:#333;
+}
 
-            font-size: 15px;
 
-            font-weight: 800;
+/* =====================================================
+   CANVAS AREA
+===================================================== */
 
-            margin-bottom: 8px;
+.canvas-wrapper{
 
-            color: #333;
-        }
+    width:100%;
 
+    display:flex;
 
-        /* ========================================
-           FILE INPUT
-        ======================================== */
+    justify-content:center;
 
-        .file-box {
+    align-items:center;
 
-            border:
-                2px dashed #f4511e;
+    background:#f4eee9;
 
-            background: #fff7f1;
+    border-radius:18px;
 
-            border-radius: 12px;
+    padding:12px;
 
-            padding: 18px;
+    overflow:hidden;
+}
 
-            text-align: center;
-        }
 
+/* IMPORTANT:
+   Canvas touch interaction */
+#posterCanvas{
 
-        .file-box input {
+    width:100%;
 
-            width: 100%;
+    max-width:650px;
 
-            font-size: 14px;
-        }
+    height:auto;
 
+    display:block;
 
-        .file-note {
+    background:#ff5a1f;
 
-            color: #777;
+    border-radius:14px;
 
-            font-size: 12px;
+    touch-action:none;
 
-            margin-top: 8px;
+    cursor:grab;
 
-            line-height: 1.6;
-        }
+    user-select:none;
 
+    -webkit-user-select:none;
+}
 
-        /* ========================================
-           ZOOM CONTROLS
-        ======================================== */
+#posterCanvas.dragging{
 
-        .zoom-row {
+    cursor:grabbing;
+}
 
-            display: flex;
 
-            align-items: center;
+/* =====================================================
+   HELP TEXT
+===================================================== */
 
-            gap: 8px;
+.help-text{
 
-            margin-bottom: 12px;
-        }
+    text-align:center;
 
+    margin-top:18px;
 
-        .zoom-btn {
+    color:#666;
 
-            width: 45px;
+    font-size:17px;
 
-            height: 45px;
+    line-height:1.8;
+}
 
-            border: none;
 
-            border-radius: 10px;
+/* =====================================================
+   UPLOAD
+===================================================== */
 
-            background: #f4511e;
+.upload-box{
 
-            color: white;
+    margin-bottom:25px;
 
-            font-size: 25px;
+    padding:20px;
 
-            font-weight: 800;
+    border:2px dashed #f4511e;
 
-            cursor: pointer;
+    border-radius:15px;
 
-            display: flex;
+    background:#fff8f3;
 
-            align-items: center;
+    text-align:center;
+}
 
-            justify-content: center;
+.upload-box label{
 
-            flex-shrink: 0;
-        }
+    display:inline-block;
 
+    background:#f4511e;
 
-        .zoom-btn:hover {
+    color:#fff;
 
-            background: #d84315;
-        }
+    padding:13px 22px;
 
+    border-radius:10px;
 
-        .zoom-value {
+    font-size:17px;
 
-            flex: 1;
+    font-weight:800;
 
-            text-align: center;
+    cursor:pointer;
 
-            font-size: 15px;
+    transition:.25s;
+}
 
-            font-weight: 800;
+.upload-box label:hover{
 
-            color: #e64a19;
+    background:#d84315;
+}
 
-            background: #fff3ed;
+#photoInput{
 
-            padding: 11px 5px;
+    display:none;
+}
 
-            border-radius: 9px;
-        }
+.file-name{
 
+    margin-top:10px;
 
-        #zoomSlider {
+    color:#666;
 
-            width: 100%;
+    font-size:14px;
 
-            accent-color: #f4511e;
+    word-break:break-word;
+}
 
-            cursor: pointer;
-        }
 
+/* =====================================================
+   ZOOM CONTROL
+===================================================== */
 
-        /* ========================================
-           BUTTONS
-        ======================================== */
+.zoom-box{
 
-        .action-buttons {
+    margin-top:25px;
 
-            display: grid;
+    padding:20px;
 
-            grid-template-columns:
-                1fr 1fr;
+    background:#fff8f3;
 
-            gap: 10px;
+    border-radius:16px;
 
-            margin-top: 20px;
-        }
+    border:1px solid #f1ded3;
+}
 
+.zoom-title{
 
-        .action-btn {
+    text-align:center;
 
-            border: none;
+    font-size:20px;
 
-            border-radius: 10px;
+    font-weight:900;
 
-            padding: 13px 10px;
+    margin-bottom:15px;
 
-            cursor: pointer;
+    color:#333;
+}
 
-            font-size: 14px;
 
-            font-weight: 800;
+/* ZOOM BUTTONS */
 
-            transition: 0.2s;
-        }
+.zoom-buttons{
 
+    display:flex;
 
-        .download-btn {
+    justify-content:center;
 
-            background: #f4511e;
+    align-items:center;
 
-            color: white;
-        }
+    gap:12px;
 
+    margin-bottom:18px;
+}
 
-        .download-btn:hover {
+.zoom-btn{
 
-            background: #d84315;
-        }
+    width:55px;
 
+    height:48px;
 
-        .reset-btn {
+    border:none;
 
-            background: #222;
+    border-radius:10px;
 
-            color: white;
-        }
+    background:#f4511e;
 
+    color:#fff;
 
-        .reset-btn:hover {
+    font-size:27px;
 
-            background: #000;
-        }
+    font-weight:900;
 
+    cursor:pointer;
 
-        .share-btn {
+    touch-action:manipulation;
 
-            width: 100%;
+    box-shadow:
+    0 4px 10px rgba(244,81,30,.25);
+}
 
-            margin-top: 10px;
+.zoom-btn:active{
 
-            background: #1976d2;
+    transform:scale(.94);
+}
 
-            color: white;
+.zoom-value{
 
-            border: none;
+    min-width:90px;
 
-            border-radius: 10px;
+    text-align:center;
 
-            padding: 13px;
+    font-size:18px;
 
-            font-size: 14px;
+    font-weight:900;
 
-            font-weight: 800;
+    color:#e64a19;
+}
 
-            cursor: pointer;
-        }
 
+/* SLIDER */
 
-        .share-btn:hover {
+#zoomSlider{
 
-            background: #125ca8;
-        }
+    width:100%;
 
+    height:10px;
 
-        .status {
+    accent-color:#f4511e;
 
-            text-align: center;
+    cursor:pointer;
 
-            margin-top: 12px;
+    touch-action:auto;
+}
 
-            min-height: 22px;
 
-            color: #e64a19;
+/* =====================================================
+   RESET
+===================================================== */
 
-            font-size: 13px;
+.reset-btn{
 
-            font-weight: 700;
-        }
+    width:100%;
 
+    margin-top:16px;
 
-        /* ========================================
-           CANVAS AREA
-        ======================================== */
+    padding:13px;
 
-        .preview-box {
+    border:2px solid #f4511e;
 
-            background: #ffffff;
+    background:#fff;
 
-            border-radius: 20px;
+    color:#e64a19;
 
-            padding: 22px;
+    border-radius:10px;
 
-            box-shadow:
-                0 8px 30px
-                rgba(0,0,0,0.08);
+    font-size:17px;
 
-            border:
-                1px solid #f0dfd5;
-        }
+    font-weight:800;
 
+    cursor:pointer;
+}
 
-        .preview-title {
+.reset-btn:hover{
 
-            text-align: center;
+    background:#fff1e9;
+}
 
-            color: #444;
 
-            font-weight: 800;
+/* =====================================================
+   DOWNLOAD
+===================================================== */
 
-            margin-bottom: 15px;
-        }
+.download-btn{
 
+    width:100%;
 
-        .canvas-wrapper {
+    margin-top:20px;
 
-            width: 100%;
+    padding:16px;
 
-            max-width: 720px;
+    border:none;
 
-            margin: auto;
+    border-radius:12px;
 
-            position: relative;
+    background:#f4511e;
 
-            overflow: hidden;
+    color:#fff;
 
-            border-radius: 12px;
+    font-size:19px;
 
-            background: #eeeeee;
+    font-weight:900;
 
-            touch-action: none;
+    cursor:pointer;
 
-            cursor: grab;
+    box-shadow:
+    0 7px 18px rgba(244,81,30,.25);
 
-            user-select: none;
+    transition:.25s;
+}
 
-            -webkit-user-select: none;
-        }
+.download-btn:hover{
 
+    background:#d84315;
 
-        .canvas-wrapper.dragging {
+    transform:translateY(-2px);
+}
 
-            cursor: grabbing;
-        }
+.download-btn:disabled{
 
+    background:#bbb;
 
-        #posterCanvas {
+    cursor:not-allowed;
 
-            width: 100%;
+    transform:none;
+}
 
-            height: auto;
 
-            display: block;
+/* =====================================================
+   SHARE
+===================================================== */
 
-            touch-action: none;
-        }
+.share-btn{
 
+    width:100%;
 
-        .drag-help {
+    margin-top:12px;
 
-            text-align: center;
+    padding:14px;
 
-            color: #777;
+    border:none;
 
-            font-size: 13px;
+    border-radius:12px;
 
-            margin-top: 12px;
+    background:#222;
 
-            line-height: 1.6;
-        }
+    color:#fff;
 
+    font-size:17px;
 
-        /* ========================================
-           FOOTER
-        ======================================== */
+    font-weight:800;
 
-        footer {
+    cursor:pointer;
+}
 
-            background: #171717;
 
-            color: white;
+/* =====================================================
+   STATUS
+===================================================== */
 
-            padding:
-                35px 0 20px;
+.status{
 
-            text-align: center;
-        }
+    min-height:25px;
 
+    margin-top:12px;
 
-        footer h3 {
+    text-align:center;
 
-            color: #ffab70;
+    font-size:14px;
 
-            margin-bottom: 10px;
+    font-weight:700;
 
-            font-size: 20px;
-        }
+    color:#e64a19;
+}
 
 
-        footer p {
+/* =====================================================
+   INFO
+===================================================== */
 
-            color: #ccc;
+.info-box{
 
-            font-size: 14px;
+    margin-top:25px;
 
-            line-height: 1.8;
-        }
+    padding:20px;
 
+    border-radius:15px;
 
-        .social {
+    background:#fff8f3;
 
-            margin-top: 12px;
-        }
+    line-height:1.9;
 
+    color:#555;
 
-        .social a {
+    font-size:15px;
+}
 
-            color: #fff;
+.info-box strong{
 
-            font-weight: 700;
-        }
+    color:#e64a19;
+}
 
 
-        .social a:hover {
+/* =====================================================
+   FOOTER
+===================================================== */
 
-            color: #ff8a50;
-        }
+footer{
 
+    background:#171717;
 
-        .copyright {
+    color:#fff;
 
-            border-top:
-                1px solid #333;
+    padding:45px 20px 25px;
 
-            margin-top: 22px;
+    margin-top:20px;
+}
 
-            padding-top: 15px;
+.footer-inner{
 
-            color: #999;
+    width:min(1150px,94%);
 
-            font-size: 12px;
-        }
+    margin:auto;
 
+    display:grid;
 
-        /* ========================================
-           MOBILE
-        ======================================== */
+    grid-template-columns:1fr 1fr;
 
-        @media (max-width: 850px) {
+    gap:30px;
+}
 
-            .maker-layout {
+footer h3{
 
-                grid-template-columns: 1fr;
+    color:#ffab70;
 
-            }
+    margin-bottom:12px;
 
+    font-size:21px;
+}
 
-            .controls {
+footer p{
 
-                position: static;
+    color:#ddd;
 
-                order: 2;
-            }
+    line-height:1.8;
+}
 
+footer a{
 
-            .preview-box {
+    color:#ffab70;
+}
 
-                order: 1;
-            }
+.copyright{
 
-        }
+    border-top:1px solid #333;
 
+    margin-top:30px;
 
-        @media (max-width: 600px) {
+    padding-top:20px;
 
-            .header-inner {
+    text-align:center;
 
-                min-height: 65px;
+    color:#aaa;
 
-                width: 94%;
-            }
+    font-size:14px;
+}
 
 
-            .brand {
+/* =====================================================
+   MOBILE
+===================================================== */
 
-                font-size: 15px;
-            }
+@media(max-width:850px){
 
+    .editor-grid{
 
-            .brand img {
+        grid-template-columns:1fr;
+    }
 
-                width: 45px;
+    .canvas-wrapper{
 
-                height: 45px;
-            }
+        padding:8px;
+    }
 
+    .brand-name{
 
-            .back-btn {
+        font-size:17px;
+    }
 
-                padding:
-                    8px 11px;
+    .brand img{
 
-                font-size: 12px;
-            }
+        width:55px;
 
+        height:55px;
+    }
 
-            .page {
+    .back-btn{
 
-                width: 94%;
+        padding:11px 14px;
 
-                padding-top: 25px;
-            }
+        font-size:14px;
+    }
 
+    .footer-inner{
 
-            .controls,
-            .preview-box {
+        grid-template-columns:1fr;
+    }
+}
 
-                padding: 15px;
 
-                border-radius: 15px;
-            }
+@media(max-width:520px){
 
+    .header-inner{
 
-            .action-buttons {
+        min-height:70px;
 
-                grid-template-columns: 1fr;
-            }
+        width:94%;
+    }
 
+    .brand{
 
-            .canvas-wrapper {
+        gap:8px;
+    }
 
-                border-radius: 8px;
-            }
+    .brand img{
 
-        }
+        width:50px;
 
-    </style>
+        height:50px;
+    }
+
+    .brand-name{
+
+        font-size:15px;
+    }
+
+    .back-btn{
+
+        font-size:13px;
+
+        padding:10px 12px;
+
+        border-radius:10px;
+    }
+
+    .page{
+
+        width:94%;
+
+        padding-top:30px;
+    }
+
+    .card{
+
+        padding:15px;
+
+        border-radius:17px;
+    }
+
+    .card-title{
+
+        font-size:23px;
+    }
+
+    .page-title h1{
+
+        font-size:34px;
+    }
+
+    .page-title p{
+
+        font-size:16px;
+    }
+
+    .zoom-btn{
+
+        width:50px;
+
+        height:45px;
+    }
+}
+
+</style>
 
 </head>
 
@@ -774,46 +853,46 @@
 <body>
 
 
-<!-- ========================================
+<!-- =====================================================
      HEADER
-======================================== -->
+===================================================== -->
 
-<header>
+<header class="site-header">
 
     <div class="header-inner">
 
-
-        <a
-            href="index.html"
-            class="brand">
+        <a href="index.html"
+           class="brand">
 
             <img
                 src="images/sangthan-logo.png"
                 alt="भगवा रक्षक हिन्दू सेना लोगो">
 
-            <span>
+            <span class="brand-name">
                 भगवा रक्षक हिन्दू सेना
             </span>
 
         </a>
 
 
-        <a
-            href="index.html"
-            class="back-btn">
+        <button
+            class="back-btn"
+            type="button"
+            onclick="goBack()">
 
             ← वापस जाएँ
 
-        </a>
+        </button>
 
     </div>
 
 </header>
 
 
-<!-- ========================================
+
+<!-- =====================================================
      PAGE
-======================================== -->
+===================================================== -->
 
 <main class="page">
 
@@ -825,34 +904,29 @@
         </h1>
 
         <p>
-            अपनी फोटो लगाएँ, फोटो को Zoom करें और HD पोस्टर डाउनलोड करें।
+            अपनी फोटो लगाएँ, फोटो को Zoom करें,
+            Drag करके सही जगह रखें और HD पोस्टर डाउनलोड करें।
         </p>
 
     </div>
 
 
 
-    <div class="maker-layout">
+    <div class="editor-grid">
 
 
-        <!-- ====================================
-             PREVIEW
-        ===================================== -->
+        <!-- =================================================
+             POSTER PREVIEW
+        ================================================== -->
 
-        <section class="preview-box">
+        <section class="card">
 
-
-            <div class="preview-title">
-
+            <h2 class="card-title">
                 आपका पोस्टर
+            </h2>
 
-            </div>
 
-
-            <div
-                class="canvas-wrapper"
-                id="canvasWrapper">
-
+            <div class="canvas-wrapper">
 
                 <canvas
                     id="posterCanvas"
@@ -860,17 +934,16 @@
                     height="1200">
                 </canvas>
 
-
             </div>
 
 
-            <div class="drag-help">
+            <div class="help-text">
 
-                👆 फोटो को उंगली से खींचकर
-                अपनी जगह पर रखें।<br>
+                ☝️ फोटो को उंगली/माउस से खींचकर
+                अपनी जगह रखें।<br>
 
-                🔍 नीचे दिए गए Zoom बटन से
-                फोटो को बड़ा या छोटा करें।
+                🔍 नीचे दिए गए Zoom
+                + / − बटन से फोटो को बड़ा या छोटा करें।
 
             </div>
 
@@ -878,41 +951,39 @@
 
 
 
-        <!-- ====================================
-             CONTROLS
-        ===================================== -->
+        <!-- =================================================
+             SETTINGS
+        ================================================== -->
 
-        <section class="controls">
+        <section class="card">
 
-
-            <h2>
+            <h2 class="card-title">
                 पोस्टर सेटिंग
             </h2>
 
 
-            <!-- PHOTO -->
+            <!-- UPLOAD -->
 
-            <div class="control-group">
+            <div class="upload-box">
 
-                <label>
-                    📷 अपनी फोटो चुनें
+                <label for="photoInput">
+
+                    📷 फोटो चुनें
+
                 </label>
 
 
-                <div class="file-box">
-
-                    <input
-                        type="file"
-                        id="photoInput"
-                        accept="image/jpeg,image/png,image/webp">
+                <input
+                    id="photoInput"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp">
 
 
-                    <div class="file-note">
+                <div
+                    id="fileName"
+                    class="file-name">
 
-                        JPG, PNG या WEBP<br>
-                        अधिकतम 8 MB
-
-                    </div>
+                    अभी कोई फोटो नहीं चुनी गई
 
                 </div>
 
@@ -922,20 +993,21 @@
 
             <!-- ZOOM -->
 
-            <div class="control-group">
+            <div class="zoom-box">
 
-                <label>
+                <div class="zoom-title">
+
                     🔍 फोटो Zoom
-                </label>
+
+                </div>
 
 
-                <div class="zoom-row">
-
+                <div class="zoom-buttons">
 
                     <button
                         type="button"
-                        class="zoom-btn"
-                        id="zoomOut">
+                        id="zoomOut"
+                        class="zoom-btn">
 
                         −
 
@@ -943,8 +1015,8 @@
 
 
                     <div
-                        class="zoom-value"
-                        id="zoomValue">
+                        id="zoomValue"
+                        class="zoom-value">
 
                         100%
 
@@ -953,8 +1025,8 @@
 
                     <button
                         type="button"
-                        class="zoom-btn"
-                        id="zoomIn">
+                        id="zoomIn"
+                        class="zoom-btn">
 
                         +
 
@@ -964,48 +1036,45 @@
 
 
                 <input
-                    type="range"
                     id="zoomSlider"
+                    type="range"
                     min="50"
                     max="300"
                     value="100"
                     step="1">
 
-            </div>
-
-
-
-            <!-- ACTIONS -->
-
-            <div class="action-buttons">
-
 
                 <button
                     type="button"
-                    class="action-btn download-btn"
-                    id="downloadBtn">
+                    id="resetBtn"
+                    class="reset-btn">
 
-                    ⬇️ HD डाउनलोड
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="action-btn reset-btn"
-                    id="resetBtn">
-
-                    🔄 Reset
+                    ↻ फोटो Reset करें
 
                 </button>
 
             </div>
 
+
+
+            <!-- DOWNLOAD -->
 
             <button
                 type="button"
-                class="share-btn"
-                id="shareBtn">
+                id="downloadBtn"
+                class="download-btn">
+
+                ⬇️ HD पोस्टर डाउनलोड करें
+
+            </button>
+
+
+            <!-- SHARE -->
+
+            <button
+                type="button"
+                id="shareBtn"
+                class="share-btn">
 
                 📤 पोस्टर शेयर करें
 
@@ -1013,10 +1082,31 @@
 
 
             <div
-                class="status"
-                id="status">
+                id="status"
+                class="status">
             </div>
 
+
+
+            <div class="info-box">
+
+                <strong>कैसे इस्तेमाल करें?</strong>
+
+                <br><br>
+
+                1️⃣ पहले अपनी फोटो चुनें।<br>
+
+                2️⃣ फोटो को उंगली से खींचकर
+                सही जगह रखें।<br>
+
+                3️⃣ + / − से फोटो का Zoom बदलें।<br>
+
+                4️⃣ Reset से फोटो की स्थिति
+                फिर से सेट करें।<br>
+
+                5️⃣ HD पोस्टर डाउनलोड करें।
+
+            </div>
 
         </section>
 
@@ -1026,55 +1116,67 @@
 
 
 
-<!-- ========================================
+<!-- =====================================================
      FOOTER
-======================================== -->
+===================================================== -->
 
 <footer>
 
+    <div class="footer-inner">
 
-    <h3>
-        भगवा रक्षक हिन्दू सेना
-    </h3>
+        <div>
 
+            <h3>
+                भगवा रक्षक हिन्दू सेना
+            </h3>
 
-    <p>
-        धर्म • सेवा • संस्कार
-    </p>
+            <p>
+                धर्म • सेवा • संस्कार
+            </p>
 
+            <p>
+                सनातन संस्कृति, सेवा और सामाजिक
+                जागरूकता के लिए समर्पित।
+            </p>
 
-    <p class="social">
-
-        Instagram:
-        <a
-            href="https://www.instagram.com/bhagva_rakshak__hindu_sena?stkn=M3B2M3U5YWMyd2Iw"
-            target="_blank"
-            rel="noopener">
-
-            @bhagva_rakshak__hindu_sena
-
-        </a>
-
-    </p>
+        </div>
 
 
-    <p>
+        <div>
 
-        Email:
-        <a
-            href="mailto:bhagvarakshakhindusena@gmail.com"
-            style="color:#fff;">
+            <h3>
+                संपर्क
+            </h3>
 
-            bhagvarakshakhindusena@gmail.com
+            <p>
 
-        </a>
+                📧
+                <a href="mailto:bhagvarakshakhindusena@gmail.com">
+                    bhagvarakshakhindusena@gmail.com
+                </a>
 
-    </p>
+                <br><br>
+
+                📷
+                <a
+                    href="https://www.instagram.com/bhagva_rakshak__hindu_sena"
+                    target="_blank"
+                    rel="noopener">
+
+                    Instagram
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
 
 
     <div class="copyright">
 
         © 2026 भगवा रक्षक हिन्दू सेना
+        • धर्म • सेवा • संस्कार
 
     </div>
 
@@ -1082,16 +1184,14 @@
 
 
 
-<!-- ========================================
-     JAVASCRIPT
-======================================== -->
-
 <script>
 
+/* =====================================================
+   POSTER MAKER JAVASCRIPT
+===================================================== */
 
-/* ==========================================
-   CANVAS
-========================================== */
+
+/* CANVAS */
 
 const canvas =
     document.getElementById("posterCanvas");
@@ -1100,28 +1200,25 @@ const ctx =
     canvas.getContext("2d");
 
 
-const wrapper =
-    document.getElementById("canvasWrapper");
-
-
-/* ==========================================
-   ELEMENTS
-========================================== */
+/* CONTROLS */
 
 const photoInput =
     document.getElementById("photoInput");
 
+const fileName =
+    document.getElementById("fileName");
+
 const zoomSlider =
     document.getElementById("zoomSlider");
-
-const zoomValue =
-    document.getElementById("zoomValue");
 
 const zoomIn =
     document.getElementById("zoomIn");
 
 const zoomOut =
     document.getElementById("zoomOut");
+
+const zoomValue =
+    document.getElementById("zoomValue");
 
 const resetBtn =
     document.getElementById("resetBtn");
@@ -1136,13 +1233,22 @@ const status =
     document.getElementById("status");
 
 
-/* ==========================================
-   PHOTO VARIABLES
-========================================== */
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 let userImage = null;
 
 let imageLoaded = false;
+
+
+/*
+   Zoom value:
+   1 = 100%
+   2 = 200%
+*/
+
+let zoom = 1;
 
 
 /*
@@ -1151,14 +1257,7 @@ let imageLoaded = false;
 
 let imageX = 600;
 
-let imageY = 490;
-
-
-/*
-   Zoom
-*/
-
-let zoom = 1;
+let imageY = 600;
 
 
 /*
@@ -1167,123 +1266,155 @@ let zoom = 1;
 
 let dragging = false;
 
-let startX = 0;
+let pointerStartX = 0;
 
-let startY = 0;
+let pointerStartY = 0;
 
 let startImageX = 0;
 
 let startImageY = 0;
 
 
-/* ==========================================
-   HELPERS
-========================================== */
+/*
+   Photo base scale
+*/
 
-function setStatus(message) {
+let baseScale = 1;
 
-    status.textContent = message;
 
-    setTimeout(() => {
+/* =====================================================
+   LOGO
+===================================================== */
 
-        status.textContent = "";
+const logo =
+    new Image();
 
-    }, 3000);
+logo.src =
+    "images/sangthan-logo.png";
+
+logo.onload = function(){
+
+    drawPoster();
+
+};
+
+
+/* =====================================================
+   INITIAL DRAW
+===================================================== */
+
+drawPoster();
+
+
+/* =====================================================
+   FORMAT NUMBER
+===================================================== */
+
+function clamp(value,min,max){
+
+    return Math.max(
+        min,
+        Math.min(max,value)
+    );
 
 }
 
 
-/* ==========================================
+/* =====================================================
    LOAD PHOTO
-========================================== */
+===================================================== */
 
 photoInput.addEventListener(
     "change",
-    function(event) {
+    function(){
 
         const file =
-            event.target.files[0];
+            this.files[0];
 
-
-        if (!file) {
-
-            return;
-
-        }
-
-
-        if (file.size > 8 * 1024 * 1024) {
-
-            alert(
-                "फोटो का size 8 MB से कम होना चाहिए।"
-            );
-
-            photoInput.value = "";
+        if(!file){
 
             return;
 
         }
 
 
-        const allowed =
-            [
-                "image/jpeg",
-                "image/png",
-                "image/webp"
-            ];
+        /*
+           File size limit 8 MB
+        */
 
+        if(file.size > 8 * 1024 * 1024){
 
-        if (!allowed.includes(file.type)) {
+            status.textContent =
+                "❌ फोटो 8 MB से कम होनी चाहिए।";
 
-            alert(
-                "कृपया JPG, PNG या WEBP फोटो चुनें।"
-            );
-
-            photoInput.value = "";
+            this.value = "";
 
             return;
 
         }
+
+
+        fileName.textContent =
+            file.name;
 
 
         const reader =
             new FileReader();
 
 
-        reader.onload = function(e) {
+        reader.onload =
+            function(event){
 
-            const img =
-                new Image();
+                const img =
+                    new Image();
 
 
-            img.onload = function() {
+                img.onload =
+                    function(){
 
-                userImage = img;
+                        userImage =
+                            img;
 
-                imageLoaded = true;
+                        imageLoaded =
+                            true;
 
-                zoom = 1;
 
-                imageX = 600;
+                        /*
+                           New photo reset
+                        */
 
-                imageY = 490;
+                        zoom =
+                            1;
 
-                zoomSlider.value = 100;
 
-                updateZoomText();
+                        zoomSlider.value =
+                            100;
 
-                drawPoster();
 
-                setStatus(
-                    "फोटो सफलतापूर्वक लग गई।"
-                );
+                        imageX =
+                            600;
+
+                        imageY =
+                            600;
+
+
+                        calculateBaseScale();
+
+                        updateZoomText();
+
+                        drawPoster();
+
+
+                        status.textContent =
+                            "✅ फोटो सफलतापूर्वक लग गई। अब फोटो को Drag या Zoom करें।";
+
+                    };
+
+
+                img.src =
+                    event.target.result;
 
             };
-
-
-            img.src = e.target.result;
-
-        };
 
 
         reader.readAsDataURL(file);
@@ -1292,219 +1423,530 @@ photoInput.addEventListener(
 );
 
 
-/* ==========================================
-   ZOOM
-========================================== */
+/* =====================================================
+   BASE SCALE
+===================================================== */
 
-function updateZoomText() {
+function calculateBaseScale(){
 
-    zoomValue.textContent =
-        Math.round(zoom * 100) + "%";
+    if(!userImage){
+
+        return;
+
+    }
+
+
+    /*
+       Circle is 500 x 500
+    */
+
+    const targetSize =
+        500;
+
+
+    baseScale =
+        targetSize /
+        Math.min(
+            userImage.width,
+            userImage.height
+        );
 
 }
 
 
-/* ==========================================
-   SLIDER
-========================================== */
+/* =====================================================
+   ZOOM FUNCTION
+===================================================== */
 
-zoomSlider.addEventListener(
-    "input",
-    function() {
+function setZoom(value){
 
-        zoom =
-            Number(this.value) / 100;
-
-        updateZoomText();
-
-        drawPoster();
-
-    }
-);
-
-
-/* ==========================================
-   ZOOM IN
-========================================== */
-
-zoomIn.addEventListener(
-    "click",
-    function() {
-
-        let value =
-            Number(zoomSlider.value);
-
-        value += 10;
-
-        if (value > 300) {
-
-            value = 300;
-
-        }
-
-        zoomSlider.value = value;
-
-        zoom =
-            value / 100;
-
-        updateZoomText();
-
-        drawPoster();
-
-    }
-);
-
-
-/* ==========================================
-   ZOOM OUT
-========================================== */
-
-zoomOut.addEventListener(
-    "click",
-    function() {
-
-        let value =
-            Number(zoomSlider.value);
-
-        value -= 10;
-
-        if (value < 50) {
-
-            value = 50;
-
-        }
-
-        zoomSlider.value = value;
-
-        zoom =
-            value / 100;
-
-        updateZoomText();
-
-        drawPoster();
-
-    }
-);
-
-
-/* ==========================================
-   IMAGE COVER CALCULATION
-========================================== */
-
-function getImageSize() {
-
-    if (!userImage) {
-
-        return null;
-
-    }
-
-
-    const targetSize = 520;
-
-
-    const iw =
-        userImage.width;
-
-    const ih =
-        userImage.height;
-
-
-    const scale =
-        Math.max(
-            targetSize / iw,
-            targetSize / ih
+    value =
+        clamp(
+            Number(value),
+            0.5,
+            3
         );
 
 
-    return {
+    zoom =
+        value;
 
-        width: iw * scale * zoom,
 
-        height: ih * scale * zoom
+    zoomSlider.value =
+        Math.round(
+            zoom * 100
+        );
 
-    };
+
+    updateZoomText();
+
+
+    drawPoster();
 
 }
 
 
-/* ==========================================
-   CIRCLE CLIP
-========================================== */
+/* =====================================================
+   UPDATE ZOOM TEXT
+===================================================== */
 
-function drawCircularPhoto() {
+function updateZoomText(){
 
-    if (!imageLoaded || !userImage) {
+    zoomValue.textContent =
+        Math.round(
+            zoom * 100
+        ) + "%";
+
+}
+
+
+/* =====================================================
+   ZOOM SLIDER
+===================================================== */
+
+zoomSlider.addEventListener(
+    "input",
+    function(){
+
+        const value =
+            Number(this.value) / 100;
+
+        setZoom(value);
+
+    }
+);
+
+
+/* =====================================================
+   ZOOM PLUS
+===================================================== */
+
+zoomIn.addEventListener(
+    "click",
+    function(){
+
+        setZoom(
+            zoom + 0.10
+        );
+
+    }
+);
+
+
+/* =====================================================
+   ZOOM MINUS
+===================================================== */
+
+zoomOut.addEventListener(
+    "click",
+    function(){
+
+        setZoom(
+            zoom - 0.10
+        );
+
+    }
+);
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+resetBtn.addEventListener(
+    "click",
+    function(){
+
+        zoom = 1;
+
+        imageX = 600;
+
+        imageY = 600;
+
+        zoomSlider.value = 100;
+
+        updateZoomText();
+
+        drawPoster();
+
+        status.textContent =
+            "↻ फोटो Reset कर दी गई।";
+
+    }
+);
+
+
+/* =====================================================
+   POINTER DOWN
+===================================================== */
+
+canvas.addEventListener(
+    "pointerdown",
+    function(event){
+
+        if(!imageLoaded){
+
+            return;
+
+        }
+
+
+        /*
+           Prevent browser scrolling
+        */
+
+        event.preventDefault();
+
+
+        dragging =
+            true;
+
+
+        canvas.classList.add(
+            "dragging"
+        );
+
+
+        pointerStartX =
+            event.clientX;
+
+        pointerStartY =
+            event.clientY;
+
+
+        startImageX =
+            imageX;
+
+        startImageY =
+            imageY;
+
+
+        /*
+           Capture pointer
+           Important for mobile
+        */
+
+        if(
+            canvas.setPointerCapture
+        ){
+
+            canvas.setPointerCapture(
+                event.pointerId
+            );
+
+        }
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+/* =====================================================
+   POINTER MOVE
+===================================================== */
+
+canvas.addEventListener(
+    "pointermove",
+    function(event){
+
+        if(!dragging){
+
+            return;
+
+        }
+
+
+        event.preventDefault();
+
+
+        /*
+           Convert screen movement
+           to canvas movement.
+        */
+
+        const rect =
+            canvas.getBoundingClientRect();
+
+
+        const scaleX =
+            canvas.width /
+            rect.width;
+
+
+        const scaleY =
+            canvas.height /
+            rect.height;
+
+
+        const dx =
+            (event.clientX -
+             pointerStartX) *
+            scaleX;
+
+
+        const dy =
+            (event.clientY -
+             pointerStartY) *
+            scaleY;
+
+
+        imageX =
+            startImageX + dx;
+
+        imageY =
+            startImageY + dy;
+
+
+        drawPoster();
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+/* =====================================================
+   POINTER UP
+===================================================== */
+
+function stopDragging(event){
+
+    dragging =
+        false;
+
+    canvas.classList.remove(
+        "dragging"
+    );
+
+}
+
+
+canvas.addEventListener(
+    "pointerup",
+    stopDragging
+);
+
+canvas.addEventListener(
+    "pointercancel",
+    stopDragging
+);
+
+canvas.addEventListener(
+    "pointerleave",
+    stopDragging
+);
+
+
+/* =====================================================
+   MOUSE WHEEL ZOOM
+===================================================== */
+
+canvas.addEventListener(
+    "wheel",
+    function(event){
+
+        if(!imageLoaded){
+
+            return;
+
+        }
+
+
+        event.preventDefault();
+
+
+        if(event.deltaY < 0){
+
+            setZoom(
+                zoom + 0.08
+            );
+
+        }else{
+
+            setZoom(
+                zoom - 0.08
+            );
+
+        }
+
+    },
+    {
+        passive:false
+    }
+);
+
+
+/* =====================================================
+   ROUNDED RECTANGLE
+===================================================== */
+
+function roundedRect(
+    ctx,
+    x,
+    y,
+    width,
+    height,
+    radius
+){
+
+    const r =
+        Math.min(
+            radius,
+            width / 2,
+            height / 2
+        );
+
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        x + r,
+        y
+    );
+
+    ctx.arcTo(
+        x + width,
+        y,
+        x + width,
+        y + height,
+        r
+    );
+
+    ctx.arcTo(
+        x + width,
+        y + height,
+        x,
+        y + height,
+        r
+    );
+
+    ctx.arcTo(
+        x,
+        y + height,
+        x,
+        y,
+        r
+    );
+
+    ctx.arcTo(
+        x,
+        y,
+        x + width,
+        y,
+        r
+    );
+
+    ctx.closePath();
+
+}
+
+
+/* =====================================================
+   DRAW CIRCLE PHOTO
+===================================================== */
+
+function drawPhoto(){
+
+    if(!imageLoaded ||
+       !userImage){
+
+        /*
+           Empty circle
+        */
+
+        ctx.save();
+
+        ctx.beginPath();
+
+        ctx.arc(
+            600,
+            475,
+            270,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            "rgba(255,255,255,.08)";
+
+        ctx.fill();
+
+        ctx.lineWidth =
+            14;
+
+        ctx.strokeStyle =
+            "#ffffff";
+
+        ctx.stroke();
+
+
+        ctx.fillStyle =
+            "#ffffff";
+
+        ctx.font =
+            "bold 32px Arial";
+
+        ctx.textAlign =
+            "center";
+
+        ctx.textBaseline =
+            "middle";
+
+        ctx.fillText(
+            "अपनी फोटो चुनें",
+            600,
+            475
+        );
+
+        ctx.restore();
 
         return;
 
     }
 
 
-    const size =
-        getImageSize();
+    const circleX = 600;
 
+    const circleY = 475;
 
-    if (!size) {
-
-        return;
-
-    }
-
-
-    const radius = 255;
+    const radius = 270;
 
 
     ctx.save();
 
 
     /*
-       White outer border
+       White outer circle
     */
 
     ctx.beginPath();
 
     ctx.arc(
-        600,
-        500,
-        275,
+        circleX,
+        circleY,
+        radius + 14,
         0,
         Math.PI * 2
     );
 
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle =
+        "#ffffff";
 
     ctx.fill();
 
 
     /*
-       Orange border
+       Clip photo inside circle
     */
 
     ctx.beginPath();
 
     ctx.arc(
-        600,
-        500,
-        265,
-        0,
-        Math.PI * 2
-    );
-
-    ctx.fillStyle = "#f4511e";
-
-    ctx.fill();
-
-
-    /*
-       Clip photo
-    */
-
-    ctx.beginPath();
-
-    ctx.arc(
-        600,
-        500,
+        circleX,
+        circleY,
         radius,
         0,
         Math.PI * 2
@@ -1513,28 +1955,77 @@ function drawCircularPhoto() {
     ctx.clip();
 
 
+    /*
+       Calculate image size
+    */
+
+    const scaledWidth =
+        userImage.width *
+        baseScale *
+        zoom;
+
+
+    const scaledHeight =
+        userImage.height *
+        baseScale *
+        zoom;
+
+
     ctx.drawImage(
         userImage,
-        imageX - size.width / 2,
-        imageY - size.height / 2,
-        size.width,
-        size.height
+
+        imageX -
+        scaledWidth / 2,
+
+        imageY -
+        scaledHeight / 2,
+
+        scaledWidth,
+
+        scaledHeight
     );
 
+
+    ctx.restore();
+
+
+    /*
+       White border
+    */
+
+    ctx.save();
+
+    ctx.beginPath();
+
+    ctx.arc(
+        circleX,
+        circleY,
+        radius + 7,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.lineWidth =
+        12;
+
+    ctx.strokeStyle =
+        "#ffffff";
+
+    ctx.stroke();
 
     ctx.restore();
 
 }
 
 
-/* ==========================================
+/* =====================================================
    DRAW POSTER
-========================================== */
+===================================================== */
 
-function drawPoster() {
+function drawPoster(){
 
     /*
-       BACKGROUND
+       Background
     */
 
     const gradient =
@@ -1548,23 +2039,22 @@ function drawPoster() {
 
     gradient.addColorStop(
         0,
-        "#b83200"
+        "#c9340d"
     );
-
 
     gradient.addColorStop(
-        0.45,
-        "#e84b12"
+        .5,
+        "#f4511e"
     );
-
 
     gradient.addColorStop(
         1,
-        "#ff6a00"
+        "#ff7a00"
     );
 
 
-    ctx.fillStyle = gradient;
+    ctx.fillStyle =
+        gradient;
 
     ctx.fillRect(
         0,
@@ -1575,759 +2065,377 @@ function drawPoster() {
 
 
     /*
-       DECORATIVE CIRCLES
-    */
-
-    ctx.globalAlpha = 0.12;
-
-    ctx.fillStyle = "#ffffff";
-
-
-    ctx.beginPath();
-
-    ctx.arc(
-        1050,
-        80,
-        180,
-        0,
-        Math.PI * 2
-    );
-
-    ctx.fill();
-
-
-    ctx.beginPath();
-
-    ctx.arc(
-        100,
-        1080,
-        220,
-        0,
-        Math.PI * 2
-    );
-
-    ctx.fill();
-
-
-    ctx.globalAlpha = 1;
-
-
-    /*
-       LOGO
-    */
-
-    const logo =
-        new Image();
-
-
-    logo.onload = function() {
-
-        /*
-           बड़ा logo
-        */
-
-        const logoSize = 145;
-
-
-        ctx.drawImage(
-            logo,
-            45,
-            45,
-            logoSize,
-            logoSize
-        );
-
-
-        drawTexts();
-
-        drawCircularPhoto();
-
-    };
-
-
-    logo.onerror = function() {
-
-        drawTexts();
-
-        drawCircularPhoto();
-
-    };
-
-
-    logo.src =
-        "images/sangthan-logo.png";
-
-}
-
-
-/* ==========================================
-   TEXT
-========================================== */
-
-function drawTexts() {
-
-    ctx.textAlign = "center";
-
-    ctx.textBaseline = "middle";
-
-
-    /*
-       MAIN TITLE
-    */
-
-    ctx.fillStyle = "#ffffff";
-
-    ctx.font =
-        "900 72px 'Noto Sans Devanagari'";
-
-
-    ctx.fillText(
-        "भगवा रक्षक हिन्दू सेना",
-        690,
-        82
-    );
-
-
-    /*
-       SUBTITLE
+       Decorative circles
     */
 
     ctx.fillStyle =
-        "#ffe0b2";
+        "rgba(255,255,255,.08)";
 
+    ctx.beginPath();
 
-    ctx.font =
-        "800 38px 'Noto Sans Devanagari'";
-
-
-    ctx.fillText(
-        "धर्म • सेवा • संस्कार",
-        690,
-        145
+    ctx.arc(
+        1100,
+        130,
+        170,
+        0,
+        Math.PI * 2
     );
 
-
-    /*
-       MAIN PHOTO PLACEHOLDER
-       अगर photo नहीं है
-    */
-
-    if (!imageLoaded) {
-
-        ctx.beginPath();
-
-        ctx.arc(
-            600,
-            500,
-            265,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fillStyle =
-            "rgba(255,255,255,0.12)";
-
-        ctx.fill();
-
-        ctx.strokeStyle =
-            "#ffffff";
-
-        ctx.lineWidth = 10;
-
-        ctx.stroke();
+    ctx.fill();
 
 
-        ctx.fillStyle =
-            "#ffffff";
+    ctx.beginPath();
 
-        ctx.font =
-            "700 30px 'Noto Sans Devanagari'";
+    ctx.arc(
+        90,
+        1100,
+        190,
+        0,
+        Math.PI * 2
+    );
+
+    ctx.fill();
 
 
-        ctx.fillText(
-            "अपनी फोटो चुनें",
-            600,
-            500
+    /* =================================================
+       LOGO
+    ================================================= */
+
+    if(logo.complete &&
+       logo.naturalWidth > 0){
+
+        ctx.drawImage(
+            logo,
+            55,
+            48,
+            155,
+            155
         );
 
     }
 
 
-    /*
-       INFORMATION BOX
-    */
+    /* =================================================
+       TITLE
+    ================================================= */
 
-    const boxX = 75;
-
-    const boxY = 790;
-
-    const boxW = 1050;
-
-    const boxH = 315;
-
-
-    ctx.fillStyle =
-        "rgba(110,30,0,0.48)";
-
-
-    roundRect(
-        ctx,
-        boxX,
-        boxY,
-        boxW,
-        boxH,
-        30
-    );
-
-
-    ctx.fill();
-
-
-    /*
-       BORDER
-    */
-
-    ctx.strokeStyle =
-        "rgba(255,255,255,0.12)";
-
-    ctx.lineWidth = 3;
-
-    ctx.stroke();
-
-
-    /*
-       SLOGAN
-    */
+    ctx.textAlign =
+        "center";
 
     ctx.fillStyle =
         "#ffffff";
 
     ctx.font =
-        "900 48px 'Noto Sans Devanagari'";
+        "900 72px Arial, sans-serif";
 
+    ctx.fillText(
+        "भगवा रक्षक हिन्दू सेना",
+        700,
+        105
+    );
+
+
+    /* SLOGAN */
+
+    ctx.fillStyle =
+        "#ffe0a3";
+
+    ctx.font =
+        "bold 38px Arial, sans-serif";
+
+    ctx.fillText(
+        "धर्म • सेवा • संस्कार",
+        700,
+        155
+    );
+
+
+    /* =================================================
+       PHOTO
+    ================================================= */
+
+    drawPhoto();
+
+
+    /* =================================================
+       INFORMATION BOX
+    ================================================= */
+
+    roundedRect(
+        ctx,
+        75,
+        780,
+        1050,
+        300,
+        30
+    );
+
+    ctx.fillStyle =
+        "rgba(120,35,0,.62)";
+
+    ctx.fill();
+
+
+    /* =================================================
+       MAIN SLOGAN
+    ================================================= */
+
+    ctx.textAlign =
+        "center";
+
+    ctx.fillStyle =
+        "#ffffff";
+
+    ctx.font =
+        "900 50px Arial, sans-serif";
 
     ctx.fillText(
         "धर्मो रक्षति रक्षितः",
         600,
-        845
+        850
     );
 
 
-    /*
-       SECOND LINE
-    */
+    /* SECOND */
 
     ctx.fillStyle =
-        "#ffe0b2";
+        "#ffe0a3";
 
     ctx.font =
-        "800 34px 'Noto Sans Devanagari'";
-
+        "bold 34px Arial, sans-serif";
 
     ctx.fillText(
         "सनातन संस्कृति • सेवा • संस्कार",
         600,
-        905
+        910
     );
 
 
-    /*
-       THIRD LINE
-    */
+    /* THIRD */
 
     ctx.fillStyle =
         "#ffffff";
 
     ctx.font =
-        "700 28px 'Noto Sans Devanagari'";
-
+        "bold 30px Arial, sans-serif";
 
     ctx.fillText(
         "समाजहित एवं सेवा कार्यों में सहभागिता",
         600,
-        960
+        965
     );
 
 
-    /*
-       INSTAGRAM
-    */
+    /* INSTAGRAM */
 
     ctx.font =
-        "800 28px Arial";
-
+        "bold 32px Arial, sans-serif";
 
     ctx.fillText(
         "@bhagva_rakshak__hindu_sena",
         600,
-        1035
+        1030
     );
 
 
-    /*
-       ORGANIZATION NAME
-    */
+    /* ORGANIZATION */
 
     ctx.font =
-        "700 27px 'Noto Sans Devanagari'";
+        "bold 29px Arial, sans-serif";
 
+    ctx.fillStyle =
+        "#ffe0a3";
 
     ctx.fillText(
         "भगवा रक्षक हिन्दू सेना",
         600,
-        1090
+        1070
     );
 
 
-    /*
+    /* =================================================
        BOTTOM LINE
-    */
-
-    ctx.strokeStyle =
-        "#ffe0b2";
-
-    ctx.lineWidth = 8;
-
+    ================================================= */
 
     ctx.beginPath();
 
     ctx.moveTo(
-        375,
+        370,
         1140
     );
 
     ctx.lineTo(
-        825,
+        830,
         1140
     );
+
+    ctx.lineWidth =
+        10;
+
+    ctx.lineCap =
+        "round";
+
+    ctx.strokeStyle =
+        "#ffe0a3";
 
     ctx.stroke();
 
 }
 
 
-/* ==========================================
-   ROUND RECT
-========================================== */
-
-function roundRect(
-    ctx,
-    x,
-    y,
-    width,
-    height,
-    radius
-) {
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-        x + radius,
-        y
-    );
-
-    ctx.lineTo(
-        x + width - radius,
-        y
-    );
-
-    ctx.quadraticCurveTo(
-        x + width,
-        y,
-        x + width,
-        y + radius
-    );
-
-    ctx.lineTo(
-        x + width,
-        y + height - radius
-    );
-
-    ctx.quadraticCurveTo(
-        x + width,
-        y + height,
-        x + width - radius,
-        y + height
-    );
-
-    ctx.lineTo(
-        x + radius,
-        y + height
-    );
-
-    ctx.quadraticCurveTo(
-        x,
-        y + height,
-        x,
-        y + height - radius
-    );
-
-    ctx.lineTo(
-        x,
-        y + radius
-    );
-
-    ctx.quadraticCurveTo(
-        x,
-        y,
-        x + radius,
-        y
-    );
-
-    ctx.closePath();
-
-}
-
-
-/* ==========================================
-   POINTER / TOUCH DRAG
-========================================== */
-
-wrapper.addEventListener(
-    "pointerdown",
-    function(e) {
-
-        if (!imageLoaded) {
-
-            return;
-
-        }
-
-
-        dragging = true;
-
-
-        wrapper.classList.add(
-            "dragging"
-        );
-
-
-        startX = e.clientX;
-
-        startY = e.clientY;
-
-
-        startImageX = imageX;
-
-        startImageY = imageY;
-
-
-        wrapper.setPointerCapture(
-            e.pointerId
-        );
-
-    }
-);
-
-
-wrapper.addEventListener(
-    "pointermove",
-    function(e) {
-
-        if (!dragging) {
-
-            return;
-
-        }
-
-
-        /*
-           Canvas display scale
-        */
-
-        const rect =
-            canvas.getBoundingClientRect();
-
-
-        const scaleX =
-            canvas.width / rect.width;
-
-        const scaleY =
-            canvas.height / rect.height;
-
-
-        const dx =
-            (e.clientX - startX)
-            * scaleX;
-
-
-        const dy =
-            (e.clientY - startY)
-            * scaleY;
-
-
-        imageX =
-            startImageX + dx;
-
-
-        imageY =
-            startImageY + dy;
-
-
-        drawPoster();
-
-    }
-);
-
-
-function stopDragging() {
-
-    dragging = false;
-
-    wrapper.classList.remove(
-        "dragging"
-    );
-
-}
-
-
-wrapper.addEventListener(
-    "pointerup",
-    stopDragging
-);
-
-
-wrapper.addEventListener(
-    "pointercancel",
-    stopDragging
-);
-
-
-wrapper.addEventListener(
-    "pointerleave",
-    function() {
-
-        /*
-           Pointer capture होने पर
-           drag चलता रहेगा।
-        */
-
-    }
-);
-
-
-/* ==========================================
-   MOUSE WHEEL ZOOM
-========================================== */
-
-wrapper.addEventListener(
-    "wheel",
-    function(e) {
-
-        if (!imageLoaded) {
-
-            return;
-
-        }
-
-
-        e.preventDefault();
-
-
-        let value =
-            Number(zoomSlider.value);
-
-
-        if (e.deltaY < 0) {
-
-            value += 5;
-
-        } else {
-
-            value -= 5;
-
-        }
-
-
-        value =
-            Math.max(
-                50,
-                Math.min(
-                    300,
-                    value
-                )
-            );
-
-
-        zoomSlider.value = value;
-
-        zoom =
-            value / 100;
-
-
-        updateZoomText();
-
-        drawPoster();
-
-    },
-    {
-        passive: false
-    }
-);
-
-
-/* ==========================================
-   RESET
-========================================== */
-
-resetBtn.addEventListener(
-    "click",
-    function() {
-
-        zoom = 1;
-
-        zoomSlider.value = 100;
-
-        imageX = 600;
-
-        imageY = 490;
-
-
-        updateZoomText();
-
-        drawPoster();
-
-
-        setStatus(
-            "Photo position और Zoom reset हो गया।"
-        );
-
-    }
-);
-
-
-/* ==========================================
+/* =====================================================
    DOWNLOAD
-========================================== */
+===================================================== */
 
 downloadBtn.addEventListener(
     "click",
-    function() {
+    function(){
 
-        /*
-           Ensure latest drawing
-        */
+        try{
 
-        drawPoster();
+            /*
+               Make sure latest poster
+               is rendered
+            */
 
-
-        setTimeout(
-            function() {
-
-                const link =
-                    document.createElement("a");
+            drawPoster();
 
 
-                const date =
-                    new Date()
-                    .toISOString()
-                    .slice(0,10);
+            const link =
+                document.createElement("a");
 
 
-                link.download =
-                    "Bhagwa_Rakshak_Hindu_Sena_" +
-                    date +
-                    ".png";
+            const date =
+                new Date()
+                .toISOString()
+                .slice(0,10);
 
 
-                link.href =
-                    canvas.toDataURL(
-                        "image/png",
-                        1.0
-                    );
+            link.download =
+                "Bhagwa_Rakshak_Hindu_Sena_Poster_" +
+                date +
+                ".png";
 
 
-                link.click();
-
-
-                setStatus(
-                    "HD पोस्टर डाउनलोड हो रहा है..."
+            link.href =
+                canvas.toDataURL(
+                    "image/png",
+                    1.0
                 );
 
-            },
-            200
-        );
+
+            document.body.appendChild(
+                link
+            );
+
+
+            link.click();
+
+
+            link.remove();
+
+
+            status.textContent =
+                "✅ HD पोस्टर डाउनलोड हो गया।";
+
+        }
+        catch(error){
+
+            console.error(error);
+
+            status.textContent =
+                "❌ पोस्टर डाउनलोड नहीं हो सका।";
+
+        }
 
     }
 );
 
 
-/* ==========================================
+/* =====================================================
    SHARE
-========================================== */
+===================================================== */
 
 shareBtn.addEventListener(
     "click",
-    async function() {
+    async function(){
 
-        try {
+        try{
 
-            if (
-                !navigator.share ||
-                !navigator.canShare
-            ) {
-
-                alert(
-                    "इस browser में direct sharing उपलब्ध नहीं है। पहले HD डाउनलोड करें।"
-                );
-
-                return;
-
-            }
+            drawPoster();
 
 
             canvas.toBlob(
-                async function(blob) {
+                async function(blob){
 
-                    const file =
-                        new File(
-                            [
-                                blob
-                            ],
-                            "Bhagwa_Rakshak_Hindu_Sena.png",
-                            {
-                                type:
-                                    "image/png"
-                            }
-                        );
+                    if(!blob){
 
-
-                    if (
-                        !navigator.canShare({
-                            files: [file]
-                        })
-                    ) {
-
-                        alert(
-                            "इस device पर image sharing उपलब्ध नहीं है।"
-                        );
+                        status.textContent =
+                            "❌ पोस्टर तैयार नहीं हुआ।";
 
                         return;
 
                     }
 
 
-                    await navigator.share({
+                    const file =
+                        new File(
+                            [blob],
+                            "bhagwa-rakshak-poster.png",
+                            {
+                                type:
+                                "image/png"
+                            }
+                        );
 
-                        title:
+
+                    /*
+                       Mobile share
+                    */
+
+                    if(
+                        navigator.share &&
+                        navigator.canShare &&
+                        navigator.canShare({
+                            files:[file]
+                        })
+                    ){
+
+                        await navigator.share({
+
+                            title:
                             "भगवा रक्षक हिन्दू सेना",
 
-                        text:
-                            "भगवा रक्षक हिन्दू सेना — धर्म • सेवा • संस्कार",
+                            text:
+                            "भगवा रक्षक हिन्दू सेना",
 
-                        files:
-                            [file]
+                            files:[file]
 
-                    });
+                        });
+
+
+                        status.textContent =
+                            "✅ पोस्टर शेयर किया गया।";
+
+                    }
+                    else{
+
+                        status.textContent =
+                            "ℹ️ इस मोबाइल ब्राउज़र में Direct Share उपलब्ध नहीं है। पहले पोस्टर डाउनलोड करें।";
+
+                    }
 
                 },
                 "image/png"
             );
 
         }
-        catch(error) {
+        catch(error){
 
-            console.log(error);
+            console.error(error);
+
+            status.textContent =
+                "शेयर बंद कर दिया गया।";
 
         }
 
@@ -2335,14 +2443,42 @@ shareBtn.addEventListener(
 );
 
 
-/* ==========================================
-   INITIAL DRAW
-========================================== */
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
-updateZoomText();
+function goBack(){
 
-drawPoster();
+    if(
+        document.referrer &&
+        document.referrer !== location.href
+    ){
 
+        history.back();
+
+    }
+    else{
+
+        window.location.href =
+            "index.html";
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVENT LONG PRESS IMAGE MENU
+===================================================== */
+
+canvas.addEventListener(
+    "contextmenu",
+    function(event){
+
+        event.preventDefault();
+
+    }
+);
 
 </script>
 
